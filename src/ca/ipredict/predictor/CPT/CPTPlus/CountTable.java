@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.TreeMap;
+import java.util.ArrayList;
 
 import ca.ipredict.database.Item;
 import ca.ipredict.database.Sequence;
@@ -121,6 +122,61 @@ public class CountTable {
 		}
 		
 		return branchesUsed;
+	}
+
+	public ArrayList<ArrayList<Integer>> getConsequents(Item[] sequence) {
+
+		int branchesUsed = 0;
+		Bitvector ids = helper.getSimilarSequencesIds(sequence);
+
+		ArrayList<ArrayList<Integer>> consequentList = new ArrayList<ArrayList<Integer>>();
+
+		//For each sequence similar of the given sequence
+		for(int id = ids.nextSetBit(0); id >= 0 ; id = ids.nextSetBit(id + 1)) {
+			
+			if(branchVisited.contains(id)) {
+				continue;
+			}
+			branchVisited.add(id);
+			
+			//extracting the sequence from the PredictionTree
+			Item[] seq = helper.getSequenceFromId(id);
+			
+			//Generating a set of all the items from sequence
+			HashSet<Item> toAvoid = new HashSet<Item>();
+			for(Item item : sequence) {
+				toAvoid.add(item);
+			}
+			
+
+			//Updating this CountTable with the items {S}
+			//Where {S} contains only the items that are in seq after
+			//all the items from sequence have appeared at least once
+			//Ex:	
+			//	sequence: 	A B C
+			//  seq: 		X A Y B C E A F
+			//	{S}: 		E F
+			int max = 99; //used to limit the number of items to push in the count table
+			int count = 1; //current number of items already pushed
+			ArrayList<Integer> consequent = new ArrayList<Integer>();
+			for(Item item : seq) {
+				//only enters this if toAvoid is empty
+				//it means that all the items of toAvoid have been seen
+				if(toAvoid.size() == 0 && count < max) {
+					
+					//calculating the score for this item
+					//push(item.val, sequence.length, initialSequenceSize, ids.cardinality(), count);
+					consequent.add(item.val);
+				}
+				else if(toAvoid.contains(item)) {
+					toAvoid.remove(item);
+				}
+			}
+			consequentList.add(consequent);
+			//meaning that the count table has been really updated
+		}
+		
+		return consequentList;
 	}
 	
 	/**

@@ -3,6 +3,7 @@ package ca.ipredict.predictor;
 import ca.ipredict.database.Item;
 
 import java.util.TreeMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 import java.lang.Math;
 
@@ -14,10 +15,27 @@ public class ConseqEntropy{
 	private int length;
 	private float minEntropy;
 
+	public ConseqEntropy(ConseqEntropy other){ 
+		this.minEntropy = other.minEntropy; 
+		this.length = other.length;
+		this.consequentsItemsFreq = new TreeMap<Integer, Integer>(other.consequentsItemsFreq);
+	}
+
 	public ConseqEntropy(){ 
-		minEntropy = 0; 
+		minEntropy = 100000; 
 		length = 0;
 		consequentsItemsFreq = new TreeMap<Integer, Integer>();
+	}
+
+	public void addConsequent(ArrayList<ArrayList<Integer>> conList){
+		for (ArrayList<Integer> l : conList){
+			Item[] items = new Item[l.size()];
+			int counter = 0;
+			for (Integer i : l){
+				items[counter++] = new Item(i);
+			}
+			addConsequent(items);
+		}
 	}
 
 	public void addConsequent(Item[] sequence){
@@ -28,13 +46,17 @@ public class ConseqEntropy{
 		}
 		length += sequence.length;
 		updateEntropy();
-		System.out.println(minEntropy);
+		//System.out.println(minEntropy);
 	}
 
 	public boolean checkIfEntropyDrops(Item[] sequence){
 		float newEntropy = calculateEntropy(consequentsItemsFreq, length, sequence);
 		if (newEntropy <= minEntropy) return true;
 		else return false;
+	}
+
+	public float getEntropy(){
+		return minEntropy;
 	}
 
 	private void updateEntropy(){

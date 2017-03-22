@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Queue;
@@ -14,6 +15,8 @@ import ca.ipredict.database.Item;
 import ca.ipredict.database.Sequence;
 import ca.ipredict.predictor.Paramable;
 import ca.ipredict.predictor.Predictor;
+
+import ca.ipredict.predictor.ConseqEntropy;
 
 /**
  * CPT+ - Compact Prediction Tree Plus
@@ -201,6 +204,8 @@ public class CPTPlusPredictor extends Predictor {
 	
 	
 	protected CountTable predictionByActiveNoiseReduction(Sequence target) {
+
+		ConseqEntropy coEn = new ConseqEntropy();
 		
 		//Queues setup
 		HashSet<Sequence> seen = new HashSet<Sequence>(); //contains the sequence already seen to avoid work duplication
@@ -214,9 +219,14 @@ public class CPTPlusPredictor extends Predictor {
 		double noiseRatio = parameters.paramDouble("noiseRatio"); //Ratio of items to remove in a sequence per level (level = target.size)
 		int initialTargetSize = target.size();
 		
+
+		
 		
 		//Initializing the count table
 		CountTable ct = new CountTable(helper);
+
+		//ArrayList<ArrayList<Integer>> consequentsList = ct.getConsequents(target.getItems().toArray(new Item[0]));
+ 		//coEn.addConsequent(consequentsList);
 		ct.update(target.getItems().toArray(new Item[0]), target.size());
 		
 		//Initial prediction
@@ -261,6 +271,14 @@ public class CPTPlusPredictor extends Predictor {
 					
 					//update count table with this sequence
  					Item[] candidateItems = candidate.getItems().toArray(new Item[0]);
+
+ 					ArrayList<ArrayList<Integer>> consequentsList = ct.getConsequents(candidateItems);
+ 					ConseqEntropy coEn_tmp = new ConseqEntropy(coEn);
+ 					coEn_tmp.addConsequent(consequentsList);
+ 					if (predictionCount > 1){
+ 						if(coEn_tmp.getEntropy() > coEn.getEntropy()) continue;
+ 						else coEn = coEn_tmp;
+ 					}else coEn = coEn_tmp;
 
 					int branches = ct.update(candidateItems, initialTargetSize);
 					
