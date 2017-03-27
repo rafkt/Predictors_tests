@@ -22,7 +22,7 @@ public class ConseqEntropy{
 	}
 
 	public ConseqEntropy(){ 
-		minEntropy = 100000; 
+		minEntropy = -1; 
 		length = 0;
 		consequentsItemsFreq = new TreeMap<Integer, Integer>();
 	}
