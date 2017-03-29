@@ -129,15 +129,17 @@ public class CountTable {
 		int branchesUsed = 0;
 		Bitvector ids = helper.getSimilarSequencesIds(sequence);
 
+
+		HashSet<Integer> _branchVisited = new HashSet<Integer>(branchVisited);
 		ArrayList<ArrayList<Integer>> consequentList = new ArrayList<ArrayList<Integer>>();
 
 		//For each sequence similar of the given sequence
 		for(int id = ids.nextSetBit(0); id >= 0 ; id = ids.nextSetBit(id + 1)) {
 			
-			if(branchVisited.contains(id)) {
+			if(_branchVisited.contains(id)) {
 				continue;
 			}
-			branchVisited.add(id);
+			_branchVisited.add(id);
 			
 			//extracting the sequence from the PredictionTree
 			Item[] seq = helper.getSequenceFromId(id);

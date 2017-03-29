@@ -278,7 +278,7 @@ public class CPTPlusPredictor extends Predictor {
  					coEn_tmp.addConsequent(consequentsList);
  					if (predictionCount > 1){
  						if(coEn_tmp.getEntropy() > coEn.getEntropy()) {
- 							System.out.println(coEn_tmp.getEntropy() + " : " + coEn.getEntropy());
+ 							//System.out.println(coEn_tmp.getEntropy() + " : " + coEn.getEntropy());
  							continue;
  						}
  						else coEn = coEn_tmp;
