@@ -37,6 +37,11 @@ public class StatsLogger {
 		value++;
 		getAlgoByName(algoName).set(stat, value);
 	}
+
+	public void inc(String stat, String algoName, double hardScore) {
+		double value = getAlgoByName(algoName).get(stat);
+		getAlgoByName(algoName).set(stat, value + hardScore);
+	}
 	
 	public void divide(String stat, String algoName, long divisor) {
 		double value = getAlgoByName(algoName).get(stat);
