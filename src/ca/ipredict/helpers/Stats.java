@@ -116,6 +116,17 @@ public class Stats {
 			data.get(row).put(column, "1");
 		}
 	}
+
+	public void Inc(String row, String column, double hardScore) {
+		
+		if(data.containsKey(row)) {
+			data.get(row).put(column, hardScore.toString());
+		}
+		else {
+			data.put(row, prepareRow());
+			data.get(row).put(column, hardScore.toString());
+		}
+	}
 	
 	public void Divide(String row, String column, float divisor) {
 		

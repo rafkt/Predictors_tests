@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.io.IOException;
 
+import java.util.HashMap;
+import java.lang.Math;
+
 import ca.ipredict.database.DatabaseHelper;
 import ca.ipredict.database.DatabaseHelper.Format;
 import ca.ipredict.database.Item;
@@ -40,6 +43,9 @@ public class Evaluator {
 	
 	public List<String> datasets;  
 	public List<Integer> datasetsMaxCount;  
+
+	private HashMap<Sequence, Double> queriesHardness;
+	private HashMap<Item, Double> traininsetItemProb;
 	
 	
 	public Evaluator(String pathToDatasets) {
@@ -47,6 +53,7 @@ public class Evaluator {
 		datasets = new ArrayList<String>();
 		datasetsMaxCount = new ArrayList<Integer>();
 		database = new DatabaseHelper(pathToDatasets);
+		queriesHardness = new HashMap<Sequence, Double>();
 	}
 	
 	/**
@@ -325,6 +332,38 @@ public class Evaluator {
 		long end = System.currentTimeMillis(); //Training ending time
 		double duration = (double)(end - start) / 1000;
 		stats.set("Train Time", predictors.get(classifierId).getTAG(), duration);
+		
+		//In order to calculate the query hardness score, we have to know
+		// all the items probabilities  of the training set.
+		// For every traininin set, the map is reset and we calculate
+		// the new probabilities.
+		int totalTrainingLength = 0;
+		traininsetItemProb = new HashMap<Item, Double>()
+		for(Sequence seq : trainingSequences){
+			totalTrainingLength += seq.size();
+			for (Item i : seq.getItems()){
+				double oldVal = traininsetItemProb.get(i);
+				if (oldVal != null) traininsetItemProb.put(i, oldVal + 1);
+				else  traininsetItemProb.put(i, 1);
+			}
+		}
+		for (Item i : traininsetItemProb.keySet()){
+			double oldVal = traininsetItemProb.get(i);
+			traininsetItemProb.put(i, oldVal / totalTrainingLength);
+		}
+	}
+
+	/*
+	* Given a sequence, it calculates the total hardness score for
+	* this sequence. It does not apply any normalisation.
+	* Returns the double value of the sequence score.
+	*/
+	private double rawHardnessScore(Sequence seq){
+		double score = 0.0;
+		for(Item i : seq.getItems()){
+			score += Math.log((float)1 / traininsetItemProb.get(i)) / Math.log(2);
+		}	
+		return score;
 	}
 	
 	private void StartClassifier(List<Sequence> testSequences, int classifierId) {	
@@ -349,6 +388,8 @@ public class Evaluator {
 				//evaluates the prediction
 				else if(isGoodPrediction(consequent, predicted)) {
 					stats.inc("Success", predictors.get(classifierId).getTAG());
+					queriesHardness.put(finalTarget, 1); //keep the sequences that were answered correctly.
+					//those sequences will be evaluated according to their hardness.
 				}
 				else {
 					stats.inc("Failure", predictors.get(classifierId).getTAG());
@@ -364,6 +405,21 @@ public class Evaluator {
 		long end = System.currentTimeMillis(); //Training ending time
 		double duration = (double)(end - start) / 1000;
 		stats.set("Test Time", predictors.get(classifierId).getTAG(), duration);
+
+		//finalise queries hardness and scores
+		double max = -1.0;
+		for (Sequence seq : queriesHardness.keySet()){
+			double val = queriesHardness.get(seq);
+			if (val > max) max = val;
+		}
+		double totalScoreOfQuerries = 0.0;
+		for (Sequence seq : queriesHardness.keySet()){
+			double oldval = queriesHardness.get(seq);
+			queriesHardness.put(seq, oldval / max);
+			totalScoreOfQuerries += oldval / max;
+		}
+		stats.inc("Hardness Score", predictors.get(classifierId).getTAG(), totalScoreOfQuerries);
+		
 	}
 
 	private List<Sequence> splitList(List<Sequence> toSplit, double absoluteRatio){
