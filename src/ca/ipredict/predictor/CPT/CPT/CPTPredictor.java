@@ -90,6 +90,26 @@ public class CPTPredictor extends Predictor {
 		//return the resulting bitset
 		return intersection;
 	}
+	/**
+	*Checks whether a given matched sequence (branch of the trie that contains all query items), is approximately same as the query (target) sequence.
+	* Approximation is controlled with an int parameter.
+	* O means that the target has to be exaclty same as the branch (excluding any consequent)
+	* 1 means that one mistake is forgiven. Two items alternation will count as two mistakes.
+	* N means that N mistakes can be forginven
+	* return True/False in case that the approximation criteria is met or not respectively
+	**/
+	private bool approximation(Item[] targetArray, List<Item> branch, int approximationCount){
+
+		int branchCounter = branch.size() - 1; // we know that branch will be at least the length of target
+		for(i : targetArray) {
+			if (branch.get(branchCounter) != i.val){
+				if (!approximationCount) return false;
+				else approximationCount--;
+			}
+			branchCounter--;
+		} 
+		return true;
+	}
 
 	/**
 	 * Updates a CountTable based on a given sequence using the predictionTree
@@ -121,6 +141,9 @@ public class CPTPredictor extends Predictor {
 				continue;    
 			}   
 			
+			//Here you can get an approximation of the sequence. Put in the count Table only the first item of the consequent. If there is no prediction from the countTable, don't make a prediction.
+			//If approximation returns false, continue with the next branch
+
 			//Getting the branch's leaf
 			PredictionTree curNode = LT.get(index);
 			
@@ -137,6 +160,7 @@ public class CPTPredictor extends Predictor {
 			
 			//Go through the branch (top to bottom) and stop when
 			//it has encountered ALL items from the target
+			// a b c a a a .. abca but a is not count twice (set) .. a, b, c, 
 			Set<Integer>  alreadySeen = new HashSet<Integer>();  
  			for(i = branch.size()-1 ; i >=0 && alreadySeen.size() != hashTarget.size(); i-- ) { 
  				// if it is an item from target
