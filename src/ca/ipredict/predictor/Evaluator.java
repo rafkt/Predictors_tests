@@ -276,7 +276,7 @@ public class Evaluator {
 			stats.divide("No Match", predictor.getTAG(), testingSize);
 			stats.divide("Too Small", predictor.getTAG(), testingSize);
 
-			stats.divide("Hardness Score", predictor.getTAG(), matchingSize);
+			stats.divide("Hardness Score", predictor.getTAG(), success);
 			
 			stats.divide("Train Time", predictor.getTAG(), 100);
 			stats.divide("Test Time", predictor.getTAG(), 100);
