@@ -363,7 +363,10 @@ public class Evaluator {
 	*/
 	private double rawHardnessScore(Sequence seq){
 		double score = 0.0;
+		ArrayList<Integer> seen = new ArrayList<Integer>();
 		for(Item i : seq.getItems()){
+			if (seen.contains(i.val)) continue;
+			seen.add(i.val);
 			Double prob = traininsetItemProb.get(i);
 			if (prob == null) prob = 1.0 / totalTrainingLength;
 			score += Math.log((float)1 / prob) / Math.log(2);
