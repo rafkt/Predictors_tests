@@ -98,12 +98,12 @@ public class CPTPredictor extends Predictor {
 	* N means that N mistakes can be forginven
 	* return True/False in case that the approximation criteria is met or not respectively
 	**/
-	private bool approximation(Item[] targetArray, List<Item> branch, int approximationCount){
+	private boolean approximation(Item[] targetArray, List<Item> branch, int approximationCount){
 
 		int branchCounter = branch.size() - 1; // we know that branch will be at least the length of target
-		for(i : targetArray) {
-			if (branch.get(branchCounter) != i.val){
-				if (!approximationCount) return false;
+		for(Item i : targetArray) {
+			if (branch.get(branchCounter).val != i.val){
+				if (approximationCount == 0) return false;
 				else approximationCount--;
 			}
 			branchCounter--;
@@ -140,6 +140,7 @@ public class CPTPredictor extends Predictor {
 			if(hashSidVisited.contains(index)){
 				continue;    
 			}   
+
 			
 			//Here you can get an approximation of the sequence. Put in the count Table only the first item of the consequent. If there is no prediction from the countTable, don't make a prediction.
 			//If approximation returns false, continue with the next branch
@@ -155,6 +156,8 @@ public class CPTPredictor extends Predictor {
 				curNode = curNode.Parent; //Going up the tree
 				branch.add(curNode.Item); //Adding node to the list
 			}
+
+			if (!approximation(targetArray, branch, 2)) continue;
 			
 			int i = 0;
 			
@@ -168,9 +171,9 @@ public class CPTPredictor extends Predictor {
                      alreadySeen.add(branch.get(i).val);
  			}
  			int consequentEndPosition = i;
-            
+            if (i == -1) continue;
 			//For all the items found 
-			for(i = 0; i <= consequentEndPosition; i++) {
+			for(/*i = 0*/; i <= consequentEndPosition; i++) {
 				
 				float oldValue = 0;
 				if(CountTable.containsKey(branch.get(i).val)) {
@@ -178,9 +181,9 @@ public class CPTPredictor extends Predictor {
 				}
 
 				//Update the countable with the right weight and value
-				float curValue = 1f /((float)indexes.cardinality());
+				float curValue = 1;//1f /((float)indexes.cardinality());
 				
-				CountTable.put(branch.get(i).val, oldValue + (curValue * weight) );
+				CountTable.put(branch.get(i).val, oldValue + (curValue /** weight*/) );
 				
 				hashSidVisited.add(index); 
 			}
@@ -295,24 +298,29 @@ public class CPTPredictor extends Predictor {
 		}
 		int initialTargetArraySize = targetArray.length; // save it to calculate the weight later...
 
+		Map<Integer, Float> CountTable = new HashMap<Integer, Float>();
 		Sequence prediction = new Sequence(-1);
-		int i = 0;
-		int minRecursion = parameters.paramInt("recursiveDividerMin");
-		int maxRecursion = (parameters.paramInt("recursiveDividerMax") > targetArray.length) ? targetArray.length : parameters.paramInt("recursiveDividerMax");
+		HashSet<Integer> hashSidVisited = new HashSet<Integer>();
+		UpdateCountTable(targetArray, 1, CountTable, hashSidVisited);
+		prediction = getBestSequenceFromCountTable(CountTable);
+
+		// int i = 0;
+		// int minRecursion = parameters.paramInt("recursiveDividerMin");
+		// int maxRecursion = (parameters.paramInt("recursiveDividerMax") > targetArray.length) ? targetArray.length : parameters.paramInt("recursiveDividerMax");
 		
-		for(i = minRecursion ; i < maxRecursion && prediction.size() == 0; i++) {
-			//Reset the CountTable and the hasSidVisited
-			HashSet<Integer> hashSidVisited = new HashSet<Integer>();
-			Map<Integer, Float> CountTable = new HashMap<Integer, Float>();
+		// for(i = minRecursion ; i < maxRecursion && prediction.size() == 0; i++) {
+		// 	//Reset the CountTable and the hasSidVisited
+		// 	HashSet<Integer> hashSidVisited = new HashSet<Integer>();
+		// 	Map<Integer, Float> CountTable = new HashMap<Integer, Float>();
 			
-			int minSize = targetArray.length - i; //setting the minSize for the recursiveDivider
+		// 	int minSize = targetArray.length - i; //setting the minSize for the recursiveDivider
 			
-			//Dividing the target sequence into sub sequences
-			RecursiveDivider(targetArray, minSize, CountTable, hashSidVisited, initialTargetArraySize);
+		// 	//Dividing the target sequence into sub sequences
+		// 	RecursiveDivider(targetArray, minSize, CountTable, hashSidVisited, initialTargetArraySize);
 		
-			//Getting the best sequence out of the CountTable
-			prediction = getBestSequenceFromCountTable(CountTable);
-		}
+		// 	//Getting the best sequence out of the CountTable
+		// 	prediction = getBestSequenceFromCountTable(CountTable);
+		// }
 		
 		return prediction;
 	}
