@@ -69,7 +69,7 @@ public class Sequence {
 		return items;
 	}
 	
-	private void setItems(List<Item> newItems) {
+	public void setItems(List<Item> newItems) {
 		items = newItems;
 	}
 	

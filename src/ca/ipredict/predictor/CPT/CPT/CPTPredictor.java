@@ -16,6 +16,8 @@ import ca.ipredict.helpers.MemoryLogger;
 import ca.ipredict.predictor.Paramable;
 import ca.ipredict.predictor.Predictor;
 
+import info.debatty.java.stringsimilarity.*;
+
 /**
  * CPT - Compact Prediction Tree 
  * 1st iteration from  ADMA 2013, with speed enhancement
@@ -126,11 +128,14 @@ public class CPTPredictor extends Predictor {
 		if(indexes.cardinality() == 0){
 			return;
 		}
+
+		Sequence targetSeq = new Sequence(-1);
 	
 		//creating an HashMap of the target's item (for O(1) search time)
 		HashSet<Integer> hashTarget = new HashSet<Integer>(targetArray.length);
 		for(Item it : targetArray) {
 			hashTarget.add(it.val);
+			targetSeq.addItem(it);
 		}
 		
 		//For each branch 
@@ -157,7 +162,7 @@ public class CPTPredictor extends Predictor {
 				branch.add(curNode.Item); //Adding node to the list
 			}
 
-			if (!approximation(targetArray, branch, 2)) continue;
+			//if (!approximation(targetArray, branch, 2)) continue;
 			
 			int i = 0;
 			
@@ -165,15 +170,27 @@ public class CPTPredictor extends Predictor {
 			//it has encountered ALL items from the target
 			// a b c a a a .. abca but a is not count twice (set) .. a, b, c, 
 			Set<Integer>  alreadySeen = new HashSet<Integer>();  
+			List<Item> prefix = new ArrayList<Item>();
  			for(i = branch.size()-1 ; i >=0 && alreadySeen.size() != hashTarget.size(); i-- ) { 
  				// if it is an item from target
                  if(hashTarget.contains(branch.get(i).val)) 
                      alreadySeen.add(branch.get(i).val);
+                 prefix.add(branch.get(i));
  			}
+
+       		//JaroWinkler instance = new JaroWinkler();
+
+       		NGram twogram = new NGram(4);
+
+       		Sequence prefixSeq = new Sequence(-1);
+       		prefixSeq.setItems(prefix);
+        	if (twogram.distance(prefixSeq.toString(), targetSeq.toString()) < 0.4) continue;
+
  			int consequentEndPosition = i;
-            if (i == -1) continue;
+
+            //if (i == -1) continue;
 			//For all the items found 
-			for(/*i = 0*/; i <= consequentEndPosition; i++) {
+			for(i = 0; i <= consequentEndPosition; i++) {
 				
 				float oldValue = 0;
 				if(CountTable.containsKey(branch.get(i).val)) {
