@@ -47,6 +47,8 @@ public class Evaluator {
 	private HashMap<Sequence, Double> queriesHardness;
 	private HashMap<Item, Double> traininsetItemProb;
 	private int totalTrainingLength;
+	private int sigma;
+	private double hardness_thress;
 	
 	
 	public Evaluator(String pathToDatasets) {
@@ -88,6 +90,10 @@ public class Evaluator {
 		statsColumns.add("Success");
 		statsColumns.add("Failure");
 		statsColumns.add("Hardness Score");
+		statsColumns.add("Succ+");
+		statsColumns.add("Succ-");
+		statsColumns.add("Fail+");
+		statsColumns.add("Fail-");
 		statsColumns.add("No Match");
 		statsColumns.add("Too Small");
 		statsColumns.add("Overall");
@@ -277,6 +283,11 @@ public class Evaluator {
 			stats.divide("Too Small", predictor.getTAG(), testingSize);
 
 			stats.divide("Hardness Score", predictor.getTAG(), success);
+
+			stats.divide("Succ+", predictor.getTAG(), matchingSize);
+			stats.divide("Succ-", predictor.getTAG(), matchingSize);
+			stats.divide("Fail+", predictor.getTAG(), matchingSize);
+			stats.divide("Fail-", predictor.getTAG(), matchingSize);
 			
 			stats.divide("Train Time", predictor.getTAG(), 100);
 			stats.divide("Test Time", predictor.getTAG(), 100);
@@ -342,18 +353,23 @@ public class Evaluator {
 		// the new probabilities.
 		totalTrainingLength = 0;
 		traininsetItemProb = new HashMap<Item, Double>();
+		sigma = 0;
 		for(Sequence seq : trainingSequences){
 			totalTrainingLength += seq.size();
 			for (Item i : seq.getItems()){
 				Double oldVal = traininsetItemProb.get(i);
 				if (oldVal != null) traininsetItemProb.put(i, oldVal + 1);
-				else  traininsetItemProb.put(i, 1.0);
+				else  {
+					traininsetItemProb.put(i, 1.0);
+					sigma++;
+				}
 			}
 		}
 		for (Item i : traininsetItemProb.keySet()){
 			double oldVal = traininsetItemProb.get(i);
 			traininsetItemProb.put(i, oldVal / totalTrainingLength);
 		}
+		hardness_thress = 1.0 / sigma;
 	}
 
 	/*
@@ -400,9 +416,20 @@ public class Evaluator {
 					stats.inc("Success", predictors.get(classifierId).getTAG());
 					queriesHardness.put(finalTarget, rawHardnessScore(finalTarget)); //keep the sequences that were answered correctly.
 					//those sequences will be evaluated according to their hardness.
+					if (traininsetItemProb.get(predicted.get(0)) <= hardness_thress){
+						stats.inc("Succ-", predictors.get(classifierId).getTAG());
+					}else{
+						stats.inc("Succ+", predictors.get(classifierId).getTAG());
+					}
 				}
 				else {
 					stats.inc("Failure", predictors.get(classifierId).getTAG());
+					if (predicted.get(0) == null || predicted.get(0).val == null) continue;
+					if (traininsetItemProb.get(predicted.get(0)) <= hardness_thress){
+						stats.inc("Fail-", predictors.get(classifierId).getTAG());
+					}else{
+						stats.inc("Fail+", predictors.get(classifierId).getTAG());
+					}
 				}
 				
 			}
