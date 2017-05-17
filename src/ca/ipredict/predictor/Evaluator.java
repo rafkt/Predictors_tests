@@ -86,6 +86,7 @@ public class Evaluator {
 		statsColumns.add("Size (MB)");
 		statsColumns.add("Train Time");
 		statsColumns.add("Test Time");
+		statsColumns.add("Query Time");
 		
 		//Extracting the name of each predictor
 		List<String> predictorNames = new ArrayList<String>();
@@ -193,13 +194,24 @@ public class Evaluator {
 	 * and the k-1 other folds for training
 	 */
 	public void KFold(int k, int classifierId) {
+
+		List<Sequence> dataSet = getDatabaseCopy();
 		
 		//k has to be at least 2
-		if(k < 2) {
+		if (k == 1){
+			List<Sequence> trainingSequences = new LinkedList<Sequence>();
+			for(int j = 0 ; j < dataSet.size(); j++) {
+				Sequence toAdd = dataSet.get(j);
+				trainingSequences.add(toAdd);
+			}
+			PrepareClassifier(trainingSequences, classifierId);
+			MemoryLogger.addUpdate();
+			return;
+		}else if(k < 2) {
 			throw new RuntimeException("K needs to be 2 or more");
 		}
 
-		List<Sequence> dataSet = getDatabaseCopy();
+		
 		
 		//calculating absolute ratio
 		double relativeRatio = 1/(double)k;
@@ -270,6 +282,7 @@ public class Evaluator {
 			
 			stats.divide("Train Time", predictor.getTAG(), 100);
 			stats.divide("Test Time", predictor.getTAG(), 100);
+			//stats.divide("Query Time", predictor.getTAG(), 100);
 			
 			//Adding overall success
 			stats.set("Overall", predictor.getTAG(), success);
@@ -330,6 +343,8 @@ public class Evaluator {
 	private void StartClassifier(List<Sequence> testSequences, int classifierId) {	
 		
 		long start = System.currentTimeMillis(); //Testing starting time
+
+		long totalQuerriesTime = 0;
 		
 		//for each sequence; it classifies it and evaluates it
 		for(Sequence target : testSequences) {
@@ -340,7 +355,12 @@ public class Evaluator {
 				Sequence consequent = target.getLastItems(Profile.paramInt("consequentSize"),0); //the lasts actual items in target
 				Sequence finalTarget = target.getLastItems(Profile.paramInt("windowSize"),Profile.paramInt("consequentSize"));
 				
+				long q_s = System.currentTimeMillis();
 				Sequence predicted = predictors.get(classifierId).Predict(finalTarget);
+				long q_e = System.currentTimeMillis(); //Training ending time
+				double q_d = (double)(q_e - q_s); /// 1000;
+
+				totalQuerriesTime += q_d;
 				
 				//if no sequence is returned, it means that they is no match for this sequence
 				if(predicted.size() == 0) {
@@ -364,6 +384,7 @@ public class Evaluator {
 		long end = System.currentTimeMillis(); //Training ending time
 		double duration = (double)(end - start) / 1000;
 		stats.set("Test Time", predictors.get(classifierId).getTAG(), duration);
+		stats.set("Query Time", predictors.get(classifierId).getTAG(), totalQuerriesTime / (double) testSequences.size());
 	}
 
 	private List<Sequence> splitList(List<Sequence> toSplit, double absoluteRatio){

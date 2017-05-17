@@ -55,16 +55,16 @@ public class MainController {
 			evaluator.addDataset("FIFA", 		5000);
 			
 			//Loading predictors
-			evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
-			evaluator.addPredictor(new TDAGPredictor());
-			evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
-			evaluator.addPredictor(new CPTPredictor());
-			evaluator.addPredictor(new MarkovFirstOrderPredictor());
-			evaluator.addPredictor(new MarkovAllKPredictor());
-			evaluator.addPredictor(new LZ78Predictor());
+			// evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
+			// evaluator.addPredictor(new TDAGPredictor());
+			 evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
+			 evaluator.addPredictor(new CPTPredictor());
+			// evaluator.addPredictor(new MarkovFirstOrderPredictor());
+			// evaluator.addPredictor(new MarkovAllKPredictor());
+			// evaluator.addPredictor(new LZ78Predictor());
 			
 			//Start the experiment
-			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 14 , true, true, true);
+			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 1 , true, true, true);
 	}
 
 }
