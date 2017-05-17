@@ -48,6 +48,7 @@ public class Evaluator {
 	private HashMap<Item, Double> traininsetItemProb;
 	private int totalTrainingLength;
 	private int sigma;
+	private double min_prob;
 	private double hardness_thress;
 	
 	
@@ -94,6 +95,7 @@ public class Evaluator {
 		statsColumns.add("Succ-");
 		statsColumns.add("Fail+");
 		statsColumns.add("Fail-");
+		statsColumns.add("Ans_Score");
 		statsColumns.add("No Match");
 		statsColumns.add("Too Small");
 		statsColumns.add("Overall");
@@ -284,6 +286,8 @@ public class Evaluator {
 
 			stats.divide("Hardness Score", predictor.getTAG(), success);
 
+			stats.divide("Ans_Score", predictor.getTAG(), matchingSize);
+
 			stats.divide("Succ+", predictor.getTAG(), success);
 			stats.divide("Succ-", predictor.getTAG(), success);
 			stats.divide("Fail+", predictor.getTAG(), failure);
@@ -352,6 +356,7 @@ public class Evaluator {
 		// For every traininin set, the map is reset and we calculate
 		// the new probabilities.
 		totalTrainingLength = 0;
+		min_prob = 1.0;
 		traininsetItemProb = new HashMap<Item, Double>();
 		sigma = 0;
 		for(Sequence seq : trainingSequences){
@@ -370,6 +375,11 @@ public class Evaluator {
 			traininsetItemProb.put(i, oldVal / totalTrainingLength);
 		}
 		hardness_thress = 1.0 / sigma;
+
+		for (Item i : traininsetItemProb.keySet()){
+			double val = traininsetItemProb.get(i);
+			if (val < min_prob) min_prob = val;
+		}
 	}
 
 	/*
@@ -391,6 +401,8 @@ public class Evaluator {
 	}
 	
 	private void StartClassifier(List<Sequence> testSequences, int classifierId) {	
+
+		double totalScoreOfQuerries_answers = 0.0;
 		
 		queriesHardness = new HashMap<Sequence, Double>();
 
@@ -413,6 +425,9 @@ public class Evaluator {
 				}
 				//evaluates the prediction
 				else if(isGoodPrediction(consequent, predicted)) {
+					Double prob = traininsetItemProb.get(predicted.get(0));
+					totalScoreOfQuerries_answers += (Math.log((float)1 / prob) / Math.log(2)) / (Math.log((float)1 / min_prob) / Math.log(2));
+
 					stats.inc("Success", predictors.get(classifierId).getTAG());
 					queriesHardness.put(finalTarget, rawHardnessScore(finalTarget)); //keep the sequences that were answered correctly.
 					//those sequences will be evaluated according to their hardness.
@@ -456,6 +471,7 @@ public class Evaluator {
 			totalScoreOfQuerries += oldval / max;
 		}
 		stats.inc("Hardness Score", predictors.get(classifierId).getTAG(), totalScoreOfQuerries);
+		stats.inc("Ans_Score", predictors.get(classifierId).getTAG(), totalScoreOfQuerries);
 		
 	}
 
