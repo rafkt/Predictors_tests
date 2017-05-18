@@ -46,11 +46,11 @@ public class MainController {
 			Evaluator evaluator = new Evaluator(args[0]);
 			
 			//Loading datasets
-			evaluator.addDataset("BMS", 		5000);
-			evaluator.addDataset("SIGN", 		1000);
-			evaluator.addDataset("MSNBC", 		5000);
-			evaluator.addDataset("BIBLE_WORD", 	5000);
-			evaluator.addDataset("BIBLE_CHAR", 	5000);
+			// evaluator.addDataset("BMS", 		5000);
+			// evaluator.addDataset("SIGN", 		1000);
+			// evaluator.addDataset("MSNBC", 		5000);
+			// evaluator.addDataset("BIBLE_WORD", 	5000);
+			// evaluator.addDataset("BIBLE_CHAR", 	5000);
 			evaluator.addDataset("KOSARAK", 	45000);
 			evaluator.addDataset("FIFA", 		5000);
 			
@@ -64,7 +64,7 @@ public class MainController {
 			// evaluator.addPredictor(new LZ78Predictor());
 			
 			//Start the experiment
-			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 14 , true, true, true);
+			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 1 , true, true, true);
 	}
 
 }
