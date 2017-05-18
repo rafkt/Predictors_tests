@@ -86,7 +86,7 @@ public class Evaluator {
 		statsColumns.add("Size (MB)");
 		statsColumns.add("Train Time");
 		statsColumns.add("Test Time");
-		statsColumns.add("Query Time");
+		statsColumns.add("Q_Time(ms)");
 		
 		//Extracting the name of each predictor
 		List<String> predictorNames = new ArrayList<String>();
@@ -282,7 +282,7 @@ public class Evaluator {
 			
 			stats.divide("Train Time", predictor.getTAG(), 100);
 			stats.divide("Test Time", predictor.getTAG(), 100);
-			//stats.divide("Query Time", predictor.getTAG(), 100);
+			//stats.divide("Q_Time(ms)", predictor.getTAG(), 100);
 			
 			//Adding overall success
 			stats.set("Overall", predictor.getTAG(), success);
@@ -384,7 +384,7 @@ public class Evaluator {
 		long end = System.currentTimeMillis(); //Training ending time
 		double duration = (double)(end - start) / 1000;
 		stats.set("Test Time", predictors.get(classifierId).getTAG(), duration);
-		stats.set("Query Time", predictors.get(classifierId).getTAG(), totalQuerriesTime / (double) testSequences.size());
+		stats.set("Q_Time(ms)", predictors.get(classifierId).getTAG(), totalQuerriesTime / (double) testSequences.size());
 	}
 
 	private List<Sequence> splitList(List<Sequence> toSplit, double absoluteRatio){

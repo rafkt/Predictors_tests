@@ -64,7 +64,7 @@ public class MainController {
 			// evaluator.addPredictor(new LZ78Predictor());
 			
 			//Start the experiment
-			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 1 , true, true, true);
+			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 14 , true, true, true);
 	}
 
 }
