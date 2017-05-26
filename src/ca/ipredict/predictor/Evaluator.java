@@ -288,10 +288,10 @@ public class Evaluator {
 
 			stats.divide("Ans_Score", predictor.getTAG(), matchingSize);
 
-			stats.divide("Succ+", predictor.getTAG(), success);
-			stats.divide("Succ-", predictor.getTAG(), success);
-			stats.divide("Fail+", predictor.getTAG(), failure);
-			stats.divide("Fail-", predictor.getTAG(), failure);
+			stats.divide("Succ+", predictor.getTAG(), testingSize);
+			stats.divide("Succ-", predictor.getTAG(), testingSize);
+			stats.divide("Fail+", predictor.getTAG(), testingSize);
+			stats.divide("Fail-", predictor.getTAG(), testingSize);
 			
 			stats.divide("Train Time", predictor.getTAG(), 100);
 			stats.divide("Test Time", predictor.getTAG(), 100);
