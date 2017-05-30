@@ -15,7 +15,21 @@ public class DatabaseHelper {
 	private String basePath;
 	
 	//Data sets
-	public static enum Format{BMS, KOSARAK, FIFA, MSNBC, SIGN, CANADARM1, CANADARM2, SNAKE, BIBLE_CHAR, BIBLE_WORD, KORAN_WORD, LEVIATHAN_WORD, CUSTOM}; 
+	public static enum Format{BMS, KOSARAK, FIFA, MSNBC, SIGN, CANADARM1, CANADARM2, SNAKE, BIBLE_CHAR, BIBLE_WORD, KORAN_WORD, LEVIATHAN_WORD, CUSTOM,
+									QUEST200,
+									QUEST400,
+									QUEST600,
+									QUEST800,
+									QUEST600_05,
+									QUEST600_01,
+									QUEST600_15,
+									QUEST600_20,
+									QUEST600_25,
+									QUEST600_30,
+									QUEST5_1200,
+									QUEST10_600,
+									QUEST20_300,
+									QUEST40_150};
 	
 	//Database
 	private SequenceDatabase database;
@@ -116,6 +130,48 @@ public class DatabaseHelper {
 				break;
 			case LEVIATHAN_WORD:
 				database.loadFileLargeTextFormatAsWords(fileToPath("leviathan.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"), false);
+				break;
+			case QUEST200:
+				database.loadFileSPMFFormat(fileToPath("spmf/data.ncust_200.tlen_1.nitems_1.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST400:
+				database.loadFileSPMFFormat(fileToPath("spmf/data.ncust_400.tlen_1.nitems_1.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST600:
+				database.loadFileSPMFFormat(fileToPath("spmf/data.ncust_600.tlen_1.nitems_1.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST800:
+				database.loadFileSPMFFormat(fileToPath("spmf/data.ncust_800.tlen_1.nitems_1.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST600_05:
+				database.loadFileSPMFFormat(fileToPath("spmf/var_sigma/data.slen_10.ncust_600.tlen_1.nitems_0.5.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST600_01:
+				database.loadFileSPMFFormat(fileToPath("spmf/var_sigma/data.slen_10.ncust_600.tlen_1.nitems_1.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST600_15:
+				database.loadFileSPMFFormat(fileToPath("spmf/var_sigma/data.slen_10.ncust_600.tlen_1.nitems_1.5.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST600_20:
+				database.loadFileSPMFFormat(fileToPath("spmf/var_sigma/data.slen_10.ncust_600.tlen_1.nitems_2.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST600_25:
+				database.loadFileSPMFFormat(fileToPath("spmf/var_sigma/data.slen_10.ncust_600.tlen_1.nitems_2.5.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST600_30:
+				database.loadFileSPMFFormat(fileToPath("spmf/var_sigma/data.slen_10.ncust_600.tlen_1.nitems_3.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST5_1200:
+				database.loadFileSPMFFormat(fileToPath("spmf/var_length/data.slen_5.ncust_1200.tlen_1.nitems_1.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST10_600:
+				database.loadFileSPMFFormat(fileToPath("spmf/var_length/data.slen_10.ncust_600.tlen_1.nitems_1.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST20_300:
+				database.loadFileSPMFFormat(fileToPath("spmf/var_length/data.slen_20.ncust_300.tlen_1.nitems_1.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST40_150:
+				database.loadFileSPMFFormat(fileToPath("spmf/var_length/data.slen_40.ncust_150.tlen_1.nitems_1.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
 				break;
 			default:
 				System.out.println("Could not load dataset, unknown format.");

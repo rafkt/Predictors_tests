@@ -52,7 +52,31 @@ public class MainController {
 //			evaluator.addDataset("BIBLE_WORD", 	5000);
 //			evaluator.addDataset("BIBLE_CHAR", 	5000);
 //			evaluator.addDataset("KOSARAK", 	45000);
-			evaluator.addDataset("FIFA", 		5000);
+			//evaluator.addDataset("FIFA", 		5000);
+
+			//var seq number
+			//Profile query length: 4, Consequent: 2
+			evaluator.addDataset("QUEST200", 		-1);//5000
+			evaluator.addDataset("QUEST400", 		-1);//5000
+			evaluator.addDataset("QUEST600", 		-1);//5000
+			evaluator.addDataset("QUEST800", 		-1);//5000
+			
+			//var alphabet
+			//Profile query length: 4, Consequent: 2
+			evaluator.addDataset("QUEST600_05", 		-1);
+			evaluator.addDataset("QUEST600_01", 		-1);
+			evaluator.addDataset("QUEST600_15", 		-1);
+			evaluator.addDataset("QUEST600_20", 		-1);
+			evaluator.addDataset("QUEST600_25", 		-1);
+			evaluator.addDataset("QUEST600_30", 		-1);
+
+			//var seq length --> total length remains about the same
+			//Profile query length: 4, Consequent: 1
+			evaluator.addDataset("QUEST5_1200", 		-1);
+			evaluator.addDataset("QUEST10_600", 		-1);
+			evaluator.addDataset("QUEST20_300", 		-1);
+			evaluator.addDataset("QUEST40_150", 		-1);
+
 			
 			//Loading predictors
 			// evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
@@ -64,7 +88,7 @@ public class MainController {
 			// evaluator.addPredictor(new LZ78Predictor());
 			
 			//Start the experiment
-			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 1 , true, true, true);
+			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 14 , true, true, true);
 	}
 
 }

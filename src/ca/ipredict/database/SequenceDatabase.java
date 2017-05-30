@@ -431,31 +431,37 @@ public class SequenceDatabase {
 		BufferedReader myInput = null;
 		try {
 			int count = 0;
+			if (maxCount == -1) count = -2; //in order to disable the condition that limits the number of sequences that we read
+			boolean itemsetEnd = false;
 			FileInputStream fin = new FileInputStream(new File(path));
 			myInput = new BufferedReader(new InputStreamReader(fin));
 			Set<Integer> alreadySeen = new HashSet<Integer>();
-			while ((thisLine = myInput.readLine()) != null /*&& count < maxCount*/) {
+			while ((thisLine = myInput.readLine()) != null && count < maxCount) {
 				Sequence sequence = new Sequence(sequences.size());
 				for (String entier : thisLine.split(" ")) {
-					if (entier.equals("-1")) { // separateur d'itemsets
-						
+					if (entier.equals("-1")) { // s�parateur d'itemsets
+						itemsetEnd = false;
 					} else if (entier.equals("-2")) { // indicateur de fin de s�quence
-						if(sequence.size()>= minSize &&
+						if(sequence.size()>= 1 &&
 							sequence.size() <= maxSize){
 							sequences.add(sequence);
-							count++;
+							if (maxCount != -1) count++;
 						}
 					} else { 
-						int val = Integer.parseInt(entier);
-						if(alreadySeen.contains(val)){
-							continue;
+						if (!itemsetEnd) { //since I can give a sequence with more than one items/itemset, we discard any extra items of itemset
+							itemsetEnd = true;
+							int val = Integer.parseInt(entier);
+							sequence.getItems().add(new Item(val));
 						}
-						alreadySeen.add(val);
-						sequence.getItems().add(new Item(val));
+						//RAF: can't figure out why the below code exists - results to not getting any sequences at all
+//						if(alreadySeen.contains(val)){
+//							continue;
+//						}
+//						alreadySeen.add(val);
+						//sequence.getItems().add(new Item(val));
 					}
 				}
 			}
-			
 			if (myInput != null) {
 				myInput.close();
 			}
