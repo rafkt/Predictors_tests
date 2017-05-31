@@ -46,13 +46,30 @@ public class MainController {
 			Evaluator evaluator = new Evaluator(args[0]);
 			
 			//Loading datasets
-			evaluator.addDataset("BMS", 		5000);
-			evaluator.addDataset("SIGN", 		1000);
-			evaluator.addDataset("MSNBC", 		5000);
-			evaluator.addDataset("BIBLE_WORD", 	5000);
-			evaluator.addDataset("BIBLE_CHAR", 	5000);
-			evaluator.addDataset("KOSARAK", 	45000);
-			evaluator.addDataset("FIFA", 		5000);
+			// evaluator.addDataset("BMS", 		5000);
+			// evaluator.addDataset("SIGN", 		1000);
+			// evaluator.addDataset("MSNBC", 		5000);
+			// evaluator.addDataset("BIBLE_WORD", 	5000);
+			// evaluator.addDataset("BIBLE_CHAR", 	5000);
+			// evaluator.addDataset("KOSARAK", 	45000);
+			// evaluator.addDataset("FIFA", 		5000);
+
+			evaluator.addDataset("SPICE0", 		-1);
+			evaluator.addDataset("SPICE1", 		-1);
+			evaluator.addDataset("SPICE2", 		-1);
+			evaluator.addDataset("SPICE3", 		-1);
+			evaluator.addDataset("SPICE4", 		-1);
+			evaluator.addDataset("SPICE5", 		-1);
+			evaluator.addDataset("SPICE6", 		-1);
+			evaluator.addDataset("SPICE7", 		-1);
+			evaluator.addDataset("SPICE8", 		-1);
+			evaluator.addDataset("SPICE9", 		-1);
+			evaluator.addDataset("SPICE10", 		-1);
+			evaluator.addDataset("SPICE11", 		-1);
+			evaluator.addDataset("SPICE12", 		-1);
+			evaluator.addDataset("SPICE13", 		-1);
+			evaluator.addDataset("SPICE14", 		-1);
+			evaluator.addDataset("SPICE15", 		-1);
 			
 			//Loading predictors
 			evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
