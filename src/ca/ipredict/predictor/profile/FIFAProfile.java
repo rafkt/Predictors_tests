@@ -10,8 +10,8 @@ public class FIFAProfile extends Profile {
 		parameters.put("sequenceMinSize", "6");
 		parameters.put("sequenceMaxSize", "999");
 		parameters.put("removeDuplicatesMethod", "1");
-		parameters.put("consequentSize", "1"); 
-		parameters.put("windowSize", "5"); 
+		parameters.put("consequentSize", "2"); 
+		parameters.put("windowSize", "4"); 
 
 		///////////////
 		//CPT parameters
