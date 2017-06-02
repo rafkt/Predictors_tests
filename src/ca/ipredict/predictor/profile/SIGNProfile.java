@@ -7,11 +7,11 @@ public class SIGNProfile extends Profile {
 		
 		//Global parameters
 		//Pre-processing
-		parameters.put("sequenceMinSize", "6");
+		parameters.put("sequenceMinSize", "8");
 		parameters.put("sequenceMaxSize", "999");
 		parameters.put("removeDuplicatesMethod", "1");
 		parameters.put("consequentSize", "2"); 
-		parameters.put("windowSize", "4"); 
+		parameters.put("windowSize", "6"); 
 
 		///////////////
 		//CPT parameters

@@ -1,17 +1,17 @@
 package ca.ipredict.predictor.profile;
 
-public class SPICE extends Profile {
+public class SPICEProfile extends Profile {
 
 	@Override
 	public void Apply() {
 
 		//Global parameters
 		//Pre-processing
-		parameters.put("sequenceMinSize", "6");
+		parameters.put("sequenceMinSize", "8");
 		parameters.put("sequenceMaxSize", "999");
 		parameters.put("removeDuplicatesMethod", "1");
 		parameters.put("consequentSize", "2"); 
-		parameters.put("windowSize", "4"); 
+		parameters.put("windowSize", "6"); 
 
 		///////////////
 		//CPT parameters

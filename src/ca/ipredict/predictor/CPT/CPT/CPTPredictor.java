@@ -157,7 +157,7 @@ public class CPTPredictor extends Predictor {
 				branch.add(curNode.Item); //Adding node to the list
 			}
 
-			if (!approximation(targetArray, branch, 2)) continue;
+			if (!approximation(targetArray, branch, 3)) continue;
 			
 			int i = 0;
 			
@@ -207,8 +207,8 @@ public class CPTPredictor extends Predictor {
 			//CONFIDENCE : |X -> Y|
 			//LIFT: CONFIDENCE(X -> Y) / (|Y|)
 			//Calculate score based on lift or confidence
-			double lift = it.getValue() / II.get(it.getKey()).cardinality();
-			double support = II.get(it.getKey()).cardinality();
+			//double lift = it.getValue() / II.get(it.getKey()).cardinality();
+			//double support = II.get(it.getKey()).cardinality();
 			double confidence = it.getValue();
 			
 			double score = confidence; //Use confidence or lift, depending on Parameter.firstVote
@@ -237,38 +237,38 @@ public class CPTPredictor extends Predictor {
 		//if there is a max item (at least one item in the CountTable)
 		// and it is better than second best (if there is one)
 		//and the minTreshold is respected
-		else if (diff >= 0.0 || secondMaxValue == -1) {
+		else {//if (diff >= 0.0 || secondMaxValue == -1) {
 			Item predictedItem = new Item(maxItem);
 			predicted.addItem(predictedItem);
 		}
 		//if there is multiple "best" items with the same weight
-		else if(diff == 0.0 && secondMaxValue != -1) {
+		// else if(diff == 0.0 && secondMaxValue != -1) {
 
-			//pick the one with the highest support or lift
-			double highestScore = 0;
-			int newBestItem = -1;
-			for(Map.Entry<Integer, Float> it : CountTable.entrySet()) {
+		// 	//pick the one with the highest support or lift
+		// 	double highestScore = 0;
+		// 	int newBestItem = -1;
+		// 	for(Map.Entry<Integer, Float> it : CountTable.entrySet()) {
 				
-				if(maxValue == it.getValue()) {
-					if(II.containsKey(it.getKey())) {
+		// 		if(maxValue == it.getValue()) {
+		// 			if(II.containsKey(it.getKey())) {
 						
-						double lift = it.getValue() / II.get(it.getKey()).cardinality();
+		// 				double lift = it.getValue() / II.get(it.getKey()).cardinality();
 						
-						double score = lift; //Use confidence or lift, depending on Parameter.secondVote
+		// 				double score = lift; //Use confidence or lift, depending on Parameter.secondVote
 						
-						if(score > highestScore) {
-							highestScore = score;
-							newBestItem = it.getKey();
-						}
-					}
-				}
-			}			
-			Item predictedItem = new Item(newBestItem);
+		// 				if(score > highestScore) {
+		// 					highestScore = score;
+		// 					newBestItem = it.getKey();
+		// 				}
+		// 			}
+		// 		}
+		// 	}			
+		// 	Item predictedItem = new Item(newBestItem);
 
-		}
-		else {
-			//Nothing to do
-		}
+		// }
+		// else {
+		// 	//Nothing to do
+		// }
 			
 		return predicted;
 	}
