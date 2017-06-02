@@ -463,6 +463,51 @@ public class SequenceDatabase {
 			e.printStackTrace();
 		}
 	}
+
+
+	public void loadFileSPiCeFormat(String path, int maxCount,
+			int minSize, int maxSize) {
+		
+		String thisLine;
+		BufferedReader myInput = null;
+		try {
+			int count = 0;
+			if (maxCount == -1) count = -2;
+			FileInputStream fin = new FileInputStream(new File(path));
+			myInput = new BufferedReader(new InputStreamReader(fin));
+
+			thisLine = myInput.readLine();//discard the first line as it is statistically placed only.
+
+			while ((thisLine = myInput.readLine()) != null && count < maxCount) {
+				Sequence sequence = new Sequence(sequences.size());
+				boolean firstItem = true;
+				int length = 0;
+				for (String entier : thisLine.split(" ")) {
+					int val = Integer.parseInt(entier);
+					if (firstItem){
+						length = val;
+						firstItem = false;
+						continue;
+					}
+					sequence.getItems().add(new Item(val));
+					length--;
+					if (length == 0){
+						if(sequence.size()>= minSize &&
+							sequence.size() <= maxSize){
+							sequences.add(sequence);
+							if (maxCount != -1) count++;
+						}
+					}
+				}
+			}
+			
+			if (myInput != null) {
+				myInput.close();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 
 	public void loadSnakeDataset(String filepath, int nbLine, 
