@@ -7,10 +7,10 @@ public class SPICEProfile extends Profile {
 
 		//Global parameters
 		//Pre-processing
-		parameters.put("sequenceMinSize", "8");
+		parameters.put("sequenceMinSize", "7");
 		parameters.put("sequenceMaxSize", "999");
 		parameters.put("removeDuplicatesMethod", "1");
-		parameters.put("consequentSize", "2"); 
+		parameters.put("consequentSize", "1"); 
 		parameters.put("windowSize", "6"); 
 
 		///////////////

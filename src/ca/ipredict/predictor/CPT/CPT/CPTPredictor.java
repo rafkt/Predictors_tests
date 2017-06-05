@@ -132,61 +132,67 @@ public class CPTPredictor extends Predictor {
 		for(Item it : targetArray) {
 			hashTarget.add(it.val);
 		}
+
+		int forgivingErrors = 0, maxErrors = 5;
+		while(forgivingErrors <= maxErrors){
 		
-		//For each branch 
-		for(int index = indexes.nextSetBit(0); index >= 0 ; index = indexes.nextSetBit(index+1)) {
+			//For each branch 
+			for(int index = indexes.nextSetBit(0); index >= 0 ; index = indexes.nextSetBit(index+1)) {
 
-			//Skip branches that have already been seen for this target sequence
-			if(hashSidVisited.contains(index)){
-				continue;    
-			}   
+				//Skip branches that have already been seen for this target sequence
+				if(hashSidVisited.contains(index)){
+					continue;    
+				}   
 
-			
-			//Here you can get an approximation of the sequence. Put in the count Table only the first item of the consequent. If there is no prediction from the countTable, don't make a prediction.
-			//If approximation returns false, continue with the next branch
-
-			//Getting the branch's leaf
-			PredictionTree curNode = LT.get(index);
-			
-			
-			//Transform this branch in a list
-			List<Item> branch = new ArrayList<Item>();
-			branch.add(curNode.Item); //Adding node to the list
-			while(curNode.Parent != null){
-				curNode = curNode.Parent; //Going up the tree
-				branch.add(curNode.Item); //Adding node to the list
-			}
-
-			if (!approximation(targetArray, branch, 3)) continue;
-			
-			int i = 0;
-			
-			//Go through the branch (top to bottom) and stop when
-			//it has encountered ALL items from the target
-			// a b c a a a .. abca but a is not count twice (set) .. a, b, c, 
-			Set<Integer>  alreadySeen = new HashSet<Integer>();  
- 			for(i = branch.size()-1 ; i >=0 && alreadySeen.size() != hashTarget.size(); i-- ) { 
- 				// if it is an item from target
-                 if(hashTarget.contains(branch.get(i).val)) 
-                     alreadySeen.add(branch.get(i).val);
- 			}
- 			int consequentEndPosition = i;
-            if (i == -1) continue;
-			//For all the items found 
-			for(i = 0; i <= consequentEndPosition; i++) {
 				
-				float oldValue = 0;
-				if(CountTable.containsKey(branch.get(i).val)) {
-					oldValue = CountTable.get(branch.get(i).val);
+				//Here you can get an approximation of the sequence. Put in the count Table only the first item of the consequent. If there is no prediction from the countTable, don't make a prediction.
+				//If approximation returns false, continue with the next branch
+
+				//Getting the branch's leaf
+				PredictionTree curNode = LT.get(index);
+				
+				
+				//Transform this branch in a list
+				List<Item> branch = new ArrayList<Item>();
+				branch.add(curNode.Item); //Adding node to the list
+				while(curNode.Parent != null){
+					curNode = curNode.Parent; //Going up the tree
+					branch.add(curNode.Item); //Adding node to the list
 				}
 
-				//Update the countable with the right weight and value
-				float curValue = 1;//1f /((float)indexes.cardinality());
+				if (!approximation(targetArray, branch, forgivingErrors)) continue;
 				
-				CountTable.put(branch.get(i).val, oldValue + (curValue /** weight*/) );
+				int i = 0;
 				
-				hashSidVisited.add(index); 
+				//Go through the branch (top to bottom) and stop when
+				//it has encountered ALL items from the target
+				// a b c a a a .. abca but a is not count twice (set) .. a, b, c, 
+				Set<Integer>  alreadySeen = new HashSet<Integer>();  
+	 			for(i = branch.size()-1 ; i >=0 && alreadySeen.size() != hashTarget.size(); i-- ) { 
+	 				// if it is an item from target
+	                 if(hashTarget.contains(branch.get(i).val)) 
+	                     alreadySeen.add(branch.get(i).val);
+	 			}
+	 			int consequentEndPosition = i;
+	            if (i == -1) continue;
+				//For all the items found 
+				for(i = 0; i <= consequentEndPosition; i++) {
+					
+					float oldValue = 0;
+					if(CountTable.containsKey(branch.get(i).val)) {
+						oldValue = CountTable.get(branch.get(i).val);
+					}
+
+					//Update the countable with the right weight and value
+					float curValue = 1;//1f /((float)indexes.cardinality());
+					
+					CountTable.put(branch.get(i).val, oldValue + (curValue /** weight*/) );
+					
+					hashSidVisited.add(index); 
+				}
 			}
+			forgivingErrors++;
+			if (CountTable.size() > 1) break;
 		}
 	}
 	
