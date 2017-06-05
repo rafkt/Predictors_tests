@@ -173,7 +173,7 @@ public class CPTPredictor extends Predictor {
  			int consequentEndPosition = i;
             if (i == -1) continue;
 			//For all the items found 
-			for(/*i = 0*/; i <= consequentEndPosition; i++) {
+			for(i = 0; i <= consequentEndPosition; i++) {
 				
 				float oldValue = 0;
 				if(CountTable.containsKey(branch.get(i).val)) {
