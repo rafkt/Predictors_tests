@@ -38,12 +38,9 @@ import ca.ipredict.database.SequenceVector;
 /**
  * Main controller to compare all the predictors
  */
-public class MainController {
+public class SpiCeController {
 
-	private static List<CPTPlusPredictor> spicePredictorList = new ArrayList<CPTPlusPredictor>();
-	private static int sigma;
-	private static List<ClusterWithMean> clusters;
-	private static DistanceFunction distanceFunction;
+	Predictor spicePredictor;
 
 	public static void main(String[] args) throws IOException {
 			prepareCPTPlus("../Spice_python_script/train_test_sets", "5.spice.train", 10);
@@ -83,38 +80,12 @@ public class MainController {
 	public static void prepareCPTPlus(String pathToDataset, String DatasetName, int numClusterers)throws IOException {
 			DatabaseHelper database = new DatabaseHelper(pathToDataset, DatasetName);
 			ProfileManager.loadProfileByName(DatasetName.toString());
-			database.loadDataset("SPICE", -1); //change the max value of 5000
+			database.loadDataset("SPICE", -1); //change the max value of 5000 // this should be changed to switch
 			List<Sequence> dataset = new ArrayList<Sequence>(database.getDatabase().getSequences().subList(0, database.getDatabase().size()));
 
-			List<SequenceVector> datasetVector = new ArrayList<SequenceVector>();
-
-			sigma = database.getDatabase().Sigma;
-			
-
-			for (Sequence s : dataset) {
-				// if (s.size() > 6){
-				// 	Sequence capped_s = new Sequence(s.getId() / 2, s.getItems().subList(s.size() - 6, s.size()));
-				// 	datasetVector.add(new SequenceVector(capped_s, sigma));
-				// 	continue;
-				// }
-				SequenceVector sv = new SequenceVector(s, sigma);
-				sv.normaliseVector();
-				datasetVector.add(sv);
-			}
-
-			distanceFunction = new DistanceEuclidian(); 
-			AlgoKMeans algoKMeans = new AlgoKMeans();  
-			clusters = algoKMeans.runAlgorithm(datasetVector, numClusterers, distanceFunction);
-			for (int i = 0; i < numClusterers; i++) System.out.println("Cluster " + i + " size: " + clusters.get(i).getVectors().size());
-
-			for (int i = 0; i < numClusterers; i++){
-				List<Sequence> clusterSeqs = new ArrayList<Sequence>();
-				for (SequenceVector sv : clusters.get(i).getVectors()) clusterSeqs.add(sv.getSequence());
-
-				CPTPlusPredictor spicePredictor = new CPTPlusPredictor("CPT+","CCF:true CBS:true");
-				spicePredictor.Train(clusterSeqs);
-				spicePredictorList.add(spicePredictor);
-			}
+			//we should add a switch where different spredictors can be chosen.
+			spicePredictor = new CPTPlusPredictor("CPT+","CCF:true CBS:true");
+			spicePredictor.Train(dataset);
 	}
 
 	public static String getPrediction(String queryStr){
@@ -131,17 +102,6 @@ public class MainController {
 		if (count == 0) {
 			Item item = new Item(-2);
 			query.addItem(item);
-			SequenceVector queryVector = new SequenceVector(query, sigma);
-			double min = Double.MAX_VALUE;
-			int index = 0;
-			for (int i= 0; i < clusters.size(); i ++){
-				double distance = distanceFunction.calculateDistance(clusters.get(i).getmean(), queryVector.getVector());
-				if ( distance < min){
-					min = distance;
-					index = i;
-				}
-			}
-
 			Sequence predicted = spicePredictorList.get(index).Predict(query);
 			//System.out.println(predicted);
 			return predicted.toString();
@@ -153,18 +113,6 @@ public class MainController {
 			Item item = new Item(Integer.valueOf(split[i].trim()));
 			query.addItem(item);
 		}
-
-		SequenceVector queryVector = new SequenceVector(query, sigma);
-			double min = Double.MAX_VALUE;
-			int index = 0;
-			for (int i= 0; i < clusters.size(); i ++){
-				double distance = distanceFunction.calculateDistance(clusters.get(i).getmean(), queryVector.getVector());
-				if ( distance < min){
-					min = distance;
-					index = i;
-				}
-			}
-
 
 		//System.out.println(query);
 		Sequence predicted = spicePredictorList.get(index).Predict(query);
