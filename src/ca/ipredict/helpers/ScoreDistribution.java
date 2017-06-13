@@ -11,10 +11,13 @@ public class ScoreDistribution<K> {
 	 * items as the value.
 	 */
 	private TreeMap<Double, List<K>> dict;
+
+	private Double bestVal;
 	
 	
 	public ScoreDistribution() {
 		dict = new TreeMap<Double, List<K>>();
+		bestVal = 0.0;
 	}
 	
 	/**
@@ -56,13 +59,17 @@ public class ScoreDistribution<K> {
 		
 		Double bestVal1 = dict.lastKey(); //best value in the dictionary
 		Double bestVal2 = dict.lowerKey(bestVal1); //second best value in the dictionary
-		
+		bestVal = bestVal1;
 		if( (bestVal1 / bestVal2) < minThreshold) {
 			return null;
 		}
 		else {
 			return dict.get(bestVal1);
 		}
+	}
+
+	public Double getLastBestValue(){
+		return bestVal;
 	}
 	
 	public List<K> getNextBest(double best) {
@@ -71,6 +78,8 @@ public class ScoreDistribution<K> {
 		if(nextBest == null) {
 			return null;
 		}
+
+		bestVal = nextBest;
 	
 		return dict.get(nextBest);
 	}

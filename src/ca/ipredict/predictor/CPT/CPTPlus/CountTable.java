@@ -151,14 +151,17 @@ public class CountTable {
 		
 		//Filling a sequence with the best |count| items
 		Sequence seq = new Sequence(-1);
-		List<Integer> bestItems = sd.getBest(1.002);
+		List<Integer> bestItems = sd.getBest(0);
 //		List<Integer> bestItems = sd.getBest(1.00001);
-		if(bestItems != null && bestItems.size() > 0) {
+		while(bestItems != null && bestItems.size() > 0 && seq.size() < count) {
 			for(int i = 0; i < count && i < bestItems.size(); i++) {
 				seq.addItem(new Item(bestItems.get(i)));
 			}
+			bestItems = sd.getNextBest(sd.getLastBestValue());
 		}
 
+		if(seq.size() < 5) seq.addItem(new Item(-1));
+		
 		return seq;
 	}
 

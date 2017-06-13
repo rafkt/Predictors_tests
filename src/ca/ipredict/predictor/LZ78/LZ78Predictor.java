@@ -161,19 +161,34 @@ public class LZ78Predictor extends Predictor implements Serializable {
 		
 		
 		//generating a prediction from the most probable item in the dictionary
-		Double highestScore = 0.0d;
-		Integer mostProbableItem = null;
-		for(Entry<Integer, Double> entry : results.entrySet()) {
-			
-			if(entry.getValue() > highestScore) {
-				highestScore = entry.getValue();
-				mostProbableItem = entry.getKey();
+		double[] highestScore = new double[5];
+		int[] mostProbableItem = new int[5];
+		int count = 0;
+		while (count < 5){
+			for(Entry<Integer, Double> entry : results.entrySet()) {
+				if (count == 0){
+					if(entry.getValue() > highestScore[count]) {
+						highestScore[count] = entry.getValue();
+						mostProbableItem[count] = entry.getKey();
+					}
+				} else{
+					if(entry.getValue() > highestScore[count] && entry.getValue() < highestScore[count - 1]) {
+						highestScore[count] = entry.getValue();
+						mostProbableItem[count] = entry.getKey();
+					}
+				}
 			}
+			count++;
 		}
 		
-		//returns the resulting sequence
+		count = results.size();
 		Sequence predicted = new Sequence(-1);
-		predicted.addItem(new Item(mostProbableItem));
+		for (int i : mostProbableItem){
+			if (count == 0) break;
+			//returns the resulting sequence
+			predicted.addItem(new Item(new Integer(i)));
+			count--;
+		}
 		return predicted;
 	}
 

@@ -195,7 +195,9 @@ public class CPTPlusPredictor extends Predictor {
 		ct = predictionByActiveNoiseReduction(target);
 		
 
-		Sequence predicted = ct.getBestSequence(1);
+		Sequence predicted = ct.getBestSequence(5);
+		//System.out.println("CPT asked:" + target);
+		//System.out.println("CPT says:" + predicted);
 		return predicted;
 	}
 	
@@ -220,7 +222,7 @@ public class CPTPlusPredictor extends Predictor {
 		ct.update(target.getItems().toArray(new Item[0]), target.size());
 		
 		//Initial prediction
-		Sequence predicted = ct.getBestSequence(1);
+		Sequence predicted = ct.getBestSequence(5);
 		if(predicted.size() > 0) {
 			predictionCount++;
 		}
@@ -266,7 +268,7 @@ public class CPTPlusPredictor extends Predictor {
 					
  					//do a prediction if this CountTable update did something
 					if(branches > 0) {
-						predicted = ct.getBestSequence(1);
+						predicted = ct.getBestSequence(5);
 						if(predicted.size() > 0) {
 							predictionCount++;
 						}

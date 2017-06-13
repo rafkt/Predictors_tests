@@ -24,26 +24,18 @@ import ca.ipredict.predictor.Markov.MarkovFirstOrderPredictor;
 import ca.ipredict.predictor.TDAG.TDAGPredictor;
 import ca.ipredict.database.DatabaseHelper;
 import ca.ipredict.database.Sequence;
+import ca.ipredict.predictor.Predictor;
 
-
-
-import ca.ipredict.clustering.distanceFunctions.*;
-import ca.ipredict.clustering.distanceFunctions.DistanceFunction;
-import ca.ipredict.clustering.kmeans.AlgoKMeans;
-import ca.ipredict.cluster.ClusterWithMean;
-import ca.ipredict.cluster.DoubleArray;
-
-import ca.ipredict.database.SequenceVector;
 
 /**
  * Main controller to compare all the predictors
  */
 public class SpiCeController {
 
-	Predictor spicePredictor;
+	static Predictor spicePredictor;
 
 	public static void main(String[] args) throws IOException {
-			prepareCPTPlus("../Spice_python_script/train_test_sets", "5.spice.train", 10);
+			//prepare("../datasets", "SPICE6", "5.spice.train", 10);
 			//getPrediction("18 18 14 2 6 10 13 15 8 15 13 18 11 15 6 18 13 9 12");
 			return;
 // 			if (args.length < 1) {
@@ -77,14 +69,37 @@ public class SpiCeController {
 // 			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 14 , true, true, true);
 	}
 
-	public static void prepareCPTPlus(String pathToDataset, String DatasetName, int numClusterers)throws IOException {
-			DatabaseHelper database = new DatabaseHelper(pathToDataset, DatasetName);
+	public static void prepare(String pathToDataset, String DatasetName, String predictorName)throws IOException {
+			DatabaseHelper database = new DatabaseHelper(pathToDataset);
 			ProfileManager.loadProfileByName(DatasetName.toString());
-			database.loadDataset("SPICE", -1); //change the max value of 5000 // this should be changed to switch
+			database.loadDataset(DatasetName, -1); 
+
 			List<Sequence> dataset = new ArrayList<Sequence>(database.getDatabase().getSequences().subList(0, database.getDatabase().size()));
 
-			//we should add a switch where different spredictors can be chosen.
-			spicePredictor = new CPTPlusPredictor("CPT+","CCF:true CBS:true");
+			switch (predictorName){
+				case "DG":	
+							spicePredictor = new DGPredictor("DG", "lookahead:4");
+							break;
+				case "TDAG":
+							spicePredictor = new TDAGPredictor();
+							break;
+				case "CPTPlus":
+							spicePredictor = new CPTPlusPredictor("CPT+",		"CCF:true CBS:true");
+							break;
+				case "CPT":
+							spicePredictor = new CPTPredictor();
+							break;
+				case "AKOM":
+							spicePredictor = new MarkovAllKPredictor();
+							break;
+				case "Mark1":
+							spicePredictor = new MarkovFirstOrderPredictor();
+							break;
+				case "LZ78":
+							spicePredictor = new LZ78Predictor();
+							break;
+
+			}
 			spicePredictor.Train(dataset);
 	}
 
@@ -102,12 +117,12 @@ public class SpiCeController {
 		if (count == 0) {
 			Item item = new Item(-2);
 			query.addItem(item);
-			Sequence predicted = spicePredictorList.get(index).Predict(query);
+			Sequence predicted = spicePredictor.Predict(query);
 			//System.out.println(predicted);
 			return predicted.toString();
 		}
-		int start_index = count - 6 > 1 ? count - 6: 1;
-		count = start_index > 1 ? 6: count;
+		int start_index = count - 10 > 1 ? count - 10: 1;
+		count = start_index > 1 ? 10: count;
 
 		for (int i = start_index; i < split.length && count > 0; i++, count--){
 			Item item = new Item(Integer.valueOf(split[i].trim()));
@@ -115,7 +130,7 @@ public class SpiCeController {
 		}
 
 		//System.out.println(query);
-		Sequence predicted = spicePredictorList.get(index).Predict(query);
+		Sequence predicted = spicePredictor.Predict(query);
 		//System.out.println(predicted);
 		return predicted.toString();
 	}

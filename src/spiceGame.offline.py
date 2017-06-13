@@ -19,14 +19,21 @@ import math
 import string
 
 train_file = argv[1] #whole sequences, PAutomaC/SPiCe format
-prefixes_file = argv[2] #all prefixes, PAutomaC/SPiCe format
-output_file = argv[3] #to store the rankings on the prefixes
-targets_file = argv[4] #contains all the answers for calculating the final score
+predictor = argv[2] #which predictor to use
+prefixes_file = "../datasets/SPICE/prefixes/" + argv[3] #all prefixes, PAutomaC/SPiCe format
+output_file = argv[4] #to store the rankings on the prefixes
+targets_file = "../datasets/SPICE/targets/" + argv[5] #contains all the answers for calculating the final score
+
+print("Parameters: ");
+print(argv[1]);
+print(argv[2]);
+print(argv[3]);
+print(argv[5]);
 
 from jpype import *
 startJVM(getDefaultJVMPath(), "-ea")
 CPT_Controller = JPackage('ca').ipredict.controllers
-CPT = CPT_Controller.MainController
+CPT = CPT_Controller.SpiCeController
 
 def find_proba(letter,target):
     for i in range(len(target)):
@@ -37,7 +44,7 @@ def find_proba(letter,target):
 def learn(train_file):
     """ Put here the learning part """
 
-    CPT.prepareCPTPlus("/Users/rafaelktistakis/Repositories/spice_CPT-/SPiCe offline data-benchmark-framework/SPiCe_Offline/train/", train_file, 1)
+    CPT.prepare("../datasets", train_file, predictor)
     return list()
 
 def next_symbols_ranking(model, prefix):
@@ -71,7 +78,7 @@ print ("Learning Ended")
 
 print("Start rankings computation")
 #open prefixes
-p = open( "/Users/rafaelktistakis/Repositories/spice_CPT-/SPiCe offline data-benchmark-framework/SPiCe_Offline/prefixes/" + prefixes_file,"r")
+p = open(prefixes_file,"r")
 o = open(output_file, "w")
 #get rid of first line of prefixes_file (needed since it contains nb of example, size of the alphabet)
 p.readline()
@@ -91,7 +98,7 @@ shutdownJVM()
 #calculating Score - Code copied from the score_computation.py in Code folder
 
 r = open(output_file, "r")
-t = open("/Users/rafaelktistakis/Repositories/spice_CPT-/SPiCe offline data-benchmark-framework/SPiCe_Offline/targets/" + targets_file, "r")
+t = open(targets_file, "r")
 
 score = 0
 nb_prefixes = 0
@@ -119,7 +126,7 @@ for ts in t.readlines():
 #print(nb_prefixes, su)
     score += prefix_score/denominator
 final_score = score/nb_prefixes
-print(final_score)
+print("Score: " + str(final_score))
 r.close()
 t.close()
 
