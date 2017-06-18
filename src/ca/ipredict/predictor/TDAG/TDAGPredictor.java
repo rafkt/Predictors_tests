@@ -138,6 +138,10 @@ public class TDAGPredictor extends Predictor implements Serializable{
 		if(context != null) {
 			TDAGNode candidate1 = null; //Best candidate
 			TDAGNode candidate2 = null; //Second best candidate
+
+			TDAGNode candidate3 = null;
+			TDAGNode candidate4 = null;
+			TDAGNode candidate5 = null;
 			
 			//For each child of this context, we calculate the score (probability of appearance given the context)
 			for(Entry<Integer, TDAGNode> entry : context.children.entrySet()) {
@@ -146,22 +150,42 @@ public class TDAGPredictor extends Predictor implements Serializable{
 				entry.getValue().score = score;
 				
 				if(candidate1 == null || candidate1.score < score) {
+					candidate5 = candidate4;
+					candidate4 = candidate3;
+					candidate3 = candidate2;
 					candidate2 = candidate1;
 					candidate1 = entry.getValue();
 				}
 				else if(candidate2 == null || candidate2.score < score) {
+					candidate5 = candidate4;
+					candidate4 = candidate3;
+					candidate3 = candidate2;
 					candidate2 = entry.getValue();
+				}else if(candidate3 == null || candidate3.score < score){
+					candidate5 = candidate4;
+					candidate4 = candidate3;
+					candidate3 = entry.getValue();
+				}else if(candidate4 == null || candidate4.score < score){
+					candidate5 = candidate4;
+					candidate4 = entry.getValue();
+				}else if(candidate5 == null || candidate5.score < score){
+					candidate5 = entry.getValue();
 				}
 			}
 			
 			
 			//Generating a prediction with candidate1 only if
 			//candidate1 has a higher score than candidate2 
-			Double treshold = 0.0;
-			if(candidate1 != null && 
-					(candidate2 == null || candidate1.score - candidate2.score > treshold)) {
-				predicted.addItem(new Item(candidate1.symbol));
-			}
+			// Double treshold = 0.0;
+			// if(candidate1 != null && 
+			// 		(candidate2 == null || candidate1.score - candidate2.score > treshold)) {
+			// 	predicted.addItem(new Item(candidate1.symbol));
+			// }
+			if(candidate1 != null) predicted.addItem(new Item(candidate1.symbol));
+			if(candidate2 != null) predicted.addItem(new Item(candidate2.symbol));
+			if(candidate3 != null) predicted.addItem(new Item(candidate3.symbol));
+			if(candidate4 != null) predicted.addItem(new Item(candidate4.symbol));
+			if(candidate5 != null) predicted.addItem(new Item(candidate5.symbol));
 		}
 		
 		return predicted;
