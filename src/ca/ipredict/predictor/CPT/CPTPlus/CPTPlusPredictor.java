@@ -212,6 +212,7 @@ public class CPTPlusPredictor extends Predictor {
 		Sequence predicted = ct.getBestSequence(1);
 		suffixScores.putAll(ct.countTableHasAnswers(suffix));
 		suffixScores.put(new Item(-9), ct.averageScore); //put average current and normalised ct score to a key that will not be used by any alphabet item (-9 can be one) 
+		if (ct.small_ct_size)suffixScores.put(new Item(-8), new Float(0)); //an Item with val -8 means that the countTable size was less than 5 items long.
 		return predicted;
 	}
 	

@@ -85,7 +85,8 @@ public class Evaluator {
 		statsColumns.add("Success");
 		statsColumns.add("Failure");
 		statsColumns.add("F-Failure");
-		statsColumns.add("F-Fail-top");
+		statsColumns.add("F-FailTop");
+		statsColumns.add("Small-CT");
 		statsColumns.add("No Match");
 		statsColumns.add("Too Small");
 		statsColumns.add("Overall");
@@ -272,7 +273,8 @@ public class Evaluator {
 			stats.divide("Success", predictor.getTAG(), matchingSize);
 			stats.divide("Failure", predictor.getTAG(), matchingSize);
 			stats.divide("F-Failure", predictor.getTAG(), matchingSize);
-			stats.divide("F-Fail-top", predictor.getTAG(), matchingSize);
+			stats.divide("F-FailTop", predictor.getTAG(), matchingSize);
+			stats.divide("Small-CT", predictor.getTAG(), matchingSize);
 			stats.divide("No Match", predictor.getTAG(), testingSize);
 			stats.divide("Too Small", predictor.getTAG(), testingSize);
 			
@@ -364,13 +366,17 @@ public class Evaluator {
 					stats.inc("Success", predictors.get(classifierId).getTAG());
 				}
 				else {
+					boolean flag_f = false, flag_top = false, flag_ct = false;
 					stats.inc("Failure", predictors.get(classifierId).getTAG());
 					float averageScore = conseqScores.get(new Item(-9));
-					conseqScores.remove (new Item(-9));
+					boolean small_ct_size = conseqScores.containsKey(new Item(-8)) ? true : false;
+					conseqScores.remove(new Item(-8));//removing informative keys as we no longer need them
+					conseqScores.remove(new Item(-9));// ---
 					for(Entry<Item, Float> it : conseqScores.entrySet()){
 						if (it.getValue() != 0) {
-							stats.inc("F-Failure", predictors.get(classifierId).getTAG());
-							if (it.getValue() >= averageScore) stats.inc("F-Fail-top", predictors.get(classifierId).getTAG());
+							if (!flag_f) { stats.inc("F-Failure", predictors.get(classifierId).getTAG()); flag_f = true;}
+							if (!flag_top) { if (it.getValue() >= averageScore) stats.inc("F-FailTop", predictors.get(classifierId).getTAG()); flag_top = true;}
+							if (!flag_ct) { if (small_ct_size) stats.inc("Small-CT", predictors.get(classifierId).getTAG()); flag_f = true;}
 						}
 
 					}

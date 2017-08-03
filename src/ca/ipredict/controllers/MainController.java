@@ -47,12 +47,12 @@ public class MainController {
 			
 			//Loading datasets
 			evaluator.addDataset("BMS", 		5000);
-			// evaluator.addDataset("SIGN", 		1000);
-			// evaluator.addDataset("MSNBC", 		5000);
-			// evaluator.addDataset("BIBLE_WORD", 	5000);
-			// evaluator.addDataset("BIBLE_CHAR", 	5000);
-			// evaluator.addDataset("KOSARAK", 	45000);
-			// evaluator.addDataset("FIFA", 		5000);
+			evaluator.addDataset("SIGN", 		1000);
+			evaluator.addDataset("MSNBC", 		5000);
+			evaluator.addDataset("BIBLE_WORD", 	5000);
+			evaluator.addDataset("BIBLE_CHAR", 	5000);
+			evaluator.addDataset("KOSARAK", 	45000);
+			evaluator.addDataset("FIFA", 		5000);
 
 			// evaluator.addDataset("SPICE0", 		5000);
 			// evaluator.addDataset("SPICE1", 		5000);

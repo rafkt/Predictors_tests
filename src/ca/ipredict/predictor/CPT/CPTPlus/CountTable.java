@@ -27,6 +27,7 @@ public class CountTable {
 	private CPTHelper helper;
 	private double highestScore;
 
+	public boolean small_ct_size;
 	public float averageScore;
 	
 	/**
@@ -38,6 +39,7 @@ public class CountTable {
 		this.helper = helper;
 		highestScore = 0.0;
 		averageScore = 0;
+		small_ct_size = false;
 	}
 
 	/**
@@ -175,14 +177,20 @@ public class CountTable {
 	}
 
 	public Map<Item, Float> countTableHasAnswers(Sequence suffix){
+		Map<Item, Float> suffixScores = new HashMap<Item, Float>();
+		if (table.size() == 0) {
+			small_ct_size = true;
+			return suffixScores;
+		}
 
 		List<Float> valueList = new ArrayList<Float>(table.values());
 		Collections.sort(valueList);
 		Collections.reverse(valueList);
-		int topItemOrder = table.size() > 5 ? 4 : table.size() - 1;
+		int topItemOrder = valueList.size() > 5 ? 4 : valueList.size() - 1;
 		averageScore = (float)valueList.get(topItemOrder) / (float)highestScore;//normalised score for the top 5th item of the countTable
+		small_ct_size = table.size() < 5 ? true : false;
 
-		Map<Item, Float> suffixScores = new HashMap<Item, Float>();
+
 		for (Item i : suffix.getItems()){
 			if (table.containsKey(i.val)){
 				//System.out.println(table.get(i.val) + " " + table.get(i.val) / highestScore);
