@@ -198,6 +198,22 @@ public class CPTPlusPredictor extends Predictor {
 		Sequence predicted = ct.getBestSequence(1);
 		return predicted;
 	}
+
+	@Override
+	public Sequence Predict(Sequence target, Sequence suffix, Map<Item, Float> suffixScores){
+		//remove items that were never seen before from the Target sequence before LLCT try to make a prediction
+		//If set to false, those items will be still ignored later on (in updateCountTable())
+		target = helper.removeUnseenItems(target);
+
+		CountTable ct = null;
+		ct = predictionByActiveNoiseReduction(target);
+		
+
+		Sequence predicted = ct.getBestSequence(1);
+		suffixScores.putAll(ct.countTableHasAnswers(suffix));
+		suffixScores.put(new Item(-9), ct.averageScore); //put average current and normalised ct score to a key that will not be used by any alphabet item (-9 can be one) 
+		return predicted;
+	}
 	
 	
 	protected CountTable predictionByActiveNoiseReduction(Sequence target) {

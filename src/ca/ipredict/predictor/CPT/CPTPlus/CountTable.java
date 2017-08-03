@@ -2,8 +2,12 @@ package ca.ipredict.predictor.CPT.CPTPlus;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 import java.util.TreeMap;
+import java.util.Map;
+import java.util.HashMap;
+import  java.util.Collections;
 
 import ca.ipredict.database.Item;
 import ca.ipredict.database.Sequence;
@@ -21,6 +25,9 @@ public class CountTable {
 	private TreeMap<Integer, Float> table;
 	private HashSet<Integer> branchVisited;
 	private CPTHelper helper;
+	private double highestScore;
+
+	public float averageScore;
 	
 	/**
 	 * Basic controller
@@ -29,6 +36,8 @@ public class CountTable {
 		table = new TreeMap<Integer, Float>();
 		branchVisited = new HashSet<Integer>();
 		this.helper = helper;
+		highestScore = 0.0;
+		averageScore = 0;
 	}
 
 	/**
@@ -50,7 +59,7 @@ public class CountTable {
 //		float curValue = (weightLevel * 0.5f) + (weightLength * 5.0f) + (weightDistance * 1.8f);
 //		float curValue = (weightLevel * 1f) + (weightLength * 1f) + (weightDistance * 0.0001f);
 		float curValue = (weightLevel * 1f) + (1f) + (weightDistance * 0.0001f);
-		
+		//System.out.println(dist + ": " + curValue);
 		//Update the count table
 		Float oldVal = table.get(key);
 		if(oldVal == null) {
@@ -147,6 +156,9 @@ public class CountTable {
 			double score =  confidence; //Use confidence or lift, depending on Parameter.firstVote
 						
 			sd.put(it.getKey(), score);
+
+			//for evaluation purposes - added on this branch only
+			highestScore = confidence > highestScore ? confidence : highestScore;
 		}
 		
 		//Filling a sequence with the best |count| items
@@ -160,6 +172,30 @@ public class CountTable {
 		}
 
 		return seq;
+	}
+
+	public Map<Item, Float> countTableHasAnswers(Sequence suffix){
+
+		List<Float> valueList = new ArrayList<Float>(table.values());
+		Collections.sort(valueList);
+		Collections.reverse(valueList);
+		int topItemOrder = table.size() > 5 ? 4 : table.size() - 1;
+		averageScore = (float)valueList.get(topItemOrder) / (float)highestScore;//normalised score for the top 5th item of the countTable
+
+		Map<Item, Float> suffixScores = new HashMap<Item, Float>();
+		for (Item i : suffix.getItems()){
+			if (table.containsKey(i.val)){
+				//System.out.println(table.get(i.val) + " " + table.get(i.val) / highestScore);
+				suffixScores.put(i, new Float(table.get(i.val) / highestScore));
+			}else{
+				suffixScores.put(i, new Float(0));
+			}
+		}
+		
+		//System.out.println(averageScore / highestScore);
+		// if (table.size() > 5)System.out.println(averageScore / highestScore);
+		// else System.out.println("NOPEEEE");
+		return suffixScores;
 	}
 
 }

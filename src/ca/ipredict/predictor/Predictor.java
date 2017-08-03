@@ -1,7 +1,10 @@
 package ca.ipredict.predictor;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import ca.ipredict.database.Sequence;
+import ca.ipredict.database.Item;
 
 /**
  * Interface for all the predictors
@@ -33,6 +36,10 @@ public abstract class Predictor {
 	 * @param sequence to predict
 	 */
 	public abstract Sequence Predict(Sequence target);
+
+	public Sequence Predict(Sequence target, Sequence suffix, Map<Item, Float> suffixScores){
+		return null;
+	}
 	
 	/**
 	 * Get the predictor's TAG (unique string identifier)

@@ -5,6 +5,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.io.IOException;
 
+import java.util.Map.Entry;
+import java.util.Map;
+import java.util.HashMap;
+
 import ca.ipredict.database.DatabaseHelper;
 import ca.ipredict.database.DatabaseHelper.Format;
 import ca.ipredict.database.Item;
@@ -80,6 +84,8 @@ public class Evaluator {
 		List<String> statsColumns = new ArrayList<String>();
 		statsColumns.add("Success");
 		statsColumns.add("Failure");
+		statsColumns.add("F-Failure");
+		statsColumns.add("F-Fail-top");
 		statsColumns.add("No Match");
 		statsColumns.add("Too Small");
 		statsColumns.add("Overall");
@@ -265,6 +271,8 @@ public class Evaluator {
 			
 			stats.divide("Success", predictor.getTAG(), matchingSize);
 			stats.divide("Failure", predictor.getTAG(), matchingSize);
+			stats.divide("F-Failure", predictor.getTAG(), matchingSize);
+			stats.divide("F-Fail-top", predictor.getTAG(), matchingSize);
 			stats.divide("No Match", predictor.getTAG(), testingSize);
 			stats.divide("Too Small", predictor.getTAG(), testingSize);
 			
@@ -340,7 +348,12 @@ public class Evaluator {
 				Sequence consequent = target.getLastItems(Profile.paramInt("consequentSize"),0); //the lasts actual items in target
 				Sequence finalTarget = target.getLastItems(Profile.paramInt("windowSize"),Profile.paramInt("consequentSize"));
 				
-				Sequence predicted = predictors.get(classifierId).Predict(finalTarget);
+
+				Map<Item, Float> conseqScores = new HashMap<Item, Float>();
+				Sequence predicted = predictors.get(classifierId).Predict(finalTarget, consequent, conseqScores);
+				// for(Entry<Item, Float> it : conseqScores.entrySet()) {
+				// 	System.out.println(it.getKey() + ": " + it.getValue());
+				// }
 				
 				//if no sequence is returned, it means that they is no match for this sequence
 				if(predicted.size() == 0) {
@@ -352,6 +365,15 @@ public class Evaluator {
 				}
 				else {
 					stats.inc("Failure", predictors.get(classifierId).getTAG());
+					float averageScore = conseqScores.get(new Item(-9));
+					conseqScores.remove (new Item(-9));
+					for(Entry<Item, Float> it : conseqScores.entrySet()){
+						if (it.getValue() != 0) {
+							stats.inc("F-Failure", predictors.get(classifierId).getTAG());
+							if (it.getValue() >= averageScore) stats.inc("F-Fail-top", predictors.get(classifierId).getTAG());
+						}
+
+					}
 				}
 				
 			}
