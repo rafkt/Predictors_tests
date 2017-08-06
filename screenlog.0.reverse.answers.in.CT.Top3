@@ -1,0 +1,184 @@
+javac -cp src src/ca/ipredict/controllers/MainController.java
+java -cp src ca.ipredict.controllers.MainController ./datasets
+
+---BMS---
+Number of sequences : 	4865
+Number of distinct items: 	494
+Largest item id: 	60977
+Itemsets per sequence: 	11.227954779033915
+Distinct item per sequence: 	11.227954779033915
+Occurences for each item: 	1.0
+Size of the dataset in MB: 	19460.218496
+
+Memory history: 38 84 122 160 70 234 156 316 486 134 294 454 117 277 277 
+Max memory used: 486mb
+Execution time: 5 seconds
+		CPT+	
+Success   	37.616
+Failure   	62.384
+F-Failure	57.608
+F-FailTop	17.665
+Small-CT  	00.000
+No Match  	0.164
+Too Small	00.000
+Overall   	37.554
+Size (MB)	0.376
+Train Tim	0.143
+Test Time	0.114
+
+
+---SIGN---
+Number of sequences : 	730
+Number of distinct items: 	267
+Largest item id: 	310
+Itemsets per sequence: 	93.0041095890411
+Distinct item per sequence: 	51.99452054794521
+Occurences for each item: 	1.78872905469491
+Size of the dataset in MB: 	2920.271572
+
+Memory history: 38 84 122 160 70 234 156 316 486 134 294 454 117 277 277 439 566 694 22 165 292 419 547 674 801 137 265 392 519 519 
+Max memory used: 801mb
+Execution time: 4 seconds
+		CPT+	
+Success   	32.875
+Failure   	67.125
+F-Failure	66.025
+F-FailTop	2.338
+Small-CT  	00.000
+No Match  	0.411
+Too Small	00.000
+Overall   	32.74
+Size (MB)	0.039
+Train Tim	0.253
+Test Time	0.021
+
+
+---MSNBC---
+Number of sequences : 	5000
+Number of distinct items: 	17
+Largest item id: 	17
+Itemsets per sequence: 	10.7638
+Distinct item per sequence: 	4.7462
+Occurences for each item: 	2.267877459862627
+Size of the dataset in MB: 	20000.215276
+
+Memory history: 38 84 122 160 70 234 156 316 486 134 294 454 117 277 277 439 566 694 22 165 292 419 547 674 801 137 265 392 519 519 674 750 852 928 1030 1106 1183 1284 83 160 262 338 440 516 516 
+Max memory used: 1284mb
+Execution time: 1 seconds
+		CPT+	
+Success   	58.94
+Failure   	41.06
+F-Failure	33.64
+F-FailTop	16.3
+Small-CT  	0.42
+No Match  	00.000
+Too Small	00.000
+Overall   	58.94
+Size (MB)	0.1
+Train Tim	0.042
+Test Time	0.047
+
+
+---BIBLE_WORD---
+Number of sequences : 	4933
+Number of distinct items: 	5422
+Largest item id: 	5433
+Itemsets per sequence: 	20.604500304074598
+Distinct item per sequence: 	16.704844921954187
+Occurences for each item: 	1.233444572538074
+Size of the dataset in MB: 	19732.406568
+
+Memory history: 38 84 122 160 70 234 156 316 486 134 294 454 117 277 277 439 566 694 22 165 292 419 547 674 801 137 265 392 519 519 674 750 852 928 1030 1106 1183 1284 83 160 262 338 440 516 516 797 1026 1281 256 499 766 1009 37 293 548 826 1058 147 390 390 
+Max memory used: 1284mb
+Execution time: 8 seconds
+		CPT+	
+Success   	22.788
+Failure   	77.212
+F-Failure	32.592
+F-FailTop	7.707
+Small-CT  	0.706
+No Match  	2.412
+Too Small	00.000
+Overall   	22.238
+Size (MB)	1.749
+Train Tim	0.521
+Test Time	0.082
+
+
+---BIBLE_CHAR---
+Number of sequences : 	5000
+Number of distinct items: 	74
+Largest item id: 	122
+Itemsets per sequence: 	133.01
+Distinct item per sequence: 	26.0638
+Occurences for each item: 	5.1032466486084145
+Size of the dataset in MB: 	20002.6602
+
+Memory history: 38 84 122 160 70 234 156 316 486 134 294 454 117 277 277 439 566 694 22 165 292 419 547 674 801 137 265 392 519 519 674 750 852 928 1030 1106 1183 1284 83 160 262 338 440 516 516 797 1026 1281 256 499 766 1009 37 293 548 826 1058 147 390 390 921 322 806 230 732 221 700 230 724 290 796 411 60 551 551 
+Max memory used: 1284mb
+Execution time: 6 seconds
+		CPT+	
+Success   	79.92
+Failure   	20.08
+F-Failure	18.58
+F-FailTop	11.64
+Small-CT  	0.5
+No Match  	00.000
+Too Small	00.000
+Overall   	79.92
+Size (MB)	0.114
+Train Tim	0.448
+Test Time	0.018
+
+
+---KOSARAK---
+Number of sequences : 	45000
+Number of distinct items: 	22422
+Largest item id: 	29727
+Itemsets per sequence: 	28.42531111111111
+Distinct item per sequence: 	28.4252
+Occurences for each item: 	1.0000039088946115
+Size of the dataset in MB: 	180005.116556
+
+Memory history: 38 84 122 160 70 234 156 316 486 134 294 454 117 277 277 439 566 694 22 165 292 419 547 674 801 137 265 392 519 519 674 750 852 928 1030 1106 1183 1284 83 160 262 338 440 516 516 797 1026 1281 256 499 766 1009 37 293 548 826 1058 147 390 390 921 322 806 230 732 221 700 230 724 290 796 411 60 551 551 1257 1285 833 939 1166 1133 727 254 903 1141 1400 905 1102 972 972 
+Max memory used: 1400mb
+Execution time: 490 seconds
+		CPT+	
+Success   	41.623
+Failure   	58.377
+F-Failure	56.078
+F-FailTop	7.918
+Small-CT  	00.000
+No Match  	0.12
+Too Small	00.000
+Overall   	41.573
+Size (MB)	99.995
+Train Tim	28.658
+Test Time	7.723
+
+
+---FIFA---
+Number of sequences : 	5000
+Number of distinct items: 	2612
+Largest item id: 	2775
+Itemsets per sequence: 	40.1966
+Distinct item per sequence: 	38.6178
+Occurences for each item: 	1.0408827017592923
+Size of the dataset in MB: 	20000.803932
+
+Memory history: 38 84 122 160 70 234 156 316 486 134 294 454 117 277 277 439 566 694 22 165 292 419 547 674 801 137 265 392 519 519 674 750 852 928 1030 1106 1183 1284 83 160 262 338 440 516 516 797 1026 1281 256 499 766 1009 37 293 548 826 1058 147 390 390 921 322 806 230 732 221 700 230 724 290 796 411 60 551 551 1257 1285 833 939 1166 1133 727 254 903 1141 1400 905 1102 972 972 417 787 1156 535 905 1274 591 974 274 658 1020 319 691 1063 1063 
+Max memory used: 1400mb
+Execution time: 14 seconds
+		CPT+	
+Success   	36.205
+Failure   	63.795
+F-Failure	53.021
+F-FailTop	20.075
+Small-CT  	0.021
+No Match  	3.3
+Too Small	0.36
+Overall   	34.88
+Size (MB)	1.375
+Train Tim	0.97
+Test Time	0.081
+
