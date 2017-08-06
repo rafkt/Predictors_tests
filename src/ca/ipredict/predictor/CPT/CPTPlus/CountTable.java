@@ -186,9 +186,9 @@ public class CountTable {
 		List<Float> valueList = new ArrayList<Float>(table.values());
 		Collections.sort(valueList);
 		Collections.reverse(valueList);
-		int topItemOrder = valueList.size() > 5 ? 4 : valueList.size() - 1;
+		int topItemOrder = valueList.size() > 3 ? 2 : valueList.size() - 1;
 		averageScore = (float)valueList.get(topItemOrder) / (float)highestScore;//normalised score for the top 5th item of the countTable
-		small_ct_size = table.size() < 5 ? true : false;
+		small_ct_size = table.size() < 3 ? true : false;
 
 
 		for (Item i : suffix.getItems()){
