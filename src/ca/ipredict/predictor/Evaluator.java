@@ -279,7 +279,7 @@ public class Evaluator {
 			stats.divide("Failure", predictor.getTAG(), matchingSize);
 			stats.divide("ImpQuer", predictor.getTAG(), testingSize);
 			stats.divide("SuccFair", predictor.getTAG(), testingSize - impQuer);
-			stats.divide("SuccUnFair", predictor.getTAG(), testingSize);
+			stats.divide("SuccUnFair", predictor.getTAG(), impQuer);
 			stats.divide("No Match", predictor.getTAG(), testingSize);
 			stats.divide("Too Small", predictor.getTAG(), testingSize);
 			
