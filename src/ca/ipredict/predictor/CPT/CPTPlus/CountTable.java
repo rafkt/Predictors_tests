@@ -133,6 +133,67 @@ public class CountTable {
 		
 		return branchesUsed;
 	}
+
+	public int updateSameSequencesOnly(Item[] sequence, int initialSequenceSize) {
+
+		int branchesUsed = 0;
+		Bitvector ids = helper.getSimilarSequencesIds(sequence);
+
+		//For each sequence similar of the given sequence
+		for(int id = ids.nextSetBit(0); id >= 0 ; id = ids.nextSetBit(id + 1)) {
+			
+			if(branchVisited.contains(id)) {
+				continue;
+			}
+			branchVisited.add(id);
+			
+			//extracting the sequence from the PredictionTree
+			Item[] seq = helper.getSequenceFromId(id);
+
+			int sequenceCounter = 0;
+			for (int i = 0; i < seq.length; i++){
+				if (seq[i].equals(sequence[sequenceCounter])) sequenceCounter++;
+				if (sequenceCounter == sequence.length) break;
+			}
+			if (sequenceCounter < sequence.length) continue;
+			
+			//Generating a set of all the items from sequence
+			HashSet<Item> toAvoid = new HashSet<Item>();
+			for(Item item : sequence) {
+				toAvoid.add(item);
+			}
+			
+
+			//Updating this CountTable with the items {S}
+			//Where {S} contains only the items that are in seq after
+			//all the items from sequence have appeared at least once
+			//Ex:	
+			//	sequence: 	A B C
+			//  seq: 		X A Y B C E A F
+			//	{S}: 		E F
+			int max = 99; //used to limit the number of items to push in the count table
+			int count = 1; //current number of items already pushed
+			for(Item item : seq) {
+				//only enters this if toAvoid is empty
+				//it means that all the items of toAvoid have been seen
+				if(toAvoid.size() == 0 && count < max) {
+					
+					//calculating the score for this item
+					push(item.val, sequence.length, initialSequenceSize, ids.cardinality(), count);
+					count++;
+				}
+				else if(toAvoid.contains(item)) {
+					toAvoid.remove(item);
+				}
+			}
+			//meaning that the count table has been really updated
+			if(count > 1 ) {
+				branchesUsed++;
+			}
+		}
+		
+		return branchesUsed;
+	}
 	
 	/**
 	 * Return a sequence containing the highest scored items from

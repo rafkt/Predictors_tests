@@ -120,6 +120,26 @@ public class CPTHelper {
 		
 		return target;
 	}
+
+	public boolean sequenceHasUnseenItems(Sequence seq){
+		Sequence target = new Sequence(seq);
+		
+		//Min support for items in the target sequence
+		int treshold = 0;
+		
+		List<Item> selectedItems = new ArrayList<Item>();
+		for(Item item : target.getItems()) {
+			
+			//Keep only the item that we have seen during training and that have a support 
+			//above the specified threshold
+			if(predictor.II.get(item.val) != null && predictor.II.get(item.val).cardinality() >= treshold) {
+				selectedItems.add(item);
+			}	
+		}
+		if (selectedItems.size() > 0) return true;
+		else return false;
+		
+	}
 	
 	
 	/**

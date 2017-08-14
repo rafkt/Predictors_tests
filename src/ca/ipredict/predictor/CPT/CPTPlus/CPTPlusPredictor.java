@@ -203,10 +203,14 @@ public class CPTPlusPredictor extends Predictor {
 	public Sequence Predict(Sequence target, Sequence suffix, Map<Item, Float> suffixScores){
 		//remove items that were never seen before from the Target sequence before LLCT try to make a prediction
 		//If set to false, those items will be still ignored later on (in updateCountTable())
+		
 		target = helper.removeUnseenItems(target);
 
-		CountTable ct = null;
-		ct = predictionByActiveNoiseReduction(target);
+		//CountTable ct = null;
+		//ct = predictionByActiveNoiseReduction(target);
+		CountTable ct = new CountTable(helper);
+		//if (helper.sequenceHasUnseenItems(target)) return new Sequence(-1);
+		ct.updateSameSequencesOnly(target.getItems().toArray(new Item[0]), target.size());
 		
 
 		Sequence predicted = ct.getBestSequence(1);

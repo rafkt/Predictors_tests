@@ -19,12 +19,16 @@ import ca.ipredict.helpers.StatsLogger;
 import ca.ipredict.predictor.profile.Profile;
 import ca.ipredict.predictor.profile.ProfileManager;
 
+import ca.ipredict.predictor.CPT.CPTPlus.CPTPlusPredictor;
+
 /**
  * Evaluation framework
  */
 public class Evaluator {
 
 	private List<Predictor> predictors; //list of predictors
+
+	private Predictor CPTPlusPredictorObj;
 	
 	//Sampling type
 	public final static int HOLDOUT = 0;
@@ -84,9 +88,9 @@ public class Evaluator {
 		List<String> statsColumns = new ArrayList<String>();
 		statsColumns.add("Success");
 		statsColumns.add("Failure");
-		statsColumns.add("F-Failure");
-		statsColumns.add("F-FailTop");
-		statsColumns.add("Small-CT");
+		statsColumns.add("SuccFair");
+		statsColumns.add("SuccUnFair");
+		statsColumns.add("ImpQuer");
 		statsColumns.add("No Match");
 		statsColumns.add("Too Small");
 		statsColumns.add("Overall");
@@ -265,16 +269,17 @@ public class Evaluator {
 			int failure = (int)(stats.get("Failure", predictor.getTAG()));
 			int noMatch = (int)(stats.get("No Match", predictor.getTAG()));
 			int tooSmall =(int)(stats.get("Too Small", predictor.getTAG()));
-			
+
+			int impQuer =(int)(stats.get("ImpQuer", predictor.getTAG()));
 			
 			long matchingSize = success + failure; //For relative success (success / (success + failure))
 			long testingSize = matchingSize + noMatch + tooSmall; //For global success (success / All_the_testing)
 			
 			stats.divide("Success", predictor.getTAG(), matchingSize);
 			stats.divide("Failure", predictor.getTAG(), matchingSize);
-			stats.divide("F-Failure", predictor.getTAG(), matchingSize);
-			stats.divide("F-FailTop", predictor.getTAG(), matchingSize);
-			stats.divide("Small-CT", predictor.getTAG(), matchingSize);
+			stats.divide("ImpQuer", predictor.getTAG(), testingSize);
+			stats.divide("SuccFair", predictor.getTAG(), testingSize - impQuer);
+			stats.divide("SuccUnFair", predictor.getTAG(), testingSize);
 			stats.divide("No Match", predictor.getTAG(), testingSize);
 			stats.divide("Too Small", predictor.getTAG(), testingSize);
 			
@@ -331,6 +336,8 @@ public class Evaluator {
 		long start = System.currentTimeMillis(); //Training starting time
 		
 		predictors.get(classifierId).Train(trainingSequences); //actual training
+		CPTPlusPredictorObj = new CPTPlusPredictor("CPT+",		"CCF:true CBS:true");
+		CPTPlusPredictorObj.Train(trainingSequences); 
 		
 		long end = System.currentTimeMillis(); //Training ending time
 		double duration = (double)(end - start) / 1000;
@@ -352,34 +359,42 @@ public class Evaluator {
 				
 
 				Map<Item, Float> conseqScores = new HashMap<Item, Float>();
-				Sequence predicted = predictors.get(classifierId).Predict(finalTarget, consequent, conseqScores);
+				Sequence predicted = predictors.get(classifierId).Predict(finalTarget);
+				Sequence predicted2 = CPTPlusPredictorObj.Predict(finalTarget, consequent, conseqScores);
 				// for(Entry<Item, Float> it : conseqScores.entrySet()) {
 				// 	System.out.println(it.getKey() + ": " + it.getValue());
 				// }
 				
 				//if no sequence is returned, it means that they is no match for this sequence
+				boolean impossible = true;
+				conseqScores.remove(new Item(-8));//removing informative keys as we no longer need them
+				conseqScores.remove(new Item(-9));// ---
+				for(Entry<Item, Float> it : conseqScores.entrySet()){
+					if (it.getValue() != 0) {
+						impossible = false;
+						break;
+						// if (!flag_f) { stats.inc("F-Failure", predictors.get(classifierId).getTAG()); flag_f = true;}
+						// if (!flag_top) { if (it.getValue() >= averageScore) stats.inc("F-FailTop", predictors.get(classifierId).getTAG()); flag_top = true;}
+						// if (!flag_ct) { if (small_ct_size) stats.inc("Small-CT", predictors.get(classifierId).getTAG()); flag_f = true;}
+					}
+
+				}
+				if (impossible) stats.inc("ImpQuer", predictors.get(classifierId).getTAG());
+
+
+
 				if(predicted.size() == 0) {
 					stats.inc("No Match", predictors.get(classifierId).getTAG());
 				}
 				//evaluates the prediction
 				else if(isGoodPrediction(consequent, predicted)) {
+					if (!impossible) stats.inc("SuccFair", predictors.get(classifierId).getTAG());
+					else stats.inc("SuccUnFair", predictors.get(classifierId).getTAG());
 					stats.inc("Success", predictors.get(classifierId).getTAG());
 				}
 				else {
-					boolean flag_f = false, flag_top = false, flag_ct = false;
+					//boolean flag_f = false, flag_top = false, flag_ct = false;
 					stats.inc("Failure", predictors.get(classifierId).getTAG());
-					float averageScore = conseqScores.get(new Item(-9));
-					boolean small_ct_size = conseqScores.containsKey(new Item(-8)) ? true : false;
-					conseqScores.remove(new Item(-8));//removing informative keys as we no longer need them
-					conseqScores.remove(new Item(-9));// ---
-					for(Entry<Item, Float> it : conseqScores.entrySet()){
-						if (it.getValue() != 0) {
-							if (!flag_f) { stats.inc("F-Failure", predictors.get(classifierId).getTAG()); flag_f = true;}
-							if (!flag_top) { if (it.getValue() >= averageScore) stats.inc("F-FailTop", predictors.get(classifierId).getTAG()); flag_top = true;}
-							if (!flag_ct) { if (small_ct_size) stats.inc("Small-CT", predictors.get(classifierId).getTAG()); flag_f = true;}
-						}
-
-					}
 				}
 				
 			}
