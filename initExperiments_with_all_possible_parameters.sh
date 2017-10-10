@@ -7,6 +7,13 @@ clear
 
 #declare -a arr=("BIBLE.txt" "BMS1_spmf.txt" "BMS2.txt" "FIFA.txt" "Kosarak_converted.txt" "LEVIATHAN.txt" "MSNBC.txt" "NASA_access_log_Aug95.txt" "NASA_access_log_Jul95.txt" "SIGN.txt")
 
+
+for ((i=1; i<=10; i+=2))
+  do 
+     echo "0.$i"
+ done
+
+
 declare -a arr=("100"
 				"200"
 				"300"

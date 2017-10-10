@@ -145,6 +145,8 @@ public class Evaluator {
 				System.out.println(stats.toString());
 			}
 		}
+
+		System.out.println(stats.get("Overall", "CPT+"));
 		
 		return stats;
 	}

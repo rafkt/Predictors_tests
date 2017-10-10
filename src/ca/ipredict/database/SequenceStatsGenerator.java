@@ -109,6 +109,8 @@ public class SequenceStatsGenerator {
 		System.out.println("Occurences for each item: \t" + calculateMean(appearXtimesbySequence));
 		System.out.println("Size of the dataset in MB: \t" + ((database.size() * 4d) + (database.size() * calculateMean(sizes) * 4d) / (1000 * 1000)));
 		System.out.println();
+
+		System.out.println("(" + database.size() +  ","  + items.size() +  ","  + maxItem +  ","  +  calculateMean(sizes) +  ","  + calculateMean(differentitems) + ")");
 		
 	}
 
