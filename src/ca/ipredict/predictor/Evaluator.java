@@ -108,6 +108,7 @@ public class Evaluator {
 				System.out.println();
 				SequenceStatsGenerator.prinStats(database.getDatabase(), format);
 			}
+			SequenceStatsGenerator.prinStats(database.getDatabase(), format);
 			
 			//Creating the statsLogger
 			stats = new StatsLogger(statsColumns, predictorNames, false);
@@ -146,7 +147,13 @@ public class Evaluator {
 			}
 		}
 
-		System.out.println(stats.get("Overall", "CPT+"));
+		System.out.print(","  +  (float)stats.get("Overall", "CPT+"));
+		System.out.print(","  + Profile.paramFloat("minPredictionRatio"));
+		System.out.println(","  + Profile.paramFloat("noiseRatio") + ")");
+
+		//The following output is being generated: 
+		// (#sequencies, Sigma, #items_per_sequence, #distinct_per_sequence, #occurence_on_sequence, Overall_Accur, #minPredictionRario, noiseRatio)
+		
 		
 		return stats;
 	}

@@ -49,8 +49,8 @@ public class SequenceStatsGenerator {
 		//  We will calculate statistics on this sequence database.
 		///////////////////////////////////
 
-		System.out.println("---" + name + "---");
-		System.out.println("Number of sequences : \t" + database.size());
+		// System.out.println("---" + name + "---");
+		// System.out.println("Number of sequences : \t" + database.size());
 		
 		int maxItem =0;
 		// we initialize some variables that we will use to generate the statistics
@@ -102,15 +102,16 @@ public class SequenceStatsGenerator {
 		
 		// we print the statistics
 //		System.out.println();
-		System.out.println("Number of distinct items: \t" + items.size());
-		System.out.println("Largest item id: \t" + maxItem);
-		System.out.println("Itemsets per sequence: \t"+ calculateMean(sizes));
-		System.out.println("Distinct item per sequence: \t" + calculateMean(differentitems));
-		System.out.println("Occurences for each item: \t" + calculateMean(appearXtimesbySequence));
-		System.out.println("Size of the dataset in MB: \t" + ((database.size() * 4d) + (database.size() * calculateMean(sizes) * 4d) / (1000 * 1000)));
-		System.out.println();
+		// System.out.println("Number of distinct items: \t" + items.size());
+		// System.out.println("Largest item id: \t" + maxItem);
+		// System.out.println("Itemsets per sequence: \t"+ calculateMean(sizes));
+		// System.out.println("Distinct item per sequence: \t" + calculateMean(differentitems));
+		// System.out.println("Occurences for each item: \t" + calculateMean(appearXtimesbySequence));
+		// System.out.println("Size of the dataset in MB: \t" + ((database.size() * 4d) + (database.size() * calculateMean(sizes) * 4d) / (1000 * 1000)));
+		// System.out.println();
 
-		System.out.println("(" + database.size() +  ","  + items.size() +  ","  + maxItem +  ","  +  calculateMean(sizes) +  ","  + calculateMean(differentitems) + ")");
+		System.out.print("(" + database.size() +  ","  + items.size() +  ","  +  (float) calculateMean(sizes) +  ","  + (float)calculateMean(differentitems) + "," + calculateMean(appearXtimesbySequence));
+		
 		
 	}
 
