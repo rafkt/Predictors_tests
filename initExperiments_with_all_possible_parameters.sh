@@ -5,17 +5,21 @@
 
 clear
 
-#declare -a arr=("BIBLE.txt" "BMS1_spmf.txt" "BMS2.txt" "FIFA.txt" "Kosarak_converted.txt" "LEVIATHAN.txt" "MSNBC.txt" "NASA_access_log_Aug95.txt" "NASA_access_log_Jul95.txt" "SIGN.txt")
+declare -a arr=("BIBLE.txt" "BMS1_spmf.txt" "BMS2.txt" "FIFA.txt" "Kosarak_converted.txt" "LEVIATHAN.txt" "MSNBC.txt" "NASA_access_log_Aug95.txt" "NASA_access_log_Jul95.txt" "SIGN.txt")
 
 
-for ((i=0; i<=10; i+=0.5))
+
+#for ((i=0; i<=10; i+=3))
+for i in `seq -f "%g" 0.1 0.1 1`
 do 
-     echo "0.$i"
-done
-
- for i in `seq -f "%g" 1 0.5 3`
-do       
-        echo $i  
+    for j in `seq -f "%g" 1 1 9`
+    do       
+        for d in "${arr[@]}"
+        do
+            sed "s/parameters.put(\"noiseRatio\", \"1.0f\");/parameters.put(\"noiseRatio\", \"1.2f\");/g" SPICEProfile.java > tmp.java
+            mv tmp.java 
+        done
+    done
 done
 
 
