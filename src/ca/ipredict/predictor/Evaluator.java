@@ -145,11 +145,10 @@ public class Evaluator {
 			if(showResults == true) {
 				System.out.println(stats.toString());
 			}
+			System.out.print(","  +  (float)stats.get("Overall", "CPT+"));
+			System.out.print(","  + Profile.paramFloat("minPredictionRatio"));
+			System.out.println(","  + Profile.paramFloat("noiseRatio") + ")");
 		}
-
-		System.out.print(","  +  (float)stats.get("Overall", "CPT+"));
-		System.out.print(","  + Profile.paramFloat("minPredictionRatio"));
-		System.out.println(","  + Profile.paramFloat("noiseRatio") + ")");
 
 		//The following output is being generated: 
 		// (#sequencies, Sigma, #items_per_sequence, #distinct_per_sequence, #occurence_on_sequence, Overall_Accur, #minPredictionRario, noiseRatio)

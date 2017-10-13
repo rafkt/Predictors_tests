@@ -3,6 +3,9 @@
 #currently only this command works
 # sed "s/parameters.put(\"noiseRatio\", \"1.0f\");/parameters.put(\"noiseRatio\", \"1.2f\");/g" SPICEProfile.java > tmp.java
 
+# This script is generally a collection of attempts to replace code within java files. It has been reused several times for several experiments purposes. Always the
+# main tool is bash and sed command. Look at the comments for several alterations of the script. 
+
 clear
 
 declare -a arr=("BIBLE_CHARProfile.java"
@@ -27,10 +30,18 @@ do
         cd src/ca/ipredict/predictor/profile/   
         for d in "${arr[@]}"
         do
-            sed "s/parameters.put(\"noiseRatio\", \"1.0f\");/parameters.put(\"noiseRatio\", \"1.2f\");/g" $d > "$d_tmp$i$j".java
+                sed "s/parameters.put(\"noiseRatio\".*/parameters.put(\"noiseRatio\", \"${i}f\");/g" $d > $d."_tmp$i$j".java
+                mv $d."_tmp$i$j".java $d
+                rm -rf $d."_tmp$i$j".java
+                sed "s/parameters.put(\"minPredictionRatio\".*/parameters.put(\"minPredictionRatio\", \"${j}f\");/g" $d > $d."_tmp$i$j".java
+                mv $d."_tmp$i$j".java $d
+                rm -rf $d."_tmp$i$j".java
             # mv tmp.java 
         done
         cd ../../../../..
+        make clean
+        make all
+        make run >> executions.log 
     done
 done
 
