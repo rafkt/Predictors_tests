@@ -82,7 +82,6 @@ public class MainController {
 			
 			//Start the experiment
 			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 14 , false, false, false);
-			System.out.println("");
 	}
 
 }

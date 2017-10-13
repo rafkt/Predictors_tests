@@ -41,7 +41,7 @@ do
         cd ../../../../..
         make clean
         make all
-        make run >> executions.log 
+        java -cp src ca.ipredict.controllers.MainController ./datasets >> executions.log 
     done
 done
 
