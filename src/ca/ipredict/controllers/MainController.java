@@ -53,6 +53,7 @@ public class MainController {
 			evaluator.addDataset("BIBLE_CHAR", 	5000);
 			evaluator.addDataset("KOSARAK", 	45000);
 			evaluator.addDataset("FIFA", 		5000);
+			evaluator.addDataset("SNAKE", 		5000);
 
 			evaluator.addDataset("SPICE0", 		5000);
 			evaluator.addDataset("SPICE1", 		5000);
