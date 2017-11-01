@@ -127,7 +127,7 @@ public class CPTPlusPredictor extends Predictor {
 			
 			//slicing the sequence if needed
 			if(parameters.paramInt("splitMethod") > 0) {
-				seq = helper.keepLastItems(seq, parameters.paramInt("splitLength"));
+				seq = helper.keepLastItems(seq, parameters.paramFloat("splitLength"));
 			}
 
 			//Generating the compressed version of this sequence

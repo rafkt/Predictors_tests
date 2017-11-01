@@ -88,12 +88,13 @@ public class CPTHelper {
 	 * @param sequence the sequence to slice
 	 * @param length the size of the subsequences
 	 */
-	public Sequence keepLastItems(Sequence sequence, int length) { 
+	public Sequence keepLastItems(Sequence sequence, float lengthRatio) { 
 
-		if(sequence.size() <= length){ 
-			return sequence;
-		}
-		
+		// if(sequence.size() <= length){ 
+		// 	return sequence;
+		// }
+		int length = (int) lengthRatio * sequence.size();
+		if (length == 0) return sequence;
 		//slicing the seqence
 		Sequence result = new Sequence(sequence.getId(), sequence.getItems().subList(sequence.size() - length, sequence.size()));
 		return result;
