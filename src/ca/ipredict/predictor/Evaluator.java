@@ -147,7 +147,7 @@ public class Evaluator {
 			}
 			System.out.print(","  +  (float)stats.get("Overall", "CPT+"));
 			System.out.print(","  + Profile.paramFloat("minPredictionRatio"));
-			System.out.println(","  + Profile.paramFloat("noiseRatio") + ")");
+			System.out.println(","  + Profile.paramFloat("noiseRatio") +  "," + format + ")");
 		}
 
 		//The following output is being generated: 
