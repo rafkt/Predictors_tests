@@ -7,6 +7,7 @@ import ca.ipredict.predictor.profile.BIBLE_WORDProfile;
 import ca.ipredict.predictor.profile.BIBLE_CHARProfile;
 import ca.ipredict.predictor.profile.KOSARAKProfile;
 import ca.ipredict.predictor.profile.FIFAProfile;
+import ca.ipredict.predictor.profile.SNAKEProfile;
 import ca.ipredict.predictor.profile.SPICEProfile;
 
 /**
