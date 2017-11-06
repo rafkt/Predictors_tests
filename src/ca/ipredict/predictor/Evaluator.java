@@ -147,11 +147,13 @@ public class Evaluator {
 			}
 			System.out.print(","  +  (float)stats.get("Overall", "CPT+"));
 			System.out.print(","  + Profile.paramFloat("minPredictionRatio"));
+			System.out.print(","  + Profile.paramInt("splitMethod"));
+			System.out.print(","  + Profile.paramFloat("splitLength"));
 			System.out.println(","  + Profile.paramFloat("noiseRatio") +  "," + format + ")");
 		}
 
 		//The following output is being generated: 
-		// (#sequencies, Sigma, #items_per_sequence, #distinct_per_sequence, #occurence_on_sequence, Overall_Accur, #minPredictionRario, noiseRatio)
+		// (#sequencies, Sigma, #items_per_sequence, #distinct_per_sequence, #occurence_on_sequence, Overall_Accur, #minPredictionRario, splitMethod, splitLength, noiseRatio)
 		
 		
 		return stats;

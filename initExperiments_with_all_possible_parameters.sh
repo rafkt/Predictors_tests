@@ -39,7 +39,11 @@ do
             rm -rf $d."_tmp$i$j".java    
             # mv tmp.java 
 
-            sed "s/parameters.put(\"splitMethod\".*/parameters.put(\"splitMethod\", \"0f\");/g" $d > $d."_tmp$i$j".java
+            sed "s/parameters.put(\"splitMethod\".*/parameters.put(\"splitMethod\", \"0\");/g" $d > $d."_tmp$i$j".java
+            mv $d."_tmp$i$j".java $d
+            rm -rf $d."_tmp$i$j".java
+
+            sed "s/parameters.put(\"splitLength\".*/parameters.put(\"splitLength\", \"1f\");/g" $d > $d."_tmp$i$j".java
             mv $d."_tmp$i$j".java $d
             rm -rf $d."_tmp$i$j".java
 
@@ -69,7 +73,7 @@ do
                 rm -rf $d."_tmp$i$j".java    
                 # mv tmp.java 
 
-                sed "s/parameters.put(\"splitMethod\".*/parameters.put(\"splitMethod\", \"1f\");/g" $d > $d."_tmp$i$j".java
+                sed "s/parameters.put(\"splitMethod\".*/parameters.put(\"splitMethod\", \"1\");/g" $d > $d."_tmp$i$j".java
                 mv $d."_tmp$i$j".java $d
                 rm -rf $d."_tmp$i$j".java
 
