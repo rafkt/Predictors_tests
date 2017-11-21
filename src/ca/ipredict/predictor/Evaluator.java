@@ -3,6 +3,7 @@ package ca.ipredict.predictor;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.HashMap;
 import java.io.IOException;
 
 import ca.ipredict.database.DatabaseHelper;
@@ -40,6 +41,9 @@ public class Evaluator {
 	
 	public List<String> datasets;  
 	public List<Integer> datasetsMaxCount;  
+
+	private HashMap<Item, HashMap<Item, Integer>> comesBefore;
+	private HashMap<Item, HashMap<Item, Integer>> comesAfter;
 	
 	
 	public Evaluator(String pathToDatasets) {
@@ -184,6 +188,10 @@ public class Evaluator {
 			MemoryLogger.addUpdate();
 		}
 		
+	}
+
+	public void setBeforeAndAfterMatrix(ArrayList<Sequence> database){
+		//fill the code...
 	}
 	
 	/**
