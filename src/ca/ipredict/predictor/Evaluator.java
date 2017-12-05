@@ -11,6 +11,7 @@ import ca.ipredict.database.DatabaseHelper.Format;
 import ca.ipredict.database.Item;
 import ca.ipredict.database.Sequence;
 import ca.ipredict.database.SequenceStatsGenerator;
+import ca.ipredict.database.SequenceDatabase;
 import ca.ipredict.helpers.MemoryLogger;
 import ca.ipredict.helpers.StatsLogger;
 import ca.ipredict.predictor.profile.Profile;
@@ -190,8 +191,23 @@ public class Evaluator {
 		
 	}
 
-	public void setBeforeAndAfterMatrix(ArrayList<Sequence> database){
-		//fill the code...
+	//constracts an ala-hankel matrix which will be used from CPT+ for doing predictions.
+	public void setBeforeAndAfterMatrix(SequenceDatabase database){
+		for (Sequence sequence : database.getSequences()) {
+			List<Item> items = sequence.getItems();
+			Item itemBefore = items.get(0);
+			List<Item> seen = new ArrayList<Item>();
+			List<Item> met = new ArrayList<Item>();
+			
+			for (int i = 0; i < items.size(); i++)
+				for (int i = 1; i < items.size(); i++) {
+					if (seen.contains(itemBefore)) continue;
+					seen.addAll(itemBefore);
+
+
+				}
+
+		}
 	}
 	
 	/**
