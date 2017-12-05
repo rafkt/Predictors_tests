@@ -43,8 +43,8 @@ public class Evaluator {
 	public List<String> datasets;  
 	public List<Integer> datasetsMaxCount;  
 
-	private HashMap<Item, HashMap<Item, Integer>> comesBefore;
-	private HashMap<Item, HashMap<Item, Integer>> comesAfter;
+	private HashMap<Item, HashMap<Item, Integer>> comesBefore; //needs initialisation
+	private HashMap<Item, HashMap<Item, Integer>> comesAfter; //needs initialisation
 	
 	
 	public Evaluator(String pathToDatasets) {
@@ -191,22 +191,29 @@ public class Evaluator {
 		
 	}
 
-	//constracts an ala-hankel matrix which will be used from CPT+ for doing predictions.
-	public void setBeforeAndAfterMatrix(SequenceDatabase database){
+	//constracts an ala-hankel matrix which will be used by CPT+ for doing predictions.
+	public void setBeforeAndAfterMatrix(SequenceDatabase database){ //needs to be called - same function can be adopted form comesAfter Hashmap and pass as a parameter a reversed sequence database (or reverse on the fly every sequence)
 		for (Sequence sequence : database.getSequences()) {
 			List<Item> items = sequence.getItems();
-			Item itemBefore = items.get(0);
 			List<Item> seen = new ArrayList<Item>();
 			List<Item> met = new ArrayList<Item>();
 			
-			for (int i = 0; i < items.size(); i++)
-				for (int i = 1; i < items.size(); i++) {
-					if (seen.contains(itemBefore)) continue;
-					seen.addAll(itemBefore);
-
-
+			for (int i = 0; i < items.size(); i++){//goes through every item of the sequence
+				Item item = items.get(i);
+				if (met.contains(itemBefore))continue;
+				met.addAll(item);
+				for (int j = i + 1; j < items.size(); j++) {//counts what comes after every item
+					Item itemAfter = items.get(j);
+					if (seen.contains(itemAfter)) continue;
+					seen.addAll(itemAfter);
+					if (comesBefore.containsKey(item)){
+						int counter = comesBefore.get(item);
+						comesBefore.put(item, counter + 1);
+					}else{
+						comesBefore.put(item, 1); //check this point
+					}
 				}
-
+			}
 		}
 	}
 	
