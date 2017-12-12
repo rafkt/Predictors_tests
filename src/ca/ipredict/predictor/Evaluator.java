@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.HashMap;
 import java.io.IOException;
 
+import java.util.Collections;
+
 import ca.ipredict.database.DatabaseHelper;
 import ca.ipredict.database.DatabaseHelper.Format;
 import ca.ipredict.database.Item;
@@ -116,6 +118,70 @@ public class Evaluator {
 			
 			//Creating the statsLogger
 			stats = new StatsLogger(statsColumns, predictorNames, false);
+
+			comesBefore = new HashMap<Item, HashMap<Item, Integer>>();
+			comesAfter = new HashMap<Item, HashMap<Item, Integer>>();
+
+
+			// --do some debugging here - then comment this section
+
+				// 		ArrayList<Sequence> training = new ArrayList<Sequence>();
+				// //		//1 2 3 4
+				// 		Sequence seq1 = new Sequence(-1);
+				// 		seq1.addItem(new Item(1));
+				// 		seq1.addItem(new Item(2));
+				// 		seq1.addItem(new Item(3));
+				// 		seq1.addItem(new Item(4));
+				// 		training.add(seq1);
+						
+				// 		//1 2 3 4
+				// 		Sequence seq2 = new Sequence(-1);
+				// 		seq2.addItem(new Item(1));
+				// 		seq2.addItem(new Item(2));
+				// 		seq2.addItem(new Item(3));
+				// 		seq2.addItem(new Item(4));
+				// 		training.add(seq2);
+						
+				// 		//1 2 3 4
+				// 		Sequence seq3 = new Sequence(-1);
+				// 		seq3.addItem(new Item(1));
+				// 		seq3.addItem(new Item(2));
+				// 		seq3.addItem(new Item(3));
+				// 		seq3.addItem(new Item(4));
+				// 		training.add(seq3);
+						
+				// //		//0 1 2 4
+				// 		Sequence seq4 = new Sequence(-1);
+				// 		seq4.addItem(new Item(0));
+				// 		seq4.addItem(new Item(1));
+				// 		seq4.addItem(new Item(2));
+				// 		seq4.addItem(new Item(4));
+				// 		training.add(seq4);
+
+				// 		setBeforeMatrix(training);
+				// 		setAfterMatrix(training);
+
+				// 		for (HashMap.Entry<Item, HashMap<Item, Integer>> entry : comesBefore.entrySet()) {
+				// 			System.out.println(entry.getKey()+" :");
+				// 		   	for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
+				// 		   		System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
+				// 		   	}
+						   
+				// 		}
+				// 		System.out.println("---------------------");
+				// 		for (HashMap.Entry<Item, HashMap<Item, Integer>> entry : comesAfter.entrySet()) {
+				// 			System.out.println(entry.getKey()+" :");
+				// 		   for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
+				// 		   		System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
+				// 		   }
+						   
+				// 		}
+
+				// 		System.exit(0);
+
+			// -- end of debugging section - comment it when not in need.
+
+			//setBeforeMatrix(database.getDatabase().getSequences());
 			
 			//Saving current time for across time analysis
 			startTime = System.currentTimeMillis();
@@ -192,25 +258,73 @@ public class Evaluator {
 	}
 
 	//constracts an ala-hankel matrix which will be used by CPT+ for doing predictions.
-	public void setBeforeAndAfterMatrix(SequenceDatabase database){ //needs to be called - same function can be adopted form comesAfter Hashmap and pass as a parameter a reversed sequence database (or reverse on the fly every sequence)
-		for (Sequence sequence : database.getSequences()) {
+	public void setBeforeMatrix(ArrayList<Sequence> database){ //needs to be called - same function can be adopted form comesAfter Hashmap and pass as a parameter a reversed sequence database (or reverse on the fly every sequence)
+		for (Sequence sequence : database) { // for every sequence
 			List<Item> items = sequence.getItems();
-			List<Item> seen = new ArrayList<Item>();
 			List<Item> met = new ArrayList<Item>();
 			
 			for (int i = 0; i < items.size(); i++){//goes through every item of the sequence
 				Item item = items.get(i);
-				if (met.contains(itemBefore))continue;
-				met.addAll(item);
+				//System.out.print(item + " : ");
+				if (met.contains(item))continue;
+				met.add(item);
+
+				List<Item> seen = new ArrayList<Item>();
+				for (int j = i + 1; j < items.size(); j++) {//counts what comes after every item
+					Item itemAfter = items.get(j);
+					//System.out.print(itemAfter + " ");
+					if (seen.contains(itemAfter)) continue;
+					seen.add(itemAfter);
+					if (comesBefore.containsKey(item)){
+						HashMap<Item, Integer> items_coming_before = comesBefore.get(item);
+						if (items_coming_before.containsKey(itemAfter)){
+							int counter = items_coming_before.get(itemAfter);
+							items_coming_before.put(itemAfter, counter + 1);
+						}else{
+							items_coming_before.put(itemAfter, 1);
+						}
+					}else{
+						HashMap<Item, Integer> items_coming_before = new HashMap<Item, Integer>();
+						items_coming_before.put(itemAfter, 1);
+						comesBefore.put(item,items_coming_before);
+					}
+				}
+				//System.out.println("");
+			}
+		}
+	}
+
+	public void setAfterMatrix(ArrayList<Sequence> database){ //needs to be called - same function can be adopted form comesAfter Hashmap and pass as a parameter a reversed sequence database (or reverse on the fly every sequence)
+		for (Sequence sequence : database) { // for every sequence
+
+			//I should reverse the sequence here - hence I can use the setBeforeMatrix function to get the setAfter results
+			List<Item> items = sequence.getItems();
+			Collections.reverse(items);
+
+			List<Item> met = new ArrayList<Item>();
+			
+			for (int i = 0; i < items.size(); i++){//goes through every item of the sequence
+				Item item = items.get(i);
+				if (met.contains(item))continue;
+				met.add(item);
+
+				List<Item> seen = new ArrayList<Item>();
 				for (int j = i + 1; j < items.size(); j++) {//counts what comes after every item
 					Item itemAfter = items.get(j);
 					if (seen.contains(itemAfter)) continue;
-					seen.addAll(itemAfter);
-					if (comesBefore.containsKey(item)){
-						int counter = comesBefore.get(item);
-						comesBefore.put(item, counter + 1);
+					seen.add(itemAfter);
+					if (comesAfter.containsKey(item)){
+						HashMap<Item, Integer> items_coming_before = comesAfter.get(item);
+						if (items_coming_before.containsKey(itemAfter)){
+							int counter = items_coming_before.get(itemAfter);
+							items_coming_before.put(itemAfter, counter + 1);
+						}else{
+							items_coming_before.put(itemAfter, 1);
+						}
 					}else{
-						comesBefore.put(item, 1); //check this point
+						HashMap<Item, Integer> items_coming_before = new HashMap<Item, Integer>();
+						items_coming_before.put(itemAfter, 1);
+						comesAfter.put(item,items_coming_before);
 					}
 				}
 			}
