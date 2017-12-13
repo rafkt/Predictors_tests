@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.io.IOException;
 
 import java.util.Collections;
+import java.lang.Math;
 
 import ca.ipredict.database.DatabaseHelper;
 import ca.ipredict.database.DatabaseHelper.Format;
@@ -47,6 +48,8 @@ public class Evaluator {
 
 	private HashMap<Item, HashMap<Item, Integer>> comesBefore; //needs initialisation
 	private HashMap<Item, HashMap<Item, Integer>> comesAfter; //needs initialisation
+	private HashMap<Item, Float> comesBeforeItemEntropy;
+	private HashMap<Item, Float> comesAfterItemEntropy;
 	
 	
 	public Evaluator(String pathToDatasets) {
@@ -121,63 +124,73 @@ public class Evaluator {
 
 			comesBefore = new HashMap<Item, HashMap<Item, Integer>>();
 			comesAfter = new HashMap<Item, HashMap<Item, Integer>>();
+			comesBeforeItemEntropy = new HashMap<Item, Float>();
+			comesAfterItemEntropy = new HashMap<Item, Float>();
 
 
 			// --do some debugging here - then comment this section
 
-				// 		ArrayList<Sequence> training = new ArrayList<Sequence>();
-				// //		//1 2 3 4
-				// 		Sequence seq1 = new Sequence(-1);
-				// 		seq1.addItem(new Item(1));
-				// 		seq1.addItem(new Item(2));
-				// 		seq1.addItem(new Item(3));
-				// 		seq1.addItem(new Item(4));
-				// 		training.add(seq1);
+						ArrayList<Sequence> training = new ArrayList<Sequence>();
+				//		//1 2 3 4
+						Sequence seq1 = new Sequence(-1);
+						seq1.addItem(new Item(1));
+						seq1.addItem(new Item(2));
+						seq1.addItem(new Item(3));
+						seq1.addItem(new Item(4));
+						training.add(seq1);
 						
-				// 		//1 2 3 4
-				// 		Sequence seq2 = new Sequence(-1);
-				// 		seq2.addItem(new Item(1));
-				// 		seq2.addItem(new Item(2));
-				// 		seq2.addItem(new Item(3));
-				// 		seq2.addItem(new Item(4));
-				// 		training.add(seq2);
+						//1 2 3 4
+						Sequence seq2 = new Sequence(-1);
+						seq2.addItem(new Item(1));
+						seq2.addItem(new Item(2));
+						seq2.addItem(new Item(3));
+						seq2.addItem(new Item(4));
+						training.add(seq2);
 						
-				// 		//1 2 3 4
-				// 		Sequence seq3 = new Sequence(-1);
-				// 		seq3.addItem(new Item(1));
-				// 		seq3.addItem(new Item(2));
-				// 		seq3.addItem(new Item(3));
-				// 		seq3.addItem(new Item(4));
-				// 		training.add(seq3);
+						//1 2 3 4
+						Sequence seq3 = new Sequence(-1);
+						seq3.addItem(new Item(1));
+						seq3.addItem(new Item(2));
+						seq3.addItem(new Item(3));
+						seq3.addItem(new Item(4));
+						training.add(seq3);
 						
-				// //		//0 1 2 4
-				// 		Sequence seq4 = new Sequence(-1);
-				// 		seq4.addItem(new Item(0));
-				// 		seq4.addItem(new Item(1));
-				// 		seq4.addItem(new Item(2));
-				// 		seq4.addItem(new Item(4));
-				// 		training.add(seq4);
+				//		//0 1 2 4
+						Sequence seq4 = new Sequence(-1);
+						seq4.addItem(new Item(0));
+						seq4.addItem(new Item(1));
+						seq4.addItem(new Item(2));
+						seq4.addItem(new Item(4));
+						training.add(seq4);
 
-				// 		setBeforeMatrix(training);
-				// 		setAfterMatrix(training);
+						setBeforeMatrix(training);
+						setAfterMatrix(training);
 
-				// 		for (HashMap.Entry<Item, HashMap<Item, Integer>> entry : comesBefore.entrySet()) {
-				// 			System.out.println(entry.getKey()+" :");
-				// 		   	for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
-				// 		   		System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
-				// 		   	}
+						for (HashMap.Entry<Item, HashMap<Item, Integer>> entry : comesBefore.entrySet()) {
+							System.out.println(entry.getKey()+" :");
+						   	for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
+						   		System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
+						   	}
 						   
-				// 		}
-				// 		System.out.println("---------------------");
-				// 		for (HashMap.Entry<Item, HashMap<Item, Integer>> entry : comesAfter.entrySet()) {
-				// 			System.out.println(entry.getKey()+" :");
-				// 		   for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
-				// 		   		System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
-				// 		   }
+						}
+						System.out.println("---------------------");
+						for (HashMap.Entry<Item, HashMap<Item, Integer>> entry : comesAfter.entrySet()) {
+							System.out.println(entry.getKey()+" :");
+						   for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
+						   		System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
+						   }
 						   
-				// 		}
+						}
 
-				// 		System.exit(0);
+						for (HashMap.Entry<Item, Float> entry : comesBeforeItemEntropy.entrySet()) {
+						   	System.out.println(entry.getKey()+" : "+entry.getValue()); 
+						}
+
+						for (HashMap.Entry<Item, Float> entry : comesAfterItemEntropy.entrySet()) {
+						   	System.out.println(entry.getKey()+" : "+entry.getValue()); 
+						}
+
+						System.exit(0);
 
 			// -- end of debugging section - comment it when not in need.
 
@@ -292,6 +305,25 @@ public class Evaluator {
 				//System.out.println("");
 			}
 		}
+
+		//set the entropy Map for each map
+
+		for (HashMap.Entry<Item, HashMap<Item, Integer>> entry : comesBefore.entrySet()) {
+			int total = 0;
+			//System.out.println(entry.getKey()+" :");
+		   	for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
+		   		//System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
+		   		total += innerEntry.getValue();
+			}
+			float h_i_sum = 0f;
+			for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
+		   		//System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
+		   		//System.out.println(innerEntry.getValue() / (float)total);
+		   		h_i_sum += (innerEntry.getValue() / (float) total) * (Math.log(total / (float) innerEntry.getValue())/Math.log(2));
+			}
+			//System.out.println(h_i_sum);
+			comesBeforeItemEntropy.put(entry.getKey(), h_i_sum);
+		}
 	}
 
 	public void setAfterMatrix(ArrayList<Sequence> database){ //needs to be called - same function can be adopted form comesAfter Hashmap and pass as a parameter a reversed sequence database (or reverse on the fly every sequence)
@@ -328,6 +360,23 @@ public class Evaluator {
 					}
 				}
 			}
+		}
+
+		//set the entropy Map for each map
+
+		for (HashMap.Entry<Item, HashMap<Item, Integer>> entry : comesAfter.entrySet()) {
+			int total = 0;
+			//System.out.println(entry.getKey()+" :");
+		   	for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
+		   		//System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
+		   		total += innerEntry.getValue();
+			}
+			float h_i_sum = 0f;
+			for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
+		   		//System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
+		   		h_i_sum += (innerEntry.getValue() / (float) total) * (Math.log(total / (float) innerEntry.getValue())/Math.log(2));
+			}
+			comesAfterItemEntropy.put(entry.getKey(), h_i_sum);
 		}
 	}
 	
