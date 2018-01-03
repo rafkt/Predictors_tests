@@ -128,73 +128,74 @@ public class Evaluator {
 			comesAfterItemEntropy = new HashMap<Item, Float>();
 
 
-			// --do some debugging here - then comment this section
+			// // --do some debugging here - then comment this section
 
-						ArrayList<Sequence> training = new ArrayList<Sequence>();
-				//		//1 2 3 4
-						Sequence seq1 = new Sequence(-1);
-						seq1.addItem(new Item(1));
-						seq1.addItem(new Item(2));
-						seq1.addItem(new Item(3));
-						seq1.addItem(new Item(4));
-						training.add(seq1);
+			// 			ArrayList<Sequence> training = new ArrayList<Sequence>();
+			// 	//		//1 2 3 4
+			// 			Sequence seq1 = new Sequence(-1);
+			// 			seq1.addItem(new Item(1));
+			// 			seq1.addItem(new Item(2));
+			// 			seq1.addItem(new Item(3));
+			// 			seq1.addItem(new Item(4));
+			// 			training.add(seq1);
 						
-						//1 2 3 4
-						Sequence seq2 = new Sequence(-1);
-						seq2.addItem(new Item(1));
-						seq2.addItem(new Item(2));
-						seq2.addItem(new Item(3));
-						seq2.addItem(new Item(4));
-						training.add(seq2);
+			// 			//1 2 3 4
+			// 			Sequence seq2 = new Sequence(-1);
+			// 			seq2.addItem(new Item(1));
+			// 			seq2.addItem(new Item(2));
+			// 			seq2.addItem(new Item(3));
+			// 			seq2.addItem(new Item(4));
+			// 			training.add(seq2);
 						
-						//1 2 3 4
-						Sequence seq3 = new Sequence(-1);
-						seq3.addItem(new Item(1));
-						seq3.addItem(new Item(2));
-						seq3.addItem(new Item(3));
-						seq3.addItem(new Item(4));
-						training.add(seq3);
+			// 			//1 2 3 4
+			// 			Sequence seq3 = new Sequence(-1);
+			// 			seq3.addItem(new Item(1));
+			// 			seq3.addItem(new Item(2));
+			// 			seq3.addItem(new Item(3));
+			// 			seq3.addItem(new Item(4));
+			// 			training.add(seq3);
 						
-				//		//0 1 2 4
-						Sequence seq4 = new Sequence(-1);
-						seq4.addItem(new Item(0));
-						seq4.addItem(new Item(1));
-						seq4.addItem(new Item(2));
-						seq4.addItem(new Item(4));
-						training.add(seq4);
+			// 	//		//0 1 2 4
+			// 			Sequence seq4 = new Sequence(-1);
+			// 			seq4.addItem(new Item(0));
+			// 			seq4.addItem(new Item(1));
+			// 			seq4.addItem(new Item(2));
+			// 			seq4.addItem(new Item(4));
+			// 			training.add(seq4);
 
-						setBeforeMatrix(training);
-						setAfterMatrix(training);
+			// 			setBeforeMatrix(training);
+			// 			setAfterMatrix(training);
 
-						for (HashMap.Entry<Item, HashMap<Item, Integer>> entry : comesBefore.entrySet()) {
-							System.out.println(entry.getKey()+" :");
-						   	for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
-						   		System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
-						   	}
+			// 			for (HashMap.Entry<Item, HashMap<Item, Integer>> entry : comesBefore.entrySet()) {
+			// 				System.out.println(entry.getKey()+" :");
+			// 			   	for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
+			// 			   		System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
+			// 			   	}
 						   
-						}
-						System.out.println("---------------------");
-						for (HashMap.Entry<Item, HashMap<Item, Integer>> entry : comesAfter.entrySet()) {
-							System.out.println(entry.getKey()+" :");
-						   for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
-						   		System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
-						   }
+			// 			}
+			// 			System.out.println("---------------------");
+			// 			for (HashMap.Entry<Item, HashMap<Item, Integer>> entry : comesAfter.entrySet()) {
+			// 				System.out.println(entry.getKey()+" :");
+			// 			   for (HashMap.Entry<Item, Integer> innerEntry : entry.getValue().entrySet()) {
+			// 			   		System.out.println(innerEntry.getKey()+" : "+innerEntry.getValue());
+			// 			   }
 						   
-						}
+			// 			}
 
-						for (HashMap.Entry<Item, Float> entry : comesBeforeItemEntropy.entrySet()) {
-						   	System.out.println(entry.getKey()+" : "+entry.getValue()); 
-						}
+			// 			for (HashMap.Entry<Item, Float> entry : comesBeforeItemEntropy.entrySet()) {
+			// 			   	System.out.println(entry.getKey()+" : "+entry.getValue()); 
+			// 			}
 
-						for (HashMap.Entry<Item, Float> entry : comesAfterItemEntropy.entrySet()) {
-						   	System.out.println(entry.getKey()+" : "+entry.getValue()); 
-						}
+			// 			for (HashMap.Entry<Item, Float> entry : comesAfterItemEntropy.entrySet()) {
+			// 			   	System.out.println(entry.getKey()+" : "+entry.getValue()); 
+			// 			}
 
-						System.exit(0);
+			// 			System.exit(0);
 
-			// -- end of debugging section - comment it when not in need.
+			// // -- end of debugging section - comment it when not in need.
 
-			//setBeforeMatrix(database.getDatabase().getSequences());
+			setBeforeMatrix(database.getDatabase().getSequences());
+			setAfterMatrix(database.getDatabase().getSequences());
 			
 			//Saving current time for across time analysis
 			startTime = System.currentTimeMillis();
@@ -271,7 +272,7 @@ public class Evaluator {
 	}
 
 	//constracts an ala-hankel matrix which will be used by CPT+ for doing predictions.
-	public void setBeforeMatrix(ArrayList<Sequence> database){ //needs to be called - same function can be adopted form comesAfter Hashmap and pass as a parameter a reversed sequence database (or reverse on the fly every sequence)
+	public void setBeforeMatrix(List<Sequence> database){ //needs to be called - same function can be adopted form comesAfter Hashmap and pass as a parameter a reversed sequence database (or reverse on the fly every sequence)
 		for (Sequence sequence : database) { // for every sequence
 			List<Item> items = sequence.getItems();
 			List<Item> met = new ArrayList<Item>();
@@ -326,7 +327,7 @@ public class Evaluator {
 		}
 	}
 
-	public void setAfterMatrix(ArrayList<Sequence> database){ //needs to be called - same function can be adopted form comesAfter Hashmap and pass as a parameter a reversed sequence database (or reverse on the fly every sequence)
+	public void setAfterMatrix(List<Sequence> database){ //needs to be called - same function can be adopted form comesAfter Hashmap and pass as a parameter a reversed sequence database (or reverse on the fly every sequence)
 		for (Sequence sequence : database) { // for every sequence
 
 			//I should reverse the sequence here - hence I can use the setBeforeMatrix function to get the setAfter results
