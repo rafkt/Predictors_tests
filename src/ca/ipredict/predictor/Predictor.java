@@ -1,5 +1,8 @@
 package ca.ipredict.predictor;
 import java.util.List;
+import java.util.HashMap;
+import ca.ipredict.database.Item;
+import ca.ipredict.database.Sequence;
 
 import ca.ipredict.database.Sequence;
 
@@ -33,6 +36,12 @@ public abstract class Predictor {
 	 * @param sequence to predict
 	 */
 	public abstract Sequence Predict(Sequence target);
+
+	public Sequence Predict(Sequence target, HashMap<Item, Float> ItemEntropy){
+		System.out.println("Abstract Predict was called - something went wrong");
+		System.exit(0);
+		return new Sequence(-1);
+	}
 	
 	/**
 	 * Get the predictor's TAG (unique string identifier)

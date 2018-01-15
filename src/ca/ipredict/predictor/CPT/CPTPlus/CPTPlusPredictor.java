@@ -192,7 +192,23 @@ public class CPTPlusPredictor extends Predictor {
 		target = helper.removeUnseenItems(target);
 
 		CountTable ct = null;
-		ct = predictionByActiveNoiseReduction(target);
+		ct = predictionByActiveNoiseReduction(target, null);
+		
+
+		Sequence predicted = ct.getBestSequence(1);
+		return predicted;
+	}
+
+	//this method is just an overload of Predict that adds up support for my new Experiment of ItemsBefore Entropy.
+	public Sequence Predict(Sequence target, HashMap<Item, Float> ItemEntropy) {
+		
+		
+		//remove items that were never seen before from the Target sequence before LLCT try to make a prediction
+		//If set to false, those items will be still ignored later on (in updateCountTable())
+		target = helper.removeUnseenItems(target);
+
+		CountTable ct = null;
+		ct = predictionByActiveNoiseReduction(target, ItemEntropy);
 		
 
 		Sequence predicted = ct.getBestSequence(1);
@@ -200,7 +216,7 @@ public class CPTPlusPredictor extends Predictor {
 	}
 	
 	
-	protected CountTable predictionByActiveNoiseReduction(Sequence target) {
+	protected CountTable predictionByActiveNoiseReduction(Sequence target, HashMap<Item, Float> ItemEntropy) {
 		
 		//Queues setup
 		HashSet<Sequence> seen = new HashSet<Sequence>(); //contains the sequence already seen to avoid work duplication
@@ -238,7 +254,9 @@ public class CPTPlusPredictor extends Predictor {
 				seen.add(seq);
 				
 				//get the sub sequences for this level while respecting the maxRatioForReduction
-				List<Item> noises = getNoise(seq, noiseRatio);
+				List<Item> noises;
+				if (ItemEntropy == null) noises = getNoise(seq, noiseRatio);
+				else noises = getNoise(seq, noiseRatio, ItemEntropy);
 				
 				//generating the candidates from the list of noisy items
 				for(Item noise : noises) {
@@ -316,6 +334,46 @@ public class CPTPlusPredictor extends Predictor {
 					
 			return noises.subList(target.size() - noiseCount, target.size());
 		}
+	}
+
+	protected List<Item> getNoise(Sequence target, double noiseRatio, HashMap<Item, Float> ItemEntropy) {
+		
+		//System.out.println("Experiment is running");
+		//Converting the noiseRatio (relative to the noiseCount (absolute)
+		int noiseCount = (int) Math.floor(target.size() * noiseRatio);
+		
+		//When the noise is <= 0, noiseCount is set to one
+		//Optimization for noiseCount == 1
+		if(noiseCount <= 0) {
+			//Find the lowest supporting item
+			float minSup = 0;//Integer.MAX_VALUE;
+			int itemVal = -1;
+			for(Item item : target.getItems()) {
+				float t_minSup = ItemEntropy.get(item.val) == null ? 0 : ItemEntropy.get(item.val);
+				if(t_minSup > minSup) {
+					minSup = t_minSup;//II.get(item.val).cardinality();
+					itemVal = item.val;
+				}
+			}
+			
+			List<Item> noises = new ArrayList<Item>();
+			noises.add(new Item(itemVal));
+			return noises;
+		}
+		else {
+			//sort the items of a sequence by frequency
+			//then return the last [noiseCount] items
+			List<Item> noises = target.getItems().stream().sorted(
+					(i1, i2) -> Float.compare(
+							getFromMap(ItemEntropy, i2), getFromMap(ItemEntropy, i1))).collect(Collectors.toList());
+					
+			return noises.subList(0, noiseCount);
+		}
+	}
+
+	private Float getFromMap(HashMap<Item, Float> ItemEntropy, Item i){
+		if (ItemEntropy.get(i) == null) return 0.f;
+		else return ItemEntropy.get(i);
 	}
 	
 	
