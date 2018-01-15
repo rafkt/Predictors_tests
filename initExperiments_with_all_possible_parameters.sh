@@ -51,7 +51,7 @@ do
         cd ../../../../..
         make clean
         make all
-        java -cp src ca.ipredict.controllers.MainController ./datasets >> executions.log 
+        java -cp src ca.ipredict.controllers.MainController ./datasets
     done
 done
 
@@ -85,7 +85,7 @@ do
             cd ../../../../..
             make clean
             make all
-            java -cp src ca.ipredict.controllers.MainController ./datasets >> executions.log 
+            java -cp src ca.ipredict.controllers.MainController ./datasets 
         done
     done
 done

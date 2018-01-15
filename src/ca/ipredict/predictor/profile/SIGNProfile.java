@@ -16,8 +16,8 @@ public class SIGNProfile extends Profile {
 		///////////////
 		//CPT parameters
 		//Training
-		parameters.put("splitMethod", "0"); //0 for no split", "1 for basicSplit", "2 for complexSplit
-		parameters.put("splitLength", "20"); // max tree height
+		parameters.put("splitMethod", "1");
+		parameters.put("splitLength", "0.9f");
 		parameters.put("minSup", "0.3"); //SEI compression, minSup to remove low supporting items
 		
 		//CCF compression
@@ -28,8 +28,8 @@ public class SIGNProfile extends Profile {
 		//Prediction
 		parameters.put("recursiveDividerMin", "3"); //should be >= 0 and < recursiveDividerMax 
 		parameters.put("recursiveDividerMax", "99"); //should be > recusiveDividerMax and < windowSize
-		parameters.put("minPredictionRatio", "1.0f"); //should be over 0
-		parameters.put("noiseRatio", "1.0f"); //should be in the range ]0,1]
+		parameters.put("minPredictionRatio", "10f");
+		parameters.put("noiseRatio", "0.8f");
 
 	}
 
