@@ -194,8 +194,8 @@ public class Evaluator {
 
 			// // -- end of debugging section - comment it when not in need.
 
-			setBeforeMatrix(database.getDatabase().getSequences());
-			setAfterMatrix(database.getDatabase().getSequences());
+			setBeforeMatrix(getDatabaseCopy());
+			setAfterMatrix(getDatabaseCopy());
 			
 			//Saving current time for across time analysis
 			startTime = System.currentTimeMillis();
@@ -331,7 +331,7 @@ public class Evaluator {
 		for (Sequence sequence : database) { // for every sequence
 
 			//I should reverse the sequence here - hence I can use the setBeforeMatrix function to get the setAfter results
-			List<Item> items = sequence.getItems();
+			List<Item> items = new ArrayList<Item>(sequence.getItems());
 			Collections.reverse(items);
 
 			List<Item> met = new ArrayList<Item>();
@@ -537,7 +537,7 @@ public class Evaluator {
 				
 				Sequence predicted;
 
-				if (predictors.get(classifierId).getTAG() == "CPT+") predicted = predictors.get(classifierId).Predict(finalTarget, comesBeforeItemEntropy);
+				if (predictors.get(classifierId).getTAG() == "CPT+") predicted = predictors.get(classifierId).Predict(finalTarget);
 				else predicted = predictors.get(classifierId).Predict(finalTarget);
 				
 				//if no sequence is returned, it means that they is no match for this sequence
