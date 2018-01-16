@@ -72,9 +72,9 @@ public class MainController {
 			// evaluator.addDataset("SPICE15", 		5000);
 			
 			//Loading predictors
-			evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
+			//evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
 			// evaluator.addPredictor(new TDAGPredictor());
-			// evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
+			 evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
 			// evaluator.addPredictor(new CPTPredictor());
 			// evaluator.addPredictor(new MarkovFirstOrderPredictor());
 			// evaluator.addPredictor(new MarkovAllKPredictor());
