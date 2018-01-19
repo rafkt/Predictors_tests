@@ -55,11 +55,11 @@ do
     done
 done
 
-for i in `seq -f "%g" 0 0.1 1`
+for i in `seq -f "%g" 0.8 0.1 1` #was 0 0.1 1`
 do 
-    for j in `seq -f "%g" 0 1 10`
+    for j in `seq -f "%g" 0 1 10` #was 0 1 10`
     do
-        for l in `seq -f "%g" 0.1 0.1 0.9`
+        for l in `seq -f "%g" 0.1 0.1 0.9` #was 0.1 0.1 0.9`
         do
             cd src/ca/ipredict/predictor/profile/   
             for d in "${arr[@]}"
