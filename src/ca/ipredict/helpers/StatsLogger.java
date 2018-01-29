@@ -32,9 +32,9 @@ public class StatsLogger {
 		getAlgoByName(algoName).set(stat, value);
 	}
 	
-	public void inc(String stat, String algoName) {
+	public void inc(String stat, String algoName, double valueInc) {
 		double value = getAlgoByName(algoName).get(stat);
-		value++;
+		value+=valueInc;
 		getAlgoByName(algoName).set(stat, value);
 	}
 	
