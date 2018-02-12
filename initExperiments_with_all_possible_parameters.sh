@@ -20,40 +20,42 @@ declare -a arr=("BIBLE_CHARProfile.java"
                 "SPICEProfile.java")
 
 
+#commenting in for doing only the experiments involving splitMethod & splitLength
+#
+##for ((i=0; i<=10; i+=3))
+#for i in `seq -f "%g" 0 0.1 1`
+#do 
+#    for j in `seq -f "%g" 0 1 10`
+#    do
+#        cd src/ca/ipredict/predictor/profile/   
+#        for d in "${arr[@]}"
+#        do
+#            sed "s/parameters.put(\"noiseRatio\".*/parameters.put(\"noiseRatio\", \"${i}f\");/g" $d > $d."_tmp$i$j".java
+#            mv $d."_tmp$i$j".java $d
+#            rm -rf $d."_tmp$i$j".java
+#            
+#            sed "s/parameters.put(\"minPredictionRatio\".*/parameters.put(\"minPredictionRatio\", \"${j}f\");/g" $d > $d."_tmp$i$j".java
+#            mv $d."_tmp$i$j".java $d
+#            rm -rf $d."_tmp$i$j".java    
+#            # mv tmp.java 
+#
+#            sed "s/parameters.put(\"splitMethod\".*/parameters.put(\"splitMethod\", \"0\");/g" $d > $d."_tmp$i$j".java
+#            mv $d."_tmp$i$j".java $d
+#            rm -rf $d."_tmp$i$j".java
+#
+#            sed "s/parameters.put(\"splitLength\".*/parameters.put(\"splitLength\", \"1f\");/g" $d > $d."_tmp$i$j".java
+#            mv $d."_tmp$i$j".java $d
+#            rm -rf $d."_tmp$i$j".java
+#
+#        done
+#        cd ../../../../..
+#        make clean
+#        make all
+#        java -cp src ca.ipredict.controllers.MainController ./datasets
+#    done
+#done
+#uncomment here if you need to run the above section again
 
-
-#for ((i=0; i<=10; i+=3))
-for i in `seq -f "%g" 0 0.1 1`
-do 
-    for j in `seq -f "%g" 0 1 10`
-    do
-        cd src/ca/ipredict/predictor/profile/   
-        for d in "${arr[@]}"
-        do
-            sed "s/parameters.put(\"noiseRatio\".*/parameters.put(\"noiseRatio\", \"${i}f\");/g" $d > $d."_tmp$i$j".java
-            mv $d."_tmp$i$j".java $d
-            rm -rf $d."_tmp$i$j".java
-            
-            sed "s/parameters.put(\"minPredictionRatio\".*/parameters.put(\"minPredictionRatio\", \"${j}f\");/g" $d > $d."_tmp$i$j".java
-            mv $d."_tmp$i$j".java $d
-            rm -rf $d."_tmp$i$j".java    
-            # mv tmp.java 
-
-            sed "s/parameters.put(\"splitMethod\".*/parameters.put(\"splitMethod\", \"0\");/g" $d > $d."_tmp$i$j".java
-            mv $d."_tmp$i$j".java $d
-            rm -rf $d."_tmp$i$j".java
-
-            sed "s/parameters.put(\"splitLength\".*/parameters.put(\"splitLength\", \"1f\");/g" $d > $d."_tmp$i$j".java
-            mv $d."_tmp$i$j".java $d
-            rm -rf $d."_tmp$i$j".java
-
-        done
-        cd ../../../../..
-        make clean
-        make all
-        java -cp src ca.ipredict.controllers.MainController ./datasets
-    done
-done
 
 for i in `seq -f "%g" 0.8 0.1 1` #was 0 0.1 1`
 do 
