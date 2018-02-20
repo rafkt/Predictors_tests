@@ -367,7 +367,7 @@ public class CPTPlusPredictor extends Predictor {
 					(i1, i2) -> Float.compare(
 							getFromMap(ItemEntropy, i2), getFromMap(ItemEntropy, i1))).collect(Collectors.toList());
 					
-			return noises.subList(0, noiseCount);
+			return noises.subList(target.size() - noiseCount, target.size());//noises.subList(0, noiseCount);
 		}
 	}
 

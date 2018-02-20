@@ -294,9 +294,10 @@ public class Evaluator {
 				//System.out.print(item + " : ");
 				if (met.contains(item))continue;
 				met.add(item);
-
+				int window_to_look = 200;// a hardcoded value - stop counting items coming after if window is reached
 				List<Item> seen = new ArrayList<Item>();
-				for (int j = i + 1; j < items.size(); j++) {//counts what comes after every item
+				for (int j = i + 1; j < items.size() && window_to_look > 0; j++) {//counts what comes after every item
+					window_to_look--;
 					Item itemAfter = items.get(j);
 					//System.out.print(itemAfter + " ");
 					if (seen.contains(itemAfter)) continue;
@@ -352,9 +353,10 @@ public class Evaluator {
 				Item item = items.get(i);
 				if (met.contains(item))continue;
 				met.add(item);
-
+				int window_to_look = 3;// a hardcoded value - stop counting items coming after if window is reached
 				List<Item> seen = new ArrayList<Item>();
-				for (int j = i + 1; j < items.size(); j++) {//counts what comes after every item
+				for (int j = i + 1; j < items.size() && window_to_look > 0; j++) {//counts what comes after every item
+					window_to_look--;
 					Item itemAfter = items.get(j);
 					if (seen.contains(itemAfter)) continue;
 					seen.add(itemAfter);

@@ -28,8 +28,8 @@ public class BIBLE_CHARProfile extends Profile{
 		//Prediction
 		parameters.put("recursiveDividerMin", "0"); //should be >= 0 and < recursiveDividerMax 
 		parameters.put("recursiveDividerMax", "5"); //should be > recusiveDividerMax and < windowSize
-		parameters.put("minPredictionRatio", "0.0f"); //should be over 0
-		parameters.put("noiseRatio", "0.0f"); //should be in the range ]0,1]
+		parameters.put("minPredictionRatio", "0.f"); //should be over 0 //previous value was 0.f
+		parameters.put("noiseRatio", "1.f"); //should be in the range ]0,1] //previous value was 0.f
 
 	}
 
