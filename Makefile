@@ -1,7 +1,7 @@
 all:
-	javac -cp src src/ca/ipredict/controllers/MainController.java
+	javac -cp ".:java-string-similarity-0.24-SNAPSHOT.jar:src" src/ca/ipredict/controllers/MainController.java
 
 run: all
-	java -cp src ca.ipredict.controllers.MainController ./datasets
+	java -cp ".:java-string-similarity-0.24-SNAPSHOT.jar:src" ca.ipredict.controllers.MainController ./datasets
 clean:
 	find . -name "*.class" -type f -delete
