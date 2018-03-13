@@ -12,6 +12,7 @@ import ca.ipredict.predictor.LZ78.LZ78Predictor;
 import ca.ipredict.predictor.Markov.MarkovAllKPredictor;
 import ca.ipredict.predictor.Markov.MarkovFirstOrderPredictor;
 import ca.ipredict.predictor.TDAG.TDAGPredictor;
+import ca.ipredict.predictor.CPT.CPT_Approx.CPT_Approx;
 
 /**
  * This controller demonstrates how to compare all the predictors.

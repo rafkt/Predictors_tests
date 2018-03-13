@@ -350,24 +350,30 @@ public class Evaluator {
 	/**
 	 * Tell whether the predicted sequence match the consequent sequence
 	 */
-	public static Boolean isGoodPrediction(Sequence consequent, Sequence predicted) {
+	public static float isGoodPrediction(Sequence consequent, Sequence predicted) {
 		
 		Boolean hasError = false;
+		float score = 0f;
 		
 		for(Item it : predicted.getItems()) {
 			
 			Boolean isFound = false;
+			int counter = 0;
 			for(Item re : consequent.getItems()) {
-				if( re.val.equals(it.val) )
-					isFound = true;
+				if(re.val.equals(it.val)){
+					if (counter == 0 && score == 0.f) score = 1f;
+					else if (counter == 1 && score == 0.f) score = 0.5f;
+					//isFound = true;
+				}
+				counter++;
 			}
-			if(isFound == false)
-				hasError = true;
+			//if(isFound == false)
+			//	hasError = true;
 			
 		}
 		
 		
-		return (hasError == false);
+		return score;//(hasError == false);
 	}
 	
 
@@ -392,21 +398,21 @@ public class Evaluator {
 			//if sequence is long enough
 			if(target.size() > (Profile.paramInt("consequentSize"))) {
 				
-				Sequence consequent = target.getLastItems(Profile.paramInt("consequentSize"),0); //the lasts actual items in target
+				Sequence consequent = target.getLastItems(2/**Profile.paramInt("consequentSize")*/,0); //the lasts actual items in target
 				Sequence finalTarget = target.getLastItems(Profile.paramInt("windowSize"),Profile.paramInt("consequentSize"));
 				
 				Sequence predicted = predictors.get(classifierId).Predict(finalTarget);
 
-
+				float weight = isGoodPrediction(consequent, predicted);
 				//if no sequence is returned, it means that they is no match for this sequence
 				if(predicted.size() == 0) {
 					stats.inc("No Match", predictors.get(classifierId).getTAG(), 1);
 				}
 				//evaluates the prediction
-				else if(isGoodPrediction(consequent, predicted)) {
+				else if( weight > 0) {
 					double score = calculateScore(predicted);
 					//System.out.println(score);
-					stats.inc("Success", predictors.get(classifierId).getTAG(), score);
+					stats.inc("Success", predictors.get(classifierId).getTAG(), score * weight);
 				}
 				else {
 					stats.inc("Failure", predictors.get(classifierId).getTAG(), 1);
