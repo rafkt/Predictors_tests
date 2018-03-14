@@ -15,8 +15,6 @@ import ca.ipredict.database.Sequence;
 import ca.ipredict.predictor.Paramable;
 import ca.ipredict.predictor.Predictor;
 
-import ca.ipredict.predictor.CPT.CPT_Approx.LevenshteinDistance;
-
 
 /**
  * CPT+ - Compact Prediction Tree Plus

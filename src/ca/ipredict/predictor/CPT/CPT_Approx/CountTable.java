@@ -4,10 +4,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.TreeMap;
+import java.util.ArrayList;
 
 import ca.ipredict.database.Item;
 import ca.ipredict.database.Sequence;
 import ca.ipredict.helpers.ScoreDistribution;
+
+import ca.ipredict.predictor.CPT.CPT_Approx.LevenshteinDistance;
+
 
 
 /**
@@ -84,6 +88,17 @@ public class CountTable {
 			
 			//extracting the sequence from the PredictionTree
 			Item[] seq = helper.getSequenceFromId(id);
+
+			ArrayList<Integer> seqList = new ArrayList<Integer>();
+			for (Item item : seq) seqList.add(item.val);
+
+			ArrayList<Integer> sequenceList = new ArrayList<Integer>();
+			for (Item item : sequence) sequenceList.add(item.val);
+
+			//Levenshtein distance - if the distance does not meet our criteria then we abort.
+
+			LevenshteinDistance.distance(seqList, sequenceList); //not ready yet
+
 			
 			//Generating a set of all the items from sequence
 			HashSet<Item> toAvoid = new HashSet<Item>();

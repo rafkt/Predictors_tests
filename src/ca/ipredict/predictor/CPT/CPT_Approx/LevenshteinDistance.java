@@ -5,8 +5,11 @@ import java.util.*;
 
 public class LevenshteinDistance{
 
-
-	public static final double distance(final ArrayList<Integer> s1, final ArrayList<Integer> s2) {
+	/*
+	 *	Calculates the Levenshtein Distance between two Int vectors.
+	 *
+	 */
+	public static final int distance(final ArrayList<Integer> s1, final ArrayList<Integer> s2) {
         if (s1 == null) {
             throw new NullPointerException("s1 must not be null");
         }
@@ -71,29 +74,38 @@ public class LevenshteinDistance{
 
         }
 
-        //normalise
+        return v0[s2.size()];
+    }
 
+    /*
+	 *
+     *	It normalises the given distance according to the biggest vector length.
+	 *
+	 */
 
-        int m_len = Math.max(s1.size(), s2.size());
+    public static float normalise (int value, int size1, int size2){
+
+    	//normalise
+
+        int m_len = Math.max(size1, size2);
 
         if (m_len == 0) {
             return 0;
         }
 
-        return v0[s2.size()] / m_len;
+        return value / m_len;
 
-        //return v0[s2.size()];
     }
 
    //  public static void main (String[] args){
 
-   //  		Sequence s1 = new Sequence(0);
-   //  		Sequence s2 = new Sequence(0);
+   //  		ArrayList<Integer> s1 = new ArrayList<Integer>();
+   //  		ArrayList<Integer> s2 = new ArrayList<Integer>();
 
-			// s1.add(10);
-			// s1.add(20);
-			// s1.add(30);
-			// s1.add(40);
+			// s1.add(100);
+			// s1.add(200);
+			// s1.add(300);
+			// s1.add(400);
 
 			// s2.add(10);
 			// s2.add(20);
@@ -102,8 +114,9 @@ public class LevenshteinDistance{
 
 
 	  //       System.out.println(distance(s1, s2));
-	  //       System.out.println(l.distance("My string", "My $tring"));
-	  //       System.out.println(l.distance("My string", "My $tring"));
+	  //       System.out.println(normalise(distance(s1, s2) , s1.size(), s2.size()));
+	  //       //System.out.println(l.distance("My string", "My $tring"));
+	  //      // System.out.println(l.distance("My string", "My $tring"));
    //  }
 
 
