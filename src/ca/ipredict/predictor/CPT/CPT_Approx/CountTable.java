@@ -42,18 +42,21 @@ public class CountTable {
 	 * @param fullSeqLength Size of the sequence before calling recursive divider
 	 * @param numberOfSeqSameLength Number of similar sequence
 	 */
-	public void push(Integer key, int curSeqLength, int fullSeqLength, int numberOfSeqSameLength, int dist) {
+	public void push(Integer key, int curSeqLength, int fullSeqLength, int numberOfSeqSameLength, int dist, int level) {
 				
 		//Declare the various weights
 		float weightLevel = 1f /numberOfSeqSameLength; //from [1.0,0[  -> higher is better
 		float weightDistance = 1f / dist; //from [1.0,0[ -> higher is better
+		float distLevel = 1f / (level + 1); //from [1.0,0[ -> higher is better
 //		float weightLength = (float)curSeqLength / fullSeqLength; //from [1.0,0[ -> higher is better
 //		float weightLength = (float)fullSeqLength / curSeqLength; //from [1.0,0[ -> higher is better
 	
 		//calculate the value for the current key 
 //		float curValue = (weightLevel * 0.5f) + (weightLength * 5.0f) + (weightDistance * 1.8f);
 //		float curValue = (weightLevel * 1f) + (weightLength * 1f) + (weightDistance * 0.0001f);
-		float curValue = (weightLevel * 1f) + (1f) + (weightDistance * 0.0001f);
+		//float curValue = (weightLevel * 1f) + (1f) + (weightDistance * 0.0001f);
+
+		float curValue = (weightLevel * 1f) + (distLevel * 1f) + (1f) + (weightDistance * 0.0001f);
 		
 		//Update the count table
 		Float oldVal = table.get(key);
@@ -73,66 +76,76 @@ public class CountTable {
 	 * @param sequence Sequence to use to update the CountTable
 	 * @param initialSequenceSize The initial size of the sequence to predict (used for weighting)
 	 */
-	public int update(Item[] sequence, int initialSequenceSize) {
+	public int update(Item[] sequence, int initialSequenceSize, int upperLever) {
 
 		int branchesUsed = 0;
 		Bitvector ids = helper.getSimilarSequencesIds(sequence);
 
+		//for each level of distance (levenshtein)
+		int level = 0; // starting from exact matches
+		for (; level <= upperLever; level++){
 		//For each sequence similar of the given sequence
-		for(int id = ids.nextSetBit(0); id >= 0 ; id = ids.nextSetBit(id + 1)) {
-			
-			if(branchVisited.contains(id)) {
-				continue;
-			}
-			branchVisited.add(id);
-			
-			//extracting the sequence from the PredictionTree
-			Item[] seq = helper.getSequenceFromId(id);
-
-			ArrayList<Integer> seqList = new ArrayList<Integer>();
-			for (Item item : seq) seqList.add(item.val);
-
-			ArrayList<Integer> sequenceList = new ArrayList<Integer>();
-			for (Item item : sequence) sequenceList.add(item.val);
-
-			//Levenshtein distance - if the distance does not meet our criteria then we abort.
-
-			LevenshteinDistance.distance(seqList, sequenceList); //not ready yet
-
-			
-			//Generating a set of all the items from sequence
-			HashSet<Item> toAvoid = new HashSet<Item>();
-			for(Item item : sequence) {
-				toAvoid.add(item);
-			}
-			
-
-			//Updating this CountTable with the items {S}
-			//Where {S} contains only the items that are in seq after
-			//all the items from sequence have appeared at least once
-			//Ex:	
-			//	sequence: 	A B C
-			//  seq: 		X A Y B C E A F
-			//	{S}: 		E F
-			int max = 99; //used to limit the number of items to push in the count table
-			int count = 1; //current number of items already pushed
-			for(Item item : seq) {
-				//only enters this if toAvoid is empty
-				//it means that all the items of toAvoid have been seen
-				if(toAvoid.size() == 0 && count < max) {
-					
-					//calculating the score for this item
-					push(item.val, sequence.length, initialSequenceSize, ids.cardinality(), count);
-					count++;
+			for(int id = ids.nextSetBit(0); id >= 0 ; id = ids.nextSetBit(id + 1)) {
+				
+				if(branchVisited.contains(id)) {
+					continue;
 				}
-				else if(toAvoid.contains(item)) {
-					toAvoid.remove(item);
+				
+				
+				//extracting the sequence from the PredictionTree
+				Item[] seq = helper.getSequenceFromId(id);
+
+				ArrayList<Integer> seqList = new ArrayList<Integer>();
+				for (Item item : seq) seqList.add(item.val);
+
+				ArrayList<Integer> sequenceList = new ArrayList<Integer>();
+				for (Item item : sequence) sequenceList.add(item.val);
+
+				//Levenshtein distance - if the distance does not meet our criteria then we abort.
+
+				int dist = LevenshteinDistance.distance(seqList, sequenceList); //not ready yet
+
+				if (dist > level) continue;
+
+				//if I continue then add it to branchVisited
+
+				branchVisited.add(id);
+				
+				//Generating a set of all the items from sequence
+				HashSet<Item> toAvoid = new HashSet<Item>();
+				for(Item item : sequence) {
+					toAvoid.add(item);
+				}
+				
+
+				//Updating this CountTable with the items {S}
+				//Where {S} contains only the items that are in seq after
+				//all the items from sequence have appeared at least once
+				//Ex:	
+				//	sequence: 	A B C
+				//  seq: 		X A Y B C E A F
+				//	{S}: 		E F
+				int max = 3; //used to limit the number of items to push in the count table
+				int count = 1; //current number of items already pushed
+				for(Item item : seq) {
+					//only enters this if toAvoid is empty
+					//it means that all the items of toAvoid have been seen
+					if(toAvoid.size() == 0 && count < max) {
+						
+						//calculating the score for this item
+						push(item.val, sequence.length, initialSequenceSize, ids.cardinality(), count, level);
+						count++;
+					}
+					else if(toAvoid.contains(item)) {
+						toAvoid.remove(item);
+					}
+				}
+				//meaning that the count table has been really updated
+				if(count > 1 ) {
+					branchesUsed++;
 				}
 			}
-			//meaning that the count table has been really updated
-			if(count > 1 ) {
-				branchesUsed++;
-			}
+
 		}
 		
 		return branchesUsed;
