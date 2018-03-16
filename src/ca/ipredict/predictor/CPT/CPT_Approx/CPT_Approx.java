@@ -192,8 +192,11 @@ public class CPT_Approx extends Predictor {
 		//If set to false, those items will be still ignored later on (in updateCountTable())
 		target = helper.removeUnseenItems(target);
 
-		CountTable ct = null;
-		ct = predictionByActiveNoiseReduction(target);
+		//CountTable ct = null;
+		//ct = predictionByActiveNoiseReduction(target);
+
+		CountTable ct = new CountTable(helper);
+		ct.update(target.getItems().toArray(new Item[0]), target.size(), 2 * target.size());
 		
 
 		Sequence predicted = ct.getBestSequence(1);
@@ -201,83 +204,83 @@ public class CPT_Approx extends Predictor {
 	}
 	
 	
-	protected CountTable predictionByActiveNoiseReduction(Sequence target) {
+	// protected CountTable predictionByActiveNoiseReduction(Sequence target) {
 		
-		//Queues setup
-		HashSet<Sequence> seen = new HashSet<Sequence>(); //contains the sequence already seen to avoid work duplication
-		Queue<Sequence> queue = new LinkedList<Sequence>(); //contains the sequence to process
-		queue.add(target); //adding the target sequence as the initial sequence to process
+	// 	//Queues setup
+	// 	HashSet<Sequence> seen = new HashSet<Sequence>(); //contains the sequence already seen to avoid work duplication
+	// 	Queue<Sequence> queue = new LinkedList<Sequence>(); //contains the sequence to process
+	// 	queue.add(target); //adding the target sequence as the initial sequence to process
 		
 
-		//Setting parameters
-		int maxPredictionCount = 1 + (int) (target.size() * parameters.paramDouble("minPredictionRatio")); //minimum number of required prediction to ensure the best accuracy
-		int predictionCount = 0; //current number of prediction done (one by default because of the CountTable being updated with the target initially) 
-		double noiseRatio = parameters.paramDouble("noiseRatio"); //Ratio of items to remove in a sequence per level (level = target.size)
-		int initialTargetSize = target.size();
+	// 	//Setting parameters
+	// 	int maxPredictionCount = 1 + (int) (target.size() * parameters.paramDouble("minPredictionRatio")); //minimum number of required prediction to ensure the best accuracy
+	// 	int predictionCount = 0; //current number of prediction done (one by default because of the CountTable being updated with the target initially) 
+	// 	double noiseRatio = parameters.paramDouble("noiseRatio"); //Ratio of items to remove in a sequence per level (level = target.size)
+	// 	int initialTargetSize = target.size();
 		
 		
-		//Initializing the count table
-		CountTable ct = new CountTable(helper);
-		ct.update(target.getItems().toArray(new Item[0]), target.size());
+	// 	//Initializing the count table
+	// 	CountTable ct = new CountTable(helper);
+	// 	ct.update(target.getItems().toArray(new Item[0]), target.size());
 		
-		//Initial prediction
-		Sequence predicted = ct.getBestSequence(1);
-		if(predicted.size() > 0) {
-			predictionCount++;
-		}
+	// 	//Initial prediction
+	// 	Sequence predicted = ct.getBestSequence(1);
+	// 	if(predicted.size() > 0) {
+	// 		predictionCount++;
+	// 	}
 		
 		
-		//while the min prediction count is not reached and the target sequence is big enough
-		Sequence seq;
-		while((seq = queue.poll()) != null && predictionCount < maxPredictionCount) {
+	// 	//while the min prediction count is not reached and the target sequence is big enough
+	// 	Sequence seq;
+	// 	while((seq = queue.poll()) != null && predictionCount < maxPredictionCount) {
 		
 			
-			//if this sequence has not been seen yet
-			if(seen.contains(seq) == false) {
+	// 		//if this sequence has not been seen yet
+	// 		if(seen.contains(seq) == false) {
 			
-				//set this sequence to seen
-				seen.add(seq);
+	// 			//set this sequence to seen
+	// 			seen.add(seq);
 				
-				//get the sub sequences for this level while respecting the maxRatioForReduction
-				List<Item> noises = getNoise(seq, noiseRatio);
+	// 			//get the sub sequences for this level while respecting the maxRatioForReduction
+	// 			List<Item> noises = getNoise(seq, noiseRatio);
 				
-				//generating the candidates from the list of noisy items
-				for(Item noise : noises) {
+	// 			//generating the candidates from the list of noisy items
+	// 			for(Item noise : noises) {
 					
-					//clone and extract the items from the target 
-					Sequence candidate = seq.clone();
+	// 				//clone and extract the items from the target 
+	// 				Sequence candidate = seq.clone();
 					
-					//remove the first noise item appearance from the target
-					for(int i = 0; i < candidate.getItems().size(); i++) {
-						if(candidate.getItems().get(i).equals(noise)) {
-							candidate.getItems().remove(i);
-							break;
-						}
-					}
+	// 				//remove the first noise item appearance from the target
+	// 				for(int i = 0; i < candidate.getItems().size(); i++) {
+	// 					if(candidate.getItems().get(i).equals(noise)) {
+	// 						candidate.getItems().remove(i);
+	// 						break;
+	// 					}
+	// 				}
 
-					//add this sequence to the queue
-					if(candidate.size() > 1) {
-						queue.add(candidate);
-					}
+	// 				//add this sequence to the queue
+	// 				if(candidate.size() > 1) {
+	// 					queue.add(candidate);
+	// 				}
 					
-					//update count table with this sequence
- 					Item[] candidateItems = candidate.getItems().toArray(new Item[0]);
+	// 				//update count table with this sequence
+ // 					Item[] candidateItems = candidate.getItems().toArray(new Item[0]);
 
-					int branches = ct.update(candidateItems, initialTargetSize);
+	// 				int branches = ct.update(candidateItems, initialTargetSize);
 					
- 					//do a prediction if this CountTable update did something
-					if(branches > 0) {
-						predicted = ct.getBestSequence(1);
-						if(predicted.size() > 0) {
-							predictionCount++;
-						}
-					}
-				}
-			}
-		}
+ // 					//do a prediction if this CountTable update did something
+	// 				if(branches > 0) {
+	// 					predicted = ct.getBestSequence(1);
+	// 					if(predicted.size() > 0) {
+	// 						predictionCount++;
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 	}
 		
-		return ct;
-	}
+	// 	return ct;
+	// }
 	
 	
 	/**

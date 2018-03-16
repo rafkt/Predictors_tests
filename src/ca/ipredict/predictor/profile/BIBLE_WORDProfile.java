@@ -11,7 +11,7 @@ public class BIBLE_WORDProfile extends Profile {
 		parameters.put("sequenceMaxSize", "999");
 		parameters.put("removeDuplicatesMethod", "1");
 		parameters.put("consequentSize", "1"); 
-		parameters.put("windowSize", "3"); 
+		parameters.put("windowSize", "15"); 
 
 		///////////////
 		//CPT parameters
