@@ -1,4 +1,4 @@
-package ca.ipredict.predictor.CPT.CPT_Approx;
+//package ca.ipredict.predictor.CPT.CPT_Approx;
 
 import java.util.*;
 
@@ -65,8 +65,8 @@ public class LevenshteinDistance{
                         Math.min(
                                 v0[j + 1] /*+ 1*/,  // Cost of remove
                                 v0[j] + cost)); // Cost of substitution
-            }
 
+            }
             // copy v1 (current row) to v0 (previous row) for next iteration
             //System.arraycopy(v1, 0, v0, 0, v0.length);
 
@@ -108,22 +108,20 @@ public class LevenshteinDistance{
 			s1.add(10);
 			s1.add(20);
 			s1.add(30);
-			s1.add(40);
+
 
 			s2.add(10);
-			s2.add(30);
-            s2.add(20);
-			s2.add(90);
-            s2.add(50);
-            s2.add(60);
-            s2.add(70);
+			s2.add(20);
+            s2.add(30);
+			s2.add(50);
+
 
             /*
             * For my use, 1st parameter should be the long sequence, 2nd parameter the short sequence
             */
 
 
-	        System.out.println(distance(s2, s1));
+	        System.out.println(distance(s1, s2));
 	        System.out.println(normalise(distance(s1, s2) , s1.size(), s2.size()));
 	        //System.out.println(l.distance("My string", "My $tring"));
 	       // System.out.println(l.distance("My string", "My $tring"));
