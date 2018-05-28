@@ -14,6 +14,32 @@ import ca.ipredict.predictor.Markov.MarkovFirstOrderPredictor;
 import ca.ipredict.predictor.TDAG.TDAGPredictor;
 import ca.ipredict.predictor.CPT.CPT_Approx.CPT_Approx;
 
+
+
+
+
+import static java.util.Arrays.asList;
+
+import java.util.HashSet;
+import java.util.*;
+import java.util.Locale;
+import java.util.Set;
+
+import org.simmetrics.SetMetric;
+import org.simmetrics.StringDistance;
+import org.simmetrics.StringMetric;
+import org.simmetrics.builders.StringDistanceBuilder;
+import org.simmetrics.builders.StringMetricBuilder;
+import org.simmetrics.metrics.CosineSimilarity;
+import org.simmetrics.metrics.EuclideanDistance;
+import org.simmetrics.metrics.OverlapCoefficient;
+import org.simmetrics.metrics.StringMetrics;
+import org.simmetrics.simplifiers.Simplifiers;
+import org.simmetrics.tokenizers.Tokenizers;
+
+import org.simmetrics.metrics.SmithWaterman;
+import org.simmetrics.metrics.SmithWatermanSetMetric;
+
 /**
  * This controller demonstrates how to compare all the predictors.
  * The results are expressed with various performance measures:
@@ -83,7 +109,19 @@ public class MainController {
 			evaluator.addPredictor(new LZ78Predictor());
 			
 			//Start the experiment
-			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 14 , true, true, true);
+			//StatsLogger results = evaluator.Start(Evaluator.KFOLD, 14 , true, true, true);
+
+			System.out.println("TEEEEEEST");
+
+		List<Integer> scores1 = new ArrayList<>(asList(1, 9, 9, 9, 2, 9, 9, 9, 1, 2, 9, 9, 1, 2, 3));
+		List<Integer> scores2 = new ArrayList<>(asList(1, 2, 3));
+
+		System.out.println(scores1);
+
+		SmithWatermanSetMetric<Integer> swSet = new SmithWatermanSetMetric<>();
+		SmithWaterman sw = new SmithWaterman();
+		System.out.println(swSet.compare(scores1, scores2));
+		System.out.println(sw.compare("axxxbxxxabxxxxa", "abc"));
 	}
 
 }
