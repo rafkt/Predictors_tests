@@ -121,7 +121,10 @@ public class MainController {
 
 		// SmithWatermanSetMetric<Integer> swSet = new SmithWatermanSetMetric<>();
 		// SmithWaterman sw = new SmithWaterman();
-		// System.out.println(swSet.compare(scores1, scores2));
+		// swSet.compare(scores1, scores2);
+		// scores2 = new ArrayList<>(asList(1, 2));
+		// swSet.compare(scores1, scores2);
+		// System.out.println(swSet.getFirstLocalIndex() + " " + swSet.getSecondLocalIndex());
 		// System.out.println(sw.compare("axxxbxxxabxxxxa", "abc"));
 	}
 
