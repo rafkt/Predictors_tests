@@ -7,11 +7,11 @@ public class BIBLE_WORDProfile extends Profile {
 
 		//Global parameters
 		//Pre-processing
-		parameters.put("sequenceMinSize", "4");
+		parameters.put("sequenceMinSize", "12");
 		parameters.put("sequenceMaxSize", "999");
 		parameters.put("removeDuplicatesMethod", "1");
-		parameters.put("consequentSize", "1"); 
-		parameters.put("windowSize", "15"); 
+		parameters.put("consequentSize", "2"); 
+		parameters.put("windowSize", "10"); 
 
 		///////////////
 		//CPT parameters

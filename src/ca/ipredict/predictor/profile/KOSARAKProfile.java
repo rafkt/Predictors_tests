@@ -7,11 +7,11 @@ public class KOSARAKProfile extends Profile {
 
 		//Global parameters
 		//Pre-processing
-		parameters.put("sequenceMinSize", "11");
+		parameters.put("sequenceMinSize", "8");
 		parameters.put("sequenceMaxSize", "999");
 		parameters.put("removeDuplicatesMethod", "1");
-		parameters.put("consequentSize", "2"); 
-		parameters.put("windowSize", "9"); 
+		parameters.put("consequentSize", "3"); 
+		parameters.put("windowSize", "5"); 
 
 		///////////////
 		//CPT parameters

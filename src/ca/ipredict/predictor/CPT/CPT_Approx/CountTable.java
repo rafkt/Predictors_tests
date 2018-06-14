@@ -15,6 +15,30 @@ import ca.ipredict.predictor.CPT.CPT_Approx.LevenshteinDistance;
 
 
 
+import static java.util.Arrays.asList;
+
+import java.util.HashSet;
+import java.util.*;
+import java.util.Locale;
+import java.util.Set;
+
+import org.simmetrics.SetMetric;
+import org.simmetrics.StringDistance;
+import org.simmetrics.StringMetric;
+import org.simmetrics.builders.StringDistanceBuilder;
+import org.simmetrics.builders.StringMetricBuilder;
+import org.simmetrics.metrics.CosineSimilarity;
+import org.simmetrics.metrics.EuclideanDistance;
+import org.simmetrics.metrics.OverlapCoefficient;
+import org.simmetrics.metrics.StringMetrics;
+import org.simmetrics.simplifiers.Simplifiers;
+import org.simmetrics.tokenizers.Tokenizers;
+
+import org.simmetrics.metrics.SmithWaterman;
+import org.simmetrics.metrics.SmithWatermanSetMetric;
+
+
+
 /**
  * Represents a CountTable for the CPT Predictor
  */
@@ -26,6 +50,7 @@ public class CountTable {
 	private TreeMap<Integer, Float> table;
 	private HashSet<Integer> branchVisited;
 	private CPTHelper helper;
+	private SmithWatermanSetMetric<Integer> sw;
 	
 	/**
 	 * Basic controller
@@ -34,6 +59,7 @@ public class CountTable {
 		table = new TreeMap<Integer, Float>();
 		branchVisited = new HashSet<Integer>();
 		this.helper = helper;
+		sw = new SmithWatermanSetMetric<>();
 	}
 
 	/**
@@ -43,12 +69,12 @@ public class CountTable {
 	 * @param fullSeqLength Size of the sequence before calling recursive divider
 	 * @param numberOfSeqSameLength Number of similar sequence
 	 */
-	public void push(Integer key, int curSeqLength, int fullSeqLength, int numberOfSeqSameLength, int dist, int level) {
+	public void push(Integer key, int curSeqLength, int fullSeqLength, int numberOfSeqSameLength, int dist, float level) {
 				
 		//Declare the various weights
 		float weightLevel = 1f /numberOfSeqSameLength; //from [1.0,0[  -> higher is better
 		float weightDistance = 1f / dist; //from [1.0,0[ -> higher is better
-		float distLevel = 1f / (level + 1); //from [1.0,0[ -> higher is better
+		float distLevel = level;//1f / (level /*+ 1*/); //from [1.0,0[ -> higher is better
 //		float weightLength = (float)curSeqLength / fullSeqLength; //from [1.0,0[ -> higher is better
 //		float weightLength = (float)fullSeqLength / curSeqLength; //from [1.0,0[ -> higher is better
 	
@@ -56,8 +82,9 @@ public class CountTable {
 //		float curValue = (weightLevel * 0.5f) + (weightLength * 5.0f) + (weightDistance * 1.8f);
 //		float curValue = (weightLevel * 1f) + (weightLength * 1f) + (weightDistance * 0.0001f);
 		//float curValue = (weightLevel * 1f) + (1f) + (weightDistance * 0.0001f);
-
-		float curValue = (/*Maybe I need 1 - */weightLevel * 1f) + (distLevel * 1f) + (1f) + (weightDistance * 0.0001f);
+		int boost = (curSeqLength / (float)fullSeqLength) >= 0.9f ? 1 : 1;
+		//if (boost == 2) System.out.println("Boosted");
+		float curValue = /*(/*Maybe I need 1 - weightLevel*//* distLevel * 1f) +*/ ((curSeqLength / (float)fullSeqLength) * distLevel * boost) + (1f) + (weightDistance * 0.0001f);
 		
 		//Update the count table
 		Float oldVal = table.get(key);
@@ -89,40 +116,46 @@ public class CountTable {
 			Bitvector ids = helper.getSimilarSequencesIds(subseq);
 
 			//for each level of distance (levenshtein)
-			int level = 0; // starting from exact matches
-			for (; level <= subseq.length * 2; level++){
+			//int level = 1; // starting from exact matches
+			//for (; level <= 10 ; level++){
+				//if (sequence.length / level < 2) break;
 			//For each sequence similar of the given sequence
 				for(int id = ids.nextSetBit(0); id >= 0 ; id = ids.nextSetBit(id + 1)) {
 					
 					if(branchVisited.contains(id)) {
 						continue;
 					}
+
+				// Map<Integer, PredictionTree> map = helper.predictor.LT;
+				// for (Map.Entry<Integer, PredictionTree> entry : map.entrySet()){
+					//System.out.println(entry.getKey() + "/" + entry.getValue());
 					
 					
 					//extracting the sequence from the PredictionTree
 					Item[] seq = helper.getSequenceFromId(id);
 
-					ArrayList<Integer> seqList = new ArrayList<Integer>();
+					List<Integer> seqList = new ArrayList<Integer>();
 					for (Item item : seq) seqList.add(item.val);
 
-					ArrayList<Integer> sequenceList = new ArrayList<Integer>();
+					List<Integer> sequenceList = new ArrayList<Integer>();
 					for (Item item : subseq) sequenceList.add(item.val);
 
 					//Levenshtein distance - if the distance does not meet our criteria then we abort.
 
-					int dist = LevenshteinDistance.distance(seqList, sequenceList); //not ready yet
+					float dist = sw.compare(seqList, sequenceList);//LevenshteinDistance.distance(seqList, sequenceList); //not ready yet
 
-					if (dist > level) continue;
+
+					if (dist < 1.0) continue;
 
 					//if I continue then add it to branchVisited
 
 					branchVisited.add(id);
 					
 					//Generating a set of all the items from sequence
-					HashSet<Item> toAvoid = new HashSet<Item>();
-					for(Item item : subseq) {
-						toAvoid.add(item);
-					}
+					// HashSet<Item> toAvoid = new HashSet<Item>();
+					// for (int local_j = sw.getSecondLocalIndex() + 1; local_j < subseq.length - 1; local_j++){//(Item item : subseq) {
+					// 	toAvoid.add(subseq[local_j]);
+					// }
 					
 
 					//Updating this CountTable with the items {S}
@@ -132,29 +165,44 @@ public class CountTable {
 					//	sequence: 	A B C
 					//  seq: 		X A Y B C E A F
 					//	{S}: 		E F
-					int max = 3; //used to limit the number of items to push in the count table
+					// int max = 99; //used to limit the number of items to push in the count table
 					int count = 1; //current number of items already pushed
-					for(Item item : seq) {
+					for (int local_i = sw.getFirstLocalIndex() + 1; local_i < seq.length - 1; local_i++){//(Item item : seq) {
 						//only enters this if toAvoid is empty
 						//it means that all the items of toAvoid have been seen
-						if(toAvoid.size() == 0 && count < max) {
+						//if(toAvoid.size() == 0 && count < max) {
 							
 							//calculating the score for this item
-							push(item.val, subseq.length, initialSequenceSize, ids.cardinality(), count, level);
+							push(seq[local_i].val, subseq.length, initialSequenceSize, ids.cardinality(), count, dist);
 							count++;
-						}
-						else if(toAvoid.contains(item)) {
-							toAvoid.remove(item);
-						}
+						//}
+						//else if(toAvoid.contains(seq[local_i])) {
+						//	toAvoid.remove(seq[local_i]);
+						//}
 					}
+
+
+					// int matchedSequenceLocalIndex = sw.getFirstLocalIndex();
+
+					// if (toAvoid.size() > 0){
+					// 	for (int local_i = sw.getFirstLocalIndex() + 1; local_i < seq.length - 1; local_i++){
+					// 		if (count < max){
+					// 			push(seq[local_i].val, seq.length, initialSequenceSize, ids.cardinality(), count, dist/*level*/);
+					// 			count++;
+					// 		}else{break;}
+					// 	}
+					// }
+					
+
 					//meaning that the count table has been really updated
 					if(count > 1 ) {
 						branchesUsed++;
-					}
+					}//else {System.out.println("NOPE");}
 				}
 
-			}
+			//}
 		}
+		//if (branchesUsed == 0){System.out.println("NOPE");}
 		return branchesUsed;
 	}
 	
