@@ -109,43 +109,54 @@ public class CountTable {
 		int branchesUsed = 0;
 
 		//skipping a query item starting from the 1st
-		for (int i = 0; i < sequence.length - 1; i ++){
+		//for (int i = 0; i < sequence.length - 1; i ++){
 
-			Item[] subseq = Arrays.copyOfRange(sequence, i, sequence.length);
+			//Item[] subseq = Arrays.copyOfRange(sequence, i, sequence.length);
 
-			Bitvector ids = helper.getSimilarSequencesIds(subseq);
+			//Bitvector ids = helper.getSimilarSequencesIds(subseq);
 
 			//for each level of distance (levenshtein)
 			//int level = 1; // starting from exact matches
 			//for (; level <= 10 ; level++){
 				//if (sequence.length / level < 2) break;
 			//For each sequence similar of the given sequence
-				for(int id = ids.nextSetBit(0); id >= 0 ; id = ids.nextSetBit(id + 1)) {
+				//for(int id = ids.nextSetBit(0); id >= 0 ; id = ids.nextSetBit(id + 1)) {
 					
-					if(branchVisited.contains(id)) {
-						continue;
-					}
+					// if(branchVisited.contains(id)) {
+					// 	continue;
+					// }
 
-				// Map<Integer, PredictionTree> map = helper.predictor.LT;
-				// for (Map.Entry<Integer, PredictionTree> entry : map.entrySet()){
+				Map<Integer, PredictionTree> map = helper.predictor.LT;
+				for (Map.Entry<Integer, PredictionTree> entry : map.entrySet()){
 					//System.out.println(entry.getKey() + "/" + entry.getValue());
 					
 					
 					//extracting the sequence from the PredictionTree
-					Item[] seq = helper.getSequenceFromId(id);
+					Item[] retrieved_seq = helper.getSequenceFromId(entry.getKey()/*id*/);
 
-					List<Integer> seqList = new ArrayList<Integer>();
-					for (Item item : seq) seqList.add(item.val);
+					List<Integer> ret_seqList = new ArrayList<Integer>();
+					for (Item item : retrieved_seq) ret_seqList.add(item.val);
 
 					List<Integer> sequenceList = new ArrayList<Integer>();
-					for (Item item : subseq) sequenceList.add(item.val);
+					for (Item item : sequence) sequenceList.add(item.val);
 
 					//Levenshtein distance - if the distance does not meet our criteria then we abort.
 
-					float dist = sw.compare(seqList, sequenceList);//LevenshteinDistance.distance(seqList, sequenceList); //not ready yet
+					float dist = sw.compare(ret_seqList, sequenceList);//LevenshteinDistance.distance(seqList, sequenceList); //not ready yet
 
+					/*
+						Now I can get the indices from the alignment. getFirstLocalIndex() for the index in ret_seqList and getSecondLocalIndex() for the index in sequenceList
+						.. Remember we want to see if we have an exact representation of the sequence in the retrieved_seq. We can always substitute one or two items.
+						The idea to go is: Get the indices. 
+							For the getFirstLocalIndex() getSecondLocalIndex() you go foward for both sequences and see if they match.
+							Increase sub counter if they not.
+							If sub-counter gets more than we want abort and continue with next retrieved sequence
+							Otherwise, as soon as we finish going foward, start again from the getFirstLocalIndex() getSecondLocalIndex() indicies and go backwards.
+							Repeat as before.
+							Add to the count table the items from the retrieved sequence, starting after the "sequence" items.
+					*/
 
-					if (dist < 1.0) continue;
+					//if (dist < 1.0) continue;
 
 					//if I continue then add it to branchVisited
 
@@ -201,7 +212,7 @@ public class CountTable {
 				}
 
 			//}
-		}
+		//}
 		//if (branchesUsed == 0){System.out.println("NOPE");}
 		return branchesUsed;
 	}
