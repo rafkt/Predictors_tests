@@ -1,4 +1,4 @@
-Check revision .... for profile parameters and specific CT tweaks. The parameters used were mainly a change of the query size. Were used large queries and split-length was deactivated globally.
+Check revision efea335 for profile parameters and specific CT tweaks. The parameters used were mainly a change of the query size. Were used large queries and split-length was deactivated globally.
 
 ---BMS---
 Number of sequences : 	798
