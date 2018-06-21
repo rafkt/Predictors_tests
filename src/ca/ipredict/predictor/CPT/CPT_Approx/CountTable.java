@@ -104,7 +104,7 @@ public class CountTable {
 	 * @param sequence Sequence to use to update the CountTable
 	 * @param initialSequenceSize The initial size of the sequence to predict (used for weighting)
 	 */
-	public int update(Item[] sequence, int initialSequenceSize, int upperLever) {
+	public int update(Item[] sequence, int initialSequenceSize, float upperLever) {
 
 		int branchesUsed = 0;
 
@@ -145,7 +145,7 @@ public class CountTable {
 					float dist = sw.compare(seqList, sequenceList);//LevenshteinDistance.distance(seqList, sequenceList); //not ready yet
 
 
-					if (dist < 1.0) continue;
+					if (dist < upperLever) continue;
 
 					//if I continue then add it to branchVisited
 

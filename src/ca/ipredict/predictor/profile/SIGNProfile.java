@@ -26,8 +26,8 @@ public class SIGNProfile extends Profile {
 		parameters.put("CCFsup", "2");
 		
 		//Prediction
-		parameters.put("recursiveDividerMin", "3"); //should be >= 0 and < recursiveDividerMax 
-		parameters.put("recursiveDividerMax", "99"); //should be > recusiveDividerMax and < windowSize
+		parameters.put("recursiveDividerMin", "0"); //should be >= 0 and < recursiveDividerMax 
+		parameters.put("recursiveDividerMax", "0"); //should be > recusiveDividerMax and < windowSize
 		parameters.put("minPredictionRatio", "1.0f"); //should be over 0
 		parameters.put("noiseRatio", "1.0f"); //should be in the range ]0,1]
 

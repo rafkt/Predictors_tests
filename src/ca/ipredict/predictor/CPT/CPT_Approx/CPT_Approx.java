@@ -194,12 +194,19 @@ public class CPT_Approx extends Predictor {
 
 		//CountTable ct = null;
 		//ct = predictionByActiveNoiseReduction(target);
-
+		float thres = 1.0f;
 		CountTable ct = new CountTable(helper);
-		ct.update(target.getItems().toArray(new Item[0]), target.size(), 2 * target.size());
-		
+		Sequence predicted;
+		// ct.update(target.getItems().toArray(new Item[0]), target.size(), thres);
+		// predicted = ct.getBestSequence(1);
+		do{
 
-		Sequence predicted = ct.getBestSequence(1);
+
+			ct.update(target.getItems().toArray(new Item[0]), target.size(), thres);
+			predicted = ct.getBestSequence(1);
+			thres = thres - 0.1f;
+		}while((predicted.size() == 0) && (thres > 0.4));
+
 		return predicted;
 	}
 	
