@@ -16,7 +16,7 @@ public class KOSARAKProfile extends Profile {
 		///////////////
 		//CPT parameters
 		//Training
-		parameters.put("splitMethod", "1"); //0 for no split", "1 for basicSplit", "2 for complexSplit
+		parameters.put("splitMethod", "0"); //0 for no split", "1 for basicSplit", "2 for complexSplit
 		parameters.put("splitLength", "22"); // max tree height
 		parameters.put("minSup", "0.0005"); //SEI compression, minSup to remove low supporting items
 		

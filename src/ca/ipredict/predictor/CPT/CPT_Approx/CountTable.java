@@ -69,12 +69,12 @@ public class CountTable {
 	 * @param fullSeqLength Size of the sequence before calling recursive divider
 	 * @param numberOfSeqSameLength Number of similar sequence
 	 */
-	public void push(Integer key, int curSeqLength, int fullSeqLength, int numberOfSeqSameLength, int dist, float level) {
+	public void push(Integer key, int curSeqLength, int fullSeqLength, int dist) {
 				
 		//Declare the various weights
-		float weightLevel = 1f /numberOfSeqSameLength; //from [1.0,0[  -> higher is better
+		//float weightLevel = 1f /numberOfSeqSameLength; //from [1.0,0[  -> higher is better
 		float weightDistance = 1f / dist; //from [1.0,0[ -> higher is better
-		float distLevel = level;//1f / (level /*+ 1*/); //from [1.0,0[ -> higher is better
+		//float distLevel = level;//1f / (level /*+ 1*/); //from [1.0,0[ -> higher is better
 //		float weightLength = (float)curSeqLength / fullSeqLength; //from [1.0,0[ -> higher is better
 //		float weightLength = (float)fullSeqLength / curSeqLength; //from [1.0,0[ -> higher is better
 	
@@ -82,9 +82,9 @@ public class CountTable {
 //		float curValue = (weightLevel * 0.5f) + (weightLength * 5.0f) + (weightDistance * 1.8f);
 //		float curValue = (weightLevel * 1f) + (weightLength * 1f) + (weightDistance * 0.0001f);
 		//float curValue = (weightLevel * 1f) + (1f) + (weightDistance * 0.0001f);
-		int boost = (curSeqLength / (float)fullSeqLength) >= 0.9f ? 1 : 1;
+		//int boost = (curSeqLength / (float)fullSeqLength) >= 0.9f ? 1 : 1;
 		//if (boost == 2) System.out.println("Boosted");
-		float curValue = /*(/*Maybe I need 1 - weightLevel*//* distLevel * 1f) +*/ ((curSeqLength / (float)fullSeqLength) * distLevel * boost) + (1f) + (weightDistance * 0.0001f);
+		float curValue = /*(/*Maybe I need 1 - weightLevel*//* distLevel * 1f) +*/ ((curSeqLength / (float)fullSeqLength)) + (1f) + (weightDistance * 0.0001f);
 		
 		//Update the count table
 		Float oldVal = table.get(key);
@@ -143,7 +143,7 @@ public class CountTable {
 					//Levenshtein distance - if the distance does not meet our criteria then we abort.
 
 					float dist = sw.compare(ret_seqList, sequenceList);//LevenshteinDistance.distance(seqList, sequenceList); //not ready yet
-
+					if (dist == 0) continue;
 					/*
 						Now I can get the indices from the alignment. getFirstLocalIndex() for the index in ret_seqList and getSecondLocalIndex() for the index in sequenceList
 						.. Remember we want to see if we have an exact representation of the sequence in the retrieved_seq. We can always substitute one or two items.
@@ -156,11 +156,38 @@ public class CountTable {
 							Add to the count table the items from the retrieved sequence, starting after the "sequence" items.
 					*/
 
+					int subs = 2;
+					int consequent_index = -1;
+
+					int seq_i = sw.getSecondLocalIndex() + 1;
+					int ret_i = sw.getFirstLocalIndex() + 1;
+					while(seq_i < sequenceList.size() && ret_i < ret_seqList.size()){
+						if (!sequenceList.get(seq_i).equals(ret_seqList.get(ret_i))) subs--;
+						if (subs < 0) break;
+						seq_i++;
+						ret_i++;
+					}
+					if (subs >= 0 && seq_i == sequenceList.size()){
+						consequent_index = ret_i;
+						seq_i = sw.getSecondLocalIndex() - 1;
+						ret_i = sw.getFirstLocalIndex() - 1;
+						while(seq_i >= 0 && ret_i >= 0){
+							if (!sequenceList.get(seq_i).equals(ret_seqList.get(ret_i))) subs--;
+							if (subs < 0) break;
+							seq_i--;
+							ret_i--;
+						}
+					}else continue;
+
+					if (subs < 0 || seq_i >= 0) continue; //update smith-water jar.. after this line you can add the consequent of ret_sequence to the cout table.
+
+					//System.out.print(ret_seqList + " <--- " + sequenceList + " <--- ");
+
 					//if (dist < 1.0) continue;
 
 					//if I continue then add it to branchVisited
 
-					branchVisited.add(id);
+					//branchVisited.add(id);
 					
 					//Generating a set of all the items from sequence
 					// HashSet<Item> toAvoid = new HashSet<Item>();
@@ -176,21 +203,22 @@ public class CountTable {
 					//	sequence: 	A B C
 					//  seq: 		X A Y B C E A F
 					//	{S}: 		E F
-					// int max = 99; //used to limit the number of items to push in the count table
+					int max = 3;//99; //used to limit the number of items to push in the count table
 					int count = 1; //current number of items already pushed
-					for (int local_i = sw.getFirstLocalIndex() + 1; local_i < seq.length - 1; local_i++){//(Item item : seq) {
+					for (int local_i = consequent_index; local_i < retrieved_seq.length; local_i++){//(Item item : seq) {
 						//only enters this if toAvoid is empty
 						//it means that all the items of toAvoid have been seen
-						//if(toAvoid.size() == 0 && count < max) {
-							
+						if(/*toAvoid.size() == 0 &&*/ count < max) {
+							//System.out.print(" " + retrieved_seq[local_i].val + " ");
 							//calculating the score for this item
-							push(seq[local_i].val, subseq.length, initialSequenceSize, ids.cardinality(), count, dist);
+							push(retrieved_seq[local_i].val, sequence.length, initialSequenceSize, count);
 							count++;
-						//}
+						} else break;
 						//else if(toAvoid.contains(seq[local_i])) {
 						//	toAvoid.remove(seq[local_i]);
 						//}
 					}
+					//System.out.println();
 
 
 					// int matchedSequenceLocalIndex = sw.getFirstLocalIndex();

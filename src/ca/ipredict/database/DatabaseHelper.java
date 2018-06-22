@@ -17,6 +17,9 @@ public class DatabaseHelper {
 	//Data sets
 	public static enum Format{BMS, KOSARAK, FIFA, MSNBC, SIGN, CANADARM1, CANADARM2, SNAKE, BIBLE_CHAR, BIBLE_WORD, KORAN_WORD, LEVIATHAN_WORD, CUSTOM, 
 
+								NASA07,
+								NASA08,
+
 								SPICE0, 
 								SPICE1, 
 								SPICE2, 
@@ -133,6 +136,12 @@ public class DatabaseHelper {
 				break;
 			case LEVIATHAN_WORD:
 				database.loadFileLargeTextFormatAsWords(fileToPath("leviathan.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"), false);
+				break;
+			case NASA07:
+				database.loadFileSPiCeFormat(fileToPath("NASA_access_log_Jul95_spmf.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case NASA08:
+				database.loadFileSPiCeFormat(fileToPath("NASA_access_log_Aug95_spmf.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
 				break;
 			case SPICE0:
 				database.loadFileSPiCeFormat(fileToPath("SPICE/0.spice.train"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
