@@ -18,6 +18,8 @@ import ca.ipredict.predictor.profile.Profile;
 public class SequenceDatabase {
 
 	private List<Sequence> sequences = new ArrayList<Sequence>();
+	public Map<Sequence, List<String>> mapSequenceToSetence = new HashMap<Sequence, List<String>>();
+	public Map<Integer, String> mapItemToString = new HashMap<Integer, String>();
 	
 	
 	public SequenceDatabase() {
@@ -330,6 +332,8 @@ public class SequenceDatabase {
 						if(itemID == null){
 							itemID = lastWordID++;
 							mapWordToID.put(token, itemID);
+							//add the same pair to mapItemToString
+							mapItemToString.put(itemID, token);
 						}
 						
 						// add the item to the sequence
@@ -337,6 +341,13 @@ public class SequenceDatabase {
 						// add the sequence to the set of sequences, if the size is ok.
 						if(sequence.size() >= minSize && sequence.size() <= maxSize )	{ 
 							sequences.add(sequence);
+							//add sequence to map<Sequence, List<String>> here
+							List<String> setence = new ArrayList<String>();
+							for (Item it : sequence.getItems()){
+								setence.add(mapItemToString.get(it.val));
+							}
+							mapSequenceToSetence.put(sequence, setence);
+							//System.out.println(sequence + " -> " + mapSequenceToSetence.get(sequence));
 						}
 						// create a new sequence
 						sequence = new Sequence(-1);
@@ -347,6 +358,8 @@ public class SequenceDatabase {
 						if(itemID == null){
 							itemID = lastWordID++;
 							mapWordToID.put(token, itemID);
+							//add the same pair to mapItemToString
+							mapItemToString.put(itemID, token);
 						}
 						sequence.addItem(new Item(itemID));
 					}

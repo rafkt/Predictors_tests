@@ -34,6 +34,8 @@ public class Evaluator {
 	//statistics
 	private long startTime;
 	private long endTime;
+
+	private int foldCount;
 	
 	//Database
 	private DatabaseHelper database;
@@ -259,6 +261,7 @@ public class Evaluator {
 		double relativeRatio = 1/(double)k;
 		int absoluteRatio = (int) (dataSet.size() * relativeRatio);
 		
+		foldCount = 0;
 		//For each fold, it does training and testing
 		for(int i = 0 ; i < k ; i++) {
 
@@ -391,9 +394,14 @@ public class Evaluator {
 	private void StartClassifier(List<Sequence> testSequences, int classifierId) {	
 		
 		long start = System.currentTimeMillis(); //Testing starting time
+
+		int printCounter = 10;
+		foldCount++;
 		
 		//for each sequence; it classifies it and evaluates it
 		for(Sequence target : testSequences) {
+
+			//System.out.println(database.mapSequenceToSetence.get(target));
 			
 			//if sequence is long enough
 			if(target.size() > (Profile.paramInt("consequentSize"))) {
@@ -417,7 +425,11 @@ public class Evaluator {
 				else {
 					stats.inc("Failure", predictors.get(classifierId).getTAG(), 1);
 				}
-				
+				if (printCounter > 0 && foldCount == 1){
+					printCounter--;
+					System.out.println(predictors.get(classifierId).getTAG());
+					if(predicted.size() != 0) System.out.println(database.mapSequenceToSetence.get(target) + " --> prediction: " + database.mapItemToString.get(predicted.get(0).val));
+				}
 			}
 			//sequence is too small
 			else {

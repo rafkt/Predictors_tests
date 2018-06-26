@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
 import ca.ipredict.predictor.profile.Profile;
 
@@ -13,6 +15,8 @@ public class DatabaseHelper {
 	 * Path to the datasets directory
 	 */
 	private String basePath;
+	public Map<Sequence, List<String>> mapSequenceToSetence;
+	public Map<Integer, String> mapItemToString;
 	
 	//Data sets
 	public static enum Format{BMS, KOSARAK, FIFA, MSNBC, SIGN, CANADARM1, CANADARM2, SNAKE, BIBLE_CHAR, BIBLE_WORD, KORAN_WORD, LEVIATHAN_WORD, CUSTOM, 
@@ -130,6 +134,9 @@ public class DatabaseHelper {
 				break;
 			case BIBLE_WORD:
 				database.loadFileLargeTextFormatAsWords(fileToPath("Bible.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"), true);
+				//get the maps here from the database.
+				mapItemToString = database.mapItemToString;
+				mapSequenceToSetence = database.mapSequenceToSetence;
 				break;
 			case KORAN_WORD:
 				database.loadFileLargeTextFormatAsWords(fileToPath("koran.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"), false);
