@@ -69,7 +69,7 @@ public class CountTable {
 	 * @param fullSeqLength Size of the sequence before calling recursive divider
 	 * @param numberOfSeqSameLength Number of similar sequence
 	 */
-	public void push(Integer key, int curSeqLength, int fullSeqLength, int dist) {
+	public void push(Integer key, int curSeqLength, int fullSeqLength, int dist, int subs) {
 				
 		//Declare the various weights
 		//float weightLevel = 1f /numberOfSeqSameLength; //from [1.0,0[  -> higher is better
@@ -84,7 +84,7 @@ public class CountTable {
 		//float curValue = (weightLevel * 1f) + (1f) + (weightDistance * 0.0001f);
 		//int boost = (curSeqLength / (float)fullSeqLength) >= 0.9f ? 1 : 1;
 		//if (boost == 2) System.out.println("Boosted");
-		float curValue = /*(/*Maybe I need 1 - weightLevel*//* distLevel * 1f) +*/ ((curSeqLength / (float)fullSeqLength)) + (1f) + (weightDistance * 0.0001f);
+		float curValue = /*(/*Maybe I need 1 - weightLevel*//* distLevel * 1f) +*/ ((curSeqLength / (float)fullSeqLength)) + (subs / 2f) + (1f) + (weightDistance * 0.0001f);
 		
 		//Update the count table
 		Float oldVal = table.get(key);
@@ -109,9 +109,9 @@ public class CountTable {
 		int branchesUsed = 0;
 
 		//skipping a query item starting from the 1st
-		//for (int i = 0; i < sequence.length - 1; i ++){
+		for (int i = 0; i < sequence.length - 1; i ++){
 
-			//Item[] subseq = Arrays.copyOfRange(sequence, i, sequence.length);
+			Item[] subseq = Arrays.copyOfRange(sequence, i, sequence.length);
 
 			//Bitvector ids = helper.getSimilarSequencesIds(subseq);
 
@@ -126,6 +126,8 @@ public class CountTable {
 					// 	continue;
 					// }
 
+			for (int sub_i = 0; sub_i < 3; sub_i++){
+
 				Map<Integer, PredictionTree> map = helper.predictor.LT;
 				for (Map.Entry<Integer, PredictionTree> entry : map.entrySet()){
 					//System.out.println(entry.getKey() + "/" + entry.getValue());
@@ -138,7 +140,7 @@ public class CountTable {
 					for (Item item : retrieved_seq) ret_seqList.add(item.val);
 
 					List<Integer> sequenceList = new ArrayList<Integer>();
-					for (Item item : sequence) sequenceList.add(item.val);
+					for (Item item : subseq) sequenceList.add(item.val);
 
 					//Levenshtein distance - if the distance does not meet our criteria then we abort.
 
@@ -179,7 +181,7 @@ public class CountTable {
 						}
 					}else continue;
 
-					if (subs < 0 || seq_i >= 0) continue; //update smith-water jar.. after this line you can add the consequent of ret_sequence to the cout table.
+					if (subs < 0 || 2 - subs > sub_i || seq_i >= 0) continue; //update smith-water jar.. after this line you can add the consequent of ret_sequence to the cout table.
 
 					//System.out.print(ret_seqList + " <--- " + sequenceList + " <--- ");
 
@@ -211,7 +213,7 @@ public class CountTable {
 						if(/*toAvoid.size() == 0 &&*/ count < max) {
 							//System.out.print(" " + retrieved_seq[local_i].val + " ");
 							//calculating the score for this item
-							push(retrieved_seq[local_i].val, sequence.length, initialSequenceSize, count);
+							push(retrieved_seq[local_i].val, subseq.length, initialSequenceSize, count, subs);
 							count++;
 						} else break;
 						//else if(toAvoid.contains(seq[local_i])) {
@@ -238,9 +240,9 @@ public class CountTable {
 						branchesUsed++;
 					}//else {System.out.println("NOPE");}
 				}
-
-			//}
-		//}
+				if (branchesUsed > 0) return branchesUsed;
+			}
+		}
 		//if (branchesUsed == 0){System.out.println("NOPE");}
 		return branchesUsed;
 	}

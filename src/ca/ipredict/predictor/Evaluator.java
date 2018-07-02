@@ -413,6 +413,7 @@ public class Evaluator {
 
 				float weight = isGoodPrediction(consequent, predicted);
 				//if no sequence is returned, it means that they is no match for this sequence
+				int result = -1;
 				if(predicted.size() == 0) {
 					stats.inc("No Match", predictors.get(classifierId).getTAG(), 1);
 				}
@@ -421,15 +422,17 @@ public class Evaluator {
 					double score = calculateScore(predicted);
 					//System.out.println(score);
 					stats.inc("Success", predictors.get(classifierId).getTAG(), score * weight);
+					result = 1;
 				}
 				else {
 					stats.inc("Failure", predictors.get(classifierId).getTAG(), 1);
+					result = 0;
 				}
-				if (printCounter > 0 && foldCount == 1){
-					printCounter--;
-					System.out.println(predictors.get(classifierId).getTAG());
-					if(predicted.size() != 0) System.out.println(database.mapSequenceToSetence.get(target) + " --> prediction: " + database.mapItemToString.get(predicted.get(0).val));
-				}
+				// if (printCounter > 0 && foldCount == 1){
+				// 	printCounter--;
+				// 	System.out.println(predictors.get(classifierId).getTAG());
+				// 	if(predicted.size() != 0) System.out.println(database.mapSequenceToSetence.get(target) + " --> prediction: " + database.mapItemToString.get(predicted.get(0).val) + " " + result);
+				// }
 			}
 			//sequence is too small
 			else {
