@@ -51,6 +51,7 @@ public class CountTable {
 	private HashSet<Integer> branchVisited;
 	private CPTHelper helper;
 	private SmithWatermanSetMetric<Integer> sw;
+	private int total_subs;
 	
 	/**
 	 * Basic controller
@@ -60,6 +61,7 @@ public class CountTable {
 		branchVisited = new HashSet<Integer>();
 		this.helper = helper;
 		sw = new SmithWatermanSetMetric<>();
+		total_subs = 2;
 	}
 
 	/**
@@ -84,7 +86,7 @@ public class CountTable {
 		//float curValue = (weightLevel * 1f) + (1f) + (weightDistance * 0.0001f);
 		//int boost = (curSeqLength / (float)fullSeqLength) >= 0.9f ? 1 : 1;
 		//if (boost == 2) System.out.println("Boosted");
-		float curValue = /*(/*Maybe I need 1 - weightLevel*//* distLevel * 1f) +*/ ((curSeqLength / (float)fullSeqLength)) + (subs / 2f) + (1f) + (weightDistance * 0.0001f);
+		float curValue = /*(/*Maybe I need 1 - weightLevel*//* distLevel * 1f) +*/ ((curSeqLength / (float)fullSeqLength)) + (subs / (float)total_subs) + (1f) + (weightDistance * 0.0001f);
 		
 		//Update the count table
 		Float oldVal = table.get(key);
@@ -105,7 +107,6 @@ public class CountTable {
 	 * @param initialSequenceSize The initial size of the sequence to predict (used for weighting)
 	 */
 	public int update(Item[] sequence, int initialSequenceSize, int upperLever) {
-
 		int branchesUsed = 0;
 
 		//skipping a query item starting from the 1st
@@ -125,9 +126,8 @@ public class CountTable {
 					// if(branchVisited.contains(id)) {
 					// 	continue;
 					// }
-
-			for (int sub_i = 0; sub_i < 3; sub_i++){
-
+			for (int sub_i = 0; sub_i < total_subs + 1; sub_i++){ // I have to sequentially forgive substitutions - start with 0 then with 1, 2...
+				branchesUsed = 0;
 				Map<Integer, PredictionTree> map = helper.predictor.LT;
 				for (Map.Entry<Integer, PredictionTree> entry : map.entrySet()){
 					//System.out.println(entry.getKey() + "/" + entry.getValue());
@@ -158,7 +158,7 @@ public class CountTable {
 							Add to the count table the items from the retrieved sequence, starting after the "sequence" items.
 					*/
 
-					int subs = 2;
+					int subs = total_subs;
 					int consequent_index = -1;
 
 					int seq_i = sw.getSecondLocalIndex() + 1;
@@ -181,7 +181,7 @@ public class CountTable {
 						}
 					}else continue;
 
-					if (subs < 0 || 2 - subs > sub_i || seq_i >= 0) continue; //update smith-water jar.. after this line you can add the consequent of ret_sequence to the cout table.
+					if (subs < 0 || total_subs - subs > sub_i || seq_i >= 0) continue; //update smith-water jar.. after this line you can add the consequent of ret_sequence to the cout table.
 
 					//System.out.print(ret_seqList + " <--- " + sequenceList + " <--- ");
 
@@ -240,7 +240,7 @@ public class CountTable {
 						branchesUsed++;
 					}//else {System.out.println("NOPE");}
 				}
-				if (branchesUsed > 0) return branchesUsed;
+				if (branchesUsed > 3) return branchesUsed;
 			}
 		}
 		//if (branchesUsed == 0){System.out.println("NOPE");}
