@@ -7,9 +7,11 @@ import ca.ipredict.database.Item;
 public class SequenceVariations{
 
 
-	public static ArrayList<ArrayList<Item>> getPairPermutations(List<Item> target){
+	public static ArrayList<List<Item>> getPairPermutations(List<Item> target){
 
-		ArrayList<ArrayList<Item>> permuted_sequences = new ArrayList<ArrayList<Item>>();		
+		ArrayList<List<Item>> permuted_sequences = new ArrayList<List<Item>>();	
+
+		permuted_sequences.add(target);	
 
 		for (int i = 0; i < target.size() - 1; i++){
 			ArrayList<Item> seq = new ArrayList<Item>();
@@ -28,10 +30,12 @@ public class SequenceVariations{
 		return permuted_sequences;
 	}
 
-	public static ArrayList<ArrayList<Item>> getOneDeletionAnywhere(List<Item> target){
-		ArrayList<ArrayList<Item>> deletion_in_sequences = new ArrayList<ArrayList<Item>>();		
+	public static ArrayList<List<Item>> getOneDeletionAnywhere(List<Item> target){
+		ArrayList<List<Item>> deletion_in_sequences = new ArrayList<List<Item>>();	
 
-		for (int i = 0; i < target.size(); i++){
+		deletion_in_sequences.add(target);	
+
+		for (int i = 1; i < target.size(); i++){
 			ArrayList<Item> seq = new ArrayList<Item>();
 
 			for (int j = 0; j < i; j++)	seq.add(target.get(j));
@@ -60,6 +64,6 @@ public class SequenceVariations{
 		seq.add(new Item(6));
 
 
-		for (ArrayList<Item> i : SequenceVariations.getPairPermutations(seq)) System.out.println(i);
+		for (List<Item> i : SequenceVariations.getOneDeletionAnywhere(seq)) System.out.println(i);
 	}
 }
