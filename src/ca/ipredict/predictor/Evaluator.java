@@ -5,10 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.io.IOException;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-
 import ca.ipredict.database.DatabaseHelper;
 import ca.ipredict.database.DatabaseHelper.Format;
 import ca.ipredict.database.Item;
@@ -34,8 +30,6 @@ public class Evaluator {
 	//statistics
 	private long startTime;
 	private long endTime;
-
-	private int foldCount;
 	
 	//Database
 	private DatabaseHelper database;
@@ -46,11 +40,6 @@ public class Evaluator {
 	
 	public List<String> datasets;  
 	public List<Integer> datasetsMaxCount;  
-
-	private HashMap<Item, Integer> itemFrequencies;
-	private int totalTrainingLength;
-	private int maxFreq;
-	private int minFreq;
 	
 	
 	public Evaluator(String pathToDatasets) {
@@ -196,51 +185,6 @@ public class Evaluator {
 		}
 		
 	}
-
-	private void setItemsFrequencies (List<Sequence> trainingSet){
-		itemFrequencies = new HashMap<Item, Integer>();
-		totalTrainingLength = 0;
-		maxFreq = 0;
-		minFreq = Integer.MAX_VALUE;;
-
-		//task of the this function is to set the above variables
-
-		for (Sequence seq : trainingSet){
-			for (Item it : seq.getItems()){
-				totalTrainingLength++;
-
-				Integer value = itemFrequencies.get(it);
-				if (value == null) value = 0;
-				itemFrequencies.put(it, ++value);
-			}
-		}
-
-		for (Map.Entry<Item, Integer> es : itemFrequencies.entrySet()) {
-			int value2check = es.getValue();
-			if (value2check > maxFreq) maxFreq = value2check;
-			if (value2check < minFreq) minFreq = value2check;
-    	}
-
-    	//System.out.println(maxFreq + " " + minFreq + " " + totalTrainingLength);
-
-	}
-
-	private double calculateScore (Sequence Predicted){
-
-		// fetch the frequency of Predicted and normalise it according to maxFreq/minFreq for log_2(1/p)
-
-		double min_log = (Math.log(totalTrainingLength / minFreq)/Math.log(2));
-		double max_log = (Math.log(totalTrainingLength / maxFreq)/Math.log(2));
-		double predicted_log = (Math.log(totalTrainingLength / itemFrequencies.get(Predicted.getItems().get(0)))/Math.log(2));
-
-		// System.out.println(min_log + " " + max_log + " " + predicted_log);
-
-		//calculating log_2 is done by
-		// (Math.log(----)/Math.log(2))
-
-		//return the result
-		return (predicted_log - min_log) / (double)(max_log - min_log);
-	}
 	
 	/**
 	 * k-fold cross-validation
@@ -261,7 +205,6 @@ public class Evaluator {
 		double relativeRatio = 1/(double)k;
 		int absoluteRatio = (int) (dataSet.size() * relativeRatio);
 		
-		foldCount = 0;
 		//For each fold, it does training and testing
 		for(int i = 0 ; i < k ; i++) {
 
@@ -292,8 +235,7 @@ public class Evaluator {
 			}
 			//
 			//End of Partitioning
-			
-			setItemsFrequencies(trainingSequences);
+		
 			PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier	
 			StartClassifier(testSequences, classifierId); //classification of the test sequence
 			
@@ -353,30 +295,24 @@ public class Evaluator {
 	/**
 	 * Tell whether the predicted sequence match the consequent sequence
 	 */
-	public static float isGoodPrediction(Sequence consequent, Sequence predicted) {
+	public static Boolean isGoodPrediction(Sequence consequent, Sequence predicted) {
 		
 		Boolean hasError = false;
-		float score = 0f;
 		
 		for(Item it : predicted.getItems()) {
 			
 			Boolean isFound = false;
-			int counter = 0;
 			for(Item re : consequent.getItems()) {
-				if(re.val.equals(it.val)){
-					if (counter == 0 && score == 0.f) score = 1f;
-					else if (counter == 1 && score == 0.f) score = 0.5f;
-					//isFound = true;
-				}
-				counter++;
+				if( re.val.equals(it.val) )
+					isFound = true;
 			}
-			//if(isFound == false)
-			//	hasError = true;
+			if(isFound == false)
+				hasError = true;
 			
 		}
 		
 		
-		return score;//(hasError == false);
+		return (hasError == false);
 	}
 	
 
@@ -394,49 +330,34 @@ public class Evaluator {
 	private void StartClassifier(List<Sequence> testSequences, int classifierId) {	
 		
 		long start = System.currentTimeMillis(); //Testing starting time
-
-		int printCounter = 10;
-		foldCount++;
 		
 		//for each sequence; it classifies it and evaluates it
 		for(Sequence target : testSequences) {
-
-			//System.out.println(database.mapSequenceToSetence.get(target));
 			
 			//if sequence is long enough
 			if(target.size() > (Profile.paramInt("consequentSize"))) {
 				
-				Sequence consequent = target.getLastItems(2/**Profile.paramInt("consequentSize")*/,0); //the lasts actual items in target
+				Sequence consequent = target.getLastItems(Profile.paramInt("consequentSize"),0); //the lasts actual items in target
 				Sequence finalTarget = target.getLastItems(Profile.paramInt("windowSize"),Profile.paramInt("consequentSize"));
 				
 				Sequence predicted = predictors.get(classifierId).Predict(finalTarget);
-
-				float weight = isGoodPrediction(consequent, predicted);
+				
 				//if no sequence is returned, it means that they is no match for this sequence
-				int result = -1;
 				if(predicted.size() == 0) {
-					stats.inc("No Match", predictors.get(classifierId).getTAG(), 1);
+					stats.inc("No Match", predictors.get(classifierId).getTAG());
 				}
 				//evaluates the prediction
-				else if( weight > 0) {
-					double score = calculateScore(predicted);
-					//System.out.println(score);
-					stats.inc("Success", predictors.get(classifierId).getTAG(), score * weight);
-					result = 1;
+				else if(isGoodPrediction(consequent, predicted)) {
+					stats.inc("Success", predictors.get(classifierId).getTAG());
 				}
 				else {
-					stats.inc("Failure", predictors.get(classifierId).getTAG(), 1);
-					result = 0;
+					stats.inc("Failure", predictors.get(classifierId).getTAG());
 				}
-				// if (printCounter > 0 && foldCount == 1){
-				// 	printCounter--;
-				// 	System.out.println(predictors.get(classifierId).getTAG());
-				// 	if(predicted.size() != 0) System.out.println(database.mapSequenceToSetence.get(target) + " --> prediction: " + database.mapItemToString.get(predicted.get(0).val) + " " + result);
-				// }
+				
 			}
 			//sequence is too small
 			else {
-				stats.inc("Too Small", predictors.get(classifierId).getTAG(), 1);
+				stats.inc("Too Small", predictors.get(classifierId).getTAG());
 			}
 		}
 		

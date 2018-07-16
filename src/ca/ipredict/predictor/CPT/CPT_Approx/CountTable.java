@@ -52,16 +52,18 @@ public class CountTable {
 	private CPTHelper helper;
 	private SmithWatermanSetMetric<Integer> sw;
 	private int total_subs;
+	private int maxPredictionCount;
 	
 	/**
 	 * Basic controller
 	 */
-	public CountTable(CPTHelper helper) {
+	public CountTable(CPTHelper helper, int maxPredictionCount) {
 		table = new TreeMap<Integer, Float>();
 		branchVisited = new HashSet<Integer>();
 		this.helper = helper;
 		sw = new SmithWatermanSetMetric<>();
 		total_subs = 2;
+		this.maxPredictionCount = maxPredictionCount;
 	}
 
 	/**
@@ -111,7 +113,7 @@ public class CountTable {
 
 		//skipping a query item starting from the 1st
 		for (int i = 0; i < sequence.length - 1; i ++){
-
+			branchesUsed = 0; //or try not to reset it at all for every sub-query - run experiment
 			Item[] subseq = Arrays.copyOfRange(sequence, i, sequence.length);
 
 			//Bitvector ids = helper.getSimilarSequencesIds(subseq);
@@ -127,7 +129,7 @@ public class CountTable {
 					// 	continue;
 					// }
 			for (int sub_i = 0; sub_i < total_subs + 1; sub_i++){ // I have to sequentially forgive substitutions - start with 0 then with 1, 2...
-				branchesUsed = 0;
+				//branchesUsed = 0;//either reset it here or in the start of the previous loop -  run experiment for this
 				Map<Integer, PredictionTree> map = helper.predictor.LT;
 				for (Map.Entry<Integer, PredictionTree> entry : map.entrySet()){
 					//System.out.println(entry.getKey() + "/" + entry.getValue());
@@ -240,7 +242,7 @@ public class CountTable {
 						branchesUsed++;
 					}//else {System.out.println("NOPE");}
 				}
-				if (branchesUsed > 3) return branchesUsed;
+				if (branchesUsed > maxPredictionCount) return branchesUsed;
 			}
 		}
 		//if (branchesUsed == 0){System.out.println("NOPE");}
