@@ -64,6 +64,8 @@ public class CPT_Approx extends Predictor {
 	public Paramable parameters;
 	
 	private String TAG = "CPT+";
+
+	private int maxPredictionCount;
 	
 	public CPT_Approx() {
 		
@@ -80,13 +82,15 @@ public class CPT_Approx extends Predictor {
 		helper = new CPTHelper(this);
 	}
 	
-	public CPT_Approx(String tag) {
+	public CPT_Approx(String tag, int maxPredictionCount) {
 		this();
 		TAG = tag;
+		this.maxPredictionCount = maxPredictionCount;
 	}
 	
 	public CPT_Approx(String tag, String params) {
-		this(tag);
+		this(tag, 10);
+		System.out.println("this was called");
 		parameters.setParameter(params);
 	}
 	
@@ -195,8 +199,11 @@ public class CPT_Approx extends Predictor {
 		//CountTable ct = null;
 		//ct = predictionByActiveNoiseReduction(target);
 
-		CountTable ct = new CountTable(helper);
-		ct.update(target.getItems().toArray(new Item[0]), target.size(), 2 * target.size());
+		CountTable ct = new CountTable(helper, maxPredictionCount);
+		//if (ct.update(target.getItems().toArray(new Item[0]), target.size()) < maxPredictionCount) 
+			//ct.update(target.getItems().toArray(new Item[0]), target.size(), 2 * target.size());
+
+		ct.update(target.getItems().toArray(new Item[0]), target.size());
 		
 
 		Sequence predicted = ct.getBestSequence(1);

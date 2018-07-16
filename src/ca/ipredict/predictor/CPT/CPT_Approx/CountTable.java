@@ -37,6 +37,8 @@ import org.simmetrics.tokenizers.Tokenizers;
 import org.simmetrics.metrics.SmithWaterman;
 import org.simmetrics.metrics.SmithWatermanSetMetric;
 
+import ca.ipredict.helpers.SequenceVariations;
+
 
 
 /**
@@ -52,16 +54,18 @@ public class CountTable {
 	private CPTHelper helper;
 	private SmithWatermanSetMetric<Integer> sw;
 	private int total_subs;
+	private int maxPredictionCount;
 	
 	/**
 	 * Basic controller
 	 */
-	public CountTable(CPTHelper helper) {
+	public CountTable(CPTHelper helper, int maxPredictionCount) {
 		table = new TreeMap<Integer, Float>();
 		branchVisited = new HashSet<Integer>();
 		this.helper = helper;
 		sw = new SmithWatermanSetMetric<>();
 		total_subs = 2;
+		this.maxPredictionCount = maxPredictionCount;
 	}
 
 	/**
@@ -98,6 +102,130 @@ public class CountTable {
 		}		
 	}
 
+
+	public int update(Item[] sequence, int initialSequenceSize) {
+		int branchesUsed = 0;
+
+
+		List<Item> seqience_l = new ArrayList<Item>(Arrays.asList(sequence));
+		List<List<Item>> list_of_queries = SequenceVariations.getOneDeletionAnywhere(seqience_l);
+
+		list_of_queries.addAll(SequenceVariations.getPairPermutations(seqience_l));
+
+		for (List<Item> q : list_of_queries){
+			branchesUsed = 0;
+			Item[] subseq = q.toArray(new Item[q.size()]);
+					for (int sub_i = 0; sub_i < total_subs + 1; sub_i++){ // I have to sequentially forgive substitutions - start with 0 then with 1, 2...
+						
+						Map<Integer, PredictionTree> map = helper.predictor.LT;
+						for (Map.Entry<Integer, PredictionTree> entry : map.entrySet()){
+							//System.out.println(entry.getKey() + "/" + entry.getValue());
+							
+							
+							//extracting the sequence from the PredictionTree
+							Item[] retrieved_seq = helper.getSequenceFromId(entry.getKey()/*id*/);
+
+							List<Integer> ret_seqList = new ArrayList<Integer>();
+							for (Item item : retrieved_seq) ret_seqList.add(item.val);
+
+							List<Integer> sequenceList = new ArrayList<Integer>();
+							for (Item item : subseq) sequenceList.add(item.val);
+
+							//Levenshtein distance - if the distance does not meet our criteria then we abort.
+
+							float dist = sw.compare(ret_seqList, sequenceList);//LevenshteinDistance.distance(seqList, sequenceList); //not ready yet
+							if (dist == 0) continue;
+
+							int subs = total_subs;
+							int consequent_index = -1;
+
+							int seq_i = sw.getSecondLocalIndex() + 1;
+							int ret_i = sw.getFirstLocalIndex() + 1;
+							while(seq_i < sequenceList.size() && ret_i < ret_seqList.size()){
+								if (!sequenceList.get(seq_i).equals(ret_seqList.get(ret_i))) subs--;
+								if (subs < 0) break;
+								seq_i++;
+								ret_i++;
+							}
+							if (subs >= 0 && seq_i == sequenceList.size()){
+								consequent_index = ret_i;
+								seq_i = sw.getSecondLocalIndex() - 1;
+								ret_i = sw.getFirstLocalIndex() - 1;
+								while(seq_i >= 0 && ret_i >= 0){
+									if (!sequenceList.get(seq_i).equals(ret_seqList.get(ret_i))) subs--;
+									if (subs < 0) break;
+									seq_i--;
+									ret_i--;
+								}
+							}else continue;
+
+							if (subs < 0 || total_subs - subs > sub_i || seq_i >= 0) continue; //update smith-water jar.. after this line you can add the consequent of ret_sequence to the cout table.
+
+							//System.out.print(ret_seqList + " <--- " + sequenceList + " <--- ");
+
+							//if (dist < 1.0) continue;
+
+							//if I continue then add it to branchVisited
+
+							//branchVisited.add(id);
+							
+							//Generating a set of all the items from sequence
+							// HashSet<Item> toAvoid = new HashSet<Item>();
+							// for (int local_j = sw.getSecondLocalIndex() + 1; local_j < subseq.length - 1; local_j++){//(Item item : subseq) {
+							// 	toAvoid.add(subseq[local_j]);
+							// }
+							
+
+							//Updating this CountTable with the items {S}
+							//Where {S} contains only the items that are in seq after
+							//all the items from sequence have appeared at least once
+							//Ex:	
+							//	sequence: 	A B C
+							//  seq: 		X A Y B C E A F
+							//	{S}: 		E F
+							int max = 3;//99; //used to limit the number of items to push in the count table
+							int count = 1; //current number of items already pushed
+							for (int local_i = consequent_index; local_i < retrieved_seq.length; local_i++){//(Item item : seq) {
+								//only enters this if toAvoid is empty
+								//it means that all the items of toAvoid have been seen
+								if(/*toAvoid.size() == 0 &&*/ count < max) {
+									//System.out.print(" " + retrieved_seq[local_i].val + " ");
+									//calculating the score for this item
+									push(retrieved_seq[local_i].val, subseq.length, initialSequenceSize, count, subs);
+									count++;
+								} else break;
+								//else if(toAvoid.contains(seq[local_i])) {
+								//	toAvoid.remove(seq[local_i]);
+								//}
+							}
+							//System.out.println();
+
+
+							// int matchedSequenceLocalIndex = sw.getFirstLocalIndex();
+
+							// if (toAvoid.size() > 0){
+							// 	for (int local_i = sw.getFirstLocalIndex() + 1; local_i < seq.length - 1; local_i++){
+							// 		if (count < max){
+							// 			push(seq[local_i].val, seq.length, initialSequenceSize, ids.cardinality(), count, dist/*level*/);
+							// 			count++;
+							// 		}else{break;}
+							// 	}
+							// }
+							
+
+							//meaning that the count table has been really updated
+							if(count > 1 ) {
+								branchesUsed++;
+							}//else {System.out.println("NOPE");}
+						}
+						if (branchesUsed > maxPredictionCount) return branchesUsed;
+					}
+				//}
+			//}
+		}
+		//if (branchesUsed == 0){System.out.println("NOPE");}
+		return branchesUsed;
+	}
 	
 	/**
 	 * Update this CountTable with a sequence S, it finds the similar sequence SS of S
@@ -111,7 +239,7 @@ public class CountTable {
 
 		//skipping a query item starting from the 1st
 		for (int i = 0; i < sequence.length - 1; i ++){
-
+			branchesUsed = 0;
 			Item[] subseq = Arrays.copyOfRange(sequence, i, sequence.length);
 
 			//Bitvector ids = helper.getSimilarSequencesIds(subseq);
@@ -126,122 +254,133 @@ public class CountTable {
 					// if(branchVisited.contains(id)) {
 					// 	continue;
 					// }
-			for (int sub_i = 0; sub_i < total_subs + 1; sub_i++){ // I have to sequentially forgive substitutions - start with 0 then with 1, 2...
-				branchesUsed = 0;
-				Map<Integer, PredictionTree> map = helper.predictor.LT;
-				for (Map.Entry<Integer, PredictionTree> entry : map.entrySet()){
-					//System.out.println(entry.getKey() + "/" + entry.getValue());
-					
-					
-					//extracting the sequence from the PredictionTree
-					Item[] retrieved_seq = helper.getSequenceFromId(entry.getKey()/*id*/);
 
-					List<Integer> ret_seqList = new ArrayList<Integer>();
-					for (Item item : retrieved_seq) ret_seqList.add(item.val);
+			//new ArrayList<Element>(Arrays.asList(array)); //need this for conversions later on
+			//Integer[] bar = foo.toArray(new Integer[foo.size()]); //using this code for conversions later on
+			//List<Item> curr_subseq_variation = new ArrayList<Item>(Arrays.asList(subseq));
 
-					List<Integer> sequenceList = new ArrayList<Integer>();
-					for (Item item : subseq) sequenceList.add(item.val);
+			//for( List<Item> subseq_variation_del : SequenceVariations.getOneDeletionAnywhere(curr_subseq_variation)){
 
-					//Levenshtein distance - if the distance does not meet our criteria then we abort.
+				//for(List<Item> subseq_variation_del_perm : SequenceVariations.getPairPermutations(subseq_variation_del)){
+					//subseq = subseq_variation_del.toArray(new Item[subseq_variation_del.size()]);
+					for (int sub_i = 0; sub_i < total_subs + 1; sub_i++){ // I have to sequentially forgive substitutions - start with 0 then with 1, 2...
+						
+						Map<Integer, PredictionTree> map = helper.predictor.LT;
+						for (Map.Entry<Integer, PredictionTree> entry : map.entrySet()){
+							//System.out.println(entry.getKey() + "/" + entry.getValue());
+							
+							
+							//extracting the sequence from the PredictionTree
+							Item[] retrieved_seq = helper.getSequenceFromId(entry.getKey()/*id*/);
 
-					float dist = sw.compare(ret_seqList, sequenceList);//LevenshteinDistance.distance(seqList, sequenceList); //not ready yet
-					if (dist == 0) continue;
-					/*
-						Now I can get the indices from the alignment. getFirstLocalIndex() for the index in ret_seqList and getSecondLocalIndex() for the index in sequenceList
-						.. Remember we want to see if we have an exact representation of the sequence in the retrieved_seq. We can always substitute one or two items.
-						The idea to go is: Get the indices. 
-							For the getFirstLocalIndex() getSecondLocalIndex() you go foward for both sequences and see if they match.
-							Increase sub counter if they not.
-							If sub-counter gets more than we want abort and continue with next retrieved sequence
-							Otherwise, as soon as we finish going foward, start again from the getFirstLocalIndex() getSecondLocalIndex() indicies and go backwards.
-							Repeat as before.
-							Add to the count table the items from the retrieved sequence, starting after the "sequence" items.
-					*/
+							List<Integer> ret_seqList = new ArrayList<Integer>();
+							for (Item item : retrieved_seq) ret_seqList.add(item.val);
 
-					int subs = total_subs;
-					int consequent_index = -1;
+							List<Integer> sequenceList = new ArrayList<Integer>();
+							for (Item item : subseq) sequenceList.add(item.val);
 
-					int seq_i = sw.getSecondLocalIndex() + 1;
-					int ret_i = sw.getFirstLocalIndex() + 1;
-					while(seq_i < sequenceList.size() && ret_i < ret_seqList.size()){
-						if (!sequenceList.get(seq_i).equals(ret_seqList.get(ret_i))) subs--;
-						if (subs < 0) break;
-						seq_i++;
-						ret_i++;
-					}
-					if (subs >= 0 && seq_i == sequenceList.size()){
-						consequent_index = ret_i;
-						seq_i = sw.getSecondLocalIndex() - 1;
-						ret_i = sw.getFirstLocalIndex() - 1;
-						while(seq_i >= 0 && ret_i >= 0){
-							if (!sequenceList.get(seq_i).equals(ret_seqList.get(ret_i))) subs--;
-							if (subs < 0) break;
-							seq_i--;
-							ret_i--;
+							//Levenshtein distance - if the distance does not meet our criteria then we abort.
+
+							float dist = sw.compare(ret_seqList, sequenceList);//LevenshteinDistance.distance(seqList, sequenceList); //not ready yet
+							if (dist == 0) continue;
+							/*
+								Now I can get the indices from the alignment. getFirstLocalIndex() for the index in ret_seqList and getSecondLocalIndex() for the index in sequenceList
+								.. Remember we want to see if we have an exact representation of the sequence in the retrieved_seq. We can always substitute one or two items.
+								The idea to go is: Get the indices. 
+									For the getFirstLocalIndex() getSecondLocalIndex() you go foward for both sequences and see if they match.
+									Increase sub counter if they not.
+									If sub-counter gets more than we want abort and continue with next retrieved sequence
+									Otherwise, as soon as we finish going foward, start again from the getFirstLocalIndex() getSecondLocalIndex() indicies and go backwards.
+									Repeat as before.
+									Add to the count table the items from the retrieved sequence, starting after the "sequence" items.
+							*/
+
+							int subs = total_subs;
+							int consequent_index = -1;
+
+							int seq_i = sw.getSecondLocalIndex() + 1;
+							int ret_i = sw.getFirstLocalIndex() + 1;
+							while(seq_i < sequenceList.size() && ret_i < ret_seqList.size()){
+								if (!sequenceList.get(seq_i).equals(ret_seqList.get(ret_i))) subs--;
+								if (subs < 0) break;
+								seq_i++;
+								ret_i++;
+							}
+							if (subs >= 0 && seq_i == sequenceList.size()){
+								consequent_index = ret_i;
+								seq_i = sw.getSecondLocalIndex() - 1;
+								ret_i = sw.getFirstLocalIndex() - 1;
+								while(seq_i >= 0 && ret_i >= 0){
+									if (!sequenceList.get(seq_i).equals(ret_seqList.get(ret_i))) subs--;
+									if (subs < 0) break;
+									seq_i--;
+									ret_i--;
+								}
+							}else continue;
+
+							if (subs < 0 || total_subs - subs > sub_i || seq_i >= 0) continue; //update smith-water jar.. after this line you can add the consequent of ret_sequence to the cout table.
+
+							//System.out.print(ret_seqList + " <--- " + sequenceList + " <--- ");
+
+							//if (dist < 1.0) continue;
+
+							//if I continue then add it to branchVisited
+
+							//branchVisited.add(id);
+							
+							//Generating a set of all the items from sequence
+							// HashSet<Item> toAvoid = new HashSet<Item>();
+							// for (int local_j = sw.getSecondLocalIndex() + 1; local_j < subseq.length - 1; local_j++){//(Item item : subseq) {
+							// 	toAvoid.add(subseq[local_j]);
+							// }
+							
+
+							//Updating this CountTable with the items {S}
+							//Where {S} contains only the items that are in seq after
+							//all the items from sequence have appeared at least once
+							//Ex:	
+							//	sequence: 	A B C
+							//  seq: 		X A Y B C E A F
+							//	{S}: 		E F
+							int max = 3;//99; //used to limit the number of items to push in the count table
+							int count = 1; //current number of items already pushed
+							for (int local_i = consequent_index; local_i < retrieved_seq.length; local_i++){//(Item item : seq) {
+								//only enters this if toAvoid is empty
+								//it means that all the items of toAvoid have been seen
+								if(/*toAvoid.size() == 0 &&*/ count < max) {
+									//System.out.print(" " + retrieved_seq[local_i].val + " ");
+									//calculating the score for this item
+									push(retrieved_seq[local_i].val, subseq.length, initialSequenceSize, count, subs);
+									count++;
+								} else break;
+								//else if(toAvoid.contains(seq[local_i])) {
+								//	toAvoid.remove(seq[local_i]);
+								//}
+							}
+							//System.out.println();
+
+
+							// int matchedSequenceLocalIndex = sw.getFirstLocalIndex();
+
+							// if (toAvoid.size() > 0){
+							// 	for (int local_i = sw.getFirstLocalIndex() + 1; local_i < seq.length - 1; local_i++){
+							// 		if (count < max){
+							// 			push(seq[local_i].val, seq.length, initialSequenceSize, ids.cardinality(), count, dist/*level*/);
+							// 			count++;
+							// 		}else{break;}
+							// 	}
+							// }
+							
+
+							//meaning that the count table has been really updated
+							if(count > 1 ) {
+								branchesUsed++;
+							}//else {System.out.println("NOPE");}
 						}
-					}else continue;
-
-					if (subs < 0 || total_subs - subs > sub_i || seq_i >= 0) continue; //update smith-water jar.. after this line you can add the consequent of ret_sequence to the cout table.
-
-					//System.out.print(ret_seqList + " <--- " + sequenceList + " <--- ");
-
-					//if (dist < 1.0) continue;
-
-					//if I continue then add it to branchVisited
-
-					//branchVisited.add(id);
-					
-					//Generating a set of all the items from sequence
-					// HashSet<Item> toAvoid = new HashSet<Item>();
-					// for (int local_j = sw.getSecondLocalIndex() + 1; local_j < subseq.length - 1; local_j++){//(Item item : subseq) {
-					// 	toAvoid.add(subseq[local_j]);
-					// }
-					
-
-					//Updating this CountTable with the items {S}
-					//Where {S} contains only the items that are in seq after
-					//all the items from sequence have appeared at least once
-					//Ex:	
-					//	sequence: 	A B C
-					//  seq: 		X A Y B C E A F
-					//	{S}: 		E F
-					int max = 3;//99; //used to limit the number of items to push in the count table
-					int count = 1; //current number of items already pushed
-					for (int local_i = consequent_index; local_i < retrieved_seq.length; local_i++){//(Item item : seq) {
-						//only enters this if toAvoid is empty
-						//it means that all the items of toAvoid have been seen
-						if(/*toAvoid.size() == 0 &&*/ count < max) {
-							//System.out.print(" " + retrieved_seq[local_i].val + " ");
-							//calculating the score for this item
-							push(retrieved_seq[local_i].val, subseq.length, initialSequenceSize, count, subs);
-							count++;
-						} else break;
-						//else if(toAvoid.contains(seq[local_i])) {
-						//	toAvoid.remove(seq[local_i]);
-						//}
+						//if (branchesUsed > maxPredictionCount) return branchesUsed;
 					}
-					//System.out.println();
-
-
-					// int matchedSequenceLocalIndex = sw.getFirstLocalIndex();
-
-					// if (toAvoid.size() > 0){
-					// 	for (int local_i = sw.getFirstLocalIndex() + 1; local_i < seq.length - 1; local_i++){
-					// 		if (count < max){
-					// 			push(seq[local_i].val, seq.length, initialSequenceSize, ids.cardinality(), count, dist/*level*/);
-					// 			count++;
-					// 		}else{break;}
-					// 	}
-					// }
-					
-
-					//meaning that the count table has been really updated
-					if(count > 1 ) {
-						branchesUsed++;
-					}//else {System.out.println("NOPE");}
-				}
-				if (branchesUsed > 3) return branchesUsed;
-			}
+				//}
+			//}
 		}
 		//if (branchesUsed == 0){System.out.println("NOPE");}
 		return branchesUsed;
