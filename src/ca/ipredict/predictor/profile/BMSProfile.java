@@ -7,11 +7,11 @@ public class BMSProfile extends Profile {
 		
 		//Global parameters
 		//Pre-processing
-		parameters.put("sequenceMinSize", "6");
+		parameters.put("sequenceMinSize", "10");
 		parameters.put("sequenceMaxSize", "999");
 		parameters.put("removeDuplicatesMethod", "1");
 		parameters.put("consequentSize", "1"); 
-		parameters.put("windowSize", "5"); 
+		parameters.put("windowSize", "9"); 
 
 		///////////////
 		//CPT parameters
