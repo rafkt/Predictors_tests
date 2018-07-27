@@ -74,12 +74,12 @@ public class MainController {
 			
 			//Loading datasets
 			evaluator.addDataset("BMS", 		5000);
-			// evaluator.addDataset("SIGN", 		1000);
-			// evaluator.addDataset("MSNBC", 		5000);
-			// evaluator.addDataset("BIBLE_WORD", 	5000);
-			// evaluator.addDataset("BIBLE_CHAR", 	5000);
-			// evaluator.addDataset("KOSARAK", 	5000);
-			// evaluator.addDataset("FIFA", 		5000);
+			evaluator.addDataset("SIGN", 		1000);
+			evaluator.addDataset("MSNBC", 		5000);
+			evaluator.addDataset("BIBLE_WORD", 	5000);
+			evaluator.addDataset("BIBLE_CHAR", 	5000);
+			evaluator.addDataset("KOSARAK", 	5000);
+			evaluator.addDataset("FIFA", 		5000);
 
 			//evaluator.addDataset("NASA07", 	5000);
 			//evaluator.addDataset("NASA08",	5000);
@@ -107,7 +107,7 @@ public class MainController {
 			evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
 			//for (int i = 0; i < 20; i++) {
 			//	System.out.println("Current Predictor: " + "CPT_App_" + i);
-				evaluator.addPredictor(new CPT_Approx("CPT_App_" + 15, 15));
+				evaluator.addPredictor(new CPT_Approx("CPT_App_" + 10, 10));
 			//}
 			evaluator.addPredictor(new CPTPredictor());
 			evaluator.addPredictor(new MarkovFirstOrderPredictor());
