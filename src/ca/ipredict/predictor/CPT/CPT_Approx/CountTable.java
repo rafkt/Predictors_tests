@@ -53,6 +53,7 @@ public class CountTable {
 	private SmithWatermanSetMetric<Integer> sw;
 	private int total_subs;
 	private int maxPredictionCount;
+	private int threshold;
 	
 	/**
 	 * Basic controller
@@ -63,7 +64,8 @@ public class CountTable {
 		this.helper = helper;
 		sw = new SmithWatermanSetMetric<>();
 		total_subs = 2;
-		this.maxPredictionCount = maxPredictionCount;
+		this.maxPredictionCount = 10;
+		this.threshold = maxPredictionCount;
 	}
 
 	/**
@@ -267,7 +269,7 @@ public class CountTable {
 	}
 
 	private int push_all(ArrayList<Item[]> retrieved_seq_to_push, int current_seq_length, int initialSequenceSize, int subs){
-		if ((retrieved_seq_to_push.size() / (float) helper.predictor.LT.size()) < 0.1) return 0;
+		if ((retrieved_seq_to_push.size() / (float) helper.predictor.LT.size()) < (threshold/(float)10)) return 0;
 		int pushes = 0;
 
 		for (Item[] retrieved_seq : retrieved_seq_to_push){

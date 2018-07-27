@@ -105,9 +105,9 @@ public class MainController {
 			// evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
 			// evaluator.addPredictor(new TDAGPredictor());
 			// evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
-			for (int i = 0; i < 20; i++) {
+			for (int i = 1; i <= 9; i++) {
 			//	System.out.println("Current Predictor: " + "CPT_App_" + i);
-				evaluator.addPredictor(new CPT_Approx("CPT_App_" + 10, 10));
+				evaluator.addPredictor(new CPT_Approx("CPT_App_" + i, i));
 			}
 			// evaluator.addPredictor(new CPTPredictor());
 			// evaluator.addPredictor(new MarkovFirstOrderPredictor());
