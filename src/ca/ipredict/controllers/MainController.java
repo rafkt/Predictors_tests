@@ -107,7 +107,7 @@ public class MainController {
 			// evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
 			for (int i = 0; i < 20; i++) {
 			//	System.out.println("Current Predictor: " + "CPT_App_" + i);
-				evaluator.addPredictor(new CPT_Approx("CPT_App_" + 10, 10));
+				evaluator.addPredictor(new CPT_Approx("CPT_App_" + i, i));
 			}
 			// evaluator.addPredictor(new CPTPredictor());
 			// evaluator.addPredictor(new MarkovFirstOrderPredictor());
