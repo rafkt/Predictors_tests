@@ -109,7 +109,10 @@ public class CountTable {
 	 * @param initialSequenceSize The initial size of the sequence to predict (used for weighting)
 	 */
 	public int update(Item[] sequence, int initialSequenceSize, int upperLever) {
+		int matches = 0;
 		int branchesUsed = 0;
+
+		ArrayList<Item[]> retrieved_seq_to_push;
 
 		//skipping a query item starting from the 1st
 		for (int i = 0; i < sequence.length - 1; i ++){
@@ -131,7 +134,10 @@ public class CountTable {
 			for (int sub_i = 0; sub_i < total_subs + 1; sub_i++){ // I have to sequentially forgive substitutions - start with 0 then with 1, 2...
 				//branchesUsed = 0;//either reset it here or in the start of the previous loop -  run experiment for this
 				Map<Integer, PredictionTree> map = helper.predictor.LT;
+				retrieved_seq_to_push = new ArrayList<Item[]>();
+				int subs = -1;
 				for (Map.Entry<Integer, PredictionTree> entry : map.entrySet()){
+
 					//System.out.println(entry.getKey() + "/" + entry.getValue());
 					
 					
@@ -160,7 +166,7 @@ public class CountTable {
 							Add to the count table the items from the retrieved sequence, starting after the "sequence" items.
 					*/
 
-					int subs = total_subs;
+					subs = total_subs;
 					int consequent_index = -1;
 
 					int seq_i = sw.getSecondLocalIndex() + 1;
@@ -185,6 +191,8 @@ public class CountTable {
 
 					if (subs < 0 || total_subs - subs > sub_i || seq_i >= 0) continue; //update smith-water jar.. after this line you can add the consequent of ret_sequence to the cout table.
 
+					retrieved_seq_to_push.add(Arrays.copyOfRange(retrieved_seq, consequent_index, retrieved_seq.length));
+
 					//System.out.print(ret_seqList + " <--- " + sequenceList + " <--- ");
 
 					//if (dist < 1.0) continue;
@@ -207,21 +215,25 @@ public class CountTable {
 					//	sequence: 	A B C
 					//  seq: 		X A Y B C E A F
 					//	{S}: 		E F
-					int max = 3;//99; //used to limit the number of items to push in the count table
-					int count = 1; //current number of items already pushed
-					for (int local_i = consequent_index; local_i < retrieved_seq.length; local_i++){//(Item item : seq) {
-						//only enters this if toAvoid is empty
-						//it means that all the items of toAvoid have been seen
-						if(/*toAvoid.size() == 0 &&*/ count < max) {
-							//System.out.print(" " + retrieved_seq[local_i].val + " ");
-							//calculating the score for this item
-							push(retrieved_seq[local_i].val, subseq.length, initialSequenceSize, count, subs);
-							count++;
-						} else break;
-						//else if(toAvoid.contains(seq[local_i])) {
-						//	toAvoid.remove(seq[local_i]);
-						//}
-					}
+					
+					//commented push prior to threshold inclusion
+					// int max = 3;//99; //used to limit the number of items to push in the count table
+					// int count = 1; //current number of items already pushed
+					// for (int local_i = consequent_index; local_i < retrieved_seq.length; local_i++){//(Item item : seq) {
+					// 	//only enters this if toAvoid is empty
+					// 	//it means that all the items of toAvoid have been seen
+					// 	if(/*toAvoid.size() == 0 &&*/ count < max) {
+					// 		//System.out.print(" " + retrieved_seq[local_i].val + " ");
+					// 		//calculating the score for this item
+					// 		push(retrieved_seq[local_i].val, subseq.length, initialSequenceSize, count, subs);
+					// 		count++;
+					// 	} else break;
+					// 	//else if(toAvoid.contains(seq[local_i])) {
+					// 	//	toAvoid.remove(seq[local_i]);
+					// 	//}
+					// }
+					//end of commented push prior to threshold inclusion
+
 					//System.out.println();
 
 
@@ -238,15 +250,45 @@ public class CountTable {
 					
 
 					//meaning that the count table has been really updated
-					if(count > 1 ) {
-						branchesUsed++;
-					}//else {System.out.println("NOPE");}
+					
+					//commented for seperate push
+					// if(count > 1 ) {
+					// 	branchesUsed++;
+					// }//else {System.out.println("NOPE");}
+
+					//end of commented for seperate push
 				}
+				branchesUsed = push_all(retrieved_seq_to_push, subseq.length, initialSequenceSize, subs);
 				if (branchesUsed > maxPredictionCount) return branchesUsed;
 			}
 		}
 		//if (branchesUsed == 0){System.out.println("NOPE");}
 		return branchesUsed;
+	}
+
+	private int push_all(ArrayList<Item[]> retrieved_seq_to_push, int current_seq_length, int initialSequenceSize, int subs){
+		if ((retrieved_seq_to_push.size() / (float) helper.predictor.LT.size()) < 0.1) return 0;
+		int pushes = 0;
+
+		for (Item[] retrieved_seq : retrieved_seq_to_push){
+			int max = 3;//99; //used to limit the number of items to push in the count table
+			int count = 1; //current number of items already pushed
+			for (int local_i = 0; local_i < retrieved_seq.length; local_i++){//(Item item : seq) {
+				//only enters this if toAvoid is empty
+				//it means that all the items of toAvoid have been seen
+				if(/*toAvoid.size() == 0 &&*/ count < max) {
+					//System.out.print(" " + retrieved_seq[local_i].val + " ");
+					//calculating the score for this item
+					push(retrieved_seq[local_i].val, current_seq_length, initialSequenceSize, count, subs);
+					count++;
+				} else break;
+				//else if(toAvoid.contains(seq[local_i])) {
+				//	toAvoid.remove(seq[local_i]);
+				//}
+			}
+			if (count > 1) pushes++;
+		}
+		return pushes;
 	}
 	
 	/**
