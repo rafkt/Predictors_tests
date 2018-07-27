@@ -102,17 +102,17 @@ public class MainController {
 			// evaluator.addDataset("SPICE15", 		5000);
 			
 			//Loading predictors
-			evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
-			evaluator.addPredictor(new TDAGPredictor());
-			evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
-			//for (int i = 0; i < 20; i++) {
+			// evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
+			// evaluator.addPredictor(new TDAGPredictor());
+			// evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
+			for (int i = 0; i < 20; i++) {
 			//	System.out.println("Current Predictor: " + "CPT_App_" + i);
 				evaluator.addPredictor(new CPT_Approx("CPT_App_" + 10, 10));
-			//}
-			evaluator.addPredictor(new CPTPredictor());
-			evaluator.addPredictor(new MarkovFirstOrderPredictor());
-			evaluator.addPredictor(new MarkovAllKPredictor());
-			evaluator.addPredictor(new LZ78Predictor());
+			}
+			// evaluator.addPredictor(new CPTPredictor());
+			// evaluator.addPredictor(new MarkovFirstOrderPredictor());
+			// evaluator.addPredictor(new MarkovAllKPredictor());
+			// evaluator.addPredictor(new LZ78Predictor());
 			
 			//Start the experiment
 			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 14 , true, true, true);
