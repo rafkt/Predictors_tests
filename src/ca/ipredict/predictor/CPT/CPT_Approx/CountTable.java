@@ -6,6 +6,7 @@ import java.util.Map.Entry;
 import java.util.TreeMap;
 import java.util.ArrayList;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import ca.ipredict.database.Item;
 import ca.ipredict.database.Sequence;
@@ -100,6 +101,46 @@ public class CountTable {
 		}		
 	}
 
+
+	/**
+	 * Return the list of items with the lowest support
+	 * @param target Sequence to consider to find the alphabet of items
+	 * @param noiseRatio [0,1] Portion of the sequence to identify as noisy (it defines the number of item returned)
+	 */
+	private List<Item> getNoise(Item[] target, double noiseRatio) {
+		
+		//Converting the noiseRatio (relative to the noiseCount (absolute)
+		int noiseCount = (int) Math.floor(target.length * noiseRatio);
+		
+		//When the noise is <= 0, noiseCount is set to one
+		//Optimization for noiseCount == 1
+		if(noiseCount <= 0) {
+			//Find the lowest supporting item
+			int minSup = Integer.MAX_VALUE;
+			int itemVal = -1;
+			for(Item item : target) {
+				if(helper.predictor.II.get(item.val).cardinality() < minSup) {
+					minSup = helper.predictor.II.get(item.val).cardinality();
+					itemVal = item.val;
+				}
+			}
+			
+			List<Item> noises = new ArrayList<Item>();
+			noises.add(new Item(itemVal));
+			return noises;
+		}
+		else {
+			//sort the items of a sequence by frequency
+			//then return the last [noiseCount] items
+			List<Item> noises = Arrays.asList(target).stream().sorted(
+					(i1, i2) -> Integer.compare(
+							helper.predictor.II.get(i2.val).cardinality(), helper.predictor.II.get(i1.val).
+							cardinality())).collect(Collectors.toList());
+					
+			return noises.subList(target.length - noiseCount, target.length);
+		}
+	}
+
 	
 	/**
 	 * Update this CountTable with a sequence S, it finds the similar sequence SS of S
@@ -111,10 +152,21 @@ public class CountTable {
 	public int update(Item[] sequence, int initialSequenceSize, int upperLever) {
 		int branchesUsed = 0;
 
+		List<Item> noises = getNoise(sequence, 1);
+		List<Item> candidate = Arrays.asList(sequence);
+
 		//skipping a query item starting from the 1st
-		for (int i = 0; i < sequence.length - 1; i ++){
+		for (Item noise : noises){
 			branchesUsed = 0; //or try not to reset it at all for every sub-query - run experiment
-			Item[] subseq = Arrays.copyOfRange(sequence, 0, sequence.length - i);
+			//remove the first noise item appearance from the target
+			for(int i = 0; i < candidate.size(); i++) {
+				if(candidate.get(i).equals(noise)) {
+					candidate.remove(i);
+					break;
+				}
+			}
+			//Item[] subseq = Arrays.copyOfRange(sequence, 0, sequence.length - i);
+			Item[] subseq = candidate.toArray(new Item[candidate.size()]);
 
 			//Bitvector ids = helper.getSimilarSequencesIds(subseq);
 
