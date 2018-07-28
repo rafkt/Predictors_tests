@@ -114,7 +114,7 @@ public class CountTable {
 		//skipping a query item starting from the 1st
 		for (int i = 0; i < sequence.length - 1; i ++){
 			branchesUsed = 0; //or try not to reset it at all for every sub-query - run experiment
-			Item[] subseq = Arrays.copyOfRange(sequence, i, sequence.length);
+			Item[] subseq = Arrays.copyOfRange(sequence, 0, sequence.length - i);
 
 			//Bitvector ids = helper.getSimilarSequencesIds(subseq);
 
