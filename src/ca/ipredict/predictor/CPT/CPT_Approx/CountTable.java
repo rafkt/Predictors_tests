@@ -153,7 +153,7 @@ public class CountTable {
 		int branchesUsed = 0;
 
 		List<Item> noises = getNoise(sequence, 1);
-		List<Item> candidate = Arrays.asList(sequence);
+		List<Item> candidate = new ArrayList<>(Arrays.asList(sequence));
 
 		//skipping a query item starting from the 1st
 		for (Item noise : noises){
