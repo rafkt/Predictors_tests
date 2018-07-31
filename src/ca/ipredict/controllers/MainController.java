@@ -81,8 +81,8 @@ public class MainController {
 			evaluator.addDataset("KOSARAK", 	5000);
 			evaluator.addDataset("FIFA", 		5000);
 
-			evaluator.addDataset("NASA07", 	5000);
-			evaluator.addDataset("NASA08",	5000);
+			//evaluator.addDataset("NASA07", 	5000);
+			//evaluator.addDataset("NASA08",	5000);
 
 			// evaluator.addDataset("SPICE0", 		5000);
 			// evaluator.addDataset("SPICE1", 		5000);
@@ -106,7 +106,7 @@ public class MainController {
 			// evaluator.addPredictor(new TDAGPredictor());
 			// evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
 			for (int i = 0; i < 20; i++) {
-				System.out.println("Current Predictor: " + "CPT_App_" + i);
+				//System.out.println("Current Predictor: " + "CPT_App_" + i);
 				evaluator.addPredictor(new CPT_Approx("CPT_App_" + i, i));
 			}
 			// evaluator.addPredictor(new CPTPredictor());
