@@ -112,9 +112,8 @@ public class CountTable {
 		int branchesUsed = 0;
 
 		//skipping a query item starting from the 1st
-		for (int i = 0; i < sequence.length - 1; i ++){
+		for (int sub_i = 0; sub_i < total_subs + 1; sub_i++){
 			branchesUsed = 0; //or try not to reset it at all for every sub-query - run experiment
-			Item[] subseq = Arrays.copyOfRange(sequence, i, sequence.length);
 
 			//Bitvector ids = helper.getSimilarSequencesIds(subseq);
 
@@ -128,8 +127,9 @@ public class CountTable {
 					// if(branchVisited.contains(id)) {
 					// 	continue;
 					// }
-			for (int sub_i = 0; sub_i < total_subs + 1; sub_i++){ // I have to sequentially forgive substitutions - start with 0 then with 1, 2...
+			for (int i = 0; i < sequence.length - 1; i ++){ // I have to sequentially forgive substitutions - start with 0 then with 1, 2...
 				//branchesUsed = 0;//either reset it here or in the start of the previous loop -  run experiment for this
+				Item[] subseq = Arrays.copyOfRange(sequence, i, sequence.length);
 				Map<Integer, PredictionTree> map = helper.predictor.LT;
 				for (Map.Entry<Integer, PredictionTree> entry : map.entrySet()){
 					//System.out.println(entry.getKey() + "/" + entry.getValue());
