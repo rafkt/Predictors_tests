@@ -1,3 +1,4 @@
+#sequencies, Sigma, #items_per_sequence, #distinct_per_sequence, #occurence_on_sequence, Overall_Accur, #minPredictionRario, splitMethod, splitLength, noiseRatio, DatasetName
 4865,494,11.227955,11.227955,1.0,0.32600206,0.0,1,0.1,0.8,BMS
 730,267,93.00411,51.994522,1.78872905469491,0.31369862,0.0,1,0.1,0.8,SIGN
 5000,17,10.7638,4.7462,2.267877459862627,0.5572,0.0,1,0.1,0.8,MSNBC
