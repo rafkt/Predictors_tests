@@ -207,7 +207,7 @@ public class CountTable {
 					//	sequence: 	A B C
 					//  seq: 		X A Y B C E A F
 					//	{S}: 		E F
-					int max = 3;//99; //used to limit the number of items to push in the count table
+					int max = 5;//99; //used to limit the number of items to push in the count table
 					int count = 1; //current number of items already pushed
 					for (int local_i = consequent_index; local_i < retrieved_seq.length; local_i++){//(Item item : seq) {
 						//only enters this if toAvoid is empty
