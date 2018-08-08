@@ -110,6 +110,7 @@ public class CountTable {
 	 */
 	public int update(Item[] sequence, int initialSequenceSize, int upperLever) {
 		int branchesUsed = 0;
+		ArrayList<Integer> exploited = new ArrayList<Integer>();
 
 		//skipping a query item starting from the 1st
 		for (int i = 0; i < sequence.length - 1; i ++){
@@ -134,6 +135,7 @@ public class CountTable {
 				for (Map.Entry<Integer, PredictionTree> entry : map.entrySet()){
 					//System.out.println(entry.getKey() + "/" + entry.getValue());
 					
+					if (exploited.contains(entry.getKey())) continue;
 					
 					//extracting the sequence from the PredictionTree
 					Item[] retrieved_seq = helper.getSequenceFromId(entry.getKey()/*id*/);
@@ -199,7 +201,7 @@ public class CountTable {
 					// 	toAvoid.add(subseq[local_j]);
 					// }
 					
-
+					exploited.add(entry.getKey());
 					//Updating this CountTable with the items {S}
 					//Where {S} contains only the items that are in seq after
 					//all the items from sequence have appeared at least once

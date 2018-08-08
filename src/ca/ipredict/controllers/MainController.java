@@ -81,8 +81,8 @@ public class MainController {
 			evaluator.addDataset("KOSARAK", 	5000);
 			evaluator.addDataset("FIFA", 		5000);
 
-			evaluator.addDataset("NASA07", 	5000);
-			evaluator.addDataset("NASA08",	5000);
+			//evaluator.addDataset("NASA07", 	5000);
+			//evaluator.addDataset("NASA08",	5000);
 
 			// evaluator.addDataset("SPICE0", 		5000);
 			// evaluator.addDataset("SPICE1", 		5000);
