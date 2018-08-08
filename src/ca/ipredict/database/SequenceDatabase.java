@@ -54,7 +54,7 @@ public class SequenceDatabase {
 			
 			//For each line in the files -- up to the end of the file or the max number of sequences
 			int count = 0;
-			while( (line = reader.readLine()) != null && count < maxCount) {
+			while( (line = reader.readLine()) != null) {
 				
 				//Spliting into items
 				String[] split = line.split(" ");
@@ -92,7 +92,7 @@ public class SequenceDatabase {
 			
 			int count = 0;
 			Sequence sequence = null; //current sequence
-			while ((thisLine = myInput.readLine()) != null  && count < maxCount) { //until end of file
+			while ((thisLine = myInput.readLine()) != null) { //until end of file
 				
 				String[] split = thisLine.split(" ");
 				int id = Integer.parseInt(split[0]);
@@ -135,9 +135,7 @@ public class SequenceDatabase {
 				// ajoute une s�quence
 				String[] split = thisLine.split(" ");
 
-				if (maxCount == i) {
-					break;
-				}
+				
 				if(split.length >= minSize && split.length <= maxSize )	{ 
 					Sequence sequence = new Sequence(-1);
 
@@ -197,9 +195,7 @@ public class SequenceDatabase {
 				Set<Integer> alreadySeen = new HashSet<Integer>();
 				String[] split = thisLine.trim().split(" ");
 				
-				if (maxCount == i) {
-					break;
-				}
+				
 				Sequence sequence = new Sequence(-1);
 				int lastValue = 0;
 				for (String val : split) {
@@ -248,9 +244,7 @@ public class SequenceDatabase {
 			myInput = new BufferedReader(new InputStreamReader(fin));
 			int i = 0;
 			while ((thisLine = myInput.readLine()) != null) {
-				if (maxCount == i) {
-					break;
-				}
+				
 				
 				if(thisLine.length() >= minSize && thisLine.length() <= maxSize )	{ 
 					
@@ -294,9 +288,6 @@ public class SequenceDatabase {
 			// for each line
 			while ((thisLine = myInput.readLine()) != null) {
 				// if we have found enough sequences, stop
-				if (maxCount == seqCount) {
-					break;
-				}
 				
 				// filter unwanted characters  (integers, [], #, 0,1,2,..)
 				StringBuffer modifiedLine = new StringBuffer(thisLine.length());
@@ -423,9 +414,7 @@ public class SequenceDatabase {
 						sequence.getItems().add(new Item(character));
 					}
 				}
-				if (maxCount == count) {
-					break;
-				}
+				
 			}
 			if(sequence.size() >= minsize &&
 				sequence.size() <= maxsize){
@@ -447,7 +436,7 @@ public class SequenceDatabase {
 			FileInputStream fin = new FileInputStream(new File(path));
 			myInput = new BufferedReader(new InputStreamReader(fin));
 			Set<Integer> alreadySeen = new HashSet<Integer>();
-			while ((thisLine = myInput.readLine()) != null && count < maxCount) {
+			while ((thisLine = myInput.readLine()) != null) {
 				Sequence sequence = new Sequence(sequences.size());
 				for (String entier : thisLine.split(" ")) {
 					if (entier.equals("-1")) { // separateur d'itemsets
@@ -491,7 +480,7 @@ public class SequenceDatabase {
 
 			thisLine = myInput.readLine();//discard the first line as it is statistically placed only.
 
-			while ((thisLine = myInput.readLine()) != null && count < maxCount) {
+			while ((thisLine = myInput.readLine()) != null) {
 				Sequence sequence = new Sequence(sequences.size());
 				boolean firstItem = true;
 				int length = 0;
