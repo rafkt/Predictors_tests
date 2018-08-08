@@ -47,13 +47,13 @@ public class MainController {
 			Evaluator evaluator = new Evaluator(args[0]);
 			
 			//Loading datasets
-			// evaluator.addDataset("BMS", 		5000);
-			// evaluator.addDataset("SIGN", 		1000);
-			// evaluator.addDataset("MSNBC", 		5000);
-			// evaluator.addDataset("BIBLE_WORD", 	5000);
-			// evaluator.addDataset("BIBLE_CHAR", 	5000);
+			evaluator.addDataset("BMS", 		5000);
+			evaluator.addDataset("SIGN", 		1000);
+			evaluator.addDataset("MSNBC", 		5000);
+			evaluator.addDataset("BIBLE_WORD", 	5000);
+			evaluator.addDataset("BIBLE_CHAR", 	5000);
 			evaluator.addDataset("KOSARAK", 	5000);
-			// evaluator.addDataset("FIFA", 		5000);
+			evaluator.addDataset("FIFA", 		5000);
 
 			// evaluator.addDataset("SPICE0", 		5000);
 			// evaluator.addDataset("SPICE1", 		5000);
@@ -72,7 +72,7 @@ public class MainController {
 			// evaluator.addDataset("SPICE14", 		5000);
 			// evaluator.addDataset("SPICE15", 		5000);
 			
-			//Loading predictors
+			//Loading predictoqrs
 			evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
 			evaluator.addPredictor(new TDAGPredictor());
 			evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
