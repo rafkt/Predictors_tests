@@ -181,9 +181,11 @@ public class CountTable {
 						}
 					}else continue;
 
+					System.out.println(ret_seqList + " <--- " + sequenceList + " <--- " + sub_i);
+
 					if (subs < 0 || total_subs - subs > sub_i || seq_i >= 0) continue; //update smith-water jar.. after this line you can add the consequent of ret_sequence to the cout table.
 
-					//System.out.print(ret_seqList + " <--- " + sequenceList + " <--- ");
+					System.out.println("ACCEPTED with subs: " +  subs);
 
 					//if (dist < 1.0) continue;
 
@@ -213,6 +215,7 @@ public class CountTable {
 						if(/*toAvoid.size() == 0 &&*/ count < max) {
 							//System.out.print(" " + retrieved_seq[local_i].val + " ");
 							//calculating the score for this item
+							System.out.print("Subseq: " + retrieved_seq[local_i].val + " ");
 							push(retrieved_seq[local_i].val, subseq.length, initialSequenceSize, count, subs);
 							count++;
 						} else break;
@@ -220,7 +223,7 @@ public class CountTable {
 						//	toAvoid.remove(seq[local_i]);
 						//}
 					}
-					//System.out.println();
+					System.out.println();
 
 
 					// int matchedSequenceLocalIndex = sw.getFirstLocalIndex();
