@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.io.IOException;
+import java.io.*;
 
 import ca.ipredict.database.DatabaseHelper;
 import ca.ipredict.database.DatabaseHelper.Format;
@@ -32,7 +33,7 @@ public class Evaluator {
 	private long endTime;
 	
 	//Database
-	private DatabaseHelper database;
+	private DatabaseHelper databaseTraining, databaseTesting;
 	
 	//public Stats stats;
 	public StatsLogger stats;
@@ -40,13 +41,18 @@ public class Evaluator {
 	
 	public List<String> datasets;  
 	public List<Integer> datasetsMaxCount;  
+
+	//writing answers & consequents to a structure and then to a file
+	private List<Sequence> answers;
+	private List<Sequence> consequents; 
 	
 	
 	public Evaluator(String pathToDatasets) {
 		predictors = new ArrayList<Predictor>();
 		datasets = new ArrayList<String>();
 		datasetsMaxCount = new ArrayList<Integer>();
-		database = new DatabaseHelper(pathToDatasets);
+		databaseTraining = new DatabaseHelper(pathToDatasets);
+		databaseTesting = new DatabaseHelper(pathToDatasets);
 	}
 	
 	/**
@@ -93,20 +99,22 @@ public class Evaluator {
 			predictorNames.add(predictor.getTAG());
 		}
 		
-		for(int i = 0; i < datasets.size(); i++) {
+		//for(int i = 0; i < datasets.size(); i++) {
 			
-			int maxCount = datasetsMaxCount.get(i);
-			String format = datasets.get(i);
-			
+			int maxCount = -1;//datasetsMaxCount.get(i);
+			String formatTraining = "FIFA_bwt_training";//datasets.get(i);
+			String formatTesting = "FIFA_bwt_testing";
 			//Loading the parameter profile
-			ProfileManager.loadProfileByName(format.toString());
 			
 			//Loading the dataset
-			database.loadDataset(format, maxCount);
+			databaseTraining.loadDataset(formatTraining, maxCount);
+			databaseTesting.loadDataset(formatTesting, maxCount);
 			
 			if(showDatasetStats) {
 				System.out.println();
-				SequenceStatsGenerator.prinStats(database.getDatabase(), format);
+				SequenceStatsGenerator.prinStats(databaseTraining.getDatabase(), formatTraining);
+				System.out.println();
+				SequenceStatsGenerator.prinStats(databaseTesting.getDatabase(), formatTesting);
 			}
 			
 			//Creating the statsLogger
@@ -144,7 +152,7 @@ public class Evaluator {
 			if(showResults == true) {
 				System.out.println(stats.toString());
 			}
-		}
+		//}
 		
 		return stats;
 	}
@@ -156,9 +164,12 @@ public class Evaluator {
 	 * @param ratio to divide the training and test sets
 	 */
 	public void Holdout(double ratio, int classifierId) {
+
+		answers = new ArrayList<Sequence>();
+		consequents = new ArrayList<Sequence>();
 		
-		List<Sequence> trainingSequences = getDatabaseCopy();
-		List<Sequence> testSequences = splitList(trainingSequences, ratio);
+		List<Sequence> trainingSequences = databaseTraining.getDatabase().getSequences().subList(0, databaseTraining.getDatabase().size());
+		List<Sequence> testSequences = databaseTesting.getDatabase().getSequences().subList(0, databaseTesting.getDatabase().size());
 		
 		//DEBUG
 		//System.out.println("Dataset size: "+ (trainingSequences.size() + testSequences.size()));
@@ -167,6 +178,7 @@ public class Evaluator {
 		PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier
 		
 		StartClassifier(testSequences, classifierId); //classification of the test sequence
+		writeAnswersConsequentsToFile();
 	}
 	
 	/**
@@ -199,8 +211,10 @@ public class Evaluator {
 			throw new RuntimeException("K needs to be 2 or more");
 		}
 
-		List<Sequence> dataSet = getDatabaseCopy();
-		
+		List<Sequence> dataSet = new ArrayList<Sequence>();//getDatabaseCopy();
+		System.out.println("K-Fold is not currently working; Revise your implementation if running with k-fold was your purpose");
+
+
 		//calculating absolute ratio
 		double relativeRatio = 1/(double)k;
 		int absoluteRatio = (int) (dataSet.size() * relativeRatio);
@@ -326,6 +340,45 @@ public class Evaluator {
 		double duration = (double)(end - start) / 1000;
 		stats.set("Train Time", predictors.get(classifierId).getTAG(), duration);
 	}
+
+
+	private void writeAnswersConsequentsToFile(){
+		// The name of the file to open.
+        String fileName = "answers.consequents.Fifa.txt";
+        if (answers.size() != consequents.size()){System.out.println("Something is wrong; Answers list is not same length as Consequents list");return;}
+
+        try {
+            // Assume default encoding.
+            FileWriter fileWriter =
+                new FileWriter(fileName);
+
+            // Always wrap FileWriter in BufferedWriter.
+            BufferedWriter bufferedWriter =
+                new BufferedWriter(fileWriter);
+
+            // Note that write() does not automatically
+            // append a newline character.
+            // bufferedWriter.write("Hello there,");
+            // bufferedWriter.write(" here is some text.");
+            // bufferedWriter.newLine();
+            // bufferedWriter.write("We are writing");
+            // bufferedWriter.write(" the text to the file.");
+            for(int i = 0; i < answers.size(); i++){
+            	bufferedWriter.write(answers.get(i) + "" + consequents.get(i));
+            	bufferedWriter.newLine();
+            }
+
+            // Always close files.
+            bufferedWriter.close();
+        }
+        catch(IOException ex) {
+            System.out.println(
+                "Error writing to file '"
+                + fileName + "'");
+            // Or we could just do this:
+            // ex.printStackTrace();
+        }
+	}
 	
 	private void StartClassifier(List<Sequence> testSequences, int classifierId) {	
 		
@@ -335,12 +388,14 @@ public class Evaluator {
 		for(Sequence target : testSequences) {
 			
 			//if sequence is long enough
-			if(target.size() > (Profile.paramInt("consequentSize"))) {
+			if(target.size() > (1/*Profile.paramInt("consequentSize")*/)) {
 				
-				Sequence consequent = target.getLastItems(Profile.paramInt("consequentSize"),0); //the lasts actual items in target
-				Sequence finalTarget = target.getLastItems(Profile.paramInt("windowSize"),Profile.paramInt("consequentSize"));
+				Sequence consequent = target.getLastItems(1/*Profile.paramInt("consequentSize")*/,0); //the lasts actual items in target
+				Sequence finalTarget = target.getLastItems(5/*Profile.paramInt("windowSize")*/,1/*Profile.paramInt("consequentSize")*/);
 				
 				Sequence predicted = predictors.get(classifierId).Predict(finalTarget);
+				answers.add(predicted);
+				consequents.add(consequent);
 				
 				//if no sequence is returned, it means that they is no match for this sequence
 				if(predicted.size() == 0) {
@@ -377,8 +432,8 @@ public class Evaluator {
 		return two;
 	}
 	
-	private List<Sequence> getDatabaseCopy() {
-		return new ArrayList<Sequence>(database.getDatabase().getSequences().subList(0, database.getDatabase().size()));
-	}
+	// private List<Sequence> getDatabaseCopy() {
+	// 	return new ArrayList<Sequence>(database.getDatabase().getSequences().subList(0, database.getDatabase().size()));
+	// }
 	
 }

@@ -466,6 +466,39 @@ public class SequenceDatabase {
 		}
 	}
 
+	public void loadFileBWTFormat(String path, int minSize) {
+		
+		String thisLine;
+		BufferedReader myInput = null;
+		try {
+			int count = 0;
+			FileInputStream fin = new FileInputStream(new File(path));
+			myInput = new BufferedReader(new InputStreamReader(fin));
+			Set<Integer> alreadySeen = new HashSet<Integer>();
+			Sequence sequence = new Sequence(sequences.size());
+			while ((thisLine = myInput.readLine()) != null) {
+				for (String entier : thisLine.split(" ")) {
+					if (entier.equals("99999")) { // indicateur de fin de s�quence
+						if(sequence.size()>= minSize){
+							sequences.add(sequence);
+							count++;
+						}
+						sequence = new Sequence(sequences.size());
+					} else { 
+						int val = Integer.parseInt(entier);
+						sequence.getItems().add(new Item(val));
+					}
+				}
+			}
+			
+			if (myInput != null) {
+				myInput.close();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 
 	public void loadFileSPiCeFormat(String path, int maxCount,
 			int minSize, int maxSize) {

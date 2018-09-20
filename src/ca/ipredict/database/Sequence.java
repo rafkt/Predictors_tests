@@ -122,13 +122,14 @@ public class Sequence {
 	public String toString() {
 		StringBuffer r = new StringBuffer("");
 		for(Item it : items){
-			r.append('(');
+			//r.append('(');
 			String string = it.toString();
 			r.append(string);
-			r.append(") ");
+			//r.append(") ");
+			r.append(" ");
 		}
 
-		return r.append("    ").toString();
+		return r./*append("    ").*/toString();
 	}
 	
 	public void setID(int newid) {

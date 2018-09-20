@@ -116,23 +116,23 @@ public class CPT_Approx extends Predictor {
 		//Identifying the frequent sequential itemsets
 		//setting up the encoder for future encoding tasks
 		FIF finder = new FIFRaw();
-		if(parameters.paramBoolOrDefault("CCF", CCF)) {
-			List<List<Item>> itemsets = finder.findFrequentItemsets(trainingSequences, parameters.paramInt("CCFmin"), parameters.paramInt("CCFmax"), parameters.paramInt("CCFsup"));
+		//if(parameters.paramBoolOrDefault("CCF", CCF)) {
+			List<List<Item>> itemsets = finder.findFrequentItemsets(trainingSequences, 2, 4, 2);
 			
 			//filling the encoder with the frequent itemsets
 			for(List<Item> itemset : itemsets) {
 				encoder.addEntry(itemset);
 			}
-		}
+		//}
 		
 
 		//for each training sequence
 		for(Sequence seq : trainingSequences) {
 			
 			//slicing the sequence if needed
-			if(parameters.paramInt("splitMethod") > 0) {
-				seq = helper.keepLastItems(seq, parameters.paramInt("splitLength"));
-			}
+			// if(parameters.paramInt("splitMethod") > 0) {
+			// 	seq = helper.keepLastItems(seq, parameters.paramInt("splitLength"));
+			// }
 
 			//Generating the compressed version of this sequence
 			Sequence seqCompressed = new Sequence(seq);
@@ -179,9 +179,9 @@ public class CPT_Approx extends Predictor {
 		
 
 		//Patch collapsing for added compression
-		if(parameters.paramBoolOrDefault("CBS", CBS)) {
+		//if(parameters.paramBoolOrDefault("CBS", CBS)) {
 			pathCollapse();
-		}
+		//}
 		
 		return true;
 	}

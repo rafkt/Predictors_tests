@@ -19,7 +19,7 @@ public class DatabaseHelper {
 	public Map<Integer, String> mapItemToString;
 	
 	//Data sets
-	public static enum Format{BMS, KOSARAK, FIFA, MSNBC, SIGN, CANADARM1, CANADARM2, SNAKE, BIBLE_CHAR, BIBLE_WORD, KORAN_WORD, LEVIATHAN_WORD, CUSTOM, 
+	public static enum Format{BMS, KOSARAK, FIFA, FIFA_bwt_training, FIFA_bwt_testing, MSNBC, SIGN, CANADARM1, CANADARM2, SNAKE, BIBLE_CHAR, BIBLE_WORD, KORAN_WORD, LEVIATHAN_WORD, CUSTOM, 
 
 								NASA07,
 								NASA08,
@@ -114,6 +114,12 @@ public class DatabaseHelper {
 			case FIFA:
 				database.loadFileFIFAFormat(fileToPath("FIFA_large.dat"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
 				break;
+			case FIFA_bwt_training:
+				database.loadFileBWTFormat(fileToPath("FIFA.training.txt"), 2);
+				break;
+			case FIFA_bwt_testing:
+				database.loadFileBWTFormat(fileToPath("FIFA.testing.txt"), 2);
+				break;	
 			case MSNBC:
 				database.loadFileMsnbsFormat(fileToPath("msnbc.seq"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
 				break;

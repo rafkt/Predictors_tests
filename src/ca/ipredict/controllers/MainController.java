@@ -73,13 +73,14 @@ public class MainController {
 			Evaluator evaluator = new Evaluator(args[0]);
 			
 			//Loading datasets
-			evaluator.addDataset("BMS", 		5000);
-			evaluator.addDataset("SIGN", 		1000);
-			evaluator.addDataset("MSNBC", 		5000);
-			evaluator.addDataset("BIBLE_WORD", 	5000);
-			evaluator.addDataset("BIBLE_CHAR", 	5000);
-			evaluator.addDataset("KOSARAK", 	5000);
-			evaluator.addDataset("FIFA", 		5000);
+			// evaluator.addDataset("BMS", 		5000);
+			// evaluator.addDataset("SIGN", 		1000);
+			// evaluator.addDataset("MSNBC", 		5000);
+			// evaluator.addDataset("BIBLE_WORD", 	5000);
+			// evaluator.addDataset("BIBLE_CHAR", 	5000);
+			// evaluator.addDataset("KOSARAK", 	5000);
+			evaluator.addDataset("FIFA_bwt_training",	-1);
+			evaluator.addDataset("FIFA_bwt_testing",	-1);
 
 			//evaluator.addDataset("NASA07", 	5000);
 			//evaluator.addDataset("NASA08",	5000);
@@ -105,17 +106,17 @@ public class MainController {
 			// evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
 			// evaluator.addPredictor(new TDAGPredictor());
 			// evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
-			for (int i = 0; i < 20; i++) {
-				System.out.println("Current Predictor: " + "CPT_App_" + i);
-				evaluator.addPredictor(new CPT_Approx("CPT_App_" + i, i));
-			}
+			// for (int i = 0; i < 20; i++) {
+			// 	System.out.println("Current Predictor: " + "CPT_App_" + i);
+			evaluator.addPredictor(new CPT_Approx("CPT_App_" + 10, 10));
+			// }
 			// evaluator.addPredictor(new CPTPredictor());
 			// evaluator.addPredictor(new MarkovFirstOrderPredictor());
 			// evaluator.addPredictor(new MarkovAllKPredictor());
 			// evaluator.addPredictor(new LZ78Predictor());
 			
 			//Start the experiment
-			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 14 , true, true, true);
+			StatsLogger results = evaluator.Start(Evaluator.HOLDOUT, 14 , true, true, true);
 
 		//Example on how to use Smith Waterman algorithm along with my customisation
 		// System.out.println("TEEEEEEST");
