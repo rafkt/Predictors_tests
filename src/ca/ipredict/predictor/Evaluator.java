@@ -45,6 +45,7 @@ public class Evaluator {
 	//writing answers & consequents to a structure and then to a file
 	private List<Sequence> answers;
 	private List<Sequence> consequents; 
+	private List<Sequence> queries;
 	
 	
 	public Evaluator(String pathToDatasets) {
@@ -109,6 +110,7 @@ public class Evaluator {
 			//Loading the dataset
 			databaseTraining.loadDataset(formatTraining, maxCount);
 			databaseTesting.loadDataset(formatTesting, maxCount);
+			//for (Sequence i : databaseTesting.getDatabase().getSequences()) System.out.println("-->" + i);
 			
 			if(showDatasetStats) {
 				System.out.println();
@@ -167,9 +169,10 @@ public class Evaluator {
 
 		answers = new ArrayList<Sequence>();
 		consequents = new ArrayList<Sequence>();
+		queries = new ArrayList<Sequence>();
 		
-		List<Sequence> trainingSequences = databaseTraining.getDatabase().getSequences().subList(0, databaseTraining.getDatabase().size());
-		List<Sequence> testSequences = databaseTesting.getDatabase().getSequences().subList(0, databaseTesting.getDatabase().size());
+		List<Sequence> trainingSequences = databaseTraining.getDatabase().getSequences();//.subList(0, databaseTraining.getDatabase().size());
+		List<Sequence> testSequences = databaseTesting.getDatabase().getSequences();//.subList(0, databaseTesting.getDatabase().size());
 		
 		//DEBUG
 		//System.out.println("Dataset size: "+ (trainingSequences.size() + testSequences.size()));
@@ -351,10 +354,13 @@ public class Evaluator {
             // Assume default encoding.
             FileWriter fileWriter =
                 new FileWriter(fileName);
+            FileWriter fileWriterQueries = new FileWriter("queries.Fifa.txt");
 
             // Always wrap FileWriter in BufferedWriter.
             BufferedWriter bufferedWriter =
                 new BufferedWriter(fileWriter);
+            BufferedWriter bufferedWriterQueries =
+                new BufferedWriter(fileWriterQueries);
 
             // Note that write() does not automatically
             // append a newline character.
@@ -366,10 +372,13 @@ public class Evaluator {
             for(int i = 0; i < answers.size(); i++){
             	bufferedWriter.write(answers.get(i) + "" + consequents.get(i));
             	bufferedWriter.newLine();
+            	bufferedWriterQueries.write(queries.get(i) + "");
+            	bufferedWriterQueries.newLine();
             }
 
             // Always close files.
             bufferedWriter.close();
+            bufferedWriterQueries.close();
         }
         catch(IOException ex) {
             System.out.println(
@@ -396,6 +405,7 @@ public class Evaluator {
 				Sequence predicted = predictors.get(classifierId).Predict(finalTarget);
 				answers.add(predicted);
 				consequents.add(consequent);
+				queries.add(finalTarget);
 				
 				//if no sequence is returned, it means that they is no match for this sequence
 				if(predicted.size() == 0) {

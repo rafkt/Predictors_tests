@@ -83,7 +83,7 @@ public class DatabaseHelper {
 
 		
 		//Shuffling the database
-		Collections.shuffle(database.getSequences());
+		//Collections.shuffle(database.getSequences());
 	}
 	
 	private void loadCustomDataset(String fileName, int maxCount) {
