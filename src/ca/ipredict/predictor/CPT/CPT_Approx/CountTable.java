@@ -47,7 +47,7 @@ public class CountTable {
 	/**
 	 * Internal representation of the CountTable
 	 */
-	private TreeMap<Integer, Float> table;
+	private TreeMap<Integer, Double> table;
 	private HashSet<Integer> branchVisited;
 	private CPTHelper helper;
 	private SmithWatermanSetMetric<Integer> sw;
@@ -58,7 +58,7 @@ public class CountTable {
 	 * Basic controller
 	 */
 	public CountTable(CPTHelper helper, int maxPredictionCount) {
-		table = new TreeMap<Integer, Float>();
+		table = new TreeMap<Integer, Double>();
 		branchVisited = new HashSet<Integer>();
 		this.helper = helper;
 		sw = new SmithWatermanSetMetric<>();
@@ -77,7 +77,7 @@ public class CountTable {
 				
 		//Declare the various weights
 		//float weightLevel = 1f /numberOfSeqSameLength; //from [1.0,0[  -> higher is better
-		float weightDistance = 1f / dist; //from [1.0,0[ -> higher is better
+		double weightDistance = 1f / dist; //from [1.0,0[ -> higher is better
 		//float distLevel = level;//1f / (level /*+ 1*/); //from [1.0,0[ -> higher is better
 //		float weightLength = (float)curSeqLength / fullSeqLength; //from [1.0,0[ -> higher is better
 //		float weightLength = (float)fullSeqLength / curSeqLength; //from [1.0,0[ -> higher is better
@@ -88,10 +88,10 @@ public class CountTable {
 		//float curValue = (weightLevel * 1f) + (1f) + (weightDistance * 0.0001f);
 		//int boost = (curSeqLength / (float)fullSeqLength) >= 0.9f ? 1 : 1;
 		//if (boost == 2) System.out.println("Boosted");
-		float curValue = /*(/*Maybe I need 1 - weightLevel*//* distLevel * 1f) +*/ ((curSeqLength / (float)fullSeqLength)) + (subs / (float)total_subs) + (1f) + (weightDistance * 0.0001f);
+		double curValue = /*(/*Maybe I need 1 - weightLevel*//* distLevel * 1f) +*/ ((curSeqLength / (double)fullSeqLength)) + (subs / (double)total_subs) + (1f) + (weightDistance * 0.0001f);
 		
 		//Update the count table
-		Float oldVal = table.get(key);
+		Double oldVal = table.get(key);
 		if(oldVal == null) {
 			table.put(key, curValue);
 		}
@@ -260,7 +260,7 @@ public class CountTable {
 		
 		//Iterating through the CountTable to sort the items by score
 		ScoreDistribution<Integer> sd = new ScoreDistribution<Integer>();
-		for(Entry<Integer, Float> it : table.entrySet()) {
+		for(Entry<Integer, Double> it : table.entrySet()) {
 			
 			//the following measure of confidence and lift are "simplified" but are exactly the same as in the literature.
 			//CONFIDENCE : |X -> Y|

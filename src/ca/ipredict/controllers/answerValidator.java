@@ -86,7 +86,7 @@ public class answerValidator {
 	                //System.out.println(line);
 	                String[] item = line.split(" ");
 	                answersBWT.add(Integer.parseInt(item[0]));
-	                consequentsBWT.add(Integer.parseInt(item[1]));
+	                //consequentsBWT.add(Integer.parseInt(item[1]));
 	                //System.out.println(item[0] + " " + item[1]);
 	            }   
 
@@ -111,12 +111,10 @@ public class answerValidator {
 	        int counter = 0;
 
 	        for (int i = 0; i < answersBWT.size(); i++){
-	        	if (answersBWT.get(i).compareTo(answers.get(i)) == 0) counter++;
-	        	else if (answersBWT.get(i).compareTo(consequents.get(i)) == 0) counter++;
-	        	else if (consequentsBWT.get(i).compareTo(consequents.get(i)) != 0){
-	        		System.out.println("Consequents between BWT and non-BWT answers are not the same; maybe check evaluator framework when exporting answers/consequents");
-	        		//System.out.println(consequentsBWT.get(i) + " " + consequents.get(i));
-	        	}
+	        	if (answersBWT.get(i).compareTo(consequents.get(i)) == 0) counter++;
+	        	else if (answersBWT.get(i).compareTo(answers.get(i)) == 0) counter++;
+	        	else if (answers.get(i).compareTo(consequents.get(i)) != 0) counter++;
+	        	if (answers.get(i).compareTo(consequents.get(i)) == 0 && answersBWT.get(i).compareTo(answers.get(i)) != 0) System.out.println("Index: " + i);
 	        }
 
 	        System.out.println("BWT approach validity: " + ((float)counter / answersBWT.size()));
