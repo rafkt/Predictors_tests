@@ -112,9 +112,9 @@ public class answerValidator {
 
 	        for (int i = 0; i < answersBWT.size(); i++){
 	        	if (answersBWT.get(i).compareTo(consequents.get(i)) == 0) counter++;
-	        	else if (answersBWT.get(i).compareTo(answers.get(i)) == 0) counter++;
-	        	else if (answers.get(i).compareTo(consequents.get(i)) != 0) counter++;
-	        	if (answers.get(i).compareTo(consequents.get(i)) == 0 && answersBWT.get(i).compareTo(answers.get(i)) != 0) System.out.println("Index: " + i);
+	        	// else if (answersBWT.get(i).compareTo(answers.get(i)) == 0) counter++;
+	        	// else if (answers.get(i).compareTo(consequents.get(i)) != 0) counter++;
+	        	// if (answers.get(i).compareTo(consequents.get(i)) == 0 && answersBWT.get(i).compareTo(answers.get(i)) != 0) System.out.println("Index: " + i);
 	        }
 
 	        System.out.println("BWT approach validity: " + ((float)counter / answersBWT.size()));

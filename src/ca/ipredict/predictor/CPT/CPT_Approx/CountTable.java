@@ -88,14 +88,16 @@ public class CountTable {
 		//float curValue = (weightLevel * 1f) + (1f) + (weightDistance * 0.0001f);
 		//int boost = (curSeqLength / (float)fullSeqLength) >= 0.9f ? 1 : 1;
 		//if (boost == 2) System.out.println("Boosted");
-		double curValue = /*(/*Maybe I need 1 - weightLevel*//* distLevel * 1f) +*/ ((curSeqLength / (double)fullSeqLength)) + (subs / (double)total_subs) + (1f) + (weightDistance * 0.0001f);
+		double curValue = /*(/*Maybe I need 1 - weightLevel*//* distLevel * 1f) +*/ ((curSeqLength / (double)fullSeqLength)) + (subs / (double)total_subs) + (1f) + (weightDistance);
 		
 		//Update the count table
 		Double oldVal = table.get(key);
 		if(oldVal == null) {
+			//System.out.print(key + " " + curValue + " ");
 			table.put(key, curValue);
 		}
 		else {
+			//System.out.print(key + " " + oldVal * curValue + " ");
 			table.put(key, oldVal * curValue);
 		}		
 	}
@@ -110,9 +112,14 @@ public class CountTable {
 	 */
 	public int update(Item[] sequence, int initialSequenceSize, int upperLever) {
 		int branchesUsed = 0;
+		ArrayList<Integer> exploited = new ArrayList<Integer>();
+
+		//ArrayList<Integer> specSeq = new ArrayList<Integer>(
+		//Arrays.asList(561, 1809, 124, 229, 728, 124, 1743, 1746, 16, 124, 936, 124, 72, 29, 119, 121, 124, 151, 51, 27, 99, 166, 2503, 168, 73, 153, 253, 30, 140, 254, 120, 193, 222, 185, 161, 185, 225, 192, 203, 239, 205, 237, 245, 246, 11, 197, 94, 124, 287, 192, 53, 270, 217, 124));
 
 		//skipping a query item starting from the 1st
 		for (int i = 0; i < sequence.length - 1; i ++){
+			//System.out.println("Del:" + i);
 			branchesUsed = 0; //or try not to reset it at all for every sub-query - run experiment
 			Item[] subseq = Arrays.copyOfRange(sequence, i, sequence.length);
 
@@ -130,24 +137,39 @@ public class CountTable {
 					// }
 			for (int sub_i = 0; sub_i < total_subs + 1; sub_i++){ // I have to sequentially forgive substitutions - start with 0 then with 1, 2...
 				//branchesUsed = 0;//either reset it here or in the start of the previous loop -  run experiment for this
+				//System.out.println("Erros: " + sub_i);
 				Map<Integer, PredictionTree> map = helper.predictor.LT;
 				for (Map.Entry<Integer, PredictionTree> entry : map.entrySet()){
 					//System.out.println(entry.getKey() + "/" + entry.getValue());
 					
+					if (exploited.contains(entry.getKey())) continue;
 					
 					//extracting the sequence from the PredictionTree
 					Item[] retrieved_seq = helper.getSequenceFromId(entry.getKey()/*id*/);
 
 					List<Integer> ret_seqList = new ArrayList<Integer>();
 					for (Item item : retrieved_seq) ret_seqList.add(item.val);
-
 					List<Integer> sequenceList = new ArrayList<Integer>();
 					for (Item item : subseq) sequenceList.add(item.val);
+
+					boolean flag = false;
+
+					// if (ret_seqList.size() == specSeq.size()){
+					// 	flag = true;
+					// 	for (int l = 0; l < specSeq.size(); l++){
+					// 		if (ret_seqList.get(i).compareTo(specSeq.get(i)) != 0){flag = false; break;}
+					// 	}
+					// }
+
+					//if (flag) System.out.println("FOUND");
 
 					//Levenshtein distance - if the distance does not meet our criteria then we abort.
 
 					float dist = sw.compare(ret_seqList, sequenceList);//LevenshteinDistance.distance(seqList, sequenceList); //not ready yet
 					if (dist == 0) continue;
+
+
+
 					/*
 						Now I can get the indices from the alignment. getFirstLocalIndex() for the index in ret_seqList and getSecondLocalIndex() for the index in sequenceList
 						.. Remember we want to see if we have an exact representation of the sequence in the retrieved_seq. We can always substitute one or two items.
@@ -163,10 +185,16 @@ public class CountTable {
 					int subs = total_subs;
 					int consequent_index = -1;
 
+					//if (flag) System.out.println("To be ---ALLIGNED on : ");
+
+
 					int seq_i = sw.getSecondLocalIndex() + 1;
 					int ret_i = sw.getFirstLocalIndex() + 1;
+
+					//if (flag) System.out.println("To be ---ALLIGNED on : " + seq_i + " " + ret_i);
+
 					while(seq_i < sequenceList.size() && ret_i < ret_seqList.size()){
-						if (!sequenceList.get(seq_i).equals(ret_seqList.get(ret_i))) subs--;
+						if (sequenceList.get(seq_i).compareTo(ret_seqList.get(ret_i)) != 0) subs--;
 						if (subs < 0) break;
 						seq_i++;
 						ret_i++;
@@ -176,12 +204,14 @@ public class CountTable {
 						seq_i = sw.getSecondLocalIndex() - 1;
 						ret_i = sw.getFirstLocalIndex() - 1;
 						while(seq_i >= 0 && ret_i >= 0){
-							if (!sequenceList.get(seq_i).equals(ret_seqList.get(ret_i))) subs--;
+							if (sequenceList.get(seq_i).compareTo(ret_seqList.get(ret_i)) != 0) subs--;
 							if (subs < 0) break;
 							seq_i--;
 							ret_i--;
 						}
 					}else continue;
+
+					//if (flag) {System.out.println("To be ---ALLIGNED"); System.out.println(subs + " " + total_subs + " " + sub_i + " " + seq_i);}
 
 					if (subs < 0 || total_subs - subs > sub_i || seq_i >= 0) continue; //update smith-water jar.. after this line you can add the consequent of ret_sequence to the cout table.
 
@@ -199,7 +229,21 @@ public class CountTable {
 					// 	toAvoid.add(subseq[local_j]);
 					// }
 					
+					exploited.add(entry.getKey());
 
+					//if (flag) System.out.println("ALLIGNED");
+
+					// System.out.print("Retrieved Seq: ");
+					// for (Integer item : ret_seqList) {
+					// 	System.out.print(item + " ");
+					// }
+					// System.out.println();
+
+					// System.out.print("Current query Seq: ");
+					// for (Integer item : sequenceList) {
+					// 	System.out.print(item + " ");
+					// }
+					// System.out.println();
 					//Updating this CountTable with the items {S}
 					//Where {S} contains only the items that are in seq after
 					//all the items from sequence have appeared at least once
@@ -209,6 +253,7 @@ public class CountTable {
 					//	{S}: 		E F
 					int max = 3;//99; //used to limit the number of items to push in the count table
 					int count = 1; //current number of items already pushed
+					//System.out.print("Pushing: ");
 					for (int local_i = consequent_index; local_i < retrieved_seq.length; local_i++){//(Item item : seq) {
 						//only enters this if toAvoid is empty
 						//it means that all the items of toAvoid have been seen
@@ -222,6 +267,7 @@ public class CountTable {
 						//	toAvoid.remove(seq[local_i]);
 						//}
 					}
+					//System.out.println();
 					//System.out.println();
 
 

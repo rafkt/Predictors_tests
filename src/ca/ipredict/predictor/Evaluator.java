@@ -177,9 +177,9 @@ public class Evaluator {
 		//DEBUG
 		//System.out.println("Dataset size: "+ (trainingSequences.size() + testSequences.size()));
 		//System.out.println("Training: " + trainingSequences.size() + " and Test set: "+ testSequences.size());
+
 		
-		PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier
-		
+		PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier		
 		StartClassifier(testSequences, classifierId); //classification of the test sequence
 		writeAnswersConsequentsToFile();
 	}
@@ -347,14 +347,14 @@ public class Evaluator {
 
 	private void writeAnswersConsequentsToFile(){
 		// The name of the file to open.
-        String fileName = "answers.consequents.Fifa.txt";
+        String fileName = "answers.consequents.BIBLE.txt";
         if (answers.size() != consequents.size()){System.out.println("Something is wrong; Answers list is not same length as Consequents list");return;}
 
         try {
             // Assume default encoding.
             FileWriter fileWriter =
                 new FileWriter(fileName);
-            FileWriter fileWriterQueries = new FileWriter("queries.Fifa.txt");
+            FileWriter fileWriterQueries = new FileWriter("queries.BIBLE.txt");
 
             // Always wrap FileWriter in BufferedWriter.
             BufferedWriter bufferedWriter =

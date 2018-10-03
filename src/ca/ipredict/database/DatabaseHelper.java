@@ -115,10 +115,10 @@ public class DatabaseHelper {
 				database.loadFileFIFAFormat(fileToPath("FIFA_large.dat"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
 				break;
 			case FIFA_bwt_training:
-				database.loadFileBWTFormat(fileToPath("FIFA.training.txt"), 2);
+				database.loadFileBWTFormat(fileToPath("old.FIFA.training.txt"), 2);
 				break;
 			case FIFA_bwt_testing:
-				database.loadFileBWTFormat(fileToPath("FIFA.testing.txt"), 2);
+				database.loadFileBWTFormat(fileToPath("old.FIFA.testing.txt"), 2);
 				break;	
 			case MSNBC:
 				database.loadFileMsnbsFormat(fileToPath("msnbc.seq"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));

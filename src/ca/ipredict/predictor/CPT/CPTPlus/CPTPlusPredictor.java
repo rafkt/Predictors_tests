@@ -112,23 +112,23 @@ public class CPTPlusPredictor extends Predictor {
 		//Identifying the frequent sequential itemsets
 		//setting up the encoder for future encoding tasks
 		FIF finder = new FIFRaw();
-		if(parameters.paramBoolOrDefault("CCF", CCF)) {
-			List<List<Item>> itemsets = finder.findFrequentItemsets(trainingSequences, parameters.paramInt("CCFmin"), parameters.paramInt("CCFmax"), parameters.paramInt("CCFsup"));
+		//if(parameters.paramBoolOrDefault("CCF", CCF)) {
+			List<List<Item>> itemsets = finder.findFrequentItemsets(trainingSequences, 2/*parameters.paramInt("CCFmin")*/, 4/*parameters.paramInt("CCFmax")*/, 2/*parameters.paramInt("CCFsup")*/);
 			
 			//filling the encoder with the frequent itemsets
 			for(List<Item> itemset : itemsets) {
 				encoder.addEntry(itemset);
 			}
-		}
+		//}
 		
 
 		//for each training sequence
 		for(Sequence seq : trainingSequences) {
 			
 			//slicing the sequence if needed
-			if(parameters.paramInt("splitMethod") > 0) {
-				seq = helper.keepLastItems(seq, parameters.paramInt("splitLength"));
-			}
+			// if(parameters.paramInt("splitMethod") > 0) {
+			// 	seq = helper.keepLastItems(seq, parameters.paramInt("splitLength"));
+			// }
 
 			//Generating the compressed version of this sequence
 			Sequence seqCompressed = new Sequence(seq);
@@ -175,9 +175,9 @@ public class CPTPlusPredictor extends Predictor {
 		
 
 		//Patch collapsing for added compression
-		if(parameters.paramBoolOrDefault("CBS", CBS)) {
+		//if(parameters.paramBoolOrDefault("CBS", CBS)) {
 			pathCollapse();
-		}
+		//}
 		
 		return true;
 	}
@@ -209,9 +209,9 @@ public class CPTPlusPredictor extends Predictor {
 		
 
 		//Setting parameters
-		int maxPredictionCount = 1 + (int) (target.size() * parameters.paramDouble("minPredictionRatio")); //minimum number of required prediction to ensure the best accuracy
+		int maxPredictionCount = 1 + (int) (target.size() * 1/*parameters.paramDouble("minPredictionRatio")*/); //minimum number of required prediction to ensure the best accuracy
 		int predictionCount = 0; //current number of prediction done (one by default because of the CountTable being updated with the target initially) 
-		double noiseRatio = parameters.paramDouble("noiseRatio"); //Ratio of items to remove in a sequence per level (level = target.size)
+		double noiseRatio = 1.0;//parameters.paramDouble("noiseRatio"); //Ratio of items to remove in a sequence per level (level = target.size)
 		int initialTargetSize = target.size();
 		
 		
