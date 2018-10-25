@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.io.IOException;
+import java.io.*;
+import java.util.*;
 
 import ca.ipredict.database.DatabaseHelper;
 import ca.ipredict.database.DatabaseHelper.Format;
@@ -125,7 +127,7 @@ public class Evaluator {
 						break;
 				
 					case KFOLD:
-						KFold((int)param, id);
+						KFold((int)param, id, format);
 						break;
 						
 					case RANDOMSAMPLING:
@@ -192,7 +194,7 @@ public class Evaluator {
 	 * Training and testing is done k times. For each time; a fold is used for testing 
 	 * and the k-1 other folds for training
 	 */
-	public void KFold(int k, int classifierId) {
+	public void KFold(int k, int classifierId, String datasetName) {
 		
 		//k has to be at least 2
 		if(k < 2) {
@@ -238,11 +240,144 @@ public class Evaluator {
 		
 			PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier	
 			StartClassifier(testSequences, classifierId); //classification of the test sequence
+
+			writeFoldsAndAnswers(trainingSequences, testSequences, i, datasetName);
 			
 			//Logging memory usage
 			MemoryLogger.addUpdate();
 		}
 		
+	}
+
+	public void writeFoldsAndAnswers(List<Sequence> trainingSequences, List<Sequence> testingSequences, int fold, String datasetName){
+		
+		// Assume default encoding.
+
+		FileWriter fileWriter = null, fileWriter2 = null;
+		BufferedWriter bufferedWriter = null, bufferedWriter2 = null;
+
+		String fileName = "outputs/" + datasetName + ".fold." + fold + ".training.txt";
+		try{
+	        fileWriter =
+	            new FileWriter(fileName);
+	        // Always wrap FileWriter in BufferedWriter.
+	       	bufferedWriter =
+	            new BufferedWriter(fileWriter);
+	    }catch(IOException ex){
+
+	    }
+
+		
+
+		for(Sequence target : trainingSequences) {
+			
+			//write in a file the training sequence e.g Fifa.fold.1.training.txt
+	        try {
+	            // Note that write() does not automatically
+	            // append a newline character.
+	            bufferedWriter.write(target.toString() + "99999 ");
+	            // bufferedWriter.write(" here is some text.");
+	            // bufferedWriter.newLine();
+	            // bufferedWriter.write("We are writing");
+	            // bufferedWriter.write(" the text to the file.");
+
+	            // Always close files.
+	        }
+	        catch(IOException ex) {
+	            System.out.println(
+	                "Error writing to file '"
+	                + fileName + "'");
+	            // Or we could just do this:
+	            // ex.printStackTrace();
+	        }
+
+		}
+
+		try {bufferedWriter.close();} catch (IOException ex){}
+
+
+		fileName = "outputs/" + datasetName + ".fold." + fold + ".consequent.txt";
+
+
+        String fileName2 = "outputs/" + datasetName + ".fold." + fold + ".queries.txt";
+
+        try{
+
+        	fileWriter =
+	            new FileWriter(fileName);
+	        // Always wrap FileWriter in BufferedWriter.
+	        bufferedWriter =
+	        	new BufferedWriter(fileWriter);
+
+	        fileWriter2 =
+	            new FileWriter(fileName2);
+	        // Always wrap FileWriter in BufferedWriter.
+	        bufferedWriter2 =
+	            new BufferedWriter(fileWriter2);
+	    }catch(IOException ex){}
+
+
+		for(Sequence target : testingSequences) {
+			
+			//if sequence is long enough
+			if(target.size() > (Profile.paramInt("consequentSize"))) {
+				
+				Sequence consequent = target.getLastItems(Profile.paramInt("consequentSize"),0); //the lasts actual items in target
+				Sequence finalTarget = target.getLastItems(Profile.paramInt("windowSize"),Profile.paramInt("consequentSize")); //the actual query
+				
+
+				//open a file and write in the consequent.. e.g Fifa.fold.1.consequent.txt
+
+		        try {
+		            // Assume default encoding.
+		            
+
+		            // Note that write() does not automatically
+		            // append a newline character.
+		            bufferedWriter.write(consequent.toString());
+		            // bufferedWriter.write(" here is some text.");
+		            bufferedWriter.newLine();
+		            // bufferedWriter.write("We are writing");
+		            // bufferedWriter.write(" the text to the file.");
+
+		            // Always close files.
+		        }
+		        catch(IOException ex) {
+		            System.out.println(
+		                "Error writing to file '"
+		                + fileName + "'");
+		            // Or we could just do this:
+		            // ex.printStackTrace();
+		        }
+
+
+				//open a file and write down the query	Fifa.fold.1.queries.txt
+
+		        try {
+		            // Assume default encoding.
+
+		            // Note that write() does not automatically
+		            // append a newline character.
+		            bufferedWriter2.write(finalTarget.toString());
+		            // bufferedWriter.write(" here is some text.");
+		            bufferedWriter2.newLine();
+		            // bufferedWriter.write("We are writing");
+		            // bufferedWriter.write(" the text to the file.");
+
+		            // Always close files.
+		        }
+		        catch(IOException ex) {
+		            System.out.println(
+		                "Error writing to file '"
+		                + fileName + "'");
+		            // Or we could just do this:
+		            // ex.printStackTrace();
+		        }
+			}
+		}
+
+		try {bufferedWriter.close();} catch (IOException ex){}
+		try {bufferedWriter2.close();} catch (IOException ex){}
 	}
 	
 	/**
