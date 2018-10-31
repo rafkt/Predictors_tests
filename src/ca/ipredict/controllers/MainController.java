@@ -81,6 +81,7 @@ public class MainController {
 			// evaluator.addDataset("KOSARAK", 	5000);
 			evaluator.addDataset("FIFA_bwt_training",	-1);
 			evaluator.addDataset("FIFA_bwt_testing",	-1);
+			evaluator.addDataset("FIFA_bwt_conseq",	-1);
 
 			//evaluator.addDataset("NASA07", 	5000);
 			//evaluator.addDataset("NASA08",	5000);

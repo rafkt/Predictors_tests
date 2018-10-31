@@ -19,7 +19,7 @@ public class DatabaseHelper {
 	public Map<Integer, String> mapItemToString;
 	
 	//Data sets
-	public static enum Format{BMS, KOSARAK, FIFA, FIFA_bwt_training, FIFA_bwt_testing, MSNBC, SIGN, CANADARM1, CANADARM2, SNAKE, BIBLE_CHAR, BIBLE_WORD, KORAN_WORD, LEVIATHAN_WORD, CUSTOM, 
+	public static enum Format{BMS, KOSARAK, FIFA, FIFA_bwt_training, FIFA_bwt_testing, FIFA_bwt_conseq, MSNBC, SIGN, CANADARM1, CANADARM2, SNAKE, BIBLE_CHAR, BIBLE_WORD, KORAN_WORD, LEVIATHAN_WORD, CUSTOM, 
 
 								NASA07,
 								NASA08,
@@ -115,10 +115,13 @@ public class DatabaseHelper {
 				database.loadFileFIFAFormat(fileToPath("FIFA_large.dat"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
 				break;
 			case FIFA_bwt_training:
-				database.loadFileBWTFormat(fileToPath("old.FIFA.training.txt"), 2);
+				database.loadFileBWTFormat(fileToPath("KOSARAK.fold.1.training.txt"), 2);
 				break;
 			case FIFA_bwt_testing:
-				database.loadFileBWTFormat(fileToPath("old.FIFA.testing.txt"), 2);
+				database.loadFileCustomFormat(fileToPath("debug.query.txt"), -1, -1, -1);
+				break;
+			case FIFA_bwt_conseq:
+				database.loadFileCustomFormat(fileToPath("KOSARAK.fold.1.consequent.txt"), -1, -1, -1);
 				break;	
 			case MSNBC:
 				database.loadFileMsnbsFormat(fileToPath("msnbc.seq"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));

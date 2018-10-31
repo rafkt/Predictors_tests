@@ -33,7 +33,7 @@ public class Evaluator {
 	private long endTime;
 	
 	//Database
-	private DatabaseHelper databaseTraining, databaseTesting;
+	private DatabaseHelper databaseTraining, databaseTesting, databaseConseq;
 	
 	//public Stats stats;
 	public StatsLogger stats;
@@ -54,6 +54,7 @@ public class Evaluator {
 		datasetsMaxCount = new ArrayList<Integer>();
 		databaseTraining = new DatabaseHelper(pathToDatasets);
 		databaseTesting = new DatabaseHelper(pathToDatasets);
+		databaseConseq = new DatabaseHelper(pathToDatasets);
 	}
 	
 	/**
@@ -105,11 +106,13 @@ public class Evaluator {
 			int maxCount = -1;//datasetsMaxCount.get(i);
 			String formatTraining = "FIFA_bwt_training";//datasets.get(i);
 			String formatTesting = "FIFA_bwt_testing";
+			String formatconseq = "FIFA_bwt_conseq";
 			//Loading the parameter profile
 			
 			//Loading the dataset
 			databaseTraining.loadDataset(formatTraining, maxCount);
 			databaseTesting.loadDataset(formatTesting, maxCount);
+			databaseConseq.loadDataset(formatconseq, maxCount);
 			//for (Sequence i : databaseTesting.getDatabase().getSequences()) System.out.println("-->" + i);
 			
 			if(showDatasetStats) {
@@ -117,6 +120,8 @@ public class Evaluator {
 				SequenceStatsGenerator.prinStats(databaseTraining.getDatabase(), formatTraining);
 				System.out.println();
 				SequenceStatsGenerator.prinStats(databaseTesting.getDatabase(), formatTesting);
+				System.out.println();
+				SequenceStatsGenerator.prinStats(databaseConseq.getDatabase(), formatconseq);
 			}
 			
 			//Creating the statsLogger
@@ -174,14 +179,17 @@ public class Evaluator {
 		List<Sequence> trainingSequences = databaseTraining.getDatabase().getSequences();//.subList(0, databaseTraining.getDatabase().size());
 		List<Sequence> testSequences = databaseTesting.getDatabase().getSequences();//.subList(0, databaseTesting.getDatabase().size());
 		
+		List<Sequence> consequentSet = databaseConseq.getDatabase().getSequences();
+
 		//DEBUG
 		//System.out.println("Dataset size: "+ (trainingSequences.size() + testSequences.size()));
 		//System.out.println("Training: " + trainingSequences.size() + " and Test set: "+ testSequences.size());
 
 		
 		PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier		
-		StartClassifier(testSequences, classifierId); //classification of the test sequence
-		writeAnswersConsequentsToFile();
+		StartClassifier(testSequences, consequentSet, classifierId); //classification of the test sequence
+		//writeAnswersConsequentsToFile();
+		writeAnswersToFile();
 	}
 	
 	/**
@@ -254,7 +262,7 @@ public class Evaluator {
 			//End of Partitioning
 		
 			PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier	
-			StartClassifier(testSequences, classifierId); //classification of the test sequence
+			//StartClassifier(testSequences, classifierId); //classification of the test sequence
 			
 			//Logging memory usage
 			MemoryLogger.addUpdate();
@@ -388,24 +396,71 @@ public class Evaluator {
             // ex.printStackTrace();
         }
 	}
+
+	private void writeAnswersToFile(){
+		// The name of the file to open.
+        String fileName = "answers.java.sBPtxt";
+        //if (answers.size() != consequents.size()){System.out.println("Something is wrong; Answers list is not same length as Consequents list");return;}
+
+        try {
+            // Assume default encoding.
+            FileWriter fileWriter =
+                new FileWriter(fileName);
+            //FileWriter fileWriterQueries = new FileWriter("queries.BIBLE.txt");
+
+            // Always wrap FileWriter in BufferedWriter.
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            //BufferedWriter bufferedWriterQueries = new BufferedWriter(fileWriterQueries);
+
+            // Note that write() does not automatically
+            // append a newline character.
+            // bufferedWriter.write("Hello there,");
+            // bufferedWriter.write(" here is some text.");
+            // bufferedWriter.newLine();
+            // bufferedWriter.write("We are writing");
+            // bufferedWriter.write(" the text to the file.");
+            for(int i = 0; i < answers.size(); i++){
+            	bufferedWriter.write(answers.get(i) + "");
+            	bufferedWriter.newLine();
+            	//bufferedWriterQueries.write(queries.get(i) + "");
+            	//bufferedWriterQueries.newLine();
+            }
+
+            // Always close files.
+            bufferedWriter.close();
+            //bufferedWriterQueries.close();
+        }
+        catch(IOException ex) {
+            System.out.println(
+                "Error writing to file '"
+                + fileName + "'");
+            // Or we could just do this:
+            // ex.printStackTrace();
+        }
+	}
 	
-	private void StartClassifier(List<Sequence> testSequences, int classifierId) {	
+	private void StartClassifier(List<Sequence> testSequences, List<Sequence> consequentSet, int classifierId) {	
 		
 		long start = System.currentTimeMillis(); //Testing starting time
 		
 		//for each sequence; it classifies it and evaluates it
-		for(Sequence target : testSequences) {
+		for(int i = 0; i < testSequences.size(); i++) {
+
+			Sequence target = testSequences.get(i);
 			
 			//if sequence is long enough
 			if(target.size() > (1/*Profile.paramInt("consequentSize")*/)) {
 				
-				Sequence consequent = target.getLastItems(1/*Profile.paramInt("consequentSize")*/,0); //the lasts actual items in target
-				Sequence finalTarget = target.getLastItems(5/*Profile.paramInt("windowSize")*/,1/*Profile.paramInt("consequentSize")*/);
+				Sequence consequent = consequentSet.get(i);
+				//Sequence consequent = target.getLastItems(1/*Profile.paramInt("consequentSize")*/,0); //the lasts actual items in target
+				//Sequence finalTarget = target.getLastItems(5/*Profile.paramInt("windowSize")*/,1/*Profile.paramInt("consequentSize")*/);
 				
-				Sequence predicted = predictors.get(classifierId).Predict(finalTarget);
+				Sequence predicted = predictors.get(classifierId).Predict(target);
 				answers.add(predicted);
-				consequents.add(consequent);
-				queries.add(finalTarget);
+				//consequents.add(consequent);
+				//queries.add(finalTarget);
+
+				System.out.println(predicted);
 				
 				//if no sequence is returned, it means that they is no match for this sequence
 				if(predicted.size() == 0) {

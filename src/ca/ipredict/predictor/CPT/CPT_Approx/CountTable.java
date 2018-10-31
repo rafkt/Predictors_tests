@@ -93,11 +93,11 @@ public class CountTable {
 		//Update the count table
 		Double oldVal = table.get(key);
 		if(oldVal == null) {
-			//System.out.print(key + " " + curValue + " ");
+			System.out.print(key + " " + curValue + " ");
 			table.put(key, curValue);
 		}
 		else {
-			//System.out.print(key + " " + oldVal * curValue + " ");
+			System.out.print(key + " " + oldVal * curValue + " ");
 			table.put(key, oldVal * curValue);
 		}		
 	}
@@ -253,7 +253,7 @@ public class CountTable {
 					//	{S}: 		E F
 					int max = 3;//99; //used to limit the number of items to push in the count table
 					int count = 1; //current number of items already pushed
-					//System.out.print("Pushing: ");
+					System.out.print("Pushing: ");
 					for (int local_i = consequent_index; local_i < retrieved_seq.length; local_i++){//(Item item : seq) {
 						//only enters this if toAvoid is empty
 						//it means that all the items of toAvoid have been seen
@@ -267,7 +267,7 @@ public class CountTable {
 						//	toAvoid.remove(seq[local_i]);
 						//}
 					}
-					//System.out.println();
+					System.out.println();
 					//System.out.println();
 
 

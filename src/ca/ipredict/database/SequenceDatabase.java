@@ -60,7 +60,7 @@ public class SequenceDatabase {
 				String[] split = line.split(" ");
 				
 				//Checks the size requirements of this sequence
-				if(split.length >= minSize && split.length <= maxSize )	{
+				//if(split.length >= minSize && split.length <= maxSize )	{
 					
 					Sequence sequence = new Sequence(-1);
 					for (String value : split) {
@@ -71,7 +71,7 @@ public class SequenceDatabase {
 					//Saving the sequence
 					sequences.add(sequence);
 					count++;
-				}
+				//}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
