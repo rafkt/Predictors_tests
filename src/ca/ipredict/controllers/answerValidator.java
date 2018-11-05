@@ -22,15 +22,16 @@ public class answerValidator {
 
 	public static void main(String[] args) throws IOException {
 
-			List<Integer> answers, consequents, answersBWT, consequentsBWT;
-			
+			List<Integer> answers, answersBWT, consequentsBWT;
+			ArrayList<ArrayList<Integer>> consequents;
+
 			answersBWT = new ArrayList<Integer>();
 			consequentsBWT = new ArrayList<Integer>();
 			answers = new ArrayList<Integer>();
-			consequents = new ArrayList<Integer>();
+			consequents = new ArrayList<ArrayList<Integer>>();
 
 			// The name of the file to open.
-	        String fileName = "answers.consequents.Fifa.txt";
+	        String fileName = "sbp.KOSARAK.fold.1.answers.debug.txt";
 
 	        // This will reference one line at a time
 	        String line = null;
@@ -47,8 +48,9 @@ public class answerValidator {
 	            while((line = bufferedReader.readLine()) != null) {
 	                //System.out.println(line);
 	                String[] item = line.split(" ");
+	                if (item[0].equals("")){answers.add(-1); continue;}
 	                answers.add(Integer.parseInt(item[0]));
-	                consequents.add(Integer.parseInt(item[1]));
+	                //consequents.add(Integer.parseInt(item[1]));
 	                // System.out.println(item[0] + " " + item[1]);
 	            }   
 
@@ -68,7 +70,7 @@ public class answerValidator {
 	            // ex.printStackTrace();
 	        }
 
-	        fileName = "BWT.answers.consequents.Fifa.txt";
+	        fileName = "KOSARAK.fold.1.consequent.txt";
 
 	        // This will reference one line at a time
 	        line = null;
@@ -85,7 +87,9 @@ public class answerValidator {
 	            while((line = bufferedReader.readLine()) != null) {
 	                //System.out.println(line);
 	                String[] item = line.split(" ");
-	                answersBWT.add(Integer.parseInt(item[0]));
+	                ArrayList<Integer> consequent = new ArrayList<Integer>();
+	                for (int i = 0; i < item.length; i++) consequent.add(Integer.parseInt(item[i]));
+	                consequents.add(consequent);
 	                //consequentsBWT.add(Integer.parseInt(item[1]));
 	                //System.out.println(item[0] + " " + item[1]);
 	            }   
@@ -106,18 +110,23 @@ public class answerValidator {
 	            // ex.printStackTrace();
 	        }
 
-	        if (answers.size() != answersBWT.size()){System.out.println("Answers are missing fron one or the other file"); return;}
+	        if (answers.size() != consequents.size()){System.out.println("Answers are missing"); return;}
 
 	        int counter = 0;
 
-	        for (int i = 0; i < answersBWT.size(); i++){
-	        	if (answersBWT.get(i).compareTo(consequents.get(i)) == 0) counter++;
+	        for (int i = 0; i < answers.size(); i++){
+	        	for (Integer conseq : consequents.get(i)) {
+	        		if (answers.get(i).compareTo(conseq) == 0) {
+	        			counter++;
+	        			break;
+	        		}
+	        	}
 	        	// else if (answersBWT.get(i).compareTo(answers.get(i)) == 0) counter++;
 	        	// else if (answers.get(i).compareTo(consequents.get(i)) != 0) counter++;
 	        	// if (answers.get(i).compareTo(consequents.get(i)) == 0 && answersBWT.get(i).compareTo(answers.get(i)) != 0) System.out.println("Index: " + i);
 	        }
 
-	        System.out.println("BWT approach validity: " + ((float)counter / answersBWT.size()));
+	        System.out.println("BWT approach validity: " + ((float)counter / answers.size()));
 
 	}
 
