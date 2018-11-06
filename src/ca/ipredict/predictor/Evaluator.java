@@ -22,6 +22,9 @@ import ca.ipredict.predictor.profile.ProfileManager;
  */
 public class Evaluator {
 
+	private static final boolean ALLOW_SPLIT_LENGTH_TRAINING_DATA_EXPORT = false;
+	private static boolean print = true;
+
 	private List<Predictor> predictors; //list of predictors
 	
 	//Sampling type
@@ -249,6 +252,17 @@ public class Evaluator {
 		
 	}
 
+	private Sequence keepLastItems(Sequence sequence, int length) { 
+
+		if(sequence.size() <= length){ 
+			return sequence;
+		}
+		
+		//slicing the seqence
+		Sequence result = new Sequence(sequence.getId(), sequence.getItems().subList(sequence.size() - length, sequence.size()));
+		return result;
+	}
+
 	public void writeFoldsAndAnswers(List<Sequence> trainingSequences, List<Sequence> testingSequences, int fold, String datasetName){
 		
 		// Assume default encoding.
@@ -266,11 +280,17 @@ public class Evaluator {
 	    }catch(IOException ex){
 
 	    }
-
 		
 
 		for(Sequence target : trainingSequences) {
 			
+			if(Profile.paramInt("splitMethod") > 0 && ALLOW_SPLIT_LENGTH_TRAINING_DATA_EXPORT) {
+				if (print) {System.out.println("Active splitLength during export of training data"); print = false;}
+				target = keepLastItems(target, Profile.paramInt("splitLength"));
+			}else{
+				if (print) {System.out.println("No active splitLength during export of training data"); print = false;}
+			}
+
 			//write in a file the training sequence e.g Fifa.fold.1.training.txt
 	        try {
 	            // Note that write() does not automatically
