@@ -515,8 +515,10 @@ public class Evaluator {
 				stats.inc("Too Small", predictors.get(classifierId).getTAG());
 			}
 		}
-		
+
 		long end = System.currentTimeMillis(); //Training ending time
+		System.out.println(predictors.get(classifierId).getTAG() + " memory (MB): " + predictors.get(classifierId).memoryUsage() / (1000 * 1000));
+		System.out.println(predictors.get(classifierId).getTAG() + " test time (ms): " + (double)(end - start));
 		double duration = (double)(end - start) / 1000;
 		stats.set("Test Time", predictors.get(classifierId).getTAG(), duration);
 	}

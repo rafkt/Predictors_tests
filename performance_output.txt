@@ -1,0 +1,1539 @@
+javac -cp src src/ca/ipredict/controllers/MainController.java
+java -cp src ca.ipredict.controllers.MainController ./datasets
+
+---BMS---
+Number of sequences : 	4865
+Number of distinct items: 	494
+Largest item id: 	60977
+Itemsets per sequence: 	11.227954779033915
+Distinct item per sequence: 	11.227954779033915
+Occurences for each item: 	1.0
+Size of the dataset in MB: 	19460.218496
+
+DG memory (MB): 0.20804
+DG test time (ms): 5.0
+Active splitLength during export of training data
+DG memory (MB): 0.207712
+DG test time (ms): 2.0
+DG memory (MB): 0.208344
+DG test time (ms): 1.0
+DG memory (MB): 0.20922
+DG test time (ms): 2.0
+DG memory (MB): 0.20838
+DG test time (ms): 0.0
+DG memory (MB): 0.20696
+DG test time (ms): 1.0
+DG memory (MB): 0.20758
+DG test time (ms): 1.0
+DG memory (MB): 0.208348
+DG test time (ms): 0.0
+DG memory (MB): 0.208372
+DG test time (ms): 1.0
+DG memory (MB): 0.208112
+DG test time (ms): 1.0
+DG memory (MB): 0.20748
+DG test time (ms): 0.0
+DG memory (MB): 0.208428
+DG test time (ms): 0.0
+DG memory (MB): 0.209128
+DG test time (ms): 1.0
+DG memory (MB): 0.207504
+DG test time (ms): 1.0
+TDAG memory (MB): 5.679384
+TDAG test time (ms): 2.0
+TDAG memory (MB): 5.639208
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.705592
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.681112
+TDAG test time (ms): 0.0
+TDAG memory (MB): 5.696376
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.654904
+TDAG test time (ms): 0.0
+TDAG memory (MB): 5.715528
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.664264
+TDAG test time (ms): 0.0
+TDAG memory (MB): 5.558856
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.681256
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.697096
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.68932
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.722584
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.702784
+TDAG test time (ms): 1.0
+CPT+ memory (MB): 0.377508
+CPT+ test time (ms): 255.0
+CPT+ memory (MB): 0.377616
+CPT+ test time (ms): 124.0
+CPT+ memory (MB): 0.377532
+CPT+ test time (ms): 130.0
+CPT+ memory (MB): 0.375212
+CPT+ test time (ms): 192.0
+CPT+ memory (MB): 0.375284
+CPT+ test time (ms): 115.0
+CPT+ memory (MB): 0.376504
+CPT+ test time (ms): 113.0
+CPT+ memory (MB): 0.377096
+CPT+ test time (ms): 126.0
+CPT+ memory (MB): 0.374184
+CPT+ test time (ms): 88.0
+CPT+ memory (MB): 0.376976
+CPT+ test time (ms): 98.0
+CPT+ memory (MB): 0.37642
+CPT+ test time (ms): 123.0
+CPT+ memory (MB): 0.376336
+CPT+ test time (ms): 180.0
+CPT+ memory (MB): 0.377508
+CPT+ test time (ms): 176.0
+CPT+ memory (MB): 0.376964
+CPT+ test time (ms): 95.0
+CPT+ memory (MB): 0.376516
+CPT+ test time (ms): 97.0
+CPT memory (MB): 0.641964
+CPT test time (ms): 193.0
+CPT memory (MB): 0.642624
+CPT test time (ms): 86.0
+CPT memory (MB): 0.642792
+CPT test time (ms): 123.0
+CPT memory (MB): 0.640796
+CPT test time (ms): 128.0
+CPT memory (MB): 0.640304
+CPT test time (ms): 89.0
+CPT memory (MB): 0.64132
+CPT test time (ms): 82.0
+CPT memory (MB): 0.641984
+CPT test time (ms): 82.0
+CPT memory (MB): 0.638556
+CPT test time (ms): 80.0
+CPT memory (MB): 0.642032
+CPT test time (ms): 88.0
+CPT memory (MB): 0.640996
+CPT test time (ms): 74.0
+CPT memory (MB): 0.641896
+CPT test time (ms): 77.0
+CPT memory (MB): 0.643332
+CPT test time (ms): 79.0
+CPT memory (MB): 0.64172
+CPT test time (ms): 82.0
+CPT memory (MB): 0.640612
+CPT test time (ms): 90.0
+Mark1 memory (MB): 0.075288
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.07516
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.075192
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.0753
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.074988
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.074992
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.07482
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.0751
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.075132
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.075
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.074872
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.075124
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.075336
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.074984
+Mark1 test time (ms): 1.0
+AKOM memory (MB): 1.07326
+AKOM test time (ms): 2.0
+AKOM memory (MB): 1.069792
+AKOM test time (ms): 2.0
+AKOM memory (MB): 1.075428
+AKOM test time (ms): 3.0
+AKOM memory (MB): 1.077064
+AKOM test time (ms): 2.0
+AKOM memory (MB): 1.075636
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.063408
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.0675
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.073932
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.07082
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.071764
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.073484
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.077908
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.0769
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.067572
+AKOM test time (ms): 1.0
+LZ78 memory (MB): 0.234572
+LZ78 test time (ms): 5.0
+LZ78 memory (MB): 0.233276
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.234752
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.234832
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.234496
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.233016
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.23412
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.234024
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.232088
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.233992
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.234692
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.23514
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.2353
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.233948
+LZ78 test time (ms): 3.0
+Memory history: 84 92 105 113 118 125 8 16 24 31 39 44 52 59 109 48 96 143 49 97 41 86 132 179 227 273 72 118 290 241 417 106 273 449 145 302 479 656 832 1009 205 382 382 401 500 500 500 598 598 617 696 696 716 814 814 814 912 912 912 1010 1010 1010 121 121 153 257 257 257 352 352 352 446 446 446 541 541 541 666 666 666 761 761 761 855 855 855 886 886 886 886 886 918 918 918 918 918 949 949 1107 1232 1358 1484 1610 167 292 418 543 669 795 920 1046 1171 1203 1234 1265 1297 1328 1360 1360 1391 1422 1454 1485 1517 1548 1579 1579 
+Max memory used: 1610mb
+Execution time: 9 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	36.397	59.402	37.817	36.841	31.241	31.406	32.95
+Failure   	63.603	40.598	62.183	63.159	68.759	68.594	67.05
+No Match  	0.041	88.304	0.206	0.185	0.123	0.123	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	36.382	6.948	37.739	36.773	31.202	31.367	32.95
+Size (MB)	0.208	5.703	0.377	0.641	0.075	1.068	0.234
+Train Tim	0.023	0.05	0.107	0.006	0.003	0.065	0.015
+Test Time	0.001	0.001	0.097	0.09	0.001	0.001	0.003
+
+
+---BIBLE_CHAR---
+Number of sequences : 	5000
+Number of distinct items: 	74
+Largest item id: 	122
+Itemsets per sequence: 	133.01
+Distinct item per sequence: 	26.0638
+Occurences for each item: 	5.1032466486084145
+Size of the dataset in MB: 	20002.6602
+
+DG memory (MB): 0.022388
+DG test time (ms): 0.0
+DG memory (MB): 0.022532
+DG test time (ms): 1.0
+DG memory (MB): 0.022596
+DG test time (ms): 0.0
+DG memory (MB): 0.022624
+DG test time (ms): 0.0
+DG memory (MB): 0.022508
+DG test time (ms): 1.0
+DG memory (MB): 0.022496
+DG test time (ms): 1.0
+DG memory (MB): 0.022676
+DG test time (ms): 0.0
+DG memory (MB): 0.022588
+DG test time (ms): 0.0
+DG memory (MB): 0.022612
+DG test time (ms): 0.0
+DG memory (MB): 0.022596
+DG test time (ms): 0.0
+DG memory (MB): 0.022412
+DG test time (ms): 0.0
+DG memory (MB): 0.02254
+DG test time (ms): 0.0
+DG memory (MB): 0.02258
+DG test time (ms): 0.0
+DG memory (MB): 0.022612
+DG test time (ms): 1.0
+TDAG memory (MB): 87.3515
+TDAG test time (ms): 1.0
+TDAG memory (MB): 87.06768
+TDAG test time (ms): 1.0
+TDAG memory (MB): 87.19339
+TDAG test time (ms): 0.0
+TDAG memory (MB): 87.42351
+TDAG test time (ms): 0.0
+TDAG memory (MB): 87.044785
+TDAG test time (ms): 1.0
+TDAG memory (MB): 87.31392
+TDAG test time (ms): 1.0
+TDAG memory (MB): 87.038734
+TDAG test time (ms): 1.0
+TDAG memory (MB): 87.1872
+TDAG test time (ms): 0.0
+TDAG memory (MB): 87.340126
+TDAG test time (ms): 0.0
+TDAG memory (MB): 87.36187
+TDAG test time (ms): 0.0
+TDAG memory (MB): 87.38347
+TDAG test time (ms): 1.0
+TDAG memory (MB): 87.396286
+TDAG test time (ms): 0.0
+TDAG memory (MB): 87.427246
+TDAG test time (ms): 0.0
+TDAG memory (MB): 87.044205
+TDAG test time (ms): 1.0
+CPT+ memory (MB): 0.113664
+CPT+ test time (ms): 32.0
+CPT+ memory (MB): 0.113892
+CPT+ test time (ms): 20.0
+CPT+ memory (MB): 0.114228
+CPT+ test time (ms): 15.0
+CPT+ memory (MB): 0.114096
+CPT+ test time (ms): 17.0
+CPT+ memory (MB): 0.11388
+CPT+ test time (ms): 15.0
+CPT+ memory (MB): 0.113296
+CPT+ test time (ms): 13.0
+CPT+ memory (MB): 0.113892
+CPT+ test time (ms): 15.0
+CPT+ memory (MB): 0.11388
+CPT+ test time (ms): 12.0
+CPT+ memory (MB): 0.114084
+CPT+ test time (ms): 13.0
+CPT+ memory (MB): 0.113832
+CPT+ test time (ms): 14.0
+CPT+ memory (MB): 0.113952
+CPT+ test time (ms): 15.0
+CPT+ memory (MB): 0.113844
+CPT+ test time (ms): 12.0
+CPT+ memory (MB): 0.114072
+CPT+ test time (ms): 14.0
+CPT+ memory (MB): 0.113708
+CPT+ test time (ms): 13.0
+CPT memory (MB): 0.211224
+CPT test time (ms): 7.0
+CPT memory (MB): 0.211368
+CPT test time (ms): 8.0
+CPT memory (MB): 0.211992
+CPT test time (ms): 7.0
+CPT memory (MB): 0.212412
+CPT test time (ms): 8.0
+CPT memory (MB): 0.211164
+CPT test time (ms): 10.0
+CPT memory (MB): 0.210808
+CPT test time (ms): 6.0
+CPT memory (MB): 0.211788
+CPT test time (ms): 7.0
+CPT memory (MB): 0.212184
+CPT test time (ms): 7.0
+CPT memory (MB): 0.211728
+CPT test time (ms): 8.0
+CPT memory (MB): 0.211068
+CPT test time (ms): 6.0
+CPT memory (MB): 0.211356
+CPT test time (ms): 6.0
+CPT memory (MB): 0.210564
+CPT test time (ms): 7.0
+CPT memory (MB): 0.211512
+CPT test time (ms): 8.0
+CPT memory (MB): 0.211424
+CPT test time (ms): 8.0
+Mark1 memory (MB): 0.008628
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.008716
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.008764
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.008728
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.008788
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.008688
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.008788
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00878
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.008788
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00878
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.008676
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.008708
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.008724
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.008788
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 1.67936
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.678692
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.68186
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.682364
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.679808
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.683368
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.676492
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.682848
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.68496
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.68098
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.67754
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.679948
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.680052
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.68174
+AKOM test time (ms): 0.0
+LZ78 memory (MB): 1.392072
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.388476
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.391684
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.393896
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.38844
+LZ78 test time (ms): 5.0
+LZ78 memory (MB): 1.391928
+LZ78 test time (ms): 9.0
+LZ78 memory (MB): 1.388136
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.389676
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 1.393068
+LZ78 test time (ms): 5.0
+LZ78 memory (MB): 1.391624
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.390392
+LZ78 test time (ms): 5.0
+LZ78 memory (MB): 1.391752
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 1.392216
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 1.387208
+LZ78 test time (ms): 4.0
+Memory history: 84 92 105 113 118 125 8 16 24 31 39 44 52 59 109 48 96 143 49 97 41 86 132 179 227 273 72 118 290 241 417 106 273 449 145 302 479 656 832 1009 205 382 382 401 500 500 500 598 598 617 696 696 716 814 814 814 912 912 912 1010 1010 1010 121 121 153 257 257 257 352 352 352 446 446 446 541 541 541 666 666 666 761 761 761 855 855 855 886 886 886 886 886 918 918 918 918 918 949 949 1107 1232 1358 1484 1610 167 292 418 543 669 795 920 1046 1171 1203 1234 1265 1297 1328 1360 1360 1391 1422 1454 1485 1517 1548 1579 1579 1611 1611 1611 1611 1642 1642 1642 1642 1642 1642 1642 1674 1674 1674 500 851 1152 1504 1855 -1889 -1588 360 711 1061 1412 1763 -2031 -1680 538 1160 1730 -1743 384 954 1576 -1845 227 845 1463 -2014 -1448 667 667 667 716 716 716 716 716 716 716 716 716 766 766 766 766 766 766 766 766 766 815 815 815 815 815 815 815 815 815 864 864 864 864 864 864 864 864 864 913 913 913 913 913 962 962 962 962 1011 1011 1011 1011 1061 1061 1061 1110 1110 -1608 1455 514 1901 1049 324 1707 1048 533 1939 1456 1102 839 628 903 1178 1484 265 544 822 1101 1379 1697 1976 271 546 820 1094 1094 
+Max memory used: 1976mb
+Execution time: 34 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	3.22	83.351	80.36	80.4	16.28	81.02	65.28
+Failure   	96.78	16.649	19.64	19.6	83.72	18.98	34.72
+No Match  	00.000	5.22	00.000	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	3.22	79	80.36	80.4	16.28	81.02	65.28
+Size (MB)	0.023	87.044	0.114	0.211	0.009	1.682	1.387
+Train Tim	0.203	0.477	0.455	0.003	0.02	1.037	0.214
+Test Time	0.001	0.001	0.013	0.008	00.000	00.000	0.004
+
+
+---KOSARAK---
+Number of sequences : 	45000
+Number of distinct items: 	22422
+Largest item id: 	29727
+Itemsets per sequence: 	28.42531111111111
+Distinct item per sequence: 	28.4252
+Occurences for each item: 	1.0000039088946115
+Size of the dataset in MB: 	180005.116556
+
+DG memory (MB): 8.273336
+DG test time (ms): 25.0
+DG memory (MB): 8.299556
+DG test time (ms): 24.0
+DG memory (MB): 8.307584
+DG test time (ms): 23.0
+DG memory (MB): 8.288448
+DG test time (ms): 39.0
+DG memory (MB): 8.2997
+DG test time (ms): 24.0
+DG memory (MB): 8.303824
+DG test time (ms): 26.0
+DG memory (MB): 8.296344
+DG test time (ms): 25.0
+DG memory (MB): 8.321388
+DG test time (ms): 24.0
+DG memory (MB): 8.306356
+DG test time (ms): 23.0
+DG memory (MB): 8.305992
+DG test time (ms): 23.0
+DG memory (MB): 8.308248
+DG test time (ms): 24.0
+DG memory (MB): 8.309868
+DG test time (ms): 23.0
+DG memory (MB): 8.289888
+DG test time (ms): 24.0
+DG memory (MB): 8.275948
+DG test time (ms): 23.0
+TDAG memory (MB): 155.8816
+TDAG test time (ms): 5.0
+TDAG memory (MB): 156.4769
+TDAG test time (ms): 4.0
+TDAG memory (MB): 156.00458
+TDAG test time (ms): 4.0
+TDAG memory (MB): 155.86073
+TDAG test time (ms): 4.0
+TDAG memory (MB): 155.0362
+TDAG test time (ms): 4.0
+TDAG memory (MB): 156.2848
+TDAG test time (ms): 4.0
+TDAG memory (MB): 155.8747
+TDAG test time (ms): 4.0
+TDAG memory (MB): 156.34903
+TDAG test time (ms): 4.0
+TDAG memory (MB): 155.65408
+TDAG test time (ms): 4.0
+TDAG memory (MB): 156.10698
+TDAG test time (ms): 4.0
+TDAG memory (MB): 156.33722
+TDAG test time (ms): 5.0
+TDAG memory (MB): 156.14166
+TDAG test time (ms): 4.0
+TDAG memory (MB): 156.02432
+TDAG test time (ms): 5.0
+TDAG memory (MB): 155.91574
+TDAG test time (ms): 4.0
+CPT+ memory (MB): 100.071
+CPT+ test time (ms): 6276.0
+CPT+ memory (MB): 100.08624
+CPT+ test time (ms): 6367.0
+CPT+ memory (MB): 100.113075
+CPT+ test time (ms): 6407.0
+CPT+ memory (MB): 100.087135
+CPT+ test time (ms): 6340.0
+CPT+ memory (MB): 99.783424
+CPT+ test time (ms): 5634.0
+CPT+ memory (MB): 100.11334
+CPT+ test time (ms): 5550.0
+CPT+ memory (MB): 99.992744
+CPT+ test time (ms): 5631.0
+CPT+ memory (MB): 100.11328
+CPT+ test time (ms): 5160.0
+CPT+ memory (MB): 100.08186
+CPT+ test time (ms): 5387.0
+CPT+ memory (MB): 100.311424
+CPT+ test time (ms): 6076.0
+CPT+ memory (MB): 100.14448
+CPT+ test time (ms): 5789.0
+CPT+ memory (MB): 100.013885
+CPT+ test time (ms): 6246.0
+CPT+ memory (MB): 99.88288
+CPT+ test time (ms): 6865.0
+CPT+ memory (MB): 100.02587
+CPT+ test time (ms): 6139.0
+CPT memory (MB): 106.10114
+CPT test time (ms): 6461.0
+CPT memory (MB): 106.1242
+CPT test time (ms): 6080.0
+CPT memory (MB): 106.14541
+CPT test time (ms): 6135.0
+CPT memory (MB): 106.11706
+CPT test time (ms): 6075.0
+CPT memory (MB): 105.814926
+CPT test time (ms): 6207.0
+CPT memory (MB): 106.14776
+CPT test time (ms): 5604.0
+CPT memory (MB): 106.02415
+CPT test time (ms): 5988.0
+CPT memory (MB): 106.13997
+CPT test time (ms): 5015.0
+CPT memory (MB): 106.11041
+CPT test time (ms): 5630.0
+CPT memory (MB): 106.343605
+CPT test time (ms): 5971.0
+CPT memory (MB): 106.18234
+CPT test time (ms): 5973.0
+CPT memory (MB): 106.05587
+CPT test time (ms): 6265.0
+CPT memory (MB): 105.91399
+CPT test time (ms): 5415.0
+CPT memory (MB): 106.06024
+CPT test time (ms): 5744.0
+Mark1 memory (MB): 2.260568
+Mark1 test time (ms): 26.0
+Mark1 memory (MB): 2.266172
+Mark1 test time (ms): 23.0
+Mark1 memory (MB): 2.27072
+Mark1 test time (ms): 23.0
+Mark1 memory (MB): 2.264008
+Mark1 test time (ms): 22.0
+Mark1 memory (MB): 2.26666
+Mark1 test time (ms): 24.0
+Mark1 memory (MB): 2.267448
+Mark1 test time (ms): 27.0
+Mark1 memory (MB): 2.26708
+Mark1 test time (ms): 23.0
+Mark1 memory (MB): 2.27302
+Mark1 test time (ms): 23.0
+Mark1 memory (MB): 2.2681
+Mark1 test time (ms): 23.0
+Mark1 memory (MB): 2.268968
+Mark1 test time (ms): 24.0
+Mark1 memory (MB): 2.269072
+Mark1 test time (ms): 25.0
+Mark1 memory (MB): 2.269828
+Mark1 test time (ms): 24.0
+Mark1 memory (MB): 2.264912
+Mark1 test time (ms): 23.0
+Mark1 memory (MB): 2.261596
+Mark1 test time (ms): 25.0
+AKOM memory (MB): 37.57707
+AKOM test time (ms): 10.0
+AKOM memory (MB): 37.715263
+AKOM test time (ms): 10.0
+AKOM memory (MB): 37.708103
+AKOM test time (ms): 11.0
+AKOM memory (MB): 37.592724
+AKOM test time (ms): 10.0
+AKOM memory (MB): 37.604893
+AKOM test time (ms): 10.0
+AKOM memory (MB): 37.72181
+AKOM test time (ms): 10.0
+AKOM memory (MB): 37.648357
+AKOM test time (ms): 11.0
+AKOM memory (MB): 37.71942
+AKOM test time (ms): 9.0
+AKOM memory (MB): 37.61388
+AKOM test time (ms): 10.0
+AKOM memory (MB): 37.640045
+AKOM test time (ms): 9.0
+AKOM memory (MB): 37.68799
+AKOM test time (ms): 9.0
+AKOM memory (MB): 37.71544
+AKOM test time (ms): 10.0
+AKOM memory (MB): 37.599316
+AKOM test time (ms): 9.0
+AKOM memory (MB): 37.56526
+AKOM test time (ms): 11.0
+LZ78 memory (MB): 5.959104
+LZ78 test time (ms): 462.0
+LZ78 memory (MB): 5.982212
+LZ78 test time (ms): 327.0
+LZ78 memory (MB): 5.97798
+LZ78 test time (ms): 449.0
+LZ78 memory (MB): 5.961388
+LZ78 test time (ms): 349.0
+LZ78 memory (MB): 5.951948
+LZ78 test time (ms): 420.0
+LZ78 memory (MB): 5.979264
+LZ78 test time (ms): 372.0
+LZ78 memory (MB): 5.968284
+LZ78 test time (ms): 456.0
+LZ78 memory (MB): 5.983836
+LZ78 test time (ms): 425.0
+LZ78 memory (MB): 5.96258
+LZ78 test time (ms): 462.0
+LZ78 memory (MB): 5.972852
+LZ78 test time (ms): 502.0
+LZ78 memory (MB): 5.979256
+LZ78 test time (ms): 510.0
+LZ78 memory (MB): 5.977856
+LZ78 test time (ms): 437.0
+LZ78 memory (MB): 5.966688
+LZ78 test time (ms): 460.0
+LZ78 memory (MB): 5.961244
+LZ78 test time (ms): 445.0
+Memory history: 84 92 105 113 118 125 8 16 24 31 39 44 52 59 109 48 96 143 49 97 41 86 132 179 227 273 72 118 290 241 417 106 273 449 145 302 479 656 832 1009 205 382 382 401 500 500 500 598 598 617 696 696 716 814 814 814 912 912 912 1010 1010 1010 121 121 153 257 257 257 352 352 352 446 446 446 541 541 541 666 666 666 761 761 761 855 855 855 886 886 886 886 886 918 918 918 918 918 949 949 1107 1232 1358 1484 1610 167 292 418 543 669 795 920 1046 1171 1203 1234 1265 1297 1328 1360 1360 1391 1422 1454 1485 1517 1548 1579 1579 1611 1611 1611 1611 1642 1642 1642 1642 1642 1642 1642 1674 1674 1674 500 851 1152 1504 1855 -1889 -1588 360 711 1061 1412 1763 -2031 -1680 538 1160 1730 -1743 384 954 1576 -1845 227 845 1463 -2014 -1448 667 667 667 716 716 716 716 716 716 716 716 716 766 766 766 766 766 766 766 766 766 815 815 815 815 815 815 815 815 815 864 864 864 864 864 864 864 864 864 913 913 913 913 913 962 962 962 962 1011 1011 1011 1011 1061 1061 1061 1110 1110 -1608 1455 514 1901 1049 324 1707 1048 533 1939 1456 1102 839 628 903 1178 1484 265 544 822 1101 1379 1697 1976 271 546 820 1094 1094 1512 1649 1741 1878 1969 -1989 -1897 -1760 -1669 346 433 564 694 781 -1672 1786 1610 1602 1225 1122 1450 -1743 1309 1225 -2014 1441 -1756 1261 1400 -1965 -2042 -1632 -1894 1461 1625 -1393 -1842 1652 -1938 -1486 -1190 -1356 -1356 -1118 -981 -981 1673 -923 -923 -717 -698 -663 1884 1885 1885 -1969 2022 2022 -1868 1949 1949 -1946 -2046 -2046 -1813 -634 -634 1889 -563 -563 1911 1919 1919 -1934 2025 2025 -1861 -1892 -1892 -1646 1957 1957 -1924 1851 1923 2031 -1992 -1884 -1812 -1703 -1595 -1523 -1415 -1343 -1235 -1163 -1055 -983 -804 -1301 -1171 -705 -1083 -687 -1044 -1505 -500 -1324 -1018 -1521 -711 -1519 -640 -1276 -429 -1237 -405 -1187 -1851 -1017 -1786 -985 -1721 -911 -1656 -814 -814 
+Max memory used: 2031mb
+Execution time: 659 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	32.601	40.558	41.602	37.579	25.723	22.594	24.529
+Failure   	67.399	59.442	58.398	62.421	74.277	77.406	75.471
+No Match  	1.733	95.058	0.084	0.389	0.927	0.927	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	32.036	2.004	41.567	37.433	25.484	22.384	24.529
+Size (MB)	8.276	155.916	100.026	106.06	2.262	37.565	5.961
+Train Tim	8.584	3.404	18.871	0.532	0.193	5.388	0.527
+Test Time	0.023	0.004	6.139	5.744	0.025	0.011	0.445
+
+javac -cp src src/ca/ipredict/controllers/MainController.java
+java -cp src ca.ipredict.controllers.MainController ./datasets
+
+---SIGN---
+Number of sequences : 	730
+Number of distinct items: 	267
+Largest item id: 	310
+Itemsets per sequence: 	93.0041095890411
+Distinct item per sequence: 	51.99452054794521
+Occurences for each item: 	1.78872905469491
+Size of the dataset in MB: 	2920.271572
+
+DG memory (MB): 0.208156
+DG test time (ms): 1.0
+No active splitLength during export of training data
+DG memory (MB): 0.209668
+DG test time (ms): 1.0
+DG memory (MB): 0.210676
+DG test time (ms): 1.0
+DG memory (MB): 0.209332
+DG test time (ms): 1.0
+DG memory (MB): 0.207788
+DG test time (ms): 1.0
+DG memory (MB): 0.206568
+DG test time (ms): 0.0
+DG memory (MB): 0.210392
+DG test time (ms): 1.0
+DG memory (MB): 0.209208
+DG test time (ms): 0.0
+DG memory (MB): 0.208596
+DG test time (ms): 1.0
+DG memory (MB): 0.208436
+DG test time (ms): 0.0
+DG memory (MB): 0.20966
+DG test time (ms): 0.0
+DG memory (MB): 0.209516
+DG test time (ms): 0.0
+DG memory (MB): 0.209364
+DG test time (ms): 0.0
+DG memory (MB): 0.209728
+DG test time (ms): 0.0
+TDAG memory (MB): 8.815416
+TDAG test time (ms): 0.0
+TDAG memory (MB): 8.841048
+TDAG test time (ms): 0.0
+TDAG memory (MB): 8.868552
+TDAG test time (ms): 0.0
+TDAG memory (MB): 8.830392
+TDAG test time (ms): 0.0
+TDAG memory (MB): 8.848536
+TDAG test time (ms): 0.0
+TDAG memory (MB): 8.807496
+TDAG test time (ms): 0.0
+TDAG memory (MB): 8.866248
+TDAG test time (ms): 0.0
+TDAG memory (MB): 8.86956
+TDAG test time (ms): 0.0
+TDAG memory (MB): 8.812248
+TDAG test time (ms): 0.0
+TDAG memory (MB): 8.827944
+TDAG test time (ms): 0.0
+TDAG memory (MB): 8.81124
+TDAG test time (ms): 0.0
+TDAG memory (MB): 8.781
+TDAG test time (ms): 0.0
+TDAG memory (MB): 8.861352
+TDAG test time (ms): 0.0
+TDAG memory (MB): 8.8386
+TDAG test time (ms): 1.0
+CPT+ memory (MB): 0.038656
+CPT+ test time (ms): 70.0
+CPT+ memory (MB): 0.038608
+CPT+ test time (ms): 45.0
+CPT+ memory (MB): 0.038632
+CPT+ test time (ms): 40.0
+CPT+ memory (MB): 0.03888
+CPT+ test time (ms): 29.0
+CPT+ memory (MB): 0.038504
+CPT+ test time (ms): 52.0
+CPT+ memory (MB): 0.03852
+CPT+ test time (ms): 22.0
+CPT+ memory (MB): 0.038792
+CPT+ test time (ms): 53.0
+CPT+ memory (MB): 0.038604
+CPT+ test time (ms): 18.0
+CPT+ memory (MB): 0.038656
+CPT+ test time (ms): 18.0
+CPT+ memory (MB): 0.038844
+CPT+ test time (ms): 17.0
+CPT+ memory (MB): 0.03888
+CPT+ test time (ms): 18.0
+CPT+ memory (MB): 0.038892
+CPT+ test time (ms): 18.0
+CPT+ memory (MB): 0.038868
+CPT+ test time (ms): 34.0
+CPT+ memory (MB): 0.038728
+CPT+ test time (ms): 20.0
+CPT memory (MB): 0.7714
+CPT test time (ms): 69.0
+CPT memory (MB): 0.77362
+CPT test time (ms): 89.0
+CPT memory (MB): 0.775828
+CPT test time (ms): 39.0
+CPT memory (MB): 0.7728
+CPT test time (ms): 34.0
+CPT memory (MB): 0.773996
+CPT test time (ms): 31.0
+CPT memory (MB): 0.77064
+CPT test time (ms): 53.0
+CPT memory (MB): 0.775748
+CPT test time (ms): 41.0
+CPT memory (MB): 0.775896
+CPT test time (ms): 39.0
+CPT memory (MB): 0.771112
+CPT test time (ms): 32.0
+CPT memory (MB): 0.77256
+CPT test time (ms): 27.0
+CPT memory (MB): 0.771288
+CPT test time (ms): 33.0
+CPT memory (MB): 0.768792
+CPT test time (ms): 31.0
+CPT memory (MB): 0.775332
+CPT test time (ms): 26.0
+CPT memory (MB): 0.773416
+CPT test time (ms): 33.0
+Mark1 memory (MB): 0.120356
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.121132
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.121644
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.12094
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.120644
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.119824
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.121608
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.120976
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.120636
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.120468
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.120684
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.12102
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.12114
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.121312
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 2.696112
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.704908
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.713988
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.700408
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.704792
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.691264
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.711788
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.710936
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.694124
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.69808
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.695128
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.686712
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.70978
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.70348
+AKOM test time (ms): 0.0
+LZ78 memory (MB): 0.367364
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.368632
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.369908
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.367908
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.368116
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.366628
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.369544
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.369024
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.367352
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.36772
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.367416
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.366092
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.368788
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.3682
+LZ78 test time (ms): 2.0
+Memory history: 41 51 56 64 69 74 82 87 92 97 102 110 115 120 99 94 145 241 229 329 85 181 273 161 261 352 452 152 319 507 307 508 692 222 418 601 798 327 510 710 893 259 259 259 293 293 293 326 326 326 359 359 359 393 393 393 426 426 426 459 459 459 493 493 493 530 530 530 563 563 563 580 580 596 613 613 630 646 646 663 680 680 696 713 730 730 730 746 746 746 763 763 763 780 780 780 780 796 220 405 569 754 939 1103 250 435 599 784 969 1133 276 451 501 526 550 600 625 649 699 724 748 798 823 847 897 922 922 
+Max memory used: 1133mb
+Execution time: 11 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	3.571	�	33.333	34.11	4.521	7.671	5.205
+Failure   	96.429	�	66.667	65.89	95.479	92.329	94.795
+No Match  	42.466	100	0.137	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	2.055	00.000	33.288	34.11	4.521	7.671	5.205
+Size (MB)	0.21	8.839	0.039	0.773	0.121	2.703	0.368
+Train Tim	0.043	0.178	0.341	0.004	0.004	0.11	0.014
+Test Time	00.000	0.001	0.02	0.033	00.000	00.000	0.002
+
+
+---MSNBC---
+Number of sequences : 	5000
+Number of distinct items: 	17
+Largest item id: 	17
+Itemsets per sequence: 	10.7638
+Distinct item per sequence: 	4.7462
+Occurences for each item: 	2.267877459862627
+Size of the dataset in MB: 	20000.215276
+
+DG memory (MB): 0.002356
+DG test time (ms): 1.0
+DG memory (MB): 0.002356
+DG test time (ms): 0.0
+DG memory (MB): 0.002356
+DG test time (ms): 0.0
+DG memory (MB): 0.002356
+DG test time (ms): 1.0
+DG memory (MB): 0.002356
+DG test time (ms): 0.0
+DG memory (MB): 0.002356
+DG test time (ms): 0.0
+DG memory (MB): 0.002348
+DG test time (ms): 1.0
+DG memory (MB): 0.002356
+DG test time (ms): 0.0
+DG memory (MB): 0.002348
+DG test time (ms): 0.0
+DG memory (MB): 0.002348
+DG test time (ms): 0.0
+DG memory (MB): 0.002356
+DG test time (ms): 0.0
+DG memory (MB): 0.002348
+DG test time (ms): 0.0
+DG memory (MB): 0.002356
+DG test time (ms): 0.0
+DG memory (MB): 0.002356
+DG test time (ms): 1.0
+TDAG memory (MB): 5.548416
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.487216
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.524224
+TDAG test time (ms): 0.0
+TDAG memory (MB): 5.526096
+TDAG test time (ms): 0.0
+TDAG memory (MB): 5.533296
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.521776
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.559936
+TDAG test time (ms): 0.0
+TDAG memory (MB): 5.49312
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.533728
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.518176
+TDAG test time (ms): 0.0
+TDAG memory (MB): 5.540496
+TDAG test time (ms): 0.0
+TDAG memory (MB): 5.500464
+TDAG test time (ms): 0.0
+TDAG memory (MB): 5.563248
+TDAG test time (ms): 1.0
+TDAG memory (MB): 5.499312
+TDAG test time (ms): 0.0
+CPT+ memory (MB): 0.10064
+CPT+ test time (ms): 45.0
+CPT+ memory (MB): 0.10058
+CPT+ test time (ms): 56.0
+CPT+ memory (MB): 0.100652
+CPT+ test time (ms): 66.0
+CPT+ memory (MB): 0.100664
+CPT+ test time (ms): 53.0
+CPT+ memory (MB): 0.100604
+CPT+ test time (ms): 55.0
+CPT+ memory (MB): 0.100448
+CPT+ test time (ms): 54.0
+CPT+ memory (MB): 0.100496
+CPT+ test time (ms): 49.0
+CPT+ memory (MB): 0.100232
+CPT+ test time (ms): 47.0
+CPT+ memory (MB): 0.1004
+CPT+ test time (ms): 48.0
+CPT+ memory (MB): 0.100316
+CPT+ test time (ms): 57.0
+CPT+ memory (MB): 0.100412
+CPT+ test time (ms): 40.0
+CPT+ memory (MB): 0.10052
+CPT+ test time (ms): 40.0
+CPT+ memory (MB): 0.100724
+CPT+ test time (ms): 40.0
+CPT+ memory (MB): 0.100516
+CPT+ test time (ms): 46.0
+CPT memory (MB): 0.17192
+CPT test time (ms): 23.0
+CPT memory (MB): 0.172256
+CPT test time (ms): 25.0
+CPT memory (MB): 0.172412
+CPT test time (ms): 29.0
+CPT memory (MB): 0.172388
+CPT test time (ms): 24.0
+CPT memory (MB): 0.172256
+CPT test time (ms): 23.0
+CPT memory (MB): 0.171788
+CPT test time (ms): 22.0
+CPT memory (MB): 0.17198
+CPT test time (ms): 24.0
+CPT memory (MB): 0.171644
+CPT test time (ms): 21.0
+CPT memory (MB): 0.171824
+CPT test time (ms): 26.0
+CPT memory (MB): 0.172052
+CPT test time (ms): 27.0
+CPT memory (MB): 0.172184
+CPT test time (ms): 23.0
+CPT memory (MB): 0.172208
+CPT test time (ms): 26.0
+CPT memory (MB): 0.172016
+CPT test time (ms): 24.0
+CPT memory (MB): 0.172084
+CPT test time (ms): 21.0
+Mark1 memory (MB): 0.002132
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.002124
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.002132
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.002132
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.002132
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.002124
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.002116
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.002132
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.002132
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.002124
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.002132
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.002116
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.002124
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.002116
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 0.431248
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.423844
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.427176
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.430424
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.432284
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.42864
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.43156
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.428136
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.431544
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.430408
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.432184
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.429128
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.431216
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.429956
+AKOM test time (ms): 1.0
+LZ78 memory (MB): 0.133196
+LZ78 test time (ms): 5.0
+LZ78 memory (MB): 0.132284
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.132908
+LZ78 test time (ms): 5.0
+LZ78 memory (MB): 0.133148
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.133452
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.132844
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.134044
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.13286
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.133532
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.133324
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.133564
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.132748
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.133948
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.132956
+LZ78 test time (ms): 3.0
+Memory history: 41 51 56 64 69 74 82 87 92 97 102 110 115 120 99 94 145 241 229 329 85 181 273 161 261 352 452 152 319 507 307 508 692 222 418 601 798 327 510 710 893 259 259 259 293 293 293 326 326 326 359 359 359 393 393 393 426 426 426 459 459 459 493 493 493 530 530 530 563 563 563 580 580 596 613 613 630 646 646 663 680 680 696 713 730 730 730 746 746 746 763 763 763 780 780 780 780 796 220 405 569 754 939 1103 250 435 599 784 969 1133 276 451 501 526 550 600 625 649 699 724 748 798 823 847 897 922 922 996 996 996 996 996 996 1020 1020 1020 1020 1020 1020 1045 1045 1070 1119 1144 1169 1218 1243 1293 1317 1367 1392 1416 262 287 336 435 534 633 732 831 930 1029 1128 1227 1326 1425 307 395 483 483 483 513 513 513 572 572 572 601 601 601 630 630 630 660 660 660 689 689 689 719 719 748 748 778 778 807 807 807 836 836 836 866 866 866 895 895 895 954 954 954 984 984 984 984 984 1013 1013 1013 1013 1013 1013 1013 1042 1042 1042 1131 1190 1278 1366 1425 1513 1602 1660 223 311 370 458 547 606 635 665 694 723 753 782 812 841 871 900 930 959 988 1018 1018 
+Max memory used: 1660mb
+Execution time: 3 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	55.8	56.078	59.1	59.02	38.06	47.66	43.72
+Failure   	44.2	43.922	40.9	40.98	61.94	52.34	56.28
+No Match  	00.000	43.9	00.000	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	55.8	31.46	59.1	59.02	38.06	47.66	43.72
+Size (MB)	0.002	5.499	0.101	0.172	0.002	0.43	0.133
+Train Tim	0.006	0.033	0.037	0.003	0.002	0.043	0.014
+Test Time	0.001	00.000	0.046	0.021	00.000	0.001	0.003
+
+
+---BIBLE_WORD---
+Number of sequences : 	4933
+Number of distinct items: 	5422
+Largest item id: 	5433
+Itemsets per sequence: 	20.604500304074598
+Distinct item per sequence: 	16.704844921954187
+Occurences for each item: 	1.233444572538074
+Size of the dataset in MB: 	19732.406568
+
+DG memory (MB): 0.936592
+DG test time (ms): 8.0
+DG memory (MB): 0.937676
+DG test time (ms): 6.0
+DG memory (MB): 0.931432
+DG test time (ms): 2.0
+DG memory (MB): 0.933024
+DG test time (ms): 1.0
+DG memory (MB): 0.940612
+DG test time (ms): 2.0
+DG memory (MB): 0.9354
+DG test time (ms): 1.0
+DG memory (MB): 0.94142
+DG test time (ms): 2.0
+DG memory (MB): 0.936544
+DG test time (ms): 1.0
+DG memory (MB): 0.924496
+DG test time (ms): 2.0
+DG memory (MB): 0.92854
+DG test time (ms): 1.0
+DG memory (MB): 0.933224
+DG test time (ms): 1.0
+DG memory (MB): 0.938548
+DG test time (ms): 2.0
+DG memory (MB): 0.93342
+DG test time (ms): 2.0
+DG memory (MB): 0.934196
+DG test time (ms): 2.0
+TDAG memory (MB): 11.972856
+TDAG test time (ms): 1.0
+TDAG memory (MB): 11.914752
+TDAG test time (ms): 0.0
+TDAG memory (MB): 11.897592
+TDAG test time (ms): 0.0
+TDAG memory (MB): 11.906664
+TDAG test time (ms): 1.0
+TDAG memory (MB): 12.034704
+TDAG test time (ms): 1.0
+TDAG memory (MB): 11.923848
+TDAG test time (ms): 0.0
+TDAG memory (MB): 12.010368
+TDAG test time (ms): 0.0
+TDAG memory (MB): 11.995968
+TDAG test time (ms): 0.0
+TDAG memory (MB): 11.832912
+TDAG test time (ms): 0.0
+TDAG memory (MB): 11.922696
+TDAG test time (ms): 1.0
+TDAG memory (MB): 11.94468
+TDAG test time (ms): 1.0
+TDAG memory (MB): 11.940624
+TDAG test time (ms): 0.0
+TDAG memory (MB): 11.920416
+TDAG test time (ms): 0.0
+TDAG memory (MB): 11.995848
+TDAG test time (ms): 1.0
+CPT+ memory (MB): 1.76424
+CPT+ test time (ms): 63.0
+CPT+ memory (MB): 1.764264
+CPT+ test time (ms): 92.0
+CPT+ memory (MB): 1.759236
+CPT+ test time (ms): 87.0
+CPT+ memory (MB): 1.757724
+CPT+ test time (ms): 86.0
+CPT+ memory (MB): 1.758696
+CPT+ test time (ms): 68.0
+CPT+ memory (MB): 1.767396
+CPT+ test time (ms): 68.0
+CPT+ memory (MB): 1.763772
+CPT+ test time (ms): 65.0
+CPT+ memory (MB): 1.756164
+CPT+ test time (ms): 63.0
+CPT+ memory (MB): 1.759716
+CPT+ test time (ms): 56.0
+CPT+ memory (MB): 1.77006
+CPT+ test time (ms): 63.0
+CPT+ memory (MB): 1.752204
+CPT+ test time (ms): 76.0
+CPT+ memory (MB): 1.760304
+CPT+ test time (ms): 60.0
+CPT+ memory (MB): 1.757964
+CPT+ test time (ms): 47.0
+CPT+ memory (MB): 1.750544
+CPT+ test time (ms): 78.0
+CPT memory (MB): 1.9512
+CPT test time (ms): 9.0
+CPT memory (MB): 1.951152
+CPT test time (ms): 9.0
+CPT memory (MB): 1.946148
+CPT test time (ms): 9.0
+CPT memory (MB): 1.944252
+CPT test time (ms): 6.0
+CPT memory (MB): 1.945368
+CPT test time (ms): 6.0
+CPT memory (MB): 1.954392
+CPT test time (ms): 8.0
+CPT memory (MB): 1.950612
+CPT test time (ms): 6.0
+CPT memory (MB): 1.942452
+CPT test time (ms): 7.0
+CPT memory (MB): 1.946184
+CPT test time (ms): 6.0
+CPT memory (MB): 1.957164
+CPT test time (ms): 5.0
+CPT memory (MB): 1.939128
+CPT test time (ms): 7.0
+CPT memory (MB): 1.946724
+CPT test time (ms): 8.0
+CPT memory (MB): 1.944312
+CPT test time (ms): 7.0
+CPT memory (MB): 1.936868
+CPT test time (ms): 6.0
+Mark1 memory (MB): 0.269912
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.270332
+Mark1 test time (ms): 2.0
+Mark1 memory (MB): 0.268392
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.269032
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.27078
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.269208
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.271028
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.270136
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.266464
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.267332
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.268768
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.270324
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.2693
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.268724
+Mark1 test time (ms): 1.0
+AKOM memory (MB): 3.195824
+AKOM test time (ms): 2.0
+AKOM memory (MB): 3.186788
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.174544
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.177008
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.207436
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.181144
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.204352
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.192904
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.150452
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.171568
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.181988
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.193068
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.174328
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.19298
+AKOM test time (ms): 1.0
+LZ78 memory (MB): 0.52546
+LZ78 test time (ms): 19.0
+LZ78 memory (MB): 0.52366
+LZ78 test time (ms): 19.0
+LZ78 memory (MB): 0.522356
+LZ78 test time (ms): 16.0
+LZ78 memory (MB): 0.523192
+LZ78 test time (ms): 20.0
+LZ78 memory (MB): 0.527044
+LZ78 test time (ms): 20.0
+LZ78 memory (MB): 0.523276
+LZ78 test time (ms): 19.0
+LZ78 memory (MB): 0.526696
+LZ78 test time (ms): 19.0
+LZ78 memory (MB): 0.525252
+LZ78 test time (ms): 17.0
+LZ78 memory (MB): 0.51946
+LZ78 test time (ms): 18.0
+LZ78 memory (MB): 0.522744
+LZ78 test time (ms): 16.0
+LZ78 memory (MB): 0.523264
+LZ78 test time (ms): 17.0
+LZ78 memory (MB): 0.524056
+LZ78 test time (ms): 15.0
+LZ78 memory (MB): 0.523364
+LZ78 test time (ms): 17.0
+LZ78 memory (MB): 0.525248
+LZ78 test time (ms): 19.0
+Memory history: 41 51 56 64 69 74 82 87 92 97 102 110 115 120 99 94 145 241 229 329 85 181 273 161 261 352 452 152 319 507 307 508 692 222 418 601 798 327 510 710 893 259 259 259 293 293 293 326 326 326 359 359 359 393 393 393 426 426 426 459 459 459 493 493 493 530 530 530 563 563 563 580 580 596 613 613 630 646 646 663 680 680 696 713 730 730 730 746 746 746 763 763 763 780 780 780 780 796 220 405 569 754 939 1103 250 435 599 784 969 1133 276 451 501 526 550 600 625 649 699 724 748 798 823 847 897 922 922 996 996 996 996 996 996 1020 1020 1020 1020 1020 1020 1045 1045 1070 1119 1144 1169 1218 1243 1293 1317 1367 1392 1416 262 287 336 435 534 633 732 831 930 1029 1128 1227 1326 1425 307 395 483 483 483 513 513 513 572 572 572 601 601 601 630 630 630 660 660 660 689 689 689 719 719 748 748 778 778 807 807 807 836 836 836 866 866 866 895 895 895 954 954 954 984 984 984 984 984 1013 1013 1013 1013 1013 1013 1013 1042 1042 1042 1131 1190 1278 1366 1425 1513 1602 1660 223 311 370 458 547 606 635 665 694 723 753 782 812 841 871 900 930 959 988 1018 1018 1047 1077 1077 1106 1106 1136 1136 1165 1165 1195 1195 1224 1224 1253 1371 1519 1636 321 450 579 708 869 998 1127 1256 1384 1546 1675 437 695 985 1275 1533 1823 495 775 1055 1301 1581 1861 384 664 664 664 664 664 699 699 699 699 734 734 734 734 734 734 769 769 769 769 769 804 804 804 804 839 839 839 839 839 839 874 874 874 874 874 909 909 909 909 944 944 944 944 979 979 979 1014 1014 1014 1049 1049 1049 1084 1084 1084 1119 1119 1365 1610 1855 363 628 854 1118 1345 1609 1835 -2033 426 653 917 955 1030 1106 1181 1257 1332 1408 1446 1521 1597 1672 1748 1823 1861 1861 
+Max memory used: 1861mb
+Execution time: 15 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	5.824	57.809	22.801	27.632	11.951	32.392	17.839
+Failure   	94.176	42.191	77.199	72.368	88.049	67.608	82.161
+No Match  	0.101	60.024	2.737	6.244	1.622	1.622	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	5.818	23.11	22.177	25.907	11.758	31.867	17.839
+Size (MB)	0.934	11.996	1.751	1.937	0.269	3.193	0.525
+Train Tim	0.214	0.121	0.358	0.009	0.007	0.16	0.024
+Test Time	0.002	0.001	0.078	0.006	0.001	0.001	0.019
+
+
+---FIFA---
+Number of sequences : 	5000
+Number of distinct items: 	2612
+Largest item id: 	2775
+Itemsets per sequence: 	40.1966
+Distinct item per sequence: 	38.6178
+Occurences for each item: 	1.0408827017592923
+Size of the dataset in MB: 	20000.803932
+
+DG memory (MB): 0.824108
+DG test time (ms): 1.0
+DG memory (MB): 0.834772
+DG test time (ms): 1.0
+DG memory (MB): 0.821728
+DG test time (ms): 1.0
+DG memory (MB): 0.829944
+DG test time (ms): 1.0
+DG memory (MB): 0.815872
+DG test time (ms): 0.0
+DG memory (MB): 0.832016
+DG test time (ms): 0.0
+DG memory (MB): 0.829148
+DG test time (ms): 0.0
+DG memory (MB): 0.828472
+DG test time (ms): 0.0
+DG memory (MB): 0.83214
+DG test time (ms): 0.0
+DG memory (MB): 0.819612
+DG test time (ms): 0.0
+DG memory (MB): 0.827324
+DG test time (ms): 1.0
+DG memory (MB): 0.8358
+DG test time (ms): 1.0
+DG memory (MB): 0.82588
+DG test time (ms): 1.0
+DG memory (MB): 0.826992
+DG test time (ms): 1.0
+TDAG memory (MB): 25.146433
+TDAG test time (ms): 0.0
+TDAG memory (MB): 25.153416
+TDAG test time (ms): 0.0
+TDAG memory (MB): 25.199495
+TDAG test time (ms): 1.0
+TDAG memory (MB): 25.183825
+TDAG test time (ms): 1.0
+TDAG memory (MB): 25.263144
+TDAG test time (ms): 1.0
+TDAG memory (MB): 25.288511
+TDAG test time (ms): 0.0
+TDAG memory (MB): 25.270512
+TDAG test time (ms): 1.0
+TDAG memory (MB): 25.157808
+TDAG test time (ms): 1.0
+TDAG memory (MB): 25.324152
+TDAG test time (ms): 1.0
+TDAG memory (MB): 24.91764
+TDAG test time (ms): 0.0
+TDAG memory (MB): 25.228271
+TDAG test time (ms): 0.0
+TDAG memory (MB): 25.358376
+TDAG test time (ms): 1.0
+TDAG memory (MB): 25.318705
+TDAG test time (ms): 1.0
+TDAG memory (MB): 25.105728
+TDAG test time (ms): 0.0
+CPT+ memory (MB): 1.356676
+CPT+ test time (ms): 59.0
+CPT+ memory (MB): 1.364196
+CPT+ test time (ms): 66.0
+CPT+ memory (MB): 1.357784
+CPT+ test time (ms): 66.0
+CPT+ memory (MB): 1.355376
+CPT+ test time (ms): 65.0
+CPT+ memory (MB): 1.347904
+CPT+ test time (ms): 68.0
+CPT+ memory (MB): 1.354984
+CPT+ test time (ms): 56.0
+CPT+ memory (MB): 1.37098
+CPT+ test time (ms): 62.0
+CPT+ memory (MB): 1.369168
+CPT+ test time (ms): 75.0
+CPT+ memory (MB): 1.369404
+CPT+ test time (ms): 70.0
+CPT+ memory (MB): 1.364424
+CPT+ test time (ms): 66.0
+CPT+ memory (MB): 1.36714
+CPT+ test time (ms): 61.0
+CPT+ memory (MB): 1.367724
+CPT+ test time (ms): 61.0
+CPT+ memory (MB): 1.355508
+CPT+ test time (ms): 61.0
+CPT+ memory (MB): 1.366576
+CPT+ test time (ms): 77.0
+CPT memory (MB): 1.840576
+CPT test time (ms): 17.0
+CPT memory (MB): 1.847952
+CPT test time (ms): 13.0
+CPT memory (MB): 1.842056
+CPT test time (ms): 11.0
+CPT memory (MB): 1.839396
+CPT test time (ms): 12.0
+CPT memory (MB): 1.83214
+CPT test time (ms): 13.0
+CPT memory (MB): 1.838764
+CPT test time (ms): 13.0
+CPT memory (MB): 1.855444
+CPT test time (ms): 13.0
+CPT memory (MB): 1.853236
+CPT test time (ms): 15.0
+CPT memory (MB): 1.854168
+CPT test time (ms): 13.0
+CPT memory (MB): 1.848552
+CPT test time (ms): 14.0
+CPT memory (MB): 1.852468
+CPT test time (ms): 17.0
+CPT memory (MB): 1.852728
+CPT test time (ms): 14.0
+CPT memory (MB): 1.840056
+CPT test time (ms): 22.0
+CPT memory (MB): 1.850644
+CPT test time (ms): 23.0
+Mark1 memory (MB): 0.322172
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.325252
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.32124
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.32444
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.320088
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.324432
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.323228
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.323392
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.32518
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.320028
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.323476
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.326048
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.323296
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.323112
+Mark1 test time (ms): 1.0
+AKOM memory (MB): 6.477936
+AKOM test time (ms): 2.0
+AKOM memory (MB): 6.506888
+AKOM test time (ms): 1.0
+AKOM memory (MB): 6.48818
+AKOM test time (ms): 1.0
+AKOM memory (MB): 6.515344
+AKOM test time (ms): 1.0
+AKOM memory (MB): 6.506804
+AKOM test time (ms): 1.0
+AKOM memory (MB): 6.524508
+AKOM test time (ms): 1.0
+AKOM memory (MB): 6.515752
+AKOM test time (ms): 1.0
+AKOM memory (MB): 6.50498
+AKOM test time (ms): 1.0
+AKOM memory (MB): 6.541652
+AKOM test time (ms): 0.0
+AKOM memory (MB): 6.423136
+AKOM test time (ms): 1.0
+AKOM memory (MB): 6.51482
+AKOM test time (ms): 1.0
+AKOM memory (MB): 6.551984
+AKOM test time (ms): 1.0
+AKOM memory (MB): 6.538592
+AKOM test time (ms): 1.0
+AKOM memory (MB): 6.483236
+AKOM test time (ms): 1.0
+LZ78 memory (MB): 0.998652
+LZ78 test time (ms): 8.0
+LZ78 memory (MB): 1.00116
+LZ78 test time (ms): 7.0
+LZ78 memory (MB): 1.000384
+LZ78 test time (ms): 6.0
+LZ78 memory (MB): 1.002548
+LZ78 test time (ms): 7.0
+LZ78 memory (MB): 1.001468
+LZ78 test time (ms): 8.0
+LZ78 memory (MB): 1.003732
+LZ78 test time (ms): 7.0
+LZ78 memory (MB): 1.00386
+LZ78 test time (ms): 7.0
+LZ78 memory (MB): 1.001308
+LZ78 test time (ms): 8.0
+LZ78 memory (MB): 1.007332
+LZ78 test time (ms): 6.0
+LZ78 memory (MB): 0.9913
+LZ78 test time (ms): 6.0
+LZ78 memory (MB): 1.00312
+LZ78 test time (ms): 8.0
+LZ78 memory (MB): 1.008324
+LZ78 test time (ms): 9.0
+LZ78 memory (MB): 1.005996
+LZ78 test time (ms): 7.0
+LZ78 memory (MB): 0.999184
+LZ78 test time (ms): 7.0
+Memory history: 41 51 56 64 69 74 82 87 92 97 102 110 115 120 99 94 145 241 229 329 85 181 273 161 261 352 452 152 319 507 307 508 692 222 418 601 798 327 510 710 893 259 259 259 293 293 293 326 326 326 359 359 359 393 393 393 426 426 426 459 459 459 493 493 493 530 530 530 563 563 563 580 580 596 613 613 630 646 646 663 680 680 696 713 730 730 730 746 746 746 763 763 763 780 780 780 780 796 220 405 569 754 939 1103 250 435 599 784 969 1133 276 451 501 526 550 600 625 649 699 724 748 798 823 847 897 922 922 996 996 996 996 996 996 1020 1020 1020 1020 1020 1020 1045 1045 1070 1119 1144 1169 1218 1243 1293 1317 1367 1392 1416 262 287 336 435 534 633 732 831 930 1029 1128 1227 1326 1425 307 395 483 483 483 513 513 513 572 572 572 601 601 601 630 630 630 660 660 660 689 689 689 719 719 748 748 778 778 807 807 807 836 836 836 866 866 866 895 895 895 954 954 954 984 984 984 984 984 1013 1013 1013 1013 1013 1013 1013 1042 1042 1042 1131 1190 1278 1366 1425 1513 1602 1660 223 311 370 458 547 606 635 665 694 723 753 782 812 841 871 900 930 959 988 1018 1018 1047 1077 1077 1106 1106 1136 1136 1165 1165 1195 1195 1224 1224 1253 1371 1519 1636 321 450 579 708 869 998 1127 1256 1384 1546 1675 437 695 985 1275 1533 1823 495 775 1055 1301 1581 1861 384 664 664 664 664 664 699 699 699 699 734 734 734 734 734 734 769 769 769 769 769 804 804 804 804 839 839 839 839 839 839 874 874 874 874 874 909 909 909 909 944 944 944 944 979 979 979 1014 1014 1014 1049 1049 1049 1084 1084 1084 1119 1119 1365 1610 1855 363 628 854 1118 1345 1609 1835 -2033 426 653 917 955 1030 1106 1181 1257 1332 1408 1446 1521 1597 1672 1748 1823 1861 1861 1936 1974 1974 2012 2013 -2044 -2044 -2006 -2006 -1969 -1969 -1932 355 355 645 893 1183 1472 1762 2010 -1795 506 754 1050 1340 1588 1877 -1928 617 1052 1487 1879 -1781 573 965 1400 1836 -1824 524 944 1363 1782 1782 1782 1824 1824 1824 1866 1866 1866 1908 1908 1908 1950 1950 1950 1950 1950 1992 1992 1992 1992 2034 2034 2034 -2019 -2019 -2019 -1977 -1977 -1977 -1936 -1936 -1936 -1936 -1936 -1894 -1894 -1894 -1852 -1852 -1852 -1852 -1810 -1810 -1768 -1768 -1726 -1726 -1684 -1684 -1642 -1642 -1642 -1601 -1601 443 443 945 1452 1955 -1637 832 1327 1823 -1736 804 1299 1794 -1803 770 1261 1342 1464 1545 1668 1749 1830 1952 2034 -1939 -1858 -1736 -1656 599 680 680 
+Max memory used: 2034mb
+Execution time: 25 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	24.849	60.877	36.266	35.177	23.347	26.573	25.512
+Failure   	75.151	39.123	63.734	64.823	76.653	73.427	74.488
+No Match  	0.32	87.78	3.24	0.54	0.44	0.44	00.000
+Too Small	0.36	0.36	0.36	0.36	0.36	0.36	0.36
+Overall   	24.68	7.22	34.96	34.86	23.16	26.36	25.42
+Size (MB)	0.827	25.106	1.367	1.851	0.323	6.483	0.999
+Train Tim	0.139	0.273	0.649	0.021	0.024	0.367	0.071
+Test Time	0.001	00.000	0.077	0.023	0.001	0.001	0.007
+
