@@ -1,0 +1,3507 @@
+javac -cp src src/ca/ipredict/controllers/MainController.java
+java -cp src ca.ipredict.controllers.MainController ./datasets
+
+---SPICE0---
+Number of sequences : 	5000
+Number of distinct items: 	4
+Largest item id: 	3
+Itemsets per sequence: 	11.6854
+Distinct item per sequence: 	3.544
+Occurences for each item: 	3.297234762979684
+Size of the dataset in MB: 	20000.233708
+
+DG memory (MB): 1.44E-4
+DG test time (ms): 3.0
+No active splitLength during export of training data
+DG memory (MB): 1.44E-4
+DG test time (ms): 2.0
+DG memory (MB): 1.44E-4
+DG test time (ms): 1.0
+DG memory (MB): 1.44E-4
+DG test time (ms): 0.0
+DG memory (MB): 1.44E-4
+DG test time (ms): 1.0
+DG memory (MB): 1.44E-4
+DG test time (ms): 0.0
+DG memory (MB): 1.44E-4
+DG test time (ms): 1.0
+DG memory (MB): 1.44E-4
+DG test time (ms): 1.0
+DG memory (MB): 1.44E-4
+DG test time (ms): 1.0
+DG memory (MB): 1.44E-4
+DG test time (ms): 0.0
+DG memory (MB): 1.44E-4
+DG test time (ms): 0.0
+DG memory (MB): 1.44E-4
+DG test time (ms): 0.0
+DG memory (MB): 1.44E-4
+DG test time (ms): 1.0
+DG memory (MB): 1.44E-4
+DG test time (ms): 0.0
+TDAG memory (MB): 6.120096
+TDAG test time (ms): 2.0
+TDAG memory (MB): 6.140544
+TDAG test time (ms): 2.0
+TDAG memory (MB): 6.134208
+TDAG test time (ms): 0.0
+TDAG memory (MB): 6.157968
+TDAG test time (ms): 0.0
+TDAG memory (MB): 6.12816
+TDAG test time (ms): 0.0
+TDAG memory (MB): 6.141552
+TDAG test time (ms): 1.0
+TDAG memory (MB): 6.168768
+TDAG test time (ms): 0.0
+TDAG memory (MB): 6.124272
+TDAG test time (ms): 1.0
+TDAG memory (MB): 6.154224
+TDAG test time (ms): 0.0
+TDAG memory (MB): 6.13752
+TDAG test time (ms): 0.0
+TDAG memory (MB): 6.14112
+TDAG test time (ms): 1.0
+TDAG memory (MB): 6.138816
+TDAG test time (ms): 1.0
+TDAG memory (MB): 6.145728
+TDAG test time (ms): 1.0
+TDAG memory (MB): 6.142704
+TDAG test time (ms): 0.0
+CPT+ memory (MB): 0.086184
+CPT+ test time (ms): 1363.0
+CPT+ memory (MB): 0.08616
+CPT+ test time (ms): 1069.0
+CPT+ memory (MB): 0.08628
+CPT+ test time (ms): 1087.0
+CPT+ memory (MB): 0.085956
+CPT+ test time (ms): 1109.0
+CPT+ memory (MB): 0.08616
+CPT+ test time (ms): 983.0
+CPT+ memory (MB): 0.08628
+CPT+ test time (ms): 961.0
+CPT+ memory (MB): 0.086352
+CPT+ test time (ms): 989.0
+CPT+ memory (MB): 0.086124
+CPT+ test time (ms): 989.0
+CPT+ memory (MB): 0.086364
+CPT+ test time (ms): 974.0
+CPT+ memory (MB): 0.086196
+CPT+ test time (ms): 974.0
+CPT+ memory (MB): 0.086172
+CPT+ test time (ms): 961.0
+CPT+ memory (MB): 0.086328
+CPT+ test time (ms): 968.0
+CPT+ memory (MB): 0.086376
+CPT+ test time (ms): 948.0
+CPT+ memory (MB): 0.08588
+CPT+ test time (ms): 975.0
+CPT memory (MB): 0.173904
+CPT test time (ms): 1133.0
+CPT memory (MB): 0.174924
+CPT test time (ms): 1090.0
+CPT memory (MB): 0.17442
+CPT test time (ms): 1086.0
+CPT memory (MB): 0.174348
+CPT test time (ms): 1126.0
+CPT memory (MB): 0.174624
+CPT test time (ms): 1085.0
+CPT memory (MB): 0.174684
+CPT test time (ms): 1088.0
+CPT memory (MB): 0.175188
+CPT test time (ms): 1075.0
+CPT memory (MB): 0.174696
+CPT test time (ms): 1075.0
+CPT memory (MB): 0.17502
+CPT test time (ms): 1091.0
+CPT memory (MB): 0.174612
+CPT test time (ms): 1091.0
+CPT memory (MB): 0.174264
+CPT test time (ms): 1069.0
+CPT memory (MB): 0.174792
+CPT test time (ms): 1089.0
+CPT memory (MB): 0.174408
+CPT test time (ms): 1086.0
+CPT memory (MB): 0.173576
+CPT test time (ms): 1099.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 1.44E-4
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 0.039924
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.04002
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.039972
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.040268
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.040032
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.040032
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.040068
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.039932
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.03992
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.04
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.040052
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.039852
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.040156
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.040036
+AKOM test time (ms): 0.0
+LZ78 memory (MB): 0.082944
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.08328
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.083024
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.083392
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.083232
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.083344
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.08336
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.082848
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.083504
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.083024
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.082896
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.083008
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.083248
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.082992
+LZ78 test time (ms): 1.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 
+Max memory used: 271mb
+Execution time: 32 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	67.76	62.46	67.76	67.76	63.66	62.28	63.52
+Failure   	32.24	37.54	32.24	32.24	36.34	37.72	36.48
+No Match  	00.000	0.96	00.000	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	67.76	61.86	67.76	67.76	63.66	62.28	63.52
+Size (MB)	0	6.143	0.086	0.174	0	0.04	0.083
+Train Tim	0.005	0.019	0.03	0.002	0.004	0.037	0.013
+Test Time	00.000	00.000	0.975	1.099	00.000	00.000	0.001
+
+
+---SPICE1---
+Number of sequences : 	5000
+Number of distinct items: 	20
+Largest item id: 	19
+Itemsets per sequence: 	41.7752
+Distinct item per sequence: 	14.2164
+Occurences for each item: 	2.9385217073239356
+Size of the dataset in MB: 	20000.835504
+
+DG memory (MB): 0.00328
+DG test time (ms): 1.0
+DG memory (MB): 0.00328
+DG test time (ms): 1.0
+DG memory (MB): 0.00328
+DG test time (ms): 1.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 1.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+TDAG memory (MB): 26.325888
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.134657
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.19672
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.150496
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.284416
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.156544
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.286287
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.343744
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.238049
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.18304
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.243376
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.372688
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.372831
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.327473
+TDAG test time (ms): 1.0
+CPT+ memory (MB): 0.107816
+CPT+ test time (ms): 441.0
+CPT+ memory (MB): 0.107936
+CPT+ test time (ms): 480.0
+CPT+ memory (MB): 0.107852
+CPT+ test time (ms): 406.0
+CPT+ memory (MB): 0.10778
+CPT+ test time (ms): 513.0
+CPT+ memory (MB): 0.107864
+CPT+ test time (ms): 444.0
+CPT+ memory (MB): 0.107864
+CPT+ test time (ms): 424.0
+CPT+ memory (MB): 0.107888
+CPT+ test time (ms): 498.0
+CPT+ memory (MB): 0.107744
+CPT+ test time (ms): 426.0
+CPT+ memory (MB): 0.107888
+CPT+ test time (ms): 377.0
+CPT+ memory (MB): 0.107756
+CPT+ test time (ms): 411.0
+CPT+ memory (MB): 0.107612
+CPT+ test time (ms): 477.0
+CPT+ memory (MB): 0.107756
+CPT+ test time (ms): 548.0
+CPT+ memory (MB): 0.10778
+CPT+ test time (ms): 507.0
+CPT+ memory (MB): 0.107836
+CPT+ test time (ms): 438.0
+CPT memory (MB): 0.466868
+CPT test time (ms): 941.0
+CPT memory (MB): 0.466688
+CPT test time (ms): 963.0
+CPT memory (MB): 0.466868
+CPT test time (ms): 880.0
+CPT memory (MB): 0.466808
+CPT test time (ms): 894.0
+CPT memory (MB): 0.467084
+CPT test time (ms): 900.0
+CPT memory (MB): 0.46682
+CPT test time (ms): 928.0
+CPT memory (MB): 0.466544
+CPT test time (ms): 941.0
+CPT memory (MB): 0.467
+CPT test time (ms): 974.0
+CPT memory (MB): 0.466688
+CPT test time (ms): 892.0
+CPT memory (MB): 0.467108
+CPT test time (ms): 946.0
+CPT memory (MB): 0.466964
+CPT test time (ms): 892.0
+CPT memory (MB): 0.467264
+CPT test time (ms): 920.0
+CPT memory (MB): 0.467228
+CPT test time (ms): 900.0
+CPT memory (MB): 0.466612
+CPT test time (ms): 920.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 4.11704
+AKOM test time (ms): 1.0
+AKOM memory (MB): 4.091372
+AKOM test time (ms): 1.0
+AKOM memory (MB): 4.099504
+AKOM test time (ms): 0.0
+AKOM memory (MB): 4.093068
+AKOM test time (ms): 1.0
+AKOM memory (MB): 4.111288
+AKOM test time (ms): 1.0
+AKOM memory (MB): 4.093828
+AKOM test time (ms): 0.0
+AKOM memory (MB): 4.111072
+AKOM test time (ms): 0.0
+AKOM memory (MB): 4.120104
+AKOM test time (ms): 0.0
+AKOM memory (MB): 4.104016
+AKOM test time (ms): 1.0
+AKOM memory (MB): 4.092076
+AKOM test time (ms): 1.0
+AKOM memory (MB): 4.105404
+AKOM test time (ms): 1.0
+AKOM memory (MB): 4.124272
+AKOM test time (ms): 1.0
+AKOM memory (MB): 4.121656
+AKOM test time (ms): 0.0
+AKOM memory (MB): 4.114964
+AKOM test time (ms): 0.0
+LZ78 memory (MB): 0.724752
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.719232
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.721344
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.719552
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.722656
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.720416
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.7228
+LZ78 test time (ms): 55.0
+LZ78 memory (MB): 0.724752
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.721664
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.720256
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.721968
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.725136
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.724944
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.724112
+LZ78 test time (ms): 3.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 
+Max memory used: 1190mb
+Execution time: 38 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	26.88	18.362	26.651	26.8	26.88	15.3	25.58
+Failure   	73.12	81.638	73.349	73.2	73.12	84.7	74.42
+No Match  	00.000	55.56	0.04	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	26.88	8.16	26.64	26.8	26.88	15.3	25.58
+Size (MB)	0.003	26.327	0.108	0.467	0.003	4.115	0.724
+Train Tim	0.029	0.47	0.614	0.004	0.008	0.302	0.048
+Test Time	00.000	0.001	0.438	0.92	00.000	00.000	0.003
+
+
+---SPICE2---
+Number of sequences : 	5000
+Number of distinct items: 	10
+Largest item id: 	9
+Itemsets per sequence: 	42.1658
+Distinct item per sequence: 	8.989
+Occurences for each item: 	4.690822115919457
+Size of the dataset in MB: 	20000.843316
+
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 1.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 1.0
+TDAG memory (MB): 26.594591
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.52288
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.49336
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.513376
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.589264
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.483568
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.608128
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.530945
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.495232
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.377296
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.55384
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.457071
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.467585
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.585089
+TDAG test time (ms): 1.0
+CPT+ memory (MB): 0.1104
+CPT+ test time (ms): 960.0
+CPT+ memory (MB): 0.110388
+CPT+ test time (ms): 948.0
+CPT+ memory (MB): 0.110412
+CPT+ test time (ms): 886.0
+CPT+ memory (MB): 0.110412
+CPT+ test time (ms): 744.0
+CPT+ memory (MB): 0.110652
+CPT+ test time (ms): 799.0
+CPT+ memory (MB): 0.110508
+CPT+ test time (ms): 819.0
+CPT+ memory (MB): 0.110208
+CPT+ test time (ms): 940.0
+CPT+ memory (MB): 0.110352
+CPT+ test time (ms): 939.0
+CPT+ memory (MB): 0.11046
+CPT+ test time (ms): 947.0
+CPT+ memory (MB): 0.110244
+CPT+ test time (ms): 746.0
+CPT+ memory (MB): 0.110376
+CPT+ test time (ms): 872.0
+CPT+ memory (MB): 0.110628
+CPT+ test time (ms): 943.0
+CPT+ memory (MB): 0.110448
+CPT+ test time (ms): 957.0
+CPT+ memory (MB): 0.110288
+CPT+ test time (ms): 840.0
+CPT memory (MB): 0.416568
+CPT test time (ms): 1215.0
+CPT memory (MB): 0.416724
+CPT test time (ms): 1282.0
+CPT memory (MB): 0.416796
+CPT test time (ms): 1282.0
+CPT memory (MB): 0.416868
+CPT test time (ms): 1151.0
+CPT memory (MB): 0.416304
+CPT test time (ms): 1224.0
+CPT memory (MB): 0.41676
+CPT test time (ms): 1303.0
+CPT memory (MB): 0.416736
+CPT test time (ms): 1161.0
+CPT memory (MB): 0.41646
+CPT test time (ms): 1164.0
+CPT memory (MB): 0.416652
+CPT test time (ms): 1166.0
+CPT memory (MB): 0.417036
+CPT test time (ms): 1221.0
+CPT memory (MB): 0.416616
+CPT test time (ms): 1217.0
+CPT memory (MB): 0.416604
+CPT test time (ms): 1164.0
+CPT memory (MB): 0.416496
+CPT test time (ms): 1168.0
+CPT memory (MB): 0.41642
+CPT test time (ms): 1163.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 1.95096
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.948504
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.944132
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.948828
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.951116
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.949744
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.953348
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.947676
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.943696
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.939748
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.949396
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.943996
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.94386
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.950808
+AKOM test time (ms): 1.0
+LZ78 memory (MB): 0.599784
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.598248
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.597976
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.598792
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.60004
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.5986
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.600744
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.598904
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.597928
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.595944
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.599352
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.597576
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.597848
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.600088
+LZ78 test time (ms): 3.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 
+Max memory used: 2036mb
+Execution time: 41 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	36.5	33.88	36.5	36.5	36.5	30.82	36.38
+Failure   	63.5	66.12	63.5	63.5	63.5	69.18	63.62
+No Match  	00.000	20.66	00.000	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	36.5	26.88	36.5	36.5	36.5	30.82	36.38
+Size (MB)	0.001	26.585	0.11	0.416	0.001	1.951	0.6
+Train Tim	0.023	0.169	0.299	0.004	0.008	0.265	0.048
+Test Time	0.001	0.001	0.84	1.163	00.000	0.001	0.003
+
+
+---SPICE3---
+Number of sequences : 	5000
+Number of distinct items: 	10
+Largest item id: 	9
+Itemsets per sequence: 	42.6778
+Distinct item per sequence: 	8.9474
+Occurences for each item: 	4.769854929923777
+Size of the dataset in MB: 	20000.853556
+
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 1.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 1.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 1.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 1.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 1.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.4E-4
+DG test time (ms): 0.0
+TDAG memory (MB): 26.87928
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.83536
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.672785
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.88432
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.88144
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.950129
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.763647
+TDAG test time (ms): 1.0
+TDAG memory (MB): 27.010176
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.874384
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.909088
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.91096
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.68704
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.823263
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.982672
+TDAG test time (ms): 1.0
+CPT+ memory (MB): 0.110244
+CPT+ test time (ms): 956.0
+CPT+ memory (MB): 0.110388
+CPT+ test time (ms): 987.0
+CPT+ memory (MB): 0.11028
+CPT+ test time (ms): 829.0
+CPT+ memory (MB): 0.110376
+CPT+ test time (ms): 951.0
+CPT+ memory (MB): 0.110364
+CPT+ test time (ms): 773.0
+CPT+ memory (MB): 0.110256
+CPT+ test time (ms): 948.0
+CPT+ memory (MB): 0.110232
+CPT+ test time (ms): 740.0
+CPT+ memory (MB): 0.110352
+CPT+ test time (ms): 952.0
+CPT+ memory (MB): 0.11028
+CPT+ test time (ms): 784.0
+CPT+ memory (MB): 0.110472
+CPT+ test time (ms): 1004.0
+CPT+ memory (MB): 0.110424
+CPT+ test time (ms): 692.0
+CPT+ memory (MB): 0.110232
+CPT+ test time (ms): 973.0
+CPT+ memory (MB): 0.110148
+CPT+ test time (ms): 732.0
+CPT+ memory (MB): 0.110048
+CPT+ test time (ms): 985.0
+CPT memory (MB): 0.419508
+CPT test time (ms): 1247.0
+CPT memory (MB): 0.419424
+CPT test time (ms): 1338.0
+CPT memory (MB): 0.419388
+CPT test time (ms): 1301.0
+CPT memory (MB): 0.419316
+CPT test time (ms): 1303.0
+CPT memory (MB): 0.419664
+CPT test time (ms): 1331.0
+CPT memory (MB): 0.419556
+CPT test time (ms): 1331.0
+CPT memory (MB): 0.419508
+CPT test time (ms): 1316.0
+CPT memory (MB): 0.419616
+CPT test time (ms): 1326.0
+CPT memory (MB): 0.419388
+CPT test time (ms): 1309.0
+CPT memory (MB): 0.41922
+CPT test time (ms): 1273.0
+CPT memory (MB): 0.419592
+CPT test time (ms): 1324.0
+CPT memory (MB): 0.41934
+CPT test time (ms): 1274.0
+CPT memory (MB): 0.419556
+CPT test time (ms): 1316.0
+CPT memory (MB): 0.41948
+CPT test time (ms): 1302.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 8.4E-4
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 2.02462
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.02436
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.014532
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.025672
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.023844
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.029236
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.02038
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.031048
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.023164
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.02562
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.027856
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.0167
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.023772
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.030676
+AKOM test time (ms): 0.0
+LZ78 memory (MB): 0.61012
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.609496
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.606392
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.610648
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.610824
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.611848
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.608168
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.613256
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.610472
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.611384
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.611624
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.606904
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.609768
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.61276
+LZ78 test time (ms): 2.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 1283 1283 1324 1324 1324 1324 1364 1364 1364 1404 1404 1404 1404 1444 1605 1766 1927 -2006 -1845 466 627 788 949 1110 1271 1432 1593 1754 841 1962 1007 -2008 1160 -1854 1247 -1768 1284 -1682 1284 -1682 1276 -1684 -1684 -1684 1135 1135 1135 -1873 -1873 -1873 948 948 948 2039 2039 2039 758 758 758 1850 1850 1850 569 569 569 1664 1664 1664 -1335 -1335 -1335 1474 1474 1474 -1525 -1525 -1525 1287 1287 1287 -1707 -1707 -1707 1096 1096 1096 1096 1144 1144 1144 1192 1192 1192 1239 1239 1239 1287 1287 1670 -1994 -1612 195 580 965 1399 1784 -1878 219 652 1037 1423 1856 1952 -2046 -1950 -1854 -1757 -1661 -1565 225 321 418 515 611 708 805 805 
+Max memory used: 2039mb
+Execution time: 43 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	26.28	27.841	26.541	26.52	28	27.1	27.74
+Failure   	73.72	72.159	73.459	73.48	72	72.9	72.26
+No Match  	00.000	24.14	0.38	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	26.28	21.12	26.44	26.52	28	27.1	27.74
+Size (MB)	0.001	26.983	0.11	0.419	0.001	2.031	0.613
+Train Tim	0.023	0.174	0.339	0.004	0.007	0.27	0.054
+Test Time	00.000	0.001	0.985	1.302	00.000	00.000	0.002
+
+
+---SPICE4---
+Number of sequences : 	4854
+Number of distinct items: 	31
+Largest item id: 	30
+Itemsets per sequence: 	8.174701277297075
+Distinct item per sequence: 	6.812731767614339
+Occurences for each item: 	1.1999153285554447
+Size of the dataset in MB: 	19416.15872
+
+DG memory (MB): 0.005608
+DG test time (ms): 0.0
+DG memory (MB): 0.005592
+DG test time (ms): 0.0
+DG memory (MB): 0.005516
+DG test time (ms): 0.0
+DG memory (MB): 0.005592
+DG test time (ms): 0.0
+DG memory (MB): 0.005536
+DG test time (ms): 0.0
+DG memory (MB): 0.005592
+DG test time (ms): 0.0
+DG memory (MB): 0.005576
+DG test time (ms): 0.0
+DG memory (MB): 0.0056
+DG test time (ms): 0.0
+DG memory (MB): 0.005584
+DG test time (ms): 0.0
+DG memory (MB): 0.005592
+DG test time (ms): 0.0
+DG memory (MB): 0.0056
+DG test time (ms): 0.0
+DG memory (MB): 0.005568
+DG test time (ms): 0.0
+DG memory (MB): 0.005592
+DG test time (ms): 0.0
+DG memory (MB): 0.005552
+DG test time (ms): 0.0
+TDAG memory (MB): 3.68052
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.684408
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.682968
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.674472
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.687432
+TDAG test time (ms): 1.0
+TDAG memory (MB): 3.678648
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.684408
+TDAG test time (ms): 1.0
+TDAG memory (MB): 3.68556
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.677928
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.684984
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.697656
+TDAG test time (ms): 1.0
+TDAG memory (MB): 3.683544
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.689736
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.672312
+TDAG test time (ms): 0.0
+CPT+ memory (MB): 0.120625
+CPT+ test time (ms): 384.0
+CPT+ memory (MB): 0.120637
+CPT+ test time (ms): 341.0
+CPT+ memory (MB): 0.119623
+CPT+ test time (ms): 311.0
+CPT+ memory (MB): 0.120541
+CPT+ test time (ms): 355.0
+CPT+ memory (MB): 0.120577
+CPT+ test time (ms): 323.0
+CPT+ memory (MB): 0.120793
+CPT+ test time (ms): 352.0
+CPT+ memory (MB): 0.120601
+CPT+ test time (ms): 298.0
+CPT+ memory (MB): 0.120781
+CPT+ test time (ms): 328.0
+CPT+ memory (MB): 0.120697
+CPT+ test time (ms): 290.0
+CPT+ memory (MB): 0.120493
+CPT+ test time (ms): 265.0
+CPT+ memory (MB): 0.121105
+CPT+ test time (ms): 262.0
+CPT+ memory (MB): 0.120673
+CPT+ test time (ms): 279.0
+CPT+ memory (MB): 0.120661
+CPT+ test time (ms): 316.0
+CPT+ memory (MB): 0.12031
+CPT+ test time (ms): 329.0
+CPT memory (MB): 0.257605
+CPT test time (ms): 480.0
+CPT memory (MB): 0.257797
+CPT test time (ms): 463.0
+CPT memory (MB): 0.257107
+CPT test time (ms): 412.0
+CPT memory (MB): 0.257761
+CPT test time (ms): 439.0
+CPT memory (MB): 0.258541
+CPT test time (ms): 421.0
+CPT memory (MB): 0.257161
+CPT test time (ms): 412.0
+CPT memory (MB): 0.257281
+CPT test time (ms): 440.0
+CPT memory (MB): 0.258229
+CPT test time (ms): 434.0
+CPT memory (MB): 0.258445
+CPT test time (ms): 458.0
+CPT memory (MB): 0.258373
+CPT test time (ms): 396.0
+CPT memory (MB): 0.259117
+CPT test time (ms): 402.0
+CPT memory (MB): 0.258073
+CPT test time (ms): 416.0
+CPT memory (MB): 0.258661
+CPT test time (ms): 414.0
+CPT memory (MB): 0.257554
+CPT test time (ms): 434.0
+Mark1 memory (MB): 0.003576
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003592
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003556
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003584
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.003592
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003584
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003576
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003592
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003592
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003592
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003592
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003592
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003552
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00356
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 0.262864
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.261584
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.263324
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.263064
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.263404
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.262804
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.261392
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.26386
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.263464
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.263812
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.263296
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.263308
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.262868
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.261596
+AKOM test time (ms): 0.0
+LZ78 memory (MB): 0.097808
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.097904
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.098048
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.09784
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.097936
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.098016
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.097872
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.097984
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.097824
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.098044
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.098096
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.098
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.09792
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.097584
+LZ78 test time (ms): 2.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 1283 1283 1324 1324 1324 1324 1364 1364 1364 1404 1404 1404 1404 1444 1605 1766 1927 -2006 -1845 466 627 788 949 1110 1271 1432 1593 1754 841 1962 1007 -2008 1160 -1854 1247 -1768 1284 -1682 1284 -1682 1276 -1684 -1684 -1684 1135 1135 1135 -1873 -1873 -1873 948 948 948 2039 2039 2039 758 758 758 1850 1850 1850 569 569 569 1664 1664 1664 -1335 -1335 -1335 1474 1474 1474 -1525 -1525 -1525 1287 1287 1287 -1707 -1707 -1707 1096 1096 1096 1096 1144 1144 1144 1192 1192 1192 1239 1239 1239 1287 1287 1670 -1994 -1612 195 580 965 1399 1784 -1878 219 652 1037 1423 1856 1952 -2046 -1950 -1854 -1757 -1661 -1565 225 321 418 515 611 708 805 805 805 805 853 853 853 853 853 853 853 853 853 853 853 853 902 902 950 950 998 998 1047 1047 1095 1095 1143 1143 1143 1192 1578 1917 -1840 240 579 965 1304 1691 -2017 -1679 337 677 1016 1403 1403 1403 1888 1888 1888 -1723 -1723 -1723 388 388 388 872 872 872 1357 1357 1357 1841 1841 1841 -1818 -1818 -1818 340 340 340 826 826 826 1264 1264 1264 1751 1751 1751 -1858 -1858 -1858 243 243 243 729 729 729 729 729 729 729 729 729 729 778 778 778 778 778 826 875 924 972 1021 1070 1118 1167 1215 1264 1313 1361 1410 1459 1507 1507 1507 1556 1556 1605 1605 1653 1653 1653 1702 1702 1751 1751 1751 
+Max memory used: 2039mb
+Execution time: 12 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	76.967	75.626	57.119	63.26	63.672	73.686	69.056
+Failure   	23.033	24.374	42.881	36.74	36.328	26.314	30.944
+No Match  	00.000	21.899	0.021	0.021	0.021	0.021	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	76.967	59.065	57.108	63.247	63.659	73.671	69.056
+Size (MB)	0.006	3.672	0.12	0.258	0.004	0.262	0.098
+Train Tim	0.006	0.017	0.075	0.002	0.001	0.032	0.008
+Test Time	00.000	00.000	0.329	0.434	00.000	00.000	0.002
+
+
+---SPICE5---
+Number of sequences : 	5000
+Number of distinct items: 	48
+Largest item id: 	48
+Itemsets per sequence: 	119.9794
+Distinct item per sequence: 	22.7796
+Occurences for each item: 	5.2669669353281
+Size of the dataset in MB: 	20002.399588
+
+DG memory (MB): 0.010984
+DG test time (ms): 1.0
+DG memory (MB): 0.011016
+DG test time (ms): 1.0
+DG memory (MB): 0.010976
+DG test time (ms): 1.0
+DG memory (MB): 0.011008
+DG test time (ms): 0.0
+DG memory (MB): 0.011
+DG test time (ms): 1.0
+DG memory (MB): 0.011032
+DG test time (ms): 0.0
+DG memory (MB): 0.010856
+DG test time (ms): 0.0
+DG memory (MB): 0.011016
+DG test time (ms): 0.0
+DG memory (MB): 0.011008
+DG test time (ms): 1.0
+DG memory (MB): 0.010968
+DG test time (ms): 1.0
+DG memory (MB): 0.011032
+DG test time (ms): 0.0
+DG memory (MB): 0.010984
+DG test time (ms): 0.0
+DG memory (MB): 0.011016
+DG test time (ms): 1.0
+DG memory (MB): 0.01092
+DG test time (ms): 0.0
+TDAG memory (MB): 78.45259
+TDAG test time (ms): 1.0
+TDAG memory (MB): 79.01419
+TDAG test time (ms): 0.0
+TDAG memory (MB): 78.66902
+TDAG test time (ms): 0.0
+TDAG memory (MB): 78.681694
+TDAG test time (ms): 0.0
+TDAG memory (MB): 78.35366
+TDAG test time (ms): 0.0
+TDAG memory (MB): 78.63331
+TDAG test time (ms): 0.0
+TDAG memory (MB): 78.70934
+TDAG test time (ms): 0.0
+TDAG memory (MB): 78.680115
+TDAG test time (ms): 0.0
+TDAG memory (MB): 78.12096
+TDAG test time (ms): 0.0
+TDAG memory (MB): 78.30225
+TDAG test time (ms): 0.0
+TDAG memory (MB): 78.743324
+TDAG test time (ms): 0.0
+TDAG memory (MB): 78.462524
+TDAG test time (ms): 0.0
+TDAG memory (MB): 78.249985
+TDAG test time (ms): 0.0
+TDAG memory (MB): 78.53453
+TDAG test time (ms): 1.0
+CPT+ memory (MB): 0.105996
+CPT+ test time (ms): 443.0
+CPT+ memory (MB): 0.105292
+CPT+ test time (ms): 444.0
+CPT+ memory (MB): 0.105696
+CPT+ test time (ms): 384.0
+CPT+ memory (MB): 0.1056
+CPT+ test time (ms): 399.0
+CPT+ memory (MB): 0.105292
+CPT+ test time (ms): 412.0
+CPT+ memory (MB): 0.105696
+CPT+ test time (ms): 408.0
+CPT+ memory (MB): 0.105744
+CPT+ test time (ms): 440.0
+CPT+ memory (MB): 0.105648
+CPT+ test time (ms): 365.0
+CPT+ memory (MB): 0.105684
+CPT+ test time (ms): 401.0
+CPT+ memory (MB): 0.1059
+CPT+ test time (ms): 380.0
+CPT+ memory (MB): 0.105768
+CPT+ test time (ms): 429.0
+CPT+ memory (MB): 0.105076
+CPT+ test time (ms): 403.0
+CPT+ memory (MB): 0.105208
+CPT+ test time (ms): 386.0
+CPT+ memory (MB): 0.105872
+CPT+ test time (ms): 424.0
+CPT memory (MB): 0.32778
+CPT test time (ms): 539.0
+CPT memory (MB): 0.326296
+CPT test time (ms): 585.0
+CPT memory (MB): 0.325236
+CPT test time (ms): 582.0
+CPT memory (MB): 0.32682
+CPT test time (ms): 565.0
+CPT memory (MB): 0.326956
+CPT test time (ms): 571.0
+CPT memory (MB): 0.32742
+CPT test time (ms): 548.0
+CPT memory (MB): 0.326928
+CPT test time (ms): 591.0
+CPT memory (MB): 0.326784
+CPT test time (ms): 599.0
+CPT memory (MB): 0.326952
+CPT test time (ms): 561.0
+CPT memory (MB): 0.326748
+CPT test time (ms): 598.0
+CPT memory (MB): 0.32628
+CPT test time (ms): 573.0
+CPT memory (MB): 0.325792
+CPT test time (ms): 577.0
+CPT memory (MB): 0.326128
+CPT test time (ms): 577.0
+CPT memory (MB): 0.327188
+CPT test time (ms): 582.0
+Mark1 memory (MB): 0.005608
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.005624
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.005624
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.005624
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00564
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.005632
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.0056
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.005616
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.005584
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.005608
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00564
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.005608
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.005632
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.005624
+Mark1 test time (ms): 1.0
+AKOM memory (MB): 1.822676
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.828592
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.828276
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.825644
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.825556
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.828816
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.825588
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.828908
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.81864
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.824068
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.82636
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.828104
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.824452
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.823908
+AKOM test time (ms): 1.0
+LZ78 memory (MB): 1.385416
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.393444
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 1.389456
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.38858
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.383584
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.388316
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.388724
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.388636
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.379936
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.381004
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.387932
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.384924
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.38166
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 1.384892
+LZ78 test time (ms): 3.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 1283 1283 1324 1324 1324 1324 1364 1364 1364 1404 1404 1404 1404 1444 1605 1766 1927 -2006 -1845 466 627 788 949 1110 1271 1432 1593 1754 841 1962 1007 -2008 1160 -1854 1247 -1768 1284 -1682 1284 -1682 1276 -1684 -1684 -1684 1135 1135 1135 -1873 -1873 -1873 948 948 948 2039 2039 2039 758 758 758 1850 1850 1850 569 569 569 1664 1664 1664 -1335 -1335 -1335 1474 1474 1474 -1525 -1525 -1525 1287 1287 1287 -1707 -1707 -1707 1096 1096 1096 1096 1144 1144 1144 1192 1192 1192 1239 1239 1239 1287 1287 1670 -1994 -1612 195 580 965 1399 1784 -1878 219 652 1037 1423 1856 1952 -2046 -1950 -1854 -1757 -1661 -1565 225 321 418 515 611 708 805 805 805 805 853 853 853 853 853 853 853 853 853 853 853 853 902 902 950 950 998 998 1047 1047 1095 1095 1143 1143 1143 1192 1578 1917 -1840 240 579 965 1304 1691 -2017 -1679 337 677 1016 1403 1403 1403 1888 1888 1888 -1723 -1723 -1723 388 388 388 872 872 872 1357 1357 1357 1841 1841 1841 -1818 -1818 -1818 340 340 340 826 826 826 1264 1264 1264 1751 1751 1751 -1858 -1858 -1858 243 243 243 729 729 729 729 729 729 729 729 729 729 778 778 778 778 778 826 875 924 972 1021 1070 1118 1167 1215 1264 1313 1361 1410 1459 1507 1507 1507 1556 1556 1605 1605 1653 1653 1653 1702 1702 1751 1751 1751 1850 1898 1947 1996 2044 2044 -2002 -1954 -1905 -1856 -1856 -1808 -1759 -1710 311 654 997 1389 1732 -2019 -1676 311 654 997 1341 1684 -2019 -1676 961 1999 567 1556 -1551 1066 -1984 620 1615 -1485 1120 -1975 672 1672 1672 1672 -1823 -1823 -1823 423 423 423 1026 1026 1026 1678 1678 1678 -1814 -1814 -1814 373 373 373 976 976 976 1628 1628 1628 -1864 -1864 -1864 324 324 324 928 928 928 1533 1533 1533 -1907 -1907 -1907 273 323 374 424 475 525 575 626 626 676 727 777 827 878 928 -1958 844 -2041 794 2004 692 1897 643 1847 543 1749 444 1650 394 644 945 1245 1546 1796 -1998 -1698 -1397 449 750 1051 1351 1602 1902 1902 
+Max memory used: 2044mb
+Execution time: 44 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	53.846	86.44	100	100	58.66	85.56	78.82
+Failure   	46.154	13.56	00.000	00.000	41.34	14.44	21.18
+No Match  	98.7	2.36	0.1	0.06	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	0.7	84.4	99.9	99.94	58.66	85.56	78.82
+Size (MB)	0.011	78.535	0.106	0.327	0.006	1.824	1.385
+Train Tim	0.123	0.406	0.457	0.005	0.023	0.861	0.18
+Test Time	00.000	0.001	0.424	0.582	0.001	0.001	0.003
+
+
+---SPICE6---
+Number of sequences : 	4099
+Number of distinct items: 	24
+Largest item id: 	53
+Itemsets per sequence: 	29.740180531837034
+Distinct item per sequence: 	11.156135642839716
+Occurences for each item: 	2.6658138161779177
+Size of the dataset in MB: 	16396.48762
+
+DG memory (MB): 0.004544
+DG test time (ms): 0.0
+DG memory (MB): 0.004536
+DG test time (ms): 0.0
+DG memory (MB): 0.004536
+DG test time (ms): 0.0
+DG memory (MB): 0.004528
+DG test time (ms): 0.0
+DG memory (MB): 0.004552
+DG test time (ms): 0.0
+DG memory (MB): 0.004544
+DG test time (ms): 0.0
+DG memory (MB): 0.004552
+DG test time (ms): 0.0
+DG memory (MB): 0.004552
+DG test time (ms): 0.0
+DG memory (MB): 0.004544
+DG test time (ms): 0.0
+DG memory (MB): 0.004544
+DG test time (ms): 0.0
+DG memory (MB): 0.004528
+DG test time (ms): 0.0
+DG memory (MB): 0.004544
+DG test time (ms): 0.0
+DG memory (MB): 0.004528
+DG test time (ms): 1.0
+DG memory (MB): 0.004536
+DG test time (ms): 0.0
+TDAG memory (MB): 14.835408
+TDAG test time (ms): 0.0
+TDAG memory (MB): 14.922816
+TDAG test time (ms): 0.0
+TDAG memory (MB): 14.962272
+TDAG test time (ms): 0.0
+TDAG memory (MB): 14.87544
+TDAG test time (ms): 0.0
+TDAG memory (MB): 14.945856
+TDAG test time (ms): 1.0
+TDAG memory (MB): 14.939664
+TDAG test time (ms): 0.0
+TDAG memory (MB): 14.952912
+TDAG test time (ms): 0.0
+TDAG memory (MB): 14.893728
+TDAG test time (ms): 0.0
+TDAG memory (MB): 14.958096
+TDAG test time (ms): 0.0
+TDAG memory (MB): 14.967024
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.04392
+TDAG test time (ms): 0.0
+TDAG memory (MB): 14.953344
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.009504
+TDAG test time (ms): 0.0
+TDAG memory (MB): 14.763192
+TDAG test time (ms): 0.0
+CPT+ memory (MB): 0.088848
+CPT+ test time (ms): 280.0
+CPT+ memory (MB): 0.08904
+CPT+ test time (ms): 319.0
+CPT+ memory (MB): 0.089232
+CPT+ test time (ms): 283.0
+CPT+ memory (MB): 0.089112
+CPT+ test time (ms): 288.0
+CPT+ memory (MB): 0.089028
+CPT+ test time (ms): 276.0
+CPT+ memory (MB): 0.088992
+CPT+ test time (ms): 271.0
+CPT+ memory (MB): 0.089088
+CPT+ test time (ms): 296.0
+CPT+ memory (MB): 0.089076
+CPT+ test time (ms): 277.0
+CPT+ memory (MB): 0.089124
+CPT+ test time (ms): 311.0
+CPT+ memory (MB): 0.088776
+CPT+ test time (ms): 243.0
+CPT+ memory (MB): 0.089148
+CPT+ test time (ms): 288.0
+CPT+ memory (MB): 0.089124
+CPT+ test time (ms): 303.0
+CPT+ memory (MB): 0.089016
+CPT+ test time (ms): 310.0
+CPT+ memory (MB): 0.088748
+CPT+ test time (ms): 281.0
+CPT memory (MB): 0.32136
+CPT test time (ms): 355.0
+CPT memory (MB): 0.321468
+CPT test time (ms): 413.0
+CPT memory (MB): 0.321828
+CPT test time (ms): 376.0
+CPT memory (MB): 0.322128
+CPT test time (ms): 386.0
+CPT memory (MB): 0.32148
+CPT test time (ms): 371.0
+CPT memory (MB): 0.321192
+CPT test time (ms): 357.0
+CPT memory (MB): 0.322188
+CPT test time (ms): 382.0
+CPT memory (MB): 0.320964
+CPT test time (ms): 383.0
+CPT memory (MB): 0.322152
+CPT test time (ms): 395.0
+CPT memory (MB): 0.321444
+CPT test time (ms): 357.0
+CPT memory (MB): 0.321708
+CPT test time (ms): 346.0
+CPT memory (MB): 0.322116
+CPT test time (ms): 381.0
+CPT memory (MB): 0.321768
+CPT test time (ms): 359.0
+CPT memory (MB): 0.319796
+CPT test time (ms): 387.0
+Mark1 memory (MB): 0.004144
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00412
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004136
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00412
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004176
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00416
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00416
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00416
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004168
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00412
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004144
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.004152
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004128
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004136
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 1.464548
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.469104
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.473708
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.471736
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.469864
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.470448
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.47458
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.466272
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.477992
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.47132
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.481004
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.474236
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.476872
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.454252
+AKOM test time (ms): 1.0
+LZ78 memory (MB): 0.341536
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.343664
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.344736
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.344176
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.34368
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.343984
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.344624
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.342432
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.345584
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.343664
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.3464
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.344736
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.345264
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.339616
+LZ78 test time (ms): 2.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 1283 1283 1324 1324 1324 1324 1364 1364 1364 1404 1404 1404 1404 1444 1605 1766 1927 -2006 -1845 466 627 788 949 1110 1271 1432 1593 1754 841 1962 1007 -2008 1160 -1854 1247 -1768 1284 -1682 1284 -1682 1276 -1684 -1684 -1684 1135 1135 1135 -1873 -1873 -1873 948 948 948 2039 2039 2039 758 758 758 1850 1850 1850 569 569 569 1664 1664 1664 -1335 -1335 -1335 1474 1474 1474 -1525 -1525 -1525 1287 1287 1287 -1707 -1707 -1707 1096 1096 1096 1096 1144 1144 1144 1192 1192 1192 1239 1239 1239 1287 1287 1670 -1994 -1612 195 580 965 1399 1784 -1878 219 652 1037 1423 1856 1952 -2046 -1950 -1854 -1757 -1661 -1565 225 321 418 515 611 708 805 805 805 805 853 853 853 853 853 853 853 853 853 853 853 853 902 902 950 950 998 998 1047 1047 1095 1095 1143 1143 1143 1192 1578 1917 -1840 240 579 965 1304 1691 -2017 -1679 337 677 1016 1403 1403 1403 1888 1888 1888 -1723 -1723 -1723 388 388 388 872 872 872 1357 1357 1357 1841 1841 1841 -1818 -1818 -1818 340 340 340 826 826 826 1264 1264 1264 1751 1751 1751 -1858 -1858 -1858 243 243 243 729 729 729 729 729 729 729 729 729 729 778 778 778 778 778 826 875 924 972 1021 1070 1118 1167 1215 1264 1313 1361 1410 1459 1507 1507 1507 1556 1556 1605 1605 1653 1653 1653 1702 1702 1751 1751 1751 1850 1898 1947 1996 2044 2044 -2002 -1954 -1905 -1856 -1856 -1808 -1759 -1710 311 654 997 1389 1732 -2019 -1676 311 654 997 1341 1684 -2019 -1676 961 1999 567 1556 -1551 1066 -1984 620 1615 -1485 1120 -1975 672 1672 1672 1672 -1823 -1823 -1823 423 423 423 1026 1026 1026 1678 1678 1678 -1814 -1814 -1814 373 373 373 976 976 976 1628 1628 1628 -1864 -1864 -1864 324 324 324 928 928 928 1533 1533 1533 -1907 -1907 -1907 273 323 374 424 475 525 575 626 626 676 727 777 827 878 928 -1958 844 -2041 794 2004 692 1897 643 1847 543 1749 444 1650 394 644 945 1245 1546 1796 -1998 -1698 -1397 449 750 1051 1351 1602 1902 1902 1952 1952 1952 1952 1952 2002 2002 2002 2002 2002 2002 -2043 -2043 -2043 -1942 -1842 -1742 -1641 -1541 -1441 300 400 499 599 699 799 899 1048 1498 1947 -1699 356 802 1248 1695 -1954 -1508 504 948 1441 1884 -1767 -1767 -1767 -1372 -1372 -1372 603 603 603 998 998 998 1393 1393 1393 1788 1788 1788 -1912 -1912 -1912 -1566 -1566 -1517 454 454 454 848 848 848 1242 1242 1242 1635 1635 1635 2029 2029 2029 -1672 -1672 -1672 356 356 356 356 356 405 405 405 405 405 405 454 454 454 454 701 947 1193 1439 1636 1883 -1966 -1720 -1474 397 594 840 1086 1332 1382 1431 1530 1579 1628 1727 1776 1825 1874 1973 2022 -2024 -1974 -1876 -1876 
+Max memory used: 2044mb
+Execution time: 17 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	29.983	48.474	28.247	29.373	28.909	41.986	36.594
+Failure   	70.017	51.526	71.753	70.627	71.091	58.014	63.406
+No Match  	00.000	29.641	0.073	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	29.983	34.106	28.226	29.373	28.909	41.986	36.594
+Size (MB)	0.005	14.763	0.089	0.32	0.004	1.454	0.34
+Train Tim	0.018	0.091	0.222	0.003	0.006	0.149	0.03
+Test Time	00.000	00.000	0.281	0.387	00.000	0.001	0.002
+
+
+---SPICE7---
+Number of sequences : 	5000
+Number of distinct items: 	20
+Largest item id: 	19
+Itemsets per sequence: 	59.1826
+Distinct item per sequence: 	16.5418
+Occurences for each item: 	3.57776058228246
+Size of the dataset in MB: 	20001.183652
+
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 1.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 1.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+TDAG memory (MB): 37.917023
+TDAG test time (ms): 0.0
+TDAG memory (MB): 37.905502
+TDAG test time (ms): 1.0
+TDAG memory (MB): 37.89456
+TDAG test time (ms): 0.0
+TDAG memory (MB): 37.88981
+TDAG test time (ms): 1.0
+TDAG memory (MB): 37.904064
+TDAG test time (ms): 0.0
+TDAG memory (MB): 37.93445
+TDAG test time (ms): 1.0
+TDAG memory (MB): 37.86835
+TDAG test time (ms): 0.0
+TDAG memory (MB): 37.90507
+TDAG test time (ms): 0.0
+TDAG memory (MB): 37.900894
+TDAG test time (ms): 1.0
+TDAG memory (MB): 37.888367
+TDAG test time (ms): 0.0
+TDAG memory (MB): 37.88491
+TDAG test time (ms): 1.0
+TDAG memory (MB): 37.868927
+TDAG test time (ms): 0.0
+TDAG memory (MB): 37.9032
+TDAG test time (ms): 0.0
+TDAG memory (MB): 37.884335
+TDAG test time (ms): 0.0
+CPT+ memory (MB): 0.107648
+CPT+ test time (ms): 738.0
+CPT+ memory (MB): 0.107876
+CPT+ test time (ms): 801.0
+CPT+ memory (MB): 0.107852
+CPT+ test time (ms): 795.0
+CPT+ memory (MB): 0.107576
+CPT+ test time (ms): 702.0
+CPT+ memory (MB): 0.107612
+CPT+ test time (ms): 608.0
+CPT+ memory (MB): 0.107708
+CPT+ test time (ms): 714.0
+CPT+ memory (MB): 0.107516
+CPT+ test time (ms): 718.0
+CPT+ memory (MB): 0.107588
+CPT+ test time (ms): 691.0
+CPT+ memory (MB): 0.107684
+CPT+ test time (ms): 703.0
+CPT+ memory (MB): 0.107492
+CPT+ test time (ms): 639.0
+CPT+ memory (MB): 0.107612
+CPT+ test time (ms): 736.0
+CPT+ memory (MB): 0.10766
+CPT+ test time (ms): 740.0
+CPT+ memory (MB): 0.107612
+CPT+ test time (ms): 736.0
+CPT+ memory (MB): 0.107644
+CPT+ test time (ms): 724.0
+CPT memory (MB): 0.344888
+CPT test time (ms): 979.0
+CPT memory (MB): 0.344456
+CPT test time (ms): 1009.0
+CPT memory (MB): 0.344996
+CPT test time (ms): 1061.0
+CPT memory (MB): 0.344468
+CPT test time (ms): 1003.0
+CPT memory (MB): 0.344504
+CPT test time (ms): 1082.0
+CPT memory (MB): 0.343988
+CPT test time (ms): 1140.0
+CPT memory (MB): 0.345044
+CPT test time (ms): 1027.0
+CPT memory (MB): 0.344132
+CPT test time (ms): 998.0
+CPT memory (MB): 0.344384
+CPT test time (ms): 920.0
+CPT memory (MB): 0.344468
+CPT test time (ms): 983.0
+CPT memory (MB): 0.344948
+CPT test time (ms): 992.0
+CPT memory (MB): 0.345296
+CPT test time (ms): 956.0
+CPT memory (MB): 0.3449
+CPT test time (ms): 982.0
+CPT memory (MB): 0.3445
+CPT test time (ms): 978.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 3.210548
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.202864
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.198028
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.208148
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.197784
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.205104
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.197672
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.202004
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.20272
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.199144
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.207808
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.205744
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.207252
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.209552
+AKOM test time (ms): 0.0
+LZ78 memory (MB): 0.88624
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.886128
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.885264
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.885696
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.88592
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.88576
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.885248
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.885712
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.885904
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.885488
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.885504
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.88464
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.885648
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.885248
+LZ78 test time (ms): 3.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 1283 1283 1324 1324 1324 1324 1364 1364 1364 1404 1404 1404 1404 1444 1605 1766 1927 -2006 -1845 466 627 788 949 1110 1271 1432 1593 1754 841 1962 1007 -2008 1160 -1854 1247 -1768 1284 -1682 1284 -1682 1276 -1684 -1684 -1684 1135 1135 1135 -1873 -1873 -1873 948 948 948 2039 2039 2039 758 758 758 1850 1850 1850 569 569 569 1664 1664 1664 -1335 -1335 -1335 1474 1474 1474 -1525 -1525 -1525 1287 1287 1287 -1707 -1707 -1707 1096 1096 1096 1096 1144 1144 1144 1192 1192 1192 1239 1239 1239 1287 1287 1670 -1994 -1612 195 580 965 1399 1784 -1878 219 652 1037 1423 1856 1952 -2046 -1950 -1854 -1757 -1661 -1565 225 321 418 515 611 708 805 805 805 805 853 853 853 853 853 853 853 853 853 853 853 853 902 902 950 950 998 998 1047 1047 1095 1095 1143 1143 1143 1192 1578 1917 -1840 240 579 965 1304 1691 -2017 -1679 337 677 1016 1403 1403 1403 1888 1888 1888 -1723 -1723 -1723 388 388 388 872 872 872 1357 1357 1357 1841 1841 1841 -1818 -1818 -1818 340 340 340 826 826 826 1264 1264 1264 1751 1751 1751 -1858 -1858 -1858 243 243 243 729 729 729 729 729 729 729 729 729 729 778 778 778 778 778 826 875 924 972 1021 1070 1118 1167 1215 1264 1313 1361 1410 1459 1507 1507 1507 1556 1556 1605 1605 1653 1653 1653 1702 1702 1751 1751 1751 1850 1898 1947 1996 2044 2044 -2002 -1954 -1905 -1856 -1856 -1808 -1759 -1710 311 654 997 1389 1732 -2019 -1676 311 654 997 1341 1684 -2019 -1676 961 1999 567 1556 -1551 1066 -1984 620 1615 -1485 1120 -1975 672 1672 1672 1672 -1823 -1823 -1823 423 423 423 1026 1026 1026 1678 1678 1678 -1814 -1814 -1814 373 373 373 976 976 976 1628 1628 1628 -1864 -1864 -1864 324 324 324 928 928 928 1533 1533 1533 -1907 -1907 -1907 273 323 374 424 475 525 575 626 626 676 727 777 827 878 928 -1958 844 -2041 794 2004 692 1897 643 1847 543 1749 444 1650 394 644 945 1245 1546 1796 -1998 -1698 -1397 449 750 1051 1351 1602 1902 1902 1952 1952 1952 1952 1952 2002 2002 2002 2002 2002 2002 -2043 -2043 -2043 -1942 -1842 -1742 -1641 -1541 -1441 300 400 499 599 699 799 899 1048 1498 1947 -1699 356 802 1248 1695 -1954 -1508 504 948 1441 1884 -1767 -1767 -1767 -1372 -1372 -1372 603 603 603 998 998 998 1393 1393 1393 1788 1788 1788 -1912 -1912 -1912 -1566 -1566 -1517 454 454 454 848 848 848 1242 1242 1242 1635 1635 1635 2029 2029 2029 -1672 -1672 -1672 356 356 356 356 356 405 405 405 405 405 405 454 454 454 454 701 947 1193 1439 1636 1883 -1966 -1720 -1474 397 594 840 1086 1332 1382 1431 1530 1579 1628 1727 1776 1825 1874 1973 2022 -2024 -1974 -1876 -1876 -1827 -1827 -1777 -1777 -1728 -1728 -1728 -1679 -1679 -1679 -1630 -1630 -1580 -1580 337 534 781 1027 1224 1470 1717 1914 -1935 -1686 -1489 365 609 853 1780 338 1362 -1806 819 1781 337 1300 -1832 815 1817 385 1340 -1800 -1800 -1800 812 812 812 1716 1716 1716 -1476 -1476 -1476 1145 1145 1145 -2046 -2046 -2046 574 574 574 1477 1477 1477 -1715 -1715 -1715 907 907 907 1810 1810 1810 -1430 -1430 -1430 1192 1192 1240 -2000 -2000 -2000 622 669 669 717 717 764 764 812 812 859 859 859 907 907 954 1525 -1953 407 975 1590 -1890 406 1021 1635 -1892 451 1064 1676 -1853 -1712 -1571 -1429 459 600 742 883 1024 1166 1307 1449 1590 1731 1873 1873 
+Max memory used: 2044mb
+Execution time: 41 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	54.92	27.451	56.14	56.56	54.5	25.28	44.04
+Failure   	45.08	72.549	43.86	43.44	45.5	74.72	55.96
+No Match  	00.000	17.38	00.000	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	54.92	22.68	56.14	56.56	54.5	25.28	44.04
+Size (MB)	0.003	37.884	0.108	0.345	0.003	3.21	0.885
+Train Tim	0.04	0.26	0.319	0.004	0.012	0.452	0.079
+Test Time	00.000	00.000	0.724	0.978	00.000	00.000	0.003
+
+
+---SPICE8---
+Number of sequences : 	5000
+Number of distinct items: 	43
+Largest item id: 	46
+Itemsets per sequence: 	31.6762
+Distinct item per sequence: 	12.3186
+Occurences for each item: 	2.571412335817382
+Size of the dataset in MB: 	20000.633524
+
+DG memory (MB): 0.011228
+DG test time (ms): 0.0
+DG memory (MB): 0.011228
+DG test time (ms): 0.0
+DG memory (MB): 0.011148
+DG test time (ms): 0.0
+DG memory (MB): 0.011144
+DG test time (ms): 0.0
+DG memory (MB): 0.011244
+DG test time (ms): 0.0
+DG memory (MB): 0.011148
+DG test time (ms): 0.0
+DG memory (MB): 0.011148
+DG test time (ms): 0.0
+DG memory (MB): 0.01126
+DG test time (ms): 0.0
+DG memory (MB): 0.011228
+DG test time (ms): 0.0
+DG memory (MB): 0.01114
+DG test time (ms): 0.0
+DG memory (MB): 0.011228
+DG test time (ms): 1.0
+DG memory (MB): 0.011252
+DG test time (ms): 0.0
+DG memory (MB): 0.01126
+DG test time (ms): 0.0
+DG memory (MB): 0.011188
+DG test time (ms): 0.0
+TDAG memory (MB): 19.516705
+TDAG test time (ms): 0.0
+TDAG memory (MB): 19.46616
+TDAG test time (ms): 0.0
+TDAG memory (MB): 19.487185
+TDAG test time (ms): 1.0
+TDAG memory (MB): 19.505615
+TDAG test time (ms): 1.0
+TDAG memory (MB): 19.48848
+TDAG test time (ms): 1.0
+TDAG memory (MB): 19.534992
+TDAG test time (ms): 1.0
+TDAG memory (MB): 19.46112
+TDAG test time (ms): 0.0
+TDAG memory (MB): 19.516848
+TDAG test time (ms): 1.0
+TDAG memory (MB): 19.489344
+TDAG test time (ms): 1.0
+TDAG memory (MB): 19.56336
+TDAG test time (ms): 0.0
+TDAG memory (MB): 19.43736
+TDAG test time (ms): 1.0
+TDAG memory (MB): 19.533983
+TDAG test time (ms): 1.0
+TDAG memory (MB): 19.553856
+TDAG test time (ms): 1.0
+TDAG memory (MB): 19.53456
+TDAG test time (ms): 0.0
+CPT+ memory (MB): 0.124636
+CPT+ test time (ms): 725.0
+CPT+ memory (MB): 0.124792
+CPT+ test time (ms): 722.0
+CPT+ memory (MB): 0.124696
+CPT+ test time (ms): 664.0
+CPT+ memory (MB): 0.124804
+CPT+ test time (ms): 753.0
+CPT+ memory (MB): 0.124876
+CPT+ test time (ms): 643.0
+CPT+ memory (MB): 0.124732
+CPT+ test time (ms): 734.0
+CPT+ memory (MB): 0.124936
+CPT+ test time (ms): 727.0
+CPT+ memory (MB): 0.124624
+CPT+ test time (ms): 680.0
+CPT+ memory (MB): 0.1249
+CPT+ test time (ms): 700.0
+CPT+ memory (MB): 0.12478
+CPT+ test time (ms): 704.0
+CPT+ memory (MB): 0.124732
+CPT+ test time (ms): 605.0
+CPT+ memory (MB): 0.1246
+CPT+ test time (ms): 793.0
+CPT+ memory (MB): 0.12466
+CPT+ test time (ms): 703.0
+CPT+ memory (MB): 0.1245
+CPT+ test time (ms): 730.0
+CPT memory (MB): 0.42052
+CPT test time (ms): 879.0
+CPT memory (MB): 0.421108
+CPT test time (ms): 911.0
+CPT memory (MB): 0.42064
+CPT test time (ms): 840.0
+CPT memory (MB): 0.42124
+CPT test time (ms): 845.0
+CPT memory (MB): 0.421852
+CPT test time (ms): 836.0
+CPT memory (MB): 0.420508
+CPT test time (ms): 869.0
+CPT memory (MB): 0.420904
+CPT test time (ms): 834.0
+CPT memory (MB): 0.420556
+CPT test time (ms): 873.0
+CPT memory (MB): 0.421228
+CPT test time (ms): 900.0
+CPT memory (MB): 0.420688
+CPT test time (ms): 867.0
+CPT memory (MB): 0.420628
+CPT test time (ms): 880.0
+CPT memory (MB): 0.420856
+CPT test time (ms): 856.0
+CPT memory (MB): 0.420976
+CPT test time (ms): 855.0
+CPT memory (MB): 0.420396
+CPT test time (ms): 870.0
+Mark1 memory (MB): 0.007604
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.007612
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.007556
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.007592
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.007644
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00762
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.007516
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.007572
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.007604
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.007524
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.007524
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.007604
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00762
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00762
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 1.539552
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.543952
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.535556
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.543144
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.540944
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.53678
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.536112
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.539668
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.542296
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.544568
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.538208
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.53928
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.541408
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.539912
+AKOM test time (ms): 1.0
+LZ78 memory (MB): 0.442056
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.441212
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.441352
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.442056
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.441256
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.442136
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.441096
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.4418
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.441708
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.443176
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.441048
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.44196
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.442552
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.442296
+LZ78 test time (ms): 4.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 1283 1283 1324 1324 1324 1324 1364 1364 1364 1404 1404 1404 1404 1444 1605 1766 1927 -2006 -1845 466 627 788 949 1110 1271 1432 1593 1754 841 1962 1007 -2008 1160 -1854 1247 -1768 1284 -1682 1284 -1682 1276 -1684 -1684 -1684 1135 1135 1135 -1873 -1873 -1873 948 948 948 2039 2039 2039 758 758 758 1850 1850 1850 569 569 569 1664 1664 1664 -1335 -1335 -1335 1474 1474 1474 -1525 -1525 -1525 1287 1287 1287 -1707 -1707 -1707 1096 1096 1096 1096 1144 1144 1144 1192 1192 1192 1239 1239 1239 1287 1287 1670 -1994 -1612 195 580 965 1399 1784 -1878 219 652 1037 1423 1856 1952 -2046 -1950 -1854 -1757 -1661 -1565 225 321 418 515 611 708 805 805 805 805 853 853 853 853 853 853 853 853 853 853 853 853 902 902 950 950 998 998 1047 1047 1095 1095 1143 1143 1143 1192 1578 1917 -1840 240 579 965 1304 1691 -2017 -1679 337 677 1016 1403 1403 1403 1888 1888 1888 -1723 -1723 -1723 388 388 388 872 872 872 1357 1357 1357 1841 1841 1841 -1818 -1818 -1818 340 340 340 826 826 826 1264 1264 1264 1751 1751 1751 -1858 -1858 -1858 243 243 243 729 729 729 729 729 729 729 729 729 729 778 778 778 778 778 826 875 924 972 1021 1070 1118 1167 1215 1264 1313 1361 1410 1459 1507 1507 1507 1556 1556 1605 1605 1653 1653 1653 1702 1702 1751 1751 1751 1850 1898 1947 1996 2044 2044 -2002 -1954 -1905 -1856 -1856 -1808 -1759 -1710 311 654 997 1389 1732 -2019 -1676 311 654 997 1341 1684 -2019 -1676 961 1999 567 1556 -1551 1066 -1984 620 1615 -1485 1120 -1975 672 1672 1672 1672 -1823 -1823 -1823 423 423 423 1026 1026 1026 1678 1678 1678 -1814 -1814 -1814 373 373 373 976 976 976 1628 1628 1628 -1864 -1864 -1864 324 324 324 928 928 928 1533 1533 1533 -1907 -1907 -1907 273 323 374 424 475 525 575 626 626 676 727 777 827 878 928 -1958 844 -2041 794 2004 692 1897 643 1847 543 1749 444 1650 394 644 945 1245 1546 1796 -1998 -1698 -1397 449 750 1051 1351 1602 1902 1902 1952 1952 1952 1952 1952 2002 2002 2002 2002 2002 2002 -2043 -2043 -2043 -1942 -1842 -1742 -1641 -1541 -1441 300 400 499 599 699 799 899 1048 1498 1947 -1699 356 802 1248 1695 -1954 -1508 504 948 1441 1884 -1767 -1767 -1767 -1372 -1372 -1372 603 603 603 998 998 998 1393 1393 1393 1788 1788 1788 -1912 -1912 -1912 -1566 -1566 -1517 454 454 454 848 848 848 1242 1242 1242 1635 1635 1635 2029 2029 2029 -1672 -1672 -1672 356 356 356 356 356 405 405 405 405 405 405 454 454 454 454 701 947 1193 1439 1636 1883 -1966 -1720 -1474 397 594 840 1086 1332 1382 1431 1530 1579 1628 1727 1776 1825 1874 1973 2022 -2024 -1974 -1876 -1876 -1827 -1827 -1777 -1777 -1728 -1728 -1728 -1679 -1679 -1679 -1630 -1630 -1580 -1580 337 534 781 1027 1224 1470 1717 1914 -1935 -1686 -1489 365 609 853 1780 338 1362 -1806 819 1781 337 1300 -1832 815 1817 385 1340 -1800 -1800 -1800 812 812 812 1716 1716 1716 -1476 -1476 -1476 1145 1145 1145 -2046 -2046 -2046 574 574 574 1477 1477 1477 -1715 -1715 -1715 907 907 907 1810 1810 1810 -1430 -1430 -1430 1192 1192 1240 -2000 -2000 -2000 622 669 669 717 717 764 764 812 812 859 859 859 907 907 954 1525 -1953 407 975 1590 -1890 406 1021 1635 -1892 451 1064 1676 -1853 -1712 -1571 -1429 459 600 742 883 1024 1166 1307 1449 1590 1731 1873 1873 1920 1920 1920 1920 1920 1967 1967 1967 1967 2014 2014 2014 2014 -2034 -1940 -1798 -1704 -1563 -1468 368 462 604 698 839 934 1075 1169 1311 -1983 570 1371 -1923 618 1422 -1917 618 1422 -1823 667 1476 -1811 715 715 715 1523 1523 1523 -1764 -1764 -1764 766 766 766 1580 1580 1580 -1749 -1749 -1749 767 767 767 1581 1581 1581 -1748 -1748 -1748 818 818 818 1589 1589 1589 -1687 -1687 -1687 818 818 818 1637 1637 1637 -1687 -1639 -1639 -1639 -1639 -1591 -1591 -1591 -1591 -1543 -1543 -1543 -1543 -1495 -1495 445 783 1073 1364 1702 1992 -1813 -1474 490 780 1119 1409 1747 2037 -1961 -1912 -1816 -1767 -1671 -1574 -1526 -1429 348 397 493 542 638 735 735 
+Max memory used: 2044mb
+Execution time: 32 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	37.38	47.928	96.659	96.9	27.22	46.96	41.92
+Failure   	62.62	52.072	3.341	3.1	72.78	53.04	58.08
+No Match  	00.000	16.5	0.02	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	37.38	40.02	96.64	96.9	27.22	46.96	41.92
+Size (MB)	0.011	19.535	0.124	0.42	0.008	1.54	0.442
+Train Tim	0.032	0.112	0.279	0.004	0.007	0.2	0.038
+Test Time	00.000	00.000	0.73	0.87	00.000	0.001	0.004
+
+
+---SPICE9---
+Number of sequences : 	4096
+Number of distinct items: 	11
+Largest item id: 	10
+Itemsets per sequence: 	30.523681640625
+Distinct item per sequence: 	6.3515625
+Occurences for each item: 	4.805696494464945
+Size of the dataset in MB: 	16384.5001
+
+DG memory (MB): 8.2E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.2E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.2E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.2E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.2E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.2E-4
+DG test time (ms): 1.0
+DG memory (MB): 8.2E-4
+DG test time (ms): 1.0
+DG memory (MB): 8.2E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.2E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.2E-4
+DG test time (ms): 1.0
+DG memory (MB): 8.2E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.2E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.2E-4
+DG test time (ms): 0.0
+DG memory (MB): 8.2E-4
+DG test time (ms): 0.0
+TDAG memory (MB): 15.28404
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.366264
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.303912
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.402552
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.380232
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.370296
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.267336
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.388584
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.297864
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.273384
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.523656
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.415368
+TDAG test time (ms): 0.0
+TDAG memory (MB): 15.397656
+TDAG test time (ms): 1.0
+TDAG memory (MB): 15.206712
+TDAG test time (ms): 0.0
+CPT+ memory (MB): 0.075313
+CPT+ test time (ms): 453.0
+CPT+ memory (MB): 0.075901
+CPT+ test time (ms): 401.0
+CPT+ memory (MB): 0.075673
+CPT+ test time (ms): 437.0
+CPT+ memory (MB): 0.075277
+CPT+ test time (ms): 426.0
+CPT+ memory (MB): 0.075445
+CPT+ test time (ms): 457.0
+CPT+ memory (MB): 0.075637
+CPT+ test time (ms): 403.0
+CPT+ memory (MB): 0.075673
+CPT+ test time (ms): 433.0
+CPT+ memory (MB): 0.075709
+CPT+ test time (ms): 424.0
+CPT+ memory (MB): 0.075721
+CPT+ test time (ms): 439.0
+CPT+ memory (MB): 0.075829
+CPT+ test time (ms): 405.0
+CPT+ memory (MB): 0.075649
+CPT+ test time (ms): 432.0
+CPT+ memory (MB): 0.075661
+CPT+ test time (ms): 436.0
+CPT+ memory (MB): 0.075649
+CPT+ test time (ms): 417.0
+CPT+ memory (MB): 0.075562
+CPT+ test time (ms): 424.0
+CPT memory (MB): 0.226297
+CPT test time (ms): 404.0
+CPT memory (MB): 0.227785
+CPT test time (ms): 400.0
+CPT memory (MB): 0.226597
+CPT test time (ms): 420.0
+CPT memory (MB): 0.226141
+CPT test time (ms): 414.0
+CPT memory (MB): 0.226477
+CPT test time (ms): 424.0
+CPT memory (MB): 0.226585
+CPT test time (ms): 415.0
+CPT memory (MB): 0.227593
+CPT test time (ms): 435.0
+CPT memory (MB): 0.226441
+CPT test time (ms): 419.0
+CPT memory (MB): 0.226729
+CPT test time (ms): 416.0
+CPT memory (MB): 0.226657
+CPT test time (ms): 424.0
+CPT memory (MB): 0.227029
+CPT test time (ms): 407.0
+CPT memory (MB): 0.226165
+CPT test time (ms): 440.0
+CPT memory (MB): 0.226717
+CPT test time (ms): 427.0
+CPT memory (MB): 0.226798
+CPT test time (ms): 454.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 7.48E-4
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 0.502728
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.503068
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.502396
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.504556
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.506572
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.503752
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.504812
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.505496
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.5043
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.50302
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.510292
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.504324
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.506552
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.504048
+AKOM test time (ms): 1.0
+LZ78 memory (MB): 0.236628
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.238916
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.237524
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.238708
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.238724
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.238468
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.237684
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.239428
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.237588
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.236836
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.2417
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.238564
+LZ78 test time (ms): 1.0
+LZ78 memory (MB): 0.239348
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.237364
+LZ78 test time (ms): 2.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 1283 1283 1324 1324 1324 1324 1364 1364 1364 1404 1404 1404 1404 1444 1605 1766 1927 -2006 -1845 466 627 788 949 1110 1271 1432 1593 1754 841 1962 1007 -2008 1160 -1854 1247 -1768 1284 -1682 1284 -1682 1276 -1684 -1684 -1684 1135 1135 1135 -1873 -1873 -1873 948 948 948 2039 2039 2039 758 758 758 1850 1850 1850 569 569 569 1664 1664 1664 -1335 -1335 -1335 1474 1474 1474 -1525 -1525 -1525 1287 1287 1287 -1707 -1707 -1707 1096 1096 1096 1096 1144 1144 1144 1192 1192 1192 1239 1239 1239 1287 1287 1670 -1994 -1612 195 580 965 1399 1784 -1878 219 652 1037 1423 1856 1952 -2046 -1950 -1854 -1757 -1661 -1565 225 321 418 515 611 708 805 805 805 805 853 853 853 853 853 853 853 853 853 853 853 853 902 902 950 950 998 998 1047 1047 1095 1095 1143 1143 1143 1192 1578 1917 -1840 240 579 965 1304 1691 -2017 -1679 337 677 1016 1403 1403 1403 1888 1888 1888 -1723 -1723 -1723 388 388 388 872 872 872 1357 1357 1357 1841 1841 1841 -1818 -1818 -1818 340 340 340 826 826 826 1264 1264 1264 1751 1751 1751 -1858 -1858 -1858 243 243 243 729 729 729 729 729 729 729 729 729 729 778 778 778 778 778 826 875 924 972 1021 1070 1118 1167 1215 1264 1313 1361 1410 1459 1507 1507 1507 1556 1556 1605 1605 1653 1653 1653 1702 1702 1751 1751 1751 1850 1898 1947 1996 2044 2044 -2002 -1954 -1905 -1856 -1856 -1808 -1759 -1710 311 654 997 1389 1732 -2019 -1676 311 654 997 1341 1684 -2019 -1676 961 1999 567 1556 -1551 1066 -1984 620 1615 -1485 1120 -1975 672 1672 1672 1672 -1823 -1823 -1823 423 423 423 1026 1026 1026 1678 1678 1678 -1814 -1814 -1814 373 373 373 976 976 976 1628 1628 1628 -1864 -1864 -1864 324 324 324 928 928 928 1533 1533 1533 -1907 -1907 -1907 273 323 374 424 475 525 575 626 626 676 727 777 827 878 928 -1958 844 -2041 794 2004 692 1897 643 1847 543 1749 444 1650 394 644 945 1245 1546 1796 -1998 -1698 -1397 449 750 1051 1351 1602 1902 1902 1952 1952 1952 1952 1952 2002 2002 2002 2002 2002 2002 -2043 -2043 -2043 -1942 -1842 -1742 -1641 -1541 -1441 300 400 499 599 699 799 899 1048 1498 1947 -1699 356 802 1248 1695 -1954 -1508 504 948 1441 1884 -1767 -1767 -1767 -1372 -1372 -1372 603 603 603 998 998 998 1393 1393 1393 1788 1788 1788 -1912 -1912 -1912 -1566 -1566 -1517 454 454 454 848 848 848 1242 1242 1242 1635 1635 1635 2029 2029 2029 -1672 -1672 -1672 356 356 356 356 356 405 405 405 405 405 405 454 454 454 454 701 947 1193 1439 1636 1883 -1966 -1720 -1474 397 594 840 1086 1332 1382 1431 1530 1579 1628 1727 1776 1825 1874 1973 2022 -2024 -1974 -1876 -1876 -1827 -1827 -1777 -1777 -1728 -1728 -1728 -1679 -1679 -1679 -1630 -1630 -1580 -1580 337 534 781 1027 1224 1470 1717 1914 -1935 -1686 -1489 365 609 853 1780 338 1362 -1806 819 1781 337 1300 -1832 815 1817 385 1340 -1800 -1800 -1800 812 812 812 1716 1716 1716 -1476 -1476 -1476 1145 1145 1145 -2046 -2046 -2046 574 574 574 1477 1477 1477 -1715 -1715 -1715 907 907 907 1810 1810 1810 -1430 -1430 -1430 1192 1192 1240 -2000 -2000 -2000 622 669 669 717 717 764 764 812 812 859 859 859 907 907 954 1525 -1953 407 975 1590 -1890 406 1021 1635 -1892 451 1064 1676 -1853 -1712 -1571 -1429 459 600 742 883 1024 1166 1307 1449 1590 1731 1873 1873 1920 1920 1920 1920 1920 1967 1967 1967 1967 2014 2014 2014 2014 -2034 -1940 -1798 -1704 -1563 -1468 368 462 604 698 839 934 1075 1169 1311 -1983 570 1371 -1923 618 1422 -1917 618 1422 -1823 667 1476 -1811 715 715 715 1523 1523 1523 -1764 -1764 -1764 766 766 766 1580 1580 1580 -1749 -1749 -1749 767 767 767 1581 1581 1581 -1748 -1748 -1748 818 818 818 1589 1589 1589 -1687 -1687 -1687 818 818 818 1637 1637 1637 -1687 -1639 -1639 -1639 -1639 -1591 -1591 -1591 -1591 -1543 -1543 -1543 -1543 -1495 -1495 445 783 1073 1364 1702 1992 -1813 -1474 490 780 1119 1409 1747 2037 -1961 -1912 -1816 -1767 -1671 -1574 -1526 -1429 348 397 493 542 638 735 735 783 783 783 783 783 783 832 832 832 832 832 832 832 880 928 1025 1073 1170 1218 1315 1363 1460 1508 1605 1653 1750 1846 1895 -1620 613 1193 1773 -1693 563 1140 1718 -1752 515 1092 1718 -1800 467 467 467 996 996 996 1477 1477 1477 1958 1958 1958 -1609 -1609 -1609 562 562 562 1091 1091 1091 1620 1620 1620 -1995 -1995 -1995 -1466 -1466 -1466 706 706 706 1188 1188 1236 1717 1717 1717 -1897 -1897 -1897 322 322 370 370 370 370 370 370 418 418 418 418 418 466 466 658 899 1140 1332 1573 1813 2006 -1849 -1608 256 497 738 931 1171 1220 1316 1364 1412 1461 1557 1605 1653 1750 1798 1846 1894 1991 2039 2039 
+Max memory used: 2044mb
+Execution time: 16 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	53.019	66.48	49.146	53.345	51.294	64.209	52.295
+Failure   	46.981	33.52	50.854	46.655	48.706	35.791	47.705
+No Match  	7.397	8.228	00.000	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	49.097	61.011	49.146	53.345	51.294	64.209	52.295
+Size (MB)	0.001	15.207	0.076	0.227	0.001	0.504	0.237
+Train Tim	0.011	0.059	0.089	0.003	0.005	0.117	0.032
+Test Time	00.000	00.000	0.424	0.454	00.000	0.001	0.002
+
+
+---SPICE10---
+Number of sequences : 	5000
+Number of distinct items: 	20
+Largest item id: 	19
+Itemsets per sequence: 	35.5188
+Distinct item per sequence: 	15.8502
+Occurences for each item: 	2.2409054775334063
+Size of the dataset in MB: 	20000.710376
+
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 1.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+DG memory (MB): 0.00328
+DG test time (ms): 0.0
+TDAG memory (MB): 22.069824
+TDAG test time (ms): 1.0
+TDAG memory (MB): 22.070112
+TDAG test time (ms): 0.0
+TDAG memory (MB): 22.082497
+TDAG test time (ms): 0.0
+TDAG memory (MB): 22.090416
+TDAG test time (ms): 0.0
+TDAG memory (MB): 22.070543
+TDAG test time (ms): 0.0
+TDAG memory (MB): 22.0632
+TDAG test time (ms): 0.0
+TDAG memory (MB): 22.077744
+TDAG test time (ms): 0.0
+TDAG memory (MB): 22.083504
+TDAG test time (ms): 0.0
+TDAG memory (MB): 22.078032
+TDAG test time (ms): 0.0
+TDAG memory (MB): 22.075584
+TDAG test time (ms): 0.0
+TDAG memory (MB): 22.093584
+TDAG test time (ms): 0.0
+TDAG memory (MB): 22.065935
+TDAG test time (ms): 0.0
+TDAG memory (MB): 22.059456
+TDAG test time (ms): 0.0
+TDAG memory (MB): 22.075872
+TDAG test time (ms): 0.0
+CPT+ memory (MB): 0.096092
+CPT+ test time (ms): 620.0
+CPT+ memory (MB): 0.0959
+CPT+ test time (ms): 523.0
+CPT+ memory (MB): 0.095684
+CPT+ test time (ms): 594.0
+CPT+ memory (MB): 0.0959
+CPT+ test time (ms): 582.0
+CPT+ memory (MB): 0.095948
+CPT+ test time (ms): 581.0
+CPT+ memory (MB): 0.09602
+CPT+ test time (ms): 604.0
+CPT+ memory (MB): 0.095876
+CPT+ test time (ms): 570.0
+CPT+ memory (MB): 0.095972
+CPT+ test time (ms): 618.0
+CPT+ memory (MB): 0.095972
+CPT+ test time (ms): 587.0
+CPT+ memory (MB): 0.096068
+CPT+ test time (ms): 585.0
+CPT+ memory (MB): 0.096056
+CPT+ test time (ms): 589.0
+CPT+ memory (MB): 0.096104
+CPT+ test time (ms): 574.0
+CPT+ memory (MB): 0.096128
+CPT+ test time (ms): 567.0
+CPT+ memory (MB): 0.095716
+CPT+ test time (ms): 589.0
+CPT memory (MB): 0.25394
+CPT test time (ms): 687.0
+CPT memory (MB): 0.254384
+CPT test time (ms): 656.0
+CPT memory (MB): 0.25268
+CPT test time (ms): 691.0
+CPT memory (MB): 0.253748
+CPT test time (ms): 710.0
+CPT memory (MB): 0.253952
+CPT test time (ms): 680.0
+CPT memory (MB): 0.254192
+CPT test time (ms): 688.0
+CPT memory (MB): 0.252944
+CPT test time (ms): 707.0
+CPT memory (MB): 0.253796
+CPT test time (ms): 723.0
+CPT memory (MB): 0.253412
+CPT test time (ms): 724.0
+CPT memory (MB): 0.253436
+CPT test time (ms): 719.0
+CPT memory (MB): 0.254
+CPT test time (ms): 707.0
+CPT memory (MB): 0.254288
+CPT test time (ms): 696.0
+CPT memory (MB): 0.254912
+CPT test time (ms): 683.0
+CPT memory (MB): 0.252592
+CPT test time (ms): 711.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00328
+Mark1 test time (ms): 1.0
+AKOM memory (MB): 1.476332
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.477452
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.479864
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.477636
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.47854
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.476436
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.477136
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.47736
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.475812
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.471708
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.480852
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.479872
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.480104
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.476344
+AKOM test time (ms): 0.0
+LZ78 memory (MB): 0.450256
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.450352
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.451072
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.45064
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.450672
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.450656
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.450592
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.450896
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.450768
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.449952
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.451008
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.450816
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.450496
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.45072
+LZ78 test time (ms): 1.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 1283 1283 1324 1324 1324 1324 1364 1364 1364 1404 1404 1404 1404 1444 1605 1766 1927 -2006 -1845 466 627 788 949 1110 1271 1432 1593 1754 841 1962 1007 -2008 1160 -1854 1247 -1768 1284 -1682 1284 -1682 1276 -1684 -1684 -1684 1135 1135 1135 -1873 -1873 -1873 948 948 948 2039 2039 2039 758 758 758 1850 1850 1850 569 569 569 1664 1664 1664 -1335 -1335 -1335 1474 1474 1474 -1525 -1525 -1525 1287 1287 1287 -1707 -1707 -1707 1096 1096 1096 1096 1144 1144 1144 1192 1192 1192 1239 1239 1239 1287 1287 1670 -1994 -1612 195 580 965 1399 1784 -1878 219 652 1037 1423 1856 1952 -2046 -1950 -1854 -1757 -1661 -1565 225 321 418 515 611 708 805 805 805 805 853 853 853 853 853 853 853 853 853 853 853 853 902 902 950 950 998 998 1047 1047 1095 1095 1143 1143 1143 1192 1578 1917 -1840 240 579 965 1304 1691 -2017 -1679 337 677 1016 1403 1403 1403 1888 1888 1888 -1723 -1723 -1723 388 388 388 872 872 872 1357 1357 1357 1841 1841 1841 -1818 -1818 -1818 340 340 340 826 826 826 1264 1264 1264 1751 1751 1751 -1858 -1858 -1858 243 243 243 729 729 729 729 729 729 729 729 729 729 778 778 778 778 778 826 875 924 972 1021 1070 1118 1167 1215 1264 1313 1361 1410 1459 1507 1507 1507 1556 1556 1605 1605 1653 1653 1653 1702 1702 1751 1751 1751 1850 1898 1947 1996 2044 2044 -2002 -1954 -1905 -1856 -1856 -1808 -1759 -1710 311 654 997 1389 1732 -2019 -1676 311 654 997 1341 1684 -2019 -1676 961 1999 567 1556 -1551 1066 -1984 620 1615 -1485 1120 -1975 672 1672 1672 1672 -1823 -1823 -1823 423 423 423 1026 1026 1026 1678 1678 1678 -1814 -1814 -1814 373 373 373 976 976 976 1628 1628 1628 -1864 -1864 -1864 324 324 324 928 928 928 1533 1533 1533 -1907 -1907 -1907 273 323 374 424 475 525 575 626 626 676 727 777 827 878 928 -1958 844 -2041 794 2004 692 1897 643 1847 543 1749 444 1650 394 644 945 1245 1546 1796 -1998 -1698 -1397 449 750 1051 1351 1602 1902 1902 1952 1952 1952 1952 1952 2002 2002 2002 2002 2002 2002 -2043 -2043 -2043 -1942 -1842 -1742 -1641 -1541 -1441 300 400 499 599 699 799 899 1048 1498 1947 -1699 356 802 1248 1695 -1954 -1508 504 948 1441 1884 -1767 -1767 -1767 -1372 -1372 -1372 603 603 603 998 998 998 1393 1393 1393 1788 1788 1788 -1912 -1912 -1912 -1566 -1566 -1517 454 454 454 848 848 848 1242 1242 1242 1635 1635 1635 2029 2029 2029 -1672 -1672 -1672 356 356 356 356 356 405 405 405 405 405 405 454 454 454 454 701 947 1193 1439 1636 1883 -1966 -1720 -1474 397 594 840 1086 1332 1382 1431 1530 1579 1628 1727 1776 1825 1874 1973 2022 -2024 -1974 -1876 -1876 -1827 -1827 -1777 -1777 -1728 -1728 -1728 -1679 -1679 -1679 -1630 -1630 -1580 -1580 337 534 781 1027 1224 1470 1717 1914 -1935 -1686 -1489 365 609 853 1780 338 1362 -1806 819 1781 337 1300 -1832 815 1817 385 1340 -1800 -1800 -1800 812 812 812 1716 1716 1716 -1476 -1476 -1476 1145 1145 1145 -2046 -2046 -2046 574 574 574 1477 1477 1477 -1715 -1715 -1715 907 907 907 1810 1810 1810 -1430 -1430 -1430 1192 1192 1240 -2000 -2000 -2000 622 669 669 717 717 764 764 812 812 859 859 859 907 907 954 1525 -1953 407 975 1590 -1890 406 1021 1635 -1892 451 1064 1676 -1853 -1712 -1571 -1429 459 600 742 883 1024 1166 1307 1449 1590 1731 1873 1873 1920 1920 1920 1920 1920 1967 1967 1967 1967 2014 2014 2014 2014 -2034 -1940 -1798 -1704 -1563 -1468 368 462 604 698 839 934 1075 1169 1311 -1983 570 1371 -1923 618 1422 -1917 618 1422 -1823 667 1476 -1811 715 715 715 1523 1523 1523 -1764 -1764 -1764 766 766 766 1580 1580 1580 -1749 -1749 -1749 767 767 767 1581 1581 1581 -1748 -1748 -1748 818 818 818 1589 1589 1589 -1687 -1687 -1687 818 818 818 1637 1637 1637 -1687 -1639 -1639 -1639 -1639 -1591 -1591 -1591 -1591 -1543 -1543 -1543 -1543 -1495 -1495 445 783 1073 1364 1702 1992 -1813 -1474 490 780 1119 1409 1747 2037 -1961 -1912 -1816 -1767 -1671 -1574 -1526 -1429 348 397 493 542 638 735 735 783 783 783 783 783 783 832 832 832 832 832 832 832 880 928 1025 1073 1170 1218 1315 1363 1460 1508 1605 1653 1750 1846 1895 -1620 613 1193 1773 -1693 563 1140 1718 -1752 515 1092 1718 -1800 467 467 467 996 996 996 1477 1477 1477 1958 1958 1958 -1609 -1609 -1609 562 562 562 1091 1091 1091 1620 1620 1620 -1995 -1995 -1995 -1466 -1466 -1466 706 706 706 1188 1188 1236 1717 1717 1717 -1897 -1897 -1897 322 322 370 370 370 370 370 370 418 418 418 418 418 466 466 658 899 1140 1332 1573 1813 2006 -1849 -1608 256 497 738 931 1171 1220 1316 1364 1412 1461 1557 1605 1653 1750 1798 1846 1894 1991 2039 2039 -2008 -1960 -1960 -1960 -1960 -1960 -1912 -1912 -1912 -1912 -1863 -1863 -1863 -1863 -1719 -1574 -1478 346 442 587 731 827 972 1068 1213 1309 1454 1598 -1677 861 1732 -1541 958 1829 -1444 1109 1938 330 1160 2038 430 1268 1268 1268 -1990 -1990 -1990 479 479 479 1317 1317 1317 -1990 -1990 -1990 481 481 481 1326 1326 1326 -1924 -1924 -1924 481 481 481 1326 1326 1326 -1924 -1924 -1924 533 533 533 1334 1334 1334 -1909 -1909 -1909 483 533 533 533 533 583 583 583 633 633 633 633 683 683 683 1034 1385 1735 -2009 -1709 -1358 582 934 1287 1590 1943 -1799 -1447 492 542 643 744 794 895 996 1046 1147 1248 1349 1399 1500 1601 1651 1651 
+Max memory used: 2044mb
+Execution time: 26 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	12.98	89.998	95.94	95.92	40.3	86.54	82.2
+Failure   	87.02	10.002	4.06	4.08	59.7	13.46	17.8
+No Match  	00.000	7.22	00.000	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	12.98	83.5	95.94	95.92	40.3	86.54	82.2
+Size (MB)	0.003	22.076	0.096	0.253	0.003	1.476	0.451
+Train Tim	0.023	0.112	0.128	0.004	0.007	0.241	0.045
+Test Time	00.000	00.000	0.589	0.711	0.001	00.000	0.001
+
+
+---SPICE11---
+Number of sequences : 	5000
+Number of distinct items: 	2546
+Largest item id: 	2553
+Itemsets per sequence: 	12.0796
+Distinct item per sequence: 	10.8556
+Occurences for each item: 	1.112752864880799
+Size of the dataset in MB: 	20000.241592
+
+DG memory (MB): 0.3939
+DG test time (ms): 1.0
+DG memory (MB): 0.392256
+DG test time (ms): 2.0
+DG memory (MB): 0.394364
+DG test time (ms): 1.0
+DG memory (MB): 0.393936
+DG test time (ms): 1.0
+DG memory (MB): 0.393304
+DG test time (ms): 1.0
+DG memory (MB): 0.394532
+DG test time (ms): 1.0
+DG memory (MB): 0.393348
+DG test time (ms): 1.0
+DG memory (MB): 0.395348
+DG test time (ms): 1.0
+DG memory (MB): 0.393096
+DG test time (ms): 2.0
+DG memory (MB): 0.392752
+DG test time (ms): 1.0
+DG memory (MB): 0.394584
+DG test time (ms): 1.0
+DG memory (MB): 0.394004
+DG test time (ms): 1.0
+DG memory (MB): 0.3924
+DG test time (ms): 1.0
+DG memory (MB): 0.39446
+DG test time (ms): 2.0
+TDAG memory (MB): 6.418608
+TDAG test time (ms): 0.0
+TDAG memory (MB): 6.392976
+TDAG test time (ms): 0.0
+TDAG memory (MB): 6.411264
+TDAG test time (ms): 1.0
+TDAG memory (MB): 6.395424
+TDAG test time (ms): 1.0
+TDAG memory (MB): 6.400608
+TDAG test time (ms): 1.0
+TDAG memory (MB): 6.406368
+TDAG test time (ms): 1.0
+TDAG memory (MB): 6.395136
+TDAG test time (ms): 1.0
+TDAG memory (MB): 6.414288
+TDAG test time (ms): 0.0
+TDAG memory (MB): 6.407664
+TDAG test time (ms): 0.0
+TDAG memory (MB): 6.396864
+TDAG test time (ms): 0.0
+TDAG memory (MB): 6.408672
+TDAG test time (ms): 1.0
+TDAG memory (MB): 6.418176
+TDAG test time (ms): 1.0
+TDAG memory (MB): 6.406512
+TDAG test time (ms): 1.0
+TDAG memory (MB): 6.392832
+TDAG test time (ms): 1.0
+CPT+ memory (MB): 1.427172
+CPT+ test time (ms): 184.0
+CPT+ memory (MB): 1.424156
+CPT+ test time (ms): 206.0
+CPT+ memory (MB): 1.424812
+CPT+ test time (ms): 224.0
+CPT+ memory (MB): 1.429568
+CPT+ test time (ms): 176.0
+CPT+ memory (MB): 1.426444
+CPT+ test time (ms): 211.0
+CPT+ memory (MB): 1.424872
+CPT+ test time (ms): 211.0
+CPT+ memory (MB): 1.432404
+CPT+ test time (ms): 272.0
+CPT+ memory (MB): 1.429532
+CPT+ test time (ms): 181.0
+CPT+ memory (MB): 1.421212
+CPT+ test time (ms): 212.0
+CPT+ memory (MB): 1.429044
+CPT+ test time (ms): 255.0
+CPT+ memory (MB): 1.431104
+CPT+ test time (ms): 252.0
+CPT+ memory (MB): 1.41666
+CPT+ test time (ms): 219.0
+CPT+ memory (MB): 1.424168
+CPT+ test time (ms): 222.0
+CPT+ memory (MB): 1.43806
+CPT+ test time (ms): 238.0
+CPT memory (MB): 1.78194
+CPT test time (ms): 169.0
+CPT memory (MB): 1.77842
+CPT test time (ms): 166.0
+CPT memory (MB): 1.779172
+CPT test time (ms): 139.0
+CPT memory (MB): 1.78376
+CPT test time (ms): 152.0
+CPT memory (MB): 1.781272
+CPT test time (ms): 160.0
+CPT memory (MB): 1.778932
+CPT test time (ms): 162.0
+CPT memory (MB): 1.787004
+CPT test time (ms): 213.0
+CPT memory (MB): 1.78418
+CPT test time (ms): 150.0
+CPT memory (MB): 1.775944
+CPT test time (ms): 149.0
+CPT memory (MB): 1.783656
+CPT test time (ms): 172.0
+CPT memory (MB): 1.7855
+CPT test time (ms): 185.0
+CPT memory (MB): 1.77132
+CPT test time (ms): 156.0
+CPT memory (MB): 1.778708
+CPT test time (ms): 164.0
+CPT memory (MB): 1.792204
+CPT test time (ms): 176.0
+Mark1 memory (MB): 0.123052
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.12228
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.122852
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.122624
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.122784
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.122884
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.122348
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.12318
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.122352
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.122496
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.122896
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.122732
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.122448
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.123236
+Mark1 test time (ms): 1.0
+AKOM memory (MB): 1.52944
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.520932
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.527484
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.524876
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.523844
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.527628
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.523376
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.52962
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.525624
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.524316
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.524928
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.528364
+AKOM test time (ms): 1.0
+AKOM memory (MB): 1.524336
+AKOM test time (ms): 0.0
+AKOM memory (MB): 1.524664
+AKOM test time (ms): 0.0
+LZ78 memory (MB): 0.268912
+LZ78 test time (ms): 14.0
+LZ78 memory (MB): 0.2677
+LZ78 test time (ms): 15.0
+LZ78 memory (MB): 0.26868
+LZ78 test time (ms): 15.0
+LZ78 memory (MB): 0.268284
+LZ78 test time (ms): 16.0
+LZ78 memory (MB): 0.268312
+LZ78 test time (ms): 17.0
+LZ78 memory (MB): 0.268684
+LZ78 test time (ms): 16.0
+LZ78 memory (MB): 0.268036
+LZ78 test time (ms): 18.0
+LZ78 memory (MB): 0.26904
+LZ78 test time (ms): 19.0
+LZ78 memory (MB): 0.268704
+LZ78 test time (ms): 20.0
+LZ78 memory (MB): 0.268544
+LZ78 test time (ms): 17.0
+LZ78 memory (MB): 0.268708
+LZ78 test time (ms): 15.0
+LZ78 memory (MB): 0.268996
+LZ78 test time (ms): 14.0
+LZ78 memory (MB): 0.26816
+LZ78 test time (ms): 17.0
+LZ78 memory (MB): 0.268148
+LZ78 test time (ms): 14.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 1283 1283 1324 1324 1324 1324 1364 1364 1364 1404 1404 1404 1404 1444 1605 1766 1927 -2006 -1845 466 627 788 949 1110 1271 1432 1593 1754 841 1962 1007 -2008 1160 -1854 1247 -1768 1284 -1682 1284 -1682 1276 -1684 -1684 -1684 1135 1135 1135 -1873 -1873 -1873 948 948 948 2039 2039 2039 758 758 758 1850 1850 1850 569 569 569 1664 1664 1664 -1335 -1335 -1335 1474 1474 1474 -1525 -1525 -1525 1287 1287 1287 -1707 -1707 -1707 1096 1096 1096 1096 1144 1144 1144 1192 1192 1192 1239 1239 1239 1287 1287 1670 -1994 -1612 195 580 965 1399 1784 -1878 219 652 1037 1423 1856 1952 -2046 -1950 -1854 -1757 -1661 -1565 225 321 418 515 611 708 805 805 805 805 853 853 853 853 853 853 853 853 853 853 853 853 902 902 950 950 998 998 1047 1047 1095 1095 1143 1143 1143 1192 1578 1917 -1840 240 579 965 1304 1691 -2017 -1679 337 677 1016 1403 1403 1403 1888 1888 1888 -1723 -1723 -1723 388 388 388 872 872 872 1357 1357 1357 1841 1841 1841 -1818 -1818 -1818 340 340 340 826 826 826 1264 1264 1264 1751 1751 1751 -1858 -1858 -1858 243 243 243 729 729 729 729 729 729 729 729 729 729 778 778 778 778 778 826 875 924 972 1021 1070 1118 1167 1215 1264 1313 1361 1410 1459 1507 1507 1507 1556 1556 1605 1605 1653 1653 1653 1702 1702 1751 1751 1751 1850 1898 1947 1996 2044 2044 -2002 -1954 -1905 -1856 -1856 -1808 -1759 -1710 311 654 997 1389 1732 -2019 -1676 311 654 997 1341 1684 -2019 -1676 961 1999 567 1556 -1551 1066 -1984 620 1615 -1485 1120 -1975 672 1672 1672 1672 -1823 -1823 -1823 423 423 423 1026 1026 1026 1678 1678 1678 -1814 -1814 -1814 373 373 373 976 976 976 1628 1628 1628 -1864 -1864 -1864 324 324 324 928 928 928 1533 1533 1533 -1907 -1907 -1907 273 323 374 424 475 525 575 626 626 676 727 777 827 878 928 -1958 844 -2041 794 2004 692 1897 643 1847 543 1749 444 1650 394 644 945 1245 1546 1796 -1998 -1698 -1397 449 750 1051 1351 1602 1902 1902 1952 1952 1952 1952 1952 2002 2002 2002 2002 2002 2002 -2043 -2043 -2043 -1942 -1842 -1742 -1641 -1541 -1441 300 400 499 599 699 799 899 1048 1498 1947 -1699 356 802 1248 1695 -1954 -1508 504 948 1441 1884 -1767 -1767 -1767 -1372 -1372 -1372 603 603 603 998 998 998 1393 1393 1393 1788 1788 1788 -1912 -1912 -1912 -1566 -1566 -1517 454 454 454 848 848 848 1242 1242 1242 1635 1635 1635 2029 2029 2029 -1672 -1672 -1672 356 356 356 356 356 405 405 405 405 405 405 454 454 454 454 701 947 1193 1439 1636 1883 -1966 -1720 -1474 397 594 840 1086 1332 1382 1431 1530 1579 1628 1727 1776 1825 1874 1973 2022 -2024 -1974 -1876 -1876 -1827 -1827 -1777 -1777 -1728 -1728 -1728 -1679 -1679 -1679 -1630 -1630 -1580 -1580 337 534 781 1027 1224 1470 1717 1914 -1935 -1686 -1489 365 609 853 1780 338 1362 -1806 819 1781 337 1300 -1832 815 1817 385 1340 -1800 -1800 -1800 812 812 812 1716 1716 1716 -1476 -1476 -1476 1145 1145 1145 -2046 -2046 -2046 574 574 574 1477 1477 1477 -1715 -1715 -1715 907 907 907 1810 1810 1810 -1430 -1430 -1430 1192 1192 1240 -2000 -2000 -2000 622 669 669 717 717 764 764 812 812 859 859 859 907 907 954 1525 -1953 407 975 1590 -1890 406 1021 1635 -1892 451 1064 1676 -1853 -1712 -1571 -1429 459 600 742 883 1024 1166 1307 1449 1590 1731 1873 1873 1920 1920 1920 1920 1920 1967 1967 1967 1967 2014 2014 2014 2014 -2034 -1940 -1798 -1704 -1563 -1468 368 462 604 698 839 934 1075 1169 1311 -1983 570 1371 -1923 618 1422 -1917 618 1422 -1823 667 1476 -1811 715 715 715 1523 1523 1523 -1764 -1764 -1764 766 766 766 1580 1580 1580 -1749 -1749 -1749 767 767 767 1581 1581 1581 -1748 -1748 -1748 818 818 818 1589 1589 1589 -1687 -1687 -1687 818 818 818 1637 1637 1637 -1687 -1639 -1639 -1639 -1639 -1591 -1591 -1591 -1591 -1543 -1543 -1543 -1543 -1495 -1495 445 783 1073 1364 1702 1992 -1813 -1474 490 780 1119 1409 1747 2037 -1961 -1912 -1816 -1767 -1671 -1574 -1526 -1429 348 397 493 542 638 735 735 783 783 783 783 783 783 832 832 832 832 832 832 832 880 928 1025 1073 1170 1218 1315 1363 1460 1508 1605 1653 1750 1846 1895 -1620 613 1193 1773 -1693 563 1140 1718 -1752 515 1092 1718 -1800 467 467 467 996 996 996 1477 1477 1477 1958 1958 1958 -1609 -1609 -1609 562 562 562 1091 1091 1091 1620 1620 1620 -1995 -1995 -1995 -1466 -1466 -1466 706 706 706 1188 1188 1236 1717 1717 1717 -1897 -1897 -1897 322 322 370 370 370 370 370 370 418 418 418 418 418 466 466 658 899 1140 1332 1573 1813 2006 -1849 -1608 256 497 738 931 1171 1220 1316 1364 1412 1461 1557 1605 1653 1750 1798 1846 1894 1991 2039 2039 -2008 -1960 -1960 -1960 -1960 -1960 -1912 -1912 -1912 -1912 -1863 -1863 -1863 -1863 -1719 -1574 -1478 346 442 587 731 827 972 1068 1213 1309 1454 1598 -1677 861 1732 -1541 958 1829 -1444 1109 1938 330 1160 2038 430 1268 1268 1268 -1990 -1990 -1990 479 479 479 1317 1317 1317 -1990 -1990 -1990 481 481 481 1326 1326 1326 -1924 -1924 -1924 481 481 481 1326 1326 1326 -1924 -1924 -1924 533 533 533 1334 1334 1334 -1909 -1909 -1909 483 533 533 533 533 583 583 583 633 633 633 633 683 683 683 1034 1385 1735 -2009 -1709 -1358 582 934 1287 1590 1943 -1799 -1447 492 542 643 744 794 895 996 1046 1147 1248 1349 1399 1500 1601 1651 1651 1701 1752 1752 1752 1752 1752 1752 1752 1802 1802 1802 1802 1802 1802 1903 1954 2005 -1989 -1939 -1888 -1788 -1737 -1636 -1586 -1536 -1435 -1384 -1335 555 859 1163 1416 1720 2024 -1717 -1464 407 711 1065 1318 1673 1977 1977 1977 -2017 -2017 -2017 -1865 -1865 -1865 -1764 -1764 -1764 -1612 -1612 -1612 -1511 -1511 -1460 -1359 -1359 -1359 359 359 359 459 459 459 611 611 611 762 762 762 863 863 913 1014 1014 1014 1165 1165 1165 1266 1316 1316 1316 1316 1316 1316 1316 1316 1366 1366 1366 1366 1366 1366 1467 1618 1719 1820 1971 -2023 -1922 -1822 -1670 -1570 -1469 -1318 348 449 499 550 600 651 701 751 802 852 903 953 1003 1054 1104 1154 1154 
+Max memory used: 2044mb
+Execution time: 13 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	85.155	43.353	90.72	90.32	23.338	29.512	23.76
+Failure   	14.845	56.647	9.28	9.68	76.662	70.488	76.24
+No Match  	43.28	68.86	00.000	9.5	2.82	2.82	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	48.3	13.5	90.72	81.74	22.68	28.68	23.76
+Size (MB)	0.394	6.393	1.438	1.792	0.123	1.525	0.268
+Train Tim	0.09	0.052	0.277	0.007	0.004	0.082	0.014
+Test Time	0.002	0.001	0.238	0.176	0.001	00.000	0.014
+
+
+---SPICE12---
+Number of sequences : 	5000
+Number of distinct items: 	21
+Largest item id: 	20
+Itemsets per sequence: 	33.0404
+Distinct item per sequence: 	14.0284
+Occurences for each item: 	2.355250776995238
+Size of the dataset in MB: 	20000.660808
+
+DG memory (MB): 0.003612
+DG test time (ms): 0.0
+DG memory (MB): 0.003612
+DG test time (ms): 0.0
+DG memory (MB): 0.003612
+DG test time (ms): 0.0
+DG memory (MB): 0.003612
+DG test time (ms): 0.0
+DG memory (MB): 0.003612
+DG test time (ms): 0.0
+DG memory (MB): 0.003612
+DG test time (ms): 0.0
+DG memory (MB): 0.003612
+DG test time (ms): 0.0
+DG memory (MB): 0.003612
+DG test time (ms): 0.0
+DG memory (MB): 0.003612
+DG test time (ms): 0.0
+DG memory (MB): 0.003612
+DG test time (ms): 0.0
+DG memory (MB): 0.003612
+DG test time (ms): 0.0
+DG memory (MB): 0.003612
+DG test time (ms): 1.0
+DG memory (MB): 0.003612
+DG test time (ms): 0.0
+DG memory (MB): 0.003612
+DG test time (ms): 0.0
+TDAG memory (MB): 20.365152
+TDAG test time (ms): 0.0
+TDAG memory (MB): 20.341536
+TDAG test time (ms): 0.0
+TDAG memory (MB): 20.472143
+TDAG test time (ms): 0.0
+TDAG memory (MB): 20.239872
+TDAG test time (ms): 1.0
+TDAG memory (MB): 20.498783
+TDAG test time (ms): 1.0
+TDAG memory (MB): 20.317345
+TDAG test time (ms): 0.0
+TDAG memory (MB): 20.368464
+TDAG test time (ms): 0.0
+TDAG memory (MB): 20.538671
+TDAG test time (ms): 0.0
+TDAG memory (MB): 20.33952
+TDAG test time (ms): 1.0
+TDAG memory (MB): 20.435568
+TDAG test time (ms): 1.0
+TDAG memory (MB): 20.507711
+TDAG test time (ms): 0.0
+TDAG memory (MB): 20.505407
+TDAG test time (ms): 0.0
+TDAG memory (MB): 20.410225
+TDAG test time (ms): 1.0
+TDAG memory (MB): 20.51808
+TDAG test time (ms): 0.0
+CPT+ memory (MB): 0.108244
+CPT+ test time (ms): 387.0
+CPT+ memory (MB): 0.108292
+CPT+ test time (ms): 510.0
+CPT+ memory (MB): 0.108352
+CPT+ test time (ms): 409.0
+CPT+ memory (MB): 0.108316
+CPT+ test time (ms): 424.0
+CPT+ memory (MB): 0.108388
+CPT+ test time (ms): 371.0
+CPT+ memory (MB): 0.108352
+CPT+ test time (ms): 399.0
+CPT+ memory (MB): 0.108268
+CPT+ test time (ms): 402.0
+CPT+ memory (MB): 0.108316
+CPT+ test time (ms): 380.0
+CPT+ memory (MB): 0.108544
+CPT+ test time (ms): 339.0
+CPT+ memory (MB): 0.108352
+CPT+ test time (ms): 398.0
+CPT+ memory (MB): 0.108256
+CPT+ test time (ms): 398.0
+CPT+ memory (MB): 0.108292
+CPT+ test time (ms): 297.0
+CPT+ memory (MB): 0.108256
+CPT+ test time (ms): 361.0
+CPT+ memory (MB): 0.108288
+CPT+ test time (ms): 386.0
+CPT memory (MB): 0.464104
+CPT test time (ms): 623.0
+CPT memory (MB): 0.463984
+CPT test time (ms): 637.0
+CPT memory (MB): 0.463708
+CPT test time (ms): 591.0
+CPT memory (MB): 0.463888
+CPT test time (ms): 587.0
+CPT memory (MB): 0.463864
+CPT test time (ms): 567.0
+CPT memory (MB): 0.464464
+CPT test time (ms): 611.0
+CPT memory (MB): 0.464104
+CPT test time (ms): 537.0
+CPT memory (MB): 0.464032
+CPT test time (ms): 570.0
+CPT memory (MB): 0.464944
+CPT test time (ms): 581.0
+CPT memory (MB): 0.463792
+CPT test time (ms): 574.0
+CPT memory (MB): 0.464596
+CPT test time (ms): 603.0
+CPT memory (MB): 0.464416
+CPT test time (ms): 547.0
+CPT memory (MB): 0.464704
+CPT test time (ms): 562.0
+CPT memory (MB): 0.463824
+CPT test time (ms): 554.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.003612
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 3.77932
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.778728
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.79804
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.758284
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.804032
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.771648
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.78292
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.810424
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.777148
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.79246
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.804264
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.80422
+AKOM test time (ms): 0.0
+AKOM memory (MB): 3.788928
+AKOM test time (ms): 1.0
+AKOM memory (MB): 3.807896
+AKOM test time (ms): 1.0
+LZ78 memory (MB): 0.609068
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.608444
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.612044
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.605516
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.612524
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.608124
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.609612
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.614156
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.608524
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.611164
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.613132
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.613244
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.610508
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.613596
+LZ78 test time (ms): 2.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 1283 1283 1324 1324 1324 1324 1364 1364 1364 1404 1404 1404 1404 1444 1605 1766 1927 -2006 -1845 466 627 788 949 1110 1271 1432 1593 1754 841 1962 1007 -2008 1160 -1854 1247 -1768 1284 -1682 1284 -1682 1276 -1684 -1684 -1684 1135 1135 1135 -1873 -1873 -1873 948 948 948 2039 2039 2039 758 758 758 1850 1850 1850 569 569 569 1664 1664 1664 -1335 -1335 -1335 1474 1474 1474 -1525 -1525 -1525 1287 1287 1287 -1707 -1707 -1707 1096 1096 1096 1096 1144 1144 1144 1192 1192 1192 1239 1239 1239 1287 1287 1670 -1994 -1612 195 580 965 1399 1784 -1878 219 652 1037 1423 1856 1952 -2046 -1950 -1854 -1757 -1661 -1565 225 321 418 515 611 708 805 805 805 805 853 853 853 853 853 853 853 853 853 853 853 853 902 902 950 950 998 998 1047 1047 1095 1095 1143 1143 1143 1192 1578 1917 -1840 240 579 965 1304 1691 -2017 -1679 337 677 1016 1403 1403 1403 1888 1888 1888 -1723 -1723 -1723 388 388 388 872 872 872 1357 1357 1357 1841 1841 1841 -1818 -1818 -1818 340 340 340 826 826 826 1264 1264 1264 1751 1751 1751 -1858 -1858 -1858 243 243 243 729 729 729 729 729 729 729 729 729 729 778 778 778 778 778 826 875 924 972 1021 1070 1118 1167 1215 1264 1313 1361 1410 1459 1507 1507 1507 1556 1556 1605 1605 1653 1653 1653 1702 1702 1751 1751 1751 1850 1898 1947 1996 2044 2044 -2002 -1954 -1905 -1856 -1856 -1808 -1759 -1710 311 654 997 1389 1732 -2019 -1676 311 654 997 1341 1684 -2019 -1676 961 1999 567 1556 -1551 1066 -1984 620 1615 -1485 1120 -1975 672 1672 1672 1672 -1823 -1823 -1823 423 423 423 1026 1026 1026 1678 1678 1678 -1814 -1814 -1814 373 373 373 976 976 976 1628 1628 1628 -1864 -1864 -1864 324 324 324 928 928 928 1533 1533 1533 -1907 -1907 -1907 273 323 374 424 475 525 575 626 626 676 727 777 827 878 928 -1958 844 -2041 794 2004 692 1897 643 1847 543 1749 444 1650 394 644 945 1245 1546 1796 -1998 -1698 -1397 449 750 1051 1351 1602 1902 1902 1952 1952 1952 1952 1952 2002 2002 2002 2002 2002 2002 -2043 -2043 -2043 -1942 -1842 -1742 -1641 -1541 -1441 300 400 499 599 699 799 899 1048 1498 1947 -1699 356 802 1248 1695 -1954 -1508 504 948 1441 1884 -1767 -1767 -1767 -1372 -1372 -1372 603 603 603 998 998 998 1393 1393 1393 1788 1788 1788 -1912 -1912 -1912 -1566 -1566 -1517 454 454 454 848 848 848 1242 1242 1242 1635 1635 1635 2029 2029 2029 -1672 -1672 -1672 356 356 356 356 356 405 405 405 405 405 405 454 454 454 454 701 947 1193 1439 1636 1883 -1966 -1720 -1474 397 594 840 1086 1332 1382 1431 1530 1579 1628 1727 1776 1825 1874 1973 2022 -2024 -1974 -1876 -1876 -1827 -1827 -1777 -1777 -1728 -1728 -1728 -1679 -1679 -1679 -1630 -1630 -1580 -1580 337 534 781 1027 1224 1470 1717 1914 -1935 -1686 -1489 365 609 853 1780 338 1362 -1806 819 1781 337 1300 -1832 815 1817 385 1340 -1800 -1800 -1800 812 812 812 1716 1716 1716 -1476 -1476 -1476 1145 1145 1145 -2046 -2046 -2046 574 574 574 1477 1477 1477 -1715 -1715 -1715 907 907 907 1810 1810 1810 -1430 -1430 -1430 1192 1192 1240 -2000 -2000 -2000 622 669 669 717 717 764 764 812 812 859 859 859 907 907 954 1525 -1953 407 975 1590 -1890 406 1021 1635 -1892 451 1064 1676 -1853 -1712 -1571 -1429 459 600 742 883 1024 1166 1307 1449 1590 1731 1873 1873 1920 1920 1920 1920 1920 1967 1967 1967 1967 2014 2014 2014 2014 -2034 -1940 -1798 -1704 -1563 -1468 368 462 604 698 839 934 1075 1169 1311 -1983 570 1371 -1923 618 1422 -1917 618 1422 -1823 667 1476 -1811 715 715 715 1523 1523 1523 -1764 -1764 -1764 766 766 766 1580 1580 1580 -1749 -1749 -1749 767 767 767 1581 1581 1581 -1748 -1748 -1748 818 818 818 1589 1589 1589 -1687 -1687 -1687 818 818 818 1637 1637 1637 -1687 -1639 -1639 -1639 -1639 -1591 -1591 -1591 -1591 -1543 -1543 -1543 -1543 -1495 -1495 445 783 1073 1364 1702 1992 -1813 -1474 490 780 1119 1409 1747 2037 -1961 -1912 -1816 -1767 -1671 -1574 -1526 -1429 348 397 493 542 638 735 735 783 783 783 783 783 783 832 832 832 832 832 832 832 880 928 1025 1073 1170 1218 1315 1363 1460 1508 1605 1653 1750 1846 1895 -1620 613 1193 1773 -1693 563 1140 1718 -1752 515 1092 1718 -1800 467 467 467 996 996 996 1477 1477 1477 1958 1958 1958 -1609 -1609 -1609 562 562 562 1091 1091 1091 1620 1620 1620 -1995 -1995 -1995 -1466 -1466 -1466 706 706 706 1188 1188 1236 1717 1717 1717 -1897 -1897 -1897 322 322 370 370 370 370 370 370 418 418 418 418 418 466 466 658 899 1140 1332 1573 1813 2006 -1849 -1608 256 497 738 931 1171 1220 1316 1364 1412 1461 1557 1605 1653 1750 1798 1846 1894 1991 2039 2039 -2008 -1960 -1960 -1960 -1960 -1960 -1912 -1912 -1912 -1912 -1863 -1863 -1863 -1863 -1719 -1574 -1478 346 442 587 731 827 972 1068 1213 1309 1454 1598 -1677 861 1732 -1541 958 1829 -1444 1109 1938 330 1160 2038 430 1268 1268 1268 -1990 -1990 -1990 479 479 479 1317 1317 1317 -1990 -1990 -1990 481 481 481 1326 1326 1326 -1924 -1924 -1924 481 481 481 1326 1326 1326 -1924 -1924 -1924 533 533 533 1334 1334 1334 -1909 -1909 -1909 483 533 533 533 533 583 583 583 633 633 633 633 683 683 683 1034 1385 1735 -2009 -1709 -1358 582 934 1287 1590 1943 -1799 -1447 492 542 643 744 794 895 996 1046 1147 1248 1349 1399 1500 1601 1651 1651 1701 1752 1752 1752 1752 1752 1752 1752 1802 1802 1802 1802 1802 1802 1903 1954 2005 -1989 -1939 -1888 -1788 -1737 -1636 -1586 -1536 -1435 -1384 -1335 555 859 1163 1416 1720 2024 -1717 -1464 407 711 1065 1318 1673 1977 1977 1977 -2017 -2017 -2017 -1865 -1865 -1865 -1764 -1764 -1764 -1612 -1612 -1612 -1511 -1511 -1460 -1359 -1359 -1359 359 359 359 459 459 459 611 611 611 762 762 762 863 863 913 1014 1014 1014 1165 1165 1165 1266 1316 1316 1316 1316 1316 1316 1316 1316 1366 1366 1366 1366 1366 1366 1467 1618 1719 1820 1971 -2023 -1922 -1822 -1670 -1570 -1469 -1318 348 449 499 550 600 651 701 751 802 852 903 953 1003 1054 1104 1154 1154 1205 1255 1255 1255 1255 1255 1306 1306 1306 1306 1356 1356 1356 1356 1558 1709 1910 -1983 -1832 -1630 -1429 358 557 755 904 1102 1301 1450 -1901 614 1308 -1993 -1298 1084 1797 -1538 896 1656 -1727 751 1459 -1881 -1881 -1881 -1362 -1362 -1362 891 891 891 1410 1410 1410 1929 1929 1929 -1647 -1647 -1647 561 561 608 1079 1079 1079 1597 1597 1597 -1979 -1979 -1979 -1461 -1461 -1461 796 796 796 1315 1315 1315 1833 1833 1833 -1743 -1743 -1696 -1696 -1696 -1696 -1649 -1649 -1649 -1649 -1602 -1602 -1602 -1602 -1555 559 931 1256 1628 1954 -1767 -1441 675 1047 1373 1745 -2025 -1651 -1327 565 657 702 794 885 977 1023 1114 1206 1251 1343 1434 1480 1572 1572 
+Max memory used: 2044mb
+Execution time: 30 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	12.4	11.606	11.448	12.08	12.58	11.32	11.94
+Failure   	87.6	88.394	88.552	87.92	87.42	88.68	88.06
+No Match  	00.000	60.02	0.94	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	12.4	4.64	11.34	12.08	12.58	11.32	11.94
+Size (MB)	0.004	20.518	0.108	0.464	0.004	3.808	0.614
+Train Tim	0.022	0.171	0.622	0.004	0.006	0.247	0.037
+Test Time	00.000	00.000	0.386	0.554	00.000	0.001	0.002
+
+
+---SPICE13---
+Number of sequences : 	5000
+Number of distinct items: 	400
+Largest item id: 	433
+Itemsets per sequence: 	8.2306
+Distinct item per sequence: 	7.193
+Occurences for each item: 	1.1442513554844989
+Size of the dataset in MB: 	20000.164612
+
+DG memory (MB): 0.05868
+DG test time (ms): 0.0
+DG memory (MB): 0.058432
+DG test time (ms): 0.0
+DG memory (MB): 0.05846
+DG test time (ms): 0.0
+DG memory (MB): 0.05868
+DG test time (ms): 1.0
+DG memory (MB): 0.05846
+DG test time (ms): 1.0
+DG memory (MB): 0.058148
+DG test time (ms): 1.0
+DG memory (MB): 0.058412
+DG test time (ms): 0.0
+DG memory (MB): 0.058708
+DG test time (ms): 0.0
+DG memory (MB): 0.05814
+DG test time (ms): 1.0
+DG memory (MB): 0.058428
+DG test time (ms): 1.0
+DG memory (MB): 0.058268
+DG test time (ms): 0.0
+DG memory (MB): 0.057768
+DG test time (ms): 1.0
+DG memory (MB): 0.058544
+DG test time (ms): 1.0
+DG memory (MB): 0.05836
+DG test time (ms): 0.0
+TDAG memory (MB): 3.829488
+TDAG test time (ms): 1.0
+TDAG memory (MB): 3.839136
+TDAG test time (ms): 1.0
+TDAG memory (MB): 3.829488
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.820416
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.834672
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.828048
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.82848
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.83712
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.83064
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.831792
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.832224
+TDAG test time (ms): 1.0
+TDAG memory (MB): 3.831648
+TDAG test time (ms): 1.0
+TDAG memory (MB): 3.83424
+TDAG test time (ms): 0.0
+TDAG memory (MB): 3.83136
+TDAG test time (ms): 0.0
+CPT+ memory (MB): 0.331284
+CPT+ test time (ms): 239.0
+CPT+ memory (MB): 0.331784
+CPT+ test time (ms): 254.0
+CPT+ memory (MB): 0.329604
+CPT+ test time (ms): 278.0
+CPT+ memory (MB): 0.332464
+CPT+ test time (ms): 254.0
+CPT+ memory (MB): 0.334324
+CPT+ test time (ms): 259.0
+CPT+ memory (MB): 0.330724
+CPT+ test time (ms): 265.0
+CPT+ memory (MB): 0.331712
+CPT+ test time (ms): 268.0
+CPT+ memory (MB): 0.330292
+CPT+ test time (ms): 286.0
+CPT+ memory (MB): 0.331676
+CPT+ test time (ms): 234.0
+CPT+ memory (MB): 0.33194
+CPT+ test time (ms): 265.0
+CPT+ memory (MB): 0.329604
+CPT+ test time (ms): 203.0
+CPT+ memory (MB): 0.328816
+CPT+ test time (ms): 254.0
+CPT+ memory (MB): 0.331988
+CPT+ test time (ms): 360.0
+CPT+ memory (MB): 0.329744
+CPT+ test time (ms): 248.0
+CPT memory (MB): 0.542832
+CPT test time (ms): 300.0
+CPT memory (MB): 0.544268
+CPT test time (ms): 310.0
+CPT memory (MB): 0.540252
+CPT test time (ms): 295.0
+CPT memory (MB): 0.543724
+CPT test time (ms): 373.0
+CPT memory (MB): 0.546004
+CPT test time (ms): 323.0
+CPT memory (MB): 0.541852
+CPT test time (ms): 310.0
+CPT memory (MB): 0.542708
+CPT test time (ms): 326.0
+CPT memory (MB): 0.542296
+CPT test time (ms): 336.0
+CPT memory (MB): 0.543092
+CPT test time (ms): 304.0
+CPT memory (MB): 0.542732
+CPT test time (ms): 296.0
+CPT memory (MB): 0.540804
+CPT test time (ms): 300.0
+CPT memory (MB): 0.540148
+CPT test time (ms): 346.0
+CPT memory (MB): 0.544016
+CPT test time (ms): 296.0
+CPT memory (MB): 0.540752
+CPT test time (ms): 315.0
+Mark1 memory (MB): 0.027296
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.027264
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.027188
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.02728
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.027108
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.027132
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.027196
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.0273
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.02706
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.027204
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.027124
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.027032
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.027264
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.027232
+Mark1 test time (ms): 1.0
+AKOM memory (MB): 0.588056
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.590944
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.59008
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.58968
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.588504
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.58902
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.58966
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.589704
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.588572
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.588092
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.588504
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.5873
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.590508
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.589572
+AKOM test time (ms): 1.0
+LZ78 memory (MB): 0.145964
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.146176
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.145848
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.145956
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.14604
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.145812
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.146104
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.145968
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.145688
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.145808
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.146096
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.146132
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.14642
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.146032
+LZ78 test time (ms): 4.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 1283 1283 1324 1324 1324 1324 1364 1364 1364 1404 1404 1404 1404 1444 1605 1766 1927 -2006 -1845 466 627 788 949 1110 1271 1432 1593 1754 841 1962 1007 -2008 1160 -1854 1247 -1768 1284 -1682 1284 -1682 1276 -1684 -1684 -1684 1135 1135 1135 -1873 -1873 -1873 948 948 948 2039 2039 2039 758 758 758 1850 1850 1850 569 569 569 1664 1664 1664 -1335 -1335 -1335 1474 1474 1474 -1525 -1525 -1525 1287 1287 1287 -1707 -1707 -1707 1096 1096 1096 1096 1144 1144 1144 1192 1192 1192 1239 1239 1239 1287 1287 1670 -1994 -1612 195 580 965 1399 1784 -1878 219 652 1037 1423 1856 1952 -2046 -1950 -1854 -1757 -1661 -1565 225 321 418 515 611 708 805 805 805 805 853 853 853 853 853 853 853 853 853 853 853 853 902 902 950 950 998 998 1047 1047 1095 1095 1143 1143 1143 1192 1578 1917 -1840 240 579 965 1304 1691 -2017 -1679 337 677 1016 1403 1403 1403 1888 1888 1888 -1723 -1723 -1723 388 388 388 872 872 872 1357 1357 1357 1841 1841 1841 -1818 -1818 -1818 340 340 340 826 826 826 1264 1264 1264 1751 1751 1751 -1858 -1858 -1858 243 243 243 729 729 729 729 729 729 729 729 729 729 778 778 778 778 778 826 875 924 972 1021 1070 1118 1167 1215 1264 1313 1361 1410 1459 1507 1507 1507 1556 1556 1605 1605 1653 1653 1653 1702 1702 1751 1751 1751 1850 1898 1947 1996 2044 2044 -2002 -1954 -1905 -1856 -1856 -1808 -1759 -1710 311 654 997 1389 1732 -2019 -1676 311 654 997 1341 1684 -2019 -1676 961 1999 567 1556 -1551 1066 -1984 620 1615 -1485 1120 -1975 672 1672 1672 1672 -1823 -1823 -1823 423 423 423 1026 1026 1026 1678 1678 1678 -1814 -1814 -1814 373 373 373 976 976 976 1628 1628 1628 -1864 -1864 -1864 324 324 324 928 928 928 1533 1533 1533 -1907 -1907 -1907 273 323 374 424 475 525 575 626 626 676 727 777 827 878 928 -1958 844 -2041 794 2004 692 1897 643 1847 543 1749 444 1650 394 644 945 1245 1546 1796 -1998 -1698 -1397 449 750 1051 1351 1602 1902 1902 1952 1952 1952 1952 1952 2002 2002 2002 2002 2002 2002 -2043 -2043 -2043 -1942 -1842 -1742 -1641 -1541 -1441 300 400 499 599 699 799 899 1048 1498 1947 -1699 356 802 1248 1695 -1954 -1508 504 948 1441 1884 -1767 -1767 -1767 -1372 -1372 -1372 603 603 603 998 998 998 1393 1393 1393 1788 1788 1788 -1912 -1912 -1912 -1566 -1566 -1517 454 454 454 848 848 848 1242 1242 1242 1635 1635 1635 2029 2029 2029 -1672 -1672 -1672 356 356 356 356 356 405 405 405 405 405 405 454 454 454 454 701 947 1193 1439 1636 1883 -1966 -1720 -1474 397 594 840 1086 1332 1382 1431 1530 1579 1628 1727 1776 1825 1874 1973 2022 -2024 -1974 -1876 -1876 -1827 -1827 -1777 -1777 -1728 -1728 -1728 -1679 -1679 -1679 -1630 -1630 -1580 -1580 337 534 781 1027 1224 1470 1717 1914 -1935 -1686 -1489 365 609 853 1780 338 1362 -1806 819 1781 337 1300 -1832 815 1817 385 1340 -1800 -1800 -1800 812 812 812 1716 1716 1716 -1476 -1476 -1476 1145 1145 1145 -2046 -2046 -2046 574 574 574 1477 1477 1477 -1715 -1715 -1715 907 907 907 1810 1810 1810 -1430 -1430 -1430 1192 1192 1240 -2000 -2000 -2000 622 669 669 717 717 764 764 812 812 859 859 859 907 907 954 1525 -1953 407 975 1590 -1890 406 1021 1635 -1892 451 1064 1676 -1853 -1712 -1571 -1429 459 600 742 883 1024 1166 1307 1449 1590 1731 1873 1873 1920 1920 1920 1920 1920 1967 1967 1967 1967 2014 2014 2014 2014 -2034 -1940 -1798 -1704 -1563 -1468 368 462 604 698 839 934 1075 1169 1311 -1983 570 1371 -1923 618 1422 -1917 618 1422 -1823 667 1476 -1811 715 715 715 1523 1523 1523 -1764 -1764 -1764 766 766 766 1580 1580 1580 -1749 -1749 -1749 767 767 767 1581 1581 1581 -1748 -1748 -1748 818 818 818 1589 1589 1589 -1687 -1687 -1687 818 818 818 1637 1637 1637 -1687 -1639 -1639 -1639 -1639 -1591 -1591 -1591 -1591 -1543 -1543 -1543 -1543 -1495 -1495 445 783 1073 1364 1702 1992 -1813 -1474 490 780 1119 1409 1747 2037 -1961 -1912 -1816 -1767 -1671 -1574 -1526 -1429 348 397 493 542 638 735 735 783 783 783 783 783 783 832 832 832 832 832 832 832 880 928 1025 1073 1170 1218 1315 1363 1460 1508 1605 1653 1750 1846 1895 -1620 613 1193 1773 -1693 563 1140 1718 -1752 515 1092 1718 -1800 467 467 467 996 996 996 1477 1477 1477 1958 1958 1958 -1609 -1609 -1609 562 562 562 1091 1091 1091 1620 1620 1620 -1995 -1995 -1995 -1466 -1466 -1466 706 706 706 1188 1188 1236 1717 1717 1717 -1897 -1897 -1897 322 322 370 370 370 370 370 370 418 418 418 418 418 466 466 658 899 1140 1332 1573 1813 2006 -1849 -1608 256 497 738 931 1171 1220 1316 1364 1412 1461 1557 1605 1653 1750 1798 1846 1894 1991 2039 2039 -2008 -1960 -1960 -1960 -1960 -1960 -1912 -1912 -1912 -1912 -1863 -1863 -1863 -1863 -1719 -1574 -1478 346 442 587 731 827 972 1068 1213 1309 1454 1598 -1677 861 1732 -1541 958 1829 -1444 1109 1938 330 1160 2038 430 1268 1268 1268 -1990 -1990 -1990 479 479 479 1317 1317 1317 -1990 -1990 -1990 481 481 481 1326 1326 1326 -1924 -1924 -1924 481 481 481 1326 1326 1326 -1924 -1924 -1924 533 533 533 1334 1334 1334 -1909 -1909 -1909 483 533 533 533 533 583 583 583 633 633 633 633 683 683 683 1034 1385 1735 -2009 -1709 -1358 582 934 1287 1590 1943 -1799 -1447 492 542 643 744 794 895 996 1046 1147 1248 1349 1399 1500 1601 1651 1651 1701 1752 1752 1752 1752 1752 1752 1752 1802 1802 1802 1802 1802 1802 1903 1954 2005 -1989 -1939 -1888 -1788 -1737 -1636 -1586 -1536 -1435 -1384 -1335 555 859 1163 1416 1720 2024 -1717 -1464 407 711 1065 1318 1673 1977 1977 1977 -2017 -2017 -2017 -1865 -1865 -1865 -1764 -1764 -1764 -1612 -1612 -1612 -1511 -1511 -1460 -1359 -1359 -1359 359 359 359 459 459 459 611 611 611 762 762 762 863 863 913 1014 1014 1014 1165 1165 1165 1266 1316 1316 1316 1316 1316 1316 1316 1316 1366 1366 1366 1366 1366 1366 1467 1618 1719 1820 1971 -2023 -1922 -1822 -1670 -1570 -1469 -1318 348 449 499 550 600 651 701 751 802 852 903 953 1003 1054 1104 1154 1154 1205 1255 1255 1255 1255 1255 1306 1306 1306 1306 1356 1356 1356 1356 1558 1709 1910 -1983 -1832 -1630 -1429 358 557 755 904 1102 1301 1450 -1901 614 1308 -1993 -1298 1084 1797 -1538 896 1656 -1727 751 1459 -1881 -1881 -1881 -1362 -1362 -1362 891 891 891 1410 1410 1410 1929 1929 1929 -1647 -1647 -1647 561 561 608 1079 1079 1079 1597 1597 1597 -1979 -1979 -1979 -1461 -1461 -1461 796 796 796 1315 1315 1315 1833 1833 1833 -1743 -1743 -1696 -1696 -1696 -1696 -1649 -1649 -1649 -1649 -1602 -1602 -1602 -1602 -1555 559 931 1256 1628 1954 -1767 -1441 675 1047 1373 1745 -2025 -1651 -1327 565 657 702 794 885 977 1023 1114 1206 1251 1343 1434 1480 1572 1572 1617 1617 1617 1663 1663 1663 1663 1663 1663 1663 1663 1663 1663 1663 1709 1755 1800 1800 1846 1892 1892 1938 1983 2029 2029 -2020 -1974 -1929 -1700 -1380 720 995 1269 1590 1864 -1911 -1682 -1362 714 981 1248 1559 1559 1559 1826 1826 1871 -1957 -1957 -1957 -1646 -1646 -1646 535 535 535 846 846 846 1158 1158 1158 1469 1469 1469 1781 1781 1781 -2003 -2003 -2003 -1692 -1692 -1692 -1425 -1425 -1380 753 753 753 1059 1059 1059 1366 1366 1366 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1497 1541 1585 1672 1716 1760 1847 1891 1935 2022 -2029 -1985 -1941 -1854 -1854 -1810 -1810 -1766 -1723 -1723 -1679 -1679 -1635 -1635 -1591 -1547 -1547 -1504 -1504 
+Max memory used: 2044mb
+Execution time: 11 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	41.92	53.8	36.944	37.826	38.479	44.741	41.06
+Failure   	58.08	46.2	63.056	62.174	61.521	55.259	58.94
+No Match  	00.000	60	0.12	1.02	0.36	0.36	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	41.92	21.52	36.9	37.44	38.34	44.58	41.06
+Size (MB)	0.058	3.831	0.33	0.541	0.027	0.59	0.146
+Train Tim	0.014	0.027	0.131	0.002	0.001	0.031	0.008
+Test Time	00.000	00.000	0.248	0.315	0.001	0.001	0.004
+
+
+---SPICE14---
+Number of sequences : 	5000
+Number of distinct items: 	27
+Largest item id: 	26
+Itemsets per sequence: 	42.1762
+Distinct item per sequence: 	12.7918
+Occurences for each item: 	3.2971278475273222
+Size of the dataset in MB: 	20000.843524
+
+DG memory (MB): 0.005828
+DG test time (ms): 0.0
+DG memory (MB): 0.00582
+DG test time (ms): 0.0
+DG memory (MB): 0.005828
+DG test time (ms): 1.0
+DG memory (MB): 0.00582
+DG test time (ms): 0.0
+DG memory (MB): 0.005812
+DG test time (ms): 1.0
+DG memory (MB): 0.005828
+DG test time (ms): 0.0
+DG memory (MB): 0.00582
+DG test time (ms): 0.0
+DG memory (MB): 0.005812
+DG test time (ms): 0.0
+DG memory (MB): 0.00582
+DG test time (ms): 0.0
+DG memory (MB): 0.005812
+DG test time (ms): 0.0
+DG memory (MB): 0.005828
+DG test time (ms): 0.0
+DG memory (MB): 0.00578
+DG test time (ms): 0.0
+DG memory (MB): 0.005804
+DG test time (ms): 0.0
+DG memory (MB): 0.00582
+DG test time (ms): 0.0
+TDAG memory (MB): 26.4552
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.603231
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.444832
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.641968
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.594591
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.374271
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.501856
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.479248
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.54304
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.513807
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.68632
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.51568
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.602367
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.413153
+TDAG test time (ms): 1.0
+CPT+ memory (MB): 0.101764
+CPT+ test time (ms): 550.0
+CPT+ memory (MB): 0.101368
+CPT+ test time (ms): 599.0
+CPT+ memory (MB): 0.10138
+CPT+ test time (ms): 610.0
+CPT+ memory (MB): 0.1018
+CPT+ test time (ms): 493.0
+CPT+ memory (MB): 0.101704
+CPT+ test time (ms): 629.0
+CPT+ memory (MB): 0.101488
+CPT+ test time (ms): 613.0
+CPT+ memory (MB): 0.101548
+CPT+ test time (ms): 584.0
+CPT+ memory (MB): 0.10144
+CPT+ test time (ms): 527.0
+CPT+ memory (MB): 0.101428
+CPT+ test time (ms): 558.0
+CPT+ memory (MB): 0.1015
+CPT+ test time (ms): 548.0
+CPT+ memory (MB): 0.10138
+CPT+ test time (ms): 555.0
+CPT+ memory (MB): 0.101716
+CPT+ test time (ms): 554.0
+CPT+ memory (MB): 0.101392
+CPT+ test time (ms): 573.0
+CPT+ memory (MB): 0.101616
+CPT+ test time (ms): 571.0
+CPT memory (MB): 0.274852
+CPT test time (ms): 683.0
+CPT memory (MB): 0.274684
+CPT test time (ms): 674.0
+CPT memory (MB): 0.273484
+CPT test time (ms): 667.0
+CPT memory (MB): 0.274984
+CPT test time (ms): 651.0
+CPT memory (MB): 0.274132
+CPT test time (ms): 682.0
+CPT memory (MB): 0.2746
+CPT test time (ms): 679.0
+CPT memory (MB): 0.27496
+CPT test time (ms): 659.0
+CPT memory (MB): 0.274396
+CPT test time (ms): 649.0
+CPT memory (MB): 0.274096
+CPT test time (ms): 651.0
+CPT memory (MB): 0.274684
+CPT test time (ms): 636.0
+CPT memory (MB): 0.274288
+CPT test time (ms): 655.0
+CPT memory (MB): 0.27502
+CPT test time (ms): 656.0
+CPT memory (MB): 0.27436
+CPT test time (ms): 662.0
+CPT memory (MB): 0.274428
+CPT test time (ms): 644.0
+Mark1 memory (MB): 0.004812
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004812
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00482
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004796
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004812
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00482
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004804
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004812
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004796
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004812
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004804
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004804
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.004788
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.004796
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 0.558328
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.558124
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.557504
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.55798
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.55538
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.556664
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.555744
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.556104
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.554808
+AKOM test time (ms): 1.0
+AKOM memory (MB): 0.558092
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.558324
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.557392
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.557924
+AKOM test time (ms): 0.0
+AKOM memory (MB): 0.55472
+AKOM test time (ms): 1.0
+LZ78 memory (MB): 0.354388
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.356148
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.354772
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.357028
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.356132
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.353252
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.3537
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.354948
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.354964
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.355108
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.356564
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.355956
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.355188
+LZ78 test time (ms): 2.0
+LZ78 memory (MB): 0.353892
+LZ78 test time (ms): 3.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 1283 1283 1324 1324 1324 1324 1364 1364 1364 1404 1404 1404 1404 1444 1605 1766 1927 -2006 -1845 466 627 788 949 1110 1271 1432 1593 1754 841 1962 1007 -2008 1160 -1854 1247 -1768 1284 -1682 1284 -1682 1276 -1684 -1684 -1684 1135 1135 1135 -1873 -1873 -1873 948 948 948 2039 2039 2039 758 758 758 1850 1850 1850 569 569 569 1664 1664 1664 -1335 -1335 -1335 1474 1474 1474 -1525 -1525 -1525 1287 1287 1287 -1707 -1707 -1707 1096 1096 1096 1096 1144 1144 1144 1192 1192 1192 1239 1239 1239 1287 1287 1670 -1994 -1612 195 580 965 1399 1784 -1878 219 652 1037 1423 1856 1952 -2046 -1950 -1854 -1757 -1661 -1565 225 321 418 515 611 708 805 805 805 805 853 853 853 853 853 853 853 853 853 853 853 853 902 902 950 950 998 998 1047 1047 1095 1095 1143 1143 1143 1192 1578 1917 -1840 240 579 965 1304 1691 -2017 -1679 337 677 1016 1403 1403 1403 1888 1888 1888 -1723 -1723 -1723 388 388 388 872 872 872 1357 1357 1357 1841 1841 1841 -1818 -1818 -1818 340 340 340 826 826 826 1264 1264 1264 1751 1751 1751 -1858 -1858 -1858 243 243 243 729 729 729 729 729 729 729 729 729 729 778 778 778 778 778 826 875 924 972 1021 1070 1118 1167 1215 1264 1313 1361 1410 1459 1507 1507 1507 1556 1556 1605 1605 1653 1653 1653 1702 1702 1751 1751 1751 1850 1898 1947 1996 2044 2044 -2002 -1954 -1905 -1856 -1856 -1808 -1759 -1710 311 654 997 1389 1732 -2019 -1676 311 654 997 1341 1684 -2019 -1676 961 1999 567 1556 -1551 1066 -1984 620 1615 -1485 1120 -1975 672 1672 1672 1672 -1823 -1823 -1823 423 423 423 1026 1026 1026 1678 1678 1678 -1814 -1814 -1814 373 373 373 976 976 976 1628 1628 1628 -1864 -1864 -1864 324 324 324 928 928 928 1533 1533 1533 -1907 -1907 -1907 273 323 374 424 475 525 575 626 626 676 727 777 827 878 928 -1958 844 -2041 794 2004 692 1897 643 1847 543 1749 444 1650 394 644 945 1245 1546 1796 -1998 -1698 -1397 449 750 1051 1351 1602 1902 1902 1952 1952 1952 1952 1952 2002 2002 2002 2002 2002 2002 -2043 -2043 -2043 -1942 -1842 -1742 -1641 -1541 -1441 300 400 499 599 699 799 899 1048 1498 1947 -1699 356 802 1248 1695 -1954 -1508 504 948 1441 1884 -1767 -1767 -1767 -1372 -1372 -1372 603 603 603 998 998 998 1393 1393 1393 1788 1788 1788 -1912 -1912 -1912 -1566 -1566 -1517 454 454 454 848 848 848 1242 1242 1242 1635 1635 1635 2029 2029 2029 -1672 -1672 -1672 356 356 356 356 356 405 405 405 405 405 405 454 454 454 454 701 947 1193 1439 1636 1883 -1966 -1720 -1474 397 594 840 1086 1332 1382 1431 1530 1579 1628 1727 1776 1825 1874 1973 2022 -2024 -1974 -1876 -1876 -1827 -1827 -1777 -1777 -1728 -1728 -1728 -1679 -1679 -1679 -1630 -1630 -1580 -1580 337 534 781 1027 1224 1470 1717 1914 -1935 -1686 -1489 365 609 853 1780 338 1362 -1806 819 1781 337 1300 -1832 815 1817 385 1340 -1800 -1800 -1800 812 812 812 1716 1716 1716 -1476 -1476 -1476 1145 1145 1145 -2046 -2046 -2046 574 574 574 1477 1477 1477 -1715 -1715 -1715 907 907 907 1810 1810 1810 -1430 -1430 -1430 1192 1192 1240 -2000 -2000 -2000 622 669 669 717 717 764 764 812 812 859 859 859 907 907 954 1525 -1953 407 975 1590 -1890 406 1021 1635 -1892 451 1064 1676 -1853 -1712 -1571 -1429 459 600 742 883 1024 1166 1307 1449 1590 1731 1873 1873 1920 1920 1920 1920 1920 1967 1967 1967 1967 2014 2014 2014 2014 -2034 -1940 -1798 -1704 -1563 -1468 368 462 604 698 839 934 1075 1169 1311 -1983 570 1371 -1923 618 1422 -1917 618 1422 -1823 667 1476 -1811 715 715 715 1523 1523 1523 -1764 -1764 -1764 766 766 766 1580 1580 1580 -1749 -1749 -1749 767 767 767 1581 1581 1581 -1748 -1748 -1748 818 818 818 1589 1589 1589 -1687 -1687 -1687 818 818 818 1637 1637 1637 -1687 -1639 -1639 -1639 -1639 -1591 -1591 -1591 -1591 -1543 -1543 -1543 -1543 -1495 -1495 445 783 1073 1364 1702 1992 -1813 -1474 490 780 1119 1409 1747 2037 -1961 -1912 -1816 -1767 -1671 -1574 -1526 -1429 348 397 493 542 638 735 735 783 783 783 783 783 783 832 832 832 832 832 832 832 880 928 1025 1073 1170 1218 1315 1363 1460 1508 1605 1653 1750 1846 1895 -1620 613 1193 1773 -1693 563 1140 1718 -1752 515 1092 1718 -1800 467 467 467 996 996 996 1477 1477 1477 1958 1958 1958 -1609 -1609 -1609 562 562 562 1091 1091 1091 1620 1620 1620 -1995 -1995 -1995 -1466 -1466 -1466 706 706 706 1188 1188 1236 1717 1717 1717 -1897 -1897 -1897 322 322 370 370 370 370 370 370 418 418 418 418 418 466 466 658 899 1140 1332 1573 1813 2006 -1849 -1608 256 497 738 931 1171 1220 1316 1364 1412 1461 1557 1605 1653 1750 1798 1846 1894 1991 2039 2039 -2008 -1960 -1960 -1960 -1960 -1960 -1912 -1912 -1912 -1912 -1863 -1863 -1863 -1863 -1719 -1574 -1478 346 442 587 731 827 972 1068 1213 1309 1454 1598 -1677 861 1732 -1541 958 1829 -1444 1109 1938 330 1160 2038 430 1268 1268 1268 -1990 -1990 -1990 479 479 479 1317 1317 1317 -1990 -1990 -1990 481 481 481 1326 1326 1326 -1924 -1924 -1924 481 481 481 1326 1326 1326 -1924 -1924 -1924 533 533 533 1334 1334 1334 -1909 -1909 -1909 483 533 533 533 533 583 583 583 633 633 633 633 683 683 683 1034 1385 1735 -2009 -1709 -1358 582 934 1287 1590 1943 -1799 -1447 492 542 643 744 794 895 996 1046 1147 1248 1349 1399 1500 1601 1651 1651 1701 1752 1752 1752 1752 1752 1752 1752 1802 1802 1802 1802 1802 1802 1903 1954 2005 -1989 -1939 -1888 -1788 -1737 -1636 -1586 -1536 -1435 -1384 -1335 555 859 1163 1416 1720 2024 -1717 -1464 407 711 1065 1318 1673 1977 1977 1977 -2017 -2017 -2017 -1865 -1865 -1865 -1764 -1764 -1764 -1612 -1612 -1612 -1511 -1511 -1460 -1359 -1359 -1359 359 359 359 459 459 459 611 611 611 762 762 762 863 863 913 1014 1014 1014 1165 1165 1165 1266 1316 1316 1316 1316 1316 1316 1316 1316 1366 1366 1366 1366 1366 1366 1467 1618 1719 1820 1971 -2023 -1922 -1822 -1670 -1570 -1469 -1318 348 449 499 550 600 651 701 751 802 852 903 953 1003 1054 1104 1154 1154 1205 1255 1255 1255 1255 1255 1306 1306 1306 1306 1356 1356 1356 1356 1558 1709 1910 -1983 -1832 -1630 -1429 358 557 755 904 1102 1301 1450 -1901 614 1308 -1993 -1298 1084 1797 -1538 896 1656 -1727 751 1459 -1881 -1881 -1881 -1362 -1362 -1362 891 891 891 1410 1410 1410 1929 1929 1929 -1647 -1647 -1647 561 561 608 1079 1079 1079 1597 1597 1597 -1979 -1979 -1979 -1461 -1461 -1461 796 796 796 1315 1315 1315 1833 1833 1833 -1743 -1743 -1696 -1696 -1696 -1696 -1649 -1649 -1649 -1649 -1602 -1602 -1602 -1602 -1555 559 931 1256 1628 1954 -1767 -1441 675 1047 1373 1745 -2025 -1651 -1327 565 657 702 794 885 977 1023 1114 1206 1251 1343 1434 1480 1572 1572 1617 1617 1617 1663 1663 1663 1663 1663 1663 1663 1663 1663 1663 1663 1709 1755 1800 1800 1846 1892 1892 1938 1983 2029 2029 -2020 -1974 -1929 -1700 -1380 720 995 1269 1590 1864 -1911 -1682 -1362 714 981 1248 1559 1559 1559 1826 1826 1871 -1957 -1957 -1957 -1646 -1646 -1646 535 535 535 846 846 846 1158 1158 1158 1469 1469 1469 1781 1781 1781 -2003 -2003 -2003 -1692 -1692 -1692 -1425 -1425 -1380 753 753 753 1059 1059 1059 1366 1366 1366 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1497 1541 1585 1672 1716 1760 1847 1891 1935 2022 -2029 -1985 -1941 -1854 -1854 -1810 -1810 -1766 -1723 -1723 -1679 -1679 -1635 -1635 -1591 -1547 -1547 -1504 -1504 -1416 -1416 -1416 82 82 82 126 126 126 170 170 170 214 214 345 433 564 695 827 914 1045 1177 1264 1396 1527 1658 1746 1877 489 1227 1965 533 1314 -1999 660 1396 -1963 704 1482 -1877 835 1572 1572 1572 188 188 188 968 968 968 1706 1706 1706 319 319 319 1104 1104 1104 1890 1890 1890 450 450 450 1192 1192 1192 1933 1933 1977 544 544 544 1295 1295 1295 2046 2046 2046 588 588 588 1383 1383 1383 1427 1427 1427 1471 1471 1516 1516 1516 1560 1560 1560 1604 2002 200 605 1010 1415 1820 -1871 377 782 1187 1592 1997 158 525 662 754 846 983 1075 1212 1304 1396 1533 1625 1717 1854 1946 2038 2038 
+Max memory used: 2046mb
+Execution time: 26 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	59.52	76.464	55.082	55.38	59.78	75	66.9
+Failure   	40.48	23.536	44.918	44.62	40.22	25	33.1
+No Match  	00.000	3.72	0.04	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	59.52	73.62	55.06	55.38	59.78	75	66.9
+Size (MB)	0.006	26.413	0.102	0.274	0.005	0.555	0.354
+Train Tim	0.03	0.092	0.136	0.003	0.008	0.234	0.068
+Test Time	00.000	0.001	0.571	0.644	00.000	0.001	0.003
+
+
+---SPICE15---
+Number of sequences : 	5000
+Number of distinct items: 	32
+Largest item id: 	31
+Itemsets per sequence: 	41.522
+Distinct item per sequence: 	17.4818
+Occurences for each item: 	2.375155876397167
+Size of the dataset in MB: 	20000.83044
+
+DG memory (MB): 0.008272
+DG test time (ms): 0.0
+DG memory (MB): 0.008272
+DG test time (ms): 0.0
+DG memory (MB): 0.008264
+DG test time (ms): 0.0
+DG memory (MB): 0.008272
+DG test time (ms): 1.0
+DG memory (MB): 0.008272
+DG test time (ms): 0.0
+DG memory (MB): 0.008264
+DG test time (ms): 0.0
+DG memory (MB): 0.008264
+DG test time (ms): 0.0
+DG memory (MB): 0.008272
+DG test time (ms): 0.0
+DG memory (MB): 0.008264
+DG test time (ms): 0.0
+DG memory (MB): 0.008264
+DG test time (ms): 1.0
+DG memory (MB): 0.008264
+DG test time (ms): 0.0
+DG memory (MB): 0.008248
+DG test time (ms): 0.0
+DG memory (MB): 0.008264
+DG test time (ms): 0.0
+DG memory (MB): 0.008272
+DG test time (ms): 0.0
+TDAG memory (MB): 26.023487
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.119392
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.147615
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.102257
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.088144
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.249569
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.061647
+TDAG test time (ms): 1.0
+TDAG memory (MB): 25.969343
+TDAG test time (ms): 1.0
+TDAG memory (MB): 26.07072
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.182608
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.037169
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.12976
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.016
+TDAG test time (ms): 0.0
+TDAG memory (MB): 26.048544
+TDAG test time (ms): 0.0
+CPT+ memory (MB): 0.118976
+CPT+ test time (ms): 329.0
+CPT+ memory (MB): 0.118976
+CPT+ test time (ms): 372.0
+CPT+ memory (MB): 0.118916
+CPT+ test time (ms): 328.0
+CPT+ memory (MB): 0.118964
+CPT+ test time (ms): 314.0
+CPT+ memory (MB): 0.118868
+CPT+ test time (ms): 352.0
+CPT+ memory (MB): 0.11882
+CPT+ test time (ms): 304.0
+CPT+ memory (MB): 0.118796
+CPT+ test time (ms): 320.0
+CPT+ memory (MB): 0.11894
+CPT+ test time (ms): 309.0
+CPT+ memory (MB): 0.118952
+CPT+ test time (ms): 342.0
+CPT+ memory (MB): 0.118868
+CPT+ test time (ms): 318.0
+CPT+ memory (MB): 0.11894
+CPT+ test time (ms): 324.0
+CPT+ memory (MB): 0.118856
+CPT+ test time (ms): 383.0
+CPT+ memory (MB): 0.118988
+CPT+ test time (ms): 378.0
+CPT+ memory (MB): 0.118828
+CPT+ test time (ms): 329.0
+CPT memory (MB): 0.44474
+CPT test time (ms): 564.0
+CPT memory (MB): 0.444056
+CPT test time (ms): 568.0
+CPT memory (MB): 0.444776
+CPT test time (ms): 587.0
+CPT memory (MB): 0.44486
+CPT test time (ms): 587.0
+CPT memory (MB): 0.444836
+CPT test time (ms): 568.0
+CPT memory (MB): 0.443732
+CPT test time (ms): 561.0
+CPT memory (MB): 0.444092
+CPT test time (ms): 569.0
+CPT memory (MB): 0.444572
+CPT test time (ms): 545.0
+CPT memory (MB): 0.444488
+CPT test time (ms): 587.0
+CPT memory (MB): 0.444236
+CPT test time (ms): 565.0
+CPT memory (MB): 0.444536
+CPT test time (ms): 594.0
+CPT memory (MB): 0.444668
+CPT test time (ms): 609.0
+CPT memory (MB): 0.44438
+CPT test time (ms): 601.0
+CPT memory (MB): 0.444352
+CPT test time (ms): 626.0
+Mark1 memory (MB): 0.006992
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.007
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.006992
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.006992
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.006976
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.006968
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.00696
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.006984
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.006976
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.007
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.007008
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.006976
+Mark1 test time (ms): 0.0
+Mark1 memory (MB): 0.006984
+Mark1 test time (ms): 1.0
+Mark1 memory (MB): 0.007
+Mark1 test time (ms): 0.0
+AKOM memory (MB): 2.43242
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.437592
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.440732
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.433812
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.43814
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.4473
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.433704
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.431128
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.437128
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.440364
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.431364
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.436124
+AKOM test time (ms): 0.0
+AKOM memory (MB): 2.43018
+AKOM test time (ms): 1.0
+AKOM memory (MB): 2.434384
+AKOM test time (ms): 1.0
+LZ78 memory (MB): 0.60856
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.61072
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.611424
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.609584
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.609504
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.613472
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.608912
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.607184
+LZ78 test time (ms): 4.0
+LZ78 memory (MB): 0.60928
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.611952
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.60872
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.610704
+LZ78 test time (ms): 3.0
+LZ78 memory (MB): 0.608368
+LZ78 test time (ms): 6.0
+LZ78 memory (MB): 0.609136
+LZ78 test time (ms): 5.0
+Memory history: 33 38 43 48 51 56 59 64 69 71 77 82 84 89 110 5 26 49 69 89 110 130 25 43 63 81 102 120 141 22 75 271 260 165 76 30 104 72 59 53 58 20 20 23 66 66 68 83 83 86 55 55 57 34 34 35 39 39 40 72 72 73 99 101 103 73 73 76 30 30 32 73 73 75 80 80 82 43 43 45 53 53 54 50 55 59 64 68 74 78 83 87 91 96 102 106 110 41 77 106 74 100 84 44 128 66 149 59 143 222 95 180 208 237 63 94 121 149 180 208 235 69 96 126 153 184 184 222 54 68 81 95 109 118 132 145 159 173 187 200 214 242 322 540 477 432 651 483 410 627 177 396 277 499 166 546 350 657 310 542 763 222 371 514 666 804 165 261 344 344 360 267 267 267 203 203 203 944 944 944 862 862 862 790 790 790 673 673 673 580 580 580 461 461 461 327 327 327 207 207 207 932 932 932 803 803 821 663 663 663 528 528 546 564 582 599 617 635 653 653 670 688 706 724 742 348 775 368 816 367 815 359 810 308 759 1190 648 1087 551 650 750 850 949 1029 1129 289 393 476 580 684 768 872 976 976 1017 1017 1038 1038 1059 1059 1080 1101 1101 1122 1122 1142 1142 1163 1309 439 587 754 899 1066 1232 378 532 685 838 1013 1166 1320 1334 1332 1240 1155 1005 840 598 1674 1425 1081 731 1784 1349 890 890 923 1979 1979 1979 1421 1421 1421 855 855 855 1937 1937 1937 1274 1274 1274 625 625 625 1685 1685 1685 954 954 954 2014 2014 2014 1276 1276 1276 483 483 483 1577 1577 1577 756 756 756 1834 1873 1873 1911 1911 1911 1950 1950 1950 1988 1988 2027 2027 2027 -2030 543 928 1352 1737 -1934 622 1015 1408 1802 -1900 660 1053 1447 1840 1918 2036 -1980 -1862 -1784 478 559 679 760 841 961 1042 1163 1243 1243 1283 1283 1324 1324 1324 1324 1364 1364 1364 1404 1404 1404 1404 1444 1605 1766 1927 -2006 -1845 466 627 788 949 1110 1271 1432 1593 1754 841 1962 1007 -2008 1160 -1854 1247 -1768 1284 -1682 1284 -1682 1276 -1684 -1684 -1684 1135 1135 1135 -1873 -1873 -1873 948 948 948 2039 2039 2039 758 758 758 1850 1850 1850 569 569 569 1664 1664 1664 -1335 -1335 -1335 1474 1474 1474 -1525 -1525 -1525 1287 1287 1287 -1707 -1707 -1707 1096 1096 1096 1096 1144 1144 1144 1192 1192 1192 1239 1239 1239 1287 1287 1670 -1994 -1612 195 580 965 1399 1784 -1878 219 652 1037 1423 1856 1952 -2046 -1950 -1854 -1757 -1661 -1565 225 321 418 515 611 708 805 805 805 805 853 853 853 853 853 853 853 853 853 853 853 853 902 902 950 950 998 998 1047 1047 1095 1095 1143 1143 1143 1192 1578 1917 -1840 240 579 965 1304 1691 -2017 -1679 337 677 1016 1403 1403 1403 1888 1888 1888 -1723 -1723 -1723 388 388 388 872 872 872 1357 1357 1357 1841 1841 1841 -1818 -1818 -1818 340 340 340 826 826 826 1264 1264 1264 1751 1751 1751 -1858 -1858 -1858 243 243 243 729 729 729 729 729 729 729 729 729 729 778 778 778 778 778 826 875 924 972 1021 1070 1118 1167 1215 1264 1313 1361 1410 1459 1507 1507 1507 1556 1556 1605 1605 1653 1653 1653 1702 1702 1751 1751 1751 1850 1898 1947 1996 2044 2044 -2002 -1954 -1905 -1856 -1856 -1808 -1759 -1710 311 654 997 1389 1732 -2019 -1676 311 654 997 1341 1684 -2019 -1676 961 1999 567 1556 -1551 1066 -1984 620 1615 -1485 1120 -1975 672 1672 1672 1672 -1823 -1823 -1823 423 423 423 1026 1026 1026 1678 1678 1678 -1814 -1814 -1814 373 373 373 976 976 976 1628 1628 1628 -1864 -1864 -1864 324 324 324 928 928 928 1533 1533 1533 -1907 -1907 -1907 273 323 374 424 475 525 575 626 626 676 727 777 827 878 928 -1958 844 -2041 794 2004 692 1897 643 1847 543 1749 444 1650 394 644 945 1245 1546 1796 -1998 -1698 -1397 449 750 1051 1351 1602 1902 1902 1952 1952 1952 1952 1952 2002 2002 2002 2002 2002 2002 -2043 -2043 -2043 -1942 -1842 -1742 -1641 -1541 -1441 300 400 499 599 699 799 899 1048 1498 1947 -1699 356 802 1248 1695 -1954 -1508 504 948 1441 1884 -1767 -1767 -1767 -1372 -1372 -1372 603 603 603 998 998 998 1393 1393 1393 1788 1788 1788 -1912 -1912 -1912 -1566 -1566 -1517 454 454 454 848 848 848 1242 1242 1242 1635 1635 1635 2029 2029 2029 -1672 -1672 -1672 356 356 356 356 356 405 405 405 405 405 405 454 454 454 454 701 947 1193 1439 1636 1883 -1966 -1720 -1474 397 594 840 1086 1332 1382 1431 1530 1579 1628 1727 1776 1825 1874 1973 2022 -2024 -1974 -1876 -1876 -1827 -1827 -1777 -1777 -1728 -1728 -1728 -1679 -1679 -1679 -1630 -1630 -1580 -1580 337 534 781 1027 1224 1470 1717 1914 -1935 -1686 -1489 365 609 853 1780 338 1362 -1806 819 1781 337 1300 -1832 815 1817 385 1340 -1800 -1800 -1800 812 812 812 1716 1716 1716 -1476 -1476 -1476 1145 1145 1145 -2046 -2046 -2046 574 574 574 1477 1477 1477 -1715 -1715 -1715 907 907 907 1810 1810 1810 -1430 -1430 -1430 1192 1192 1240 -2000 -2000 -2000 622 669 669 717 717 764 764 812 812 859 859 859 907 907 954 1525 -1953 407 975 1590 -1890 406 1021 1635 -1892 451 1064 1676 -1853 -1712 -1571 -1429 459 600 742 883 1024 1166 1307 1449 1590 1731 1873 1873 1920 1920 1920 1920 1920 1967 1967 1967 1967 2014 2014 2014 2014 -2034 -1940 -1798 -1704 -1563 -1468 368 462 604 698 839 934 1075 1169 1311 -1983 570 1371 -1923 618 1422 -1917 618 1422 -1823 667 1476 -1811 715 715 715 1523 1523 1523 -1764 -1764 -1764 766 766 766 1580 1580 1580 -1749 -1749 -1749 767 767 767 1581 1581 1581 -1748 -1748 -1748 818 818 818 1589 1589 1589 -1687 -1687 -1687 818 818 818 1637 1637 1637 -1687 -1639 -1639 -1639 -1639 -1591 -1591 -1591 -1591 -1543 -1543 -1543 -1543 -1495 -1495 445 783 1073 1364 1702 1992 -1813 -1474 490 780 1119 1409 1747 2037 -1961 -1912 -1816 -1767 -1671 -1574 -1526 -1429 348 397 493 542 638 735 735 783 783 783 783 783 783 832 832 832 832 832 832 832 880 928 1025 1073 1170 1218 1315 1363 1460 1508 1605 1653 1750 1846 1895 -1620 613 1193 1773 -1693 563 1140 1718 -1752 515 1092 1718 -1800 467 467 467 996 996 996 1477 1477 1477 1958 1958 1958 -1609 -1609 -1609 562 562 562 1091 1091 1091 1620 1620 1620 -1995 -1995 -1995 -1466 -1466 -1466 706 706 706 1188 1188 1236 1717 1717 1717 -1897 -1897 -1897 322 322 370 370 370 370 370 370 418 418 418 418 418 466 466 658 899 1140 1332 1573 1813 2006 -1849 -1608 256 497 738 931 1171 1220 1316 1364 1412 1461 1557 1605 1653 1750 1798 1846 1894 1991 2039 2039 -2008 -1960 -1960 -1960 -1960 -1960 -1912 -1912 -1912 -1912 -1863 -1863 -1863 -1863 -1719 -1574 -1478 346 442 587 731 827 972 1068 1213 1309 1454 1598 -1677 861 1732 -1541 958 1829 -1444 1109 1938 330 1160 2038 430 1268 1268 1268 -1990 -1990 -1990 479 479 479 1317 1317 1317 -1990 -1990 -1990 481 481 481 1326 1326 1326 -1924 -1924 -1924 481 481 481 1326 1326 1326 -1924 -1924 -1924 533 533 533 1334 1334 1334 -1909 -1909 -1909 483 533 533 533 533 583 583 583 633 633 633 633 683 683 683 1034 1385 1735 -2009 -1709 -1358 582 934 1287 1590 1943 -1799 -1447 492 542 643 744 794 895 996 1046 1147 1248 1349 1399 1500 1601 1651 1651 1701 1752 1752 1752 1752 1752 1752 1752 1802 1802 1802 1802 1802 1802 1903 1954 2005 -1989 -1939 -1888 -1788 -1737 -1636 -1586 -1536 -1435 -1384 -1335 555 859 1163 1416 1720 2024 -1717 -1464 407 711 1065 1318 1673 1977 1977 1977 -2017 -2017 -2017 -1865 -1865 -1865 -1764 -1764 -1764 -1612 -1612 -1612 -1511 -1511 -1460 -1359 -1359 -1359 359 359 359 459 459 459 611 611 611 762 762 762 863 863 913 1014 1014 1014 1165 1165 1165 1266 1316 1316 1316 1316 1316 1316 1316 1316 1366 1366 1366 1366 1366 1366 1467 1618 1719 1820 1971 -2023 -1922 -1822 -1670 -1570 -1469 -1318 348 449 499 550 600 651 701 751 802 852 903 953 1003 1054 1104 1154 1154 1205 1255 1255 1255 1255 1255 1306 1306 1306 1306 1356 1356 1356 1356 1558 1709 1910 -1983 -1832 -1630 -1429 358 557 755 904 1102 1301 1450 -1901 614 1308 -1993 -1298 1084 1797 -1538 896 1656 -1727 751 1459 -1881 -1881 -1881 -1362 -1362 -1362 891 891 891 1410 1410 1410 1929 1929 1929 -1647 -1647 -1647 561 561 608 1079 1079 1079 1597 1597 1597 -1979 -1979 -1979 -1461 -1461 -1461 796 796 796 1315 1315 1315 1833 1833 1833 -1743 -1743 -1696 -1696 -1696 -1696 -1649 -1649 -1649 -1649 -1602 -1602 -1602 -1602 -1555 559 931 1256 1628 1954 -1767 -1441 675 1047 1373 1745 -2025 -1651 -1327 565 657 702 794 885 977 1023 1114 1206 1251 1343 1434 1480 1572 1572 1617 1617 1617 1663 1663 1663 1663 1663 1663 1663 1663 1663 1663 1663 1709 1755 1800 1800 1846 1892 1892 1938 1983 2029 2029 -2020 -1974 -1929 -1700 -1380 720 995 1269 1590 1864 -1911 -1682 -1362 714 981 1248 1559 1559 1559 1826 1826 1871 -1957 -1957 -1957 -1646 -1646 -1646 535 535 535 846 846 846 1158 1158 1158 1469 1469 1469 1781 1781 1781 -2003 -2003 -2003 -1692 -1692 -1692 -1425 -1425 -1380 753 753 753 1059 1059 1059 1366 1366 1366 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1410 1497 1541 1585 1672 1716 1760 1847 1891 1935 2022 -2029 -1985 -1941 -1854 -1854 -1810 -1810 -1766 -1723 -1723 -1679 -1679 -1635 -1635 -1591 -1547 -1547 -1504 -1504 -1416 -1416 -1416 82 82 82 126 126 126 170 170 170 214 214 345 433 564 695 827 914 1045 1177 1264 1396 1527 1658 1746 1877 489 1227 1965 533 1314 -1999 660 1396 -1963 704 1482 -1877 835 1572 1572 1572 188 188 188 968 968 968 1706 1706 1706 319 319 319 1104 1104 1104 1890 1890 1890 450 450 450 1192 1192 1192 1933 1933 1977 544 544 544 1295 1295 1295 2046 2046 2046 588 588 588 1383 1383 1383 1427 1427 1427 1471 1471 1516 1516 1516 1560 1560 1560 1604 2002 200 605 1010 1415 1820 -1871 377 782 1187 1592 1997 158 525 662 754 846 983 1075 1212 1304 1396 1533 1625 1717 1854 1946 2038 2038 -1919 -1919 -1919 -1874 -1874 -1874 -1828 -1828 -1828 -1828 -1782 -1782 -1782 -1736 221 404 588 725 909 1046 1230 1413 1551 1734 1918 -2040 -1856 173 731 1335 1894 -1643 729 1288 1892 -1645 739 1305 1872 -1610 740 1306 1306 1306 1825 1825 1825 -1798 -1798 -1798 461 461 461 982 982 982 1455 1455 1502 1976 1976 1976 -1599 -1599 -1599 651 651 651 1171 1171 1171 1644 1644 1644 -1930 -1930 -1930 320 320 320 795 795 795 1316 1316 1364 1364 1364 1411 1411 1411 1459 1459 1459 1506 1506 1506 1554 1934 -1734 426 853 1280 1660 -2008 -1581 555 984 1364 1792 -1874 297 392 487 583 678 773 868 963 1058 1153 1249 1344 1439 1582 1677 1677 
+Max memory used: 2046mb
+Execution time: 27 seconds
+		DG	TDAG	CPT+	CPT	Mark1	AKOM	LZ78	
+Success   	27.78	44.671	24.769	25.82	26.68	40.34	35.74
+Failure   	72.22	55.329	75.231	74.18	73.32	59.66	64.26
+No Match  	00.000	24.38	0.28	00.000	00.000	00.000	00.000
+Too Small	00.000	00.000	00.000	00.000	00.000	00.000	00.000
+Overall   	27.78	33.78	24.7	25.82	26.68	40.34	35.74
+Size (MB)	0.008	26.049	0.119	0.444	0.007	2.434	0.609
+Train Tim	0.036	0.174	0.406	0.005	0.009	0.344	0.088
+Test Time	00.000	00.000	0.329	0.626	00.000	0.001	0.005
+
