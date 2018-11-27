@@ -29,7 +29,7 @@ public class answerValidator {
 			consequents = new ArrayList<List<Integer>>();
 
 			// The name of the file to open.
-	        String fileName = "../SPICE" + args[0] + ".fold." + args[1] + ".consequent.txt";//"answers.consequents.Fifa.txt";
+	        String fileName = "../" + args[0] + ".fold." + args[1] + ".consequent.txt";//"answers.consequents.Fifa.txt";
 
 	        // This will reference one line at a time
 	        String line = null;
@@ -69,7 +69,7 @@ public class answerValidator {
 	            // ex.printStackTrace();
 	        }
 
-	        fileName = "../spice/SPICE" + args[0] + ".fold." + args[1] + ".answers.SPICE.txt";
+	        fileName = "" + args[0] + ".fold." + args[1] + ".answers.sbp.txt";
 
 	        // This will reference one line at a time
 	        line = null;
