@@ -22,7 +22,7 @@ import ca.ipredict.predictor.profile.ProfileManager;
  */
 public class Evaluator {
 
-	private static final boolean ALLOW_SPLIT_LENGTH_TRAINING_DATA_EXPORT = false;
+	private static final boolean ALLOW_SPLIT_LENGTH_TRAINING_DATA_EXPORT = true;
 	private static boolean print = true;
 
 	private List<Predictor> predictors; //list of predictors
