@@ -45,6 +45,8 @@ public class Evaluator {
 	
 	public List<String> datasets;  
 	public List<Integer> datasetsMaxCount;  
+
+	private Map<String, ArrayList<Double>> foldResults;
 	
 	
 	public Evaluator(String pathToDatasets) {
@@ -97,6 +99,9 @@ public class Evaluator {
 		for(Predictor predictor : predictors) {
 			predictorNames.add(predictor.getTAG());
 		}
+
+
+		foldResults = new HashMap<String, ArrayList<Double>>();
 		
 		for(int i = 0; i < datasets.size(); i++) {
 			
@@ -149,6 +154,45 @@ public class Evaluator {
 			if(showResults == true) {
 				System.out.println(stats.toString());
 			}
+
+
+
+
+			//write folds map in csv file for this dataset...
+
+			// FileWriter fileWriter = null;
+			// BufferedWriter bufferedWriter = null;
+
+			// String fileName = "outputs/foldResults/" + datasets.get(i) + ".foldResults.csv";
+			// try{
+		 //        fileWriter =
+		 //            new FileWriter(fileName);
+		 //        // Always wrap FileWriter in BufferedWriter.
+		 //       	bufferedWriter =
+		 //            new BufferedWriter(fileWriter);
+		 //    }catch(IOException ex){
+		 //    }
+
+			// for(Map.Entry<String, ArrayList<Double>>  pair : foldResults.entrySet()){
+			// 	try {
+		            
+		 //            bufferedWriter.write(pair.getKey());
+		 //            for (Double val : pair.getValue()){
+		 //            	bufferedWriter.write("," + val);
+		 //            }
+		 //            bufferedWriter.newLine();
+		 //            // bufferedWriter.write("We are writing");
+		 //        }
+		 //        catch(IOException ex) {
+		 //            System.out.println(
+		 //                "Error writing to file '"
+		 //                + fileName + "'");
+		 //            // Or we could just do this:
+		 //            // ex.printStackTrace();
+		 //        }
+			// }
+			// try {bufferedWriter.close();} catch (IOException ex){}
+			// foldResults.clear();
 		}
 		
 		return stats;
@@ -485,6 +529,8 @@ public class Evaluator {
 	private void StartClassifier(List<Sequence> testSequences, int classifierId) {	
 		
 		long start = System.currentTimeMillis(); //Testing starting time
+
+		int success = 0, failure = 0, noMatch = 0, tooSmall = 0;
 		
 		//for each sequence; it classifies it and evaluates it
 		for(Sequence target : testSequences) {
@@ -500,27 +546,41 @@ public class Evaluator {
 				//if no sequence is returned, it means that they is no match for this sequence
 				if(predicted.size() == 0) {
 					stats.inc("No Match", predictors.get(classifierId).getTAG());
+					noMatch++;
 				}
 				//evaluates the prediction
 				else if(isGoodPrediction(consequent, predicted)) {
 					stats.inc("Success", predictors.get(classifierId).getTAG());
+					success++;
 				}
 				else {
 					stats.inc("Failure", predictors.get(classifierId).getTAG());
+					failure++;
 				}
 				
 			}
 			//sequence is too small
 			else {
 				stats.inc("Too Small", predictors.get(classifierId).getTAG());
+				tooSmall++;
 			}
 		}
 
 		long end = System.currentTimeMillis(); //Training ending time
-		System.out.println(predictors.get(classifierId).getTAG() + " memory (MB): " + predictors.get(classifierId).memoryUsage() / (1000 * 1000));
-		System.out.println(predictors.get(classifierId).getTAG() + " test time (ms): " + (double)(end - start));
+		//System.out.println(predictors.get(classifierId).getTAG() + " memory (MB): " + predictors.get(classifierId).memoryUsage() / (1000 * 1000));
+		//System.out.println(predictors.get(classifierId).getTAG() + " test time (ms): " + (double)(end - start));
 		double duration = (double)(end - start) / 1000;
 		stats.set("Test Time", predictors.get(classifierId).getTAG(), duration);
+
+
+		//Since this fold is finished testing, keep seperate records for No Match, Success, Failure, Overall
+		// 	Added to a map like:
+		// 	ID: <Fold_1_accur, Fold_2.., Fold_14>
+		// 	The above map should be a column; each predictor ID in different column
+		//	Export the map to a csv file per dataset
+		if(!foldResults.containsKey(predictors.get(classifierId).getTAG()))
+			foldResults.put(predictors.get(classifierId).getTAG(), new ArrayList<Double>());
+		foldResults.get(predictors.get(classifierId).getTAG()).add((double)success / (success + failure + noMatch + tooSmall));
 	}
 
 	private List<Sequence> splitList(List<Sequence> toSplit, double absoluteRatio){
