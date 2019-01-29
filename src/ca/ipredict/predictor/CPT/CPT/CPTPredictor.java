@@ -27,6 +27,9 @@ public class CPTPredictor extends Predictor {
 	private Map<Integer, Bitvector> II; //Inverted Index
 	
 	private String TAG = "CPT";
+
+	private HashMap<Item, Integer> freq;
+	private int minFreq, maxFreq, totalTrainingLength;
 	
 	private long nodeNumber; //number of node in the prediction tree
 	
@@ -98,7 +101,7 @@ public class CPTPredictor extends Predictor {
 	 * @param CountTable The CountTable to update/fill
 	 * @param hashSidVisited Prevent for processing the same branch multiple times
 	 */
-	private void UpdateCountTable(Item[] targetArray, float weight, Map<Integer, Float> CountTable, HashSet<Integer> hashSidVisited) {
+	private void UpdateCountTable(Item[] targetArray, float weight, Map<Integer, Double> CountTable, HashSet<Integer> hashSidVisited) {
 		
 		Bitvector indexes = getMatchingSequences(targetArray); 
 		
@@ -147,14 +150,20 @@ public class CPTPredictor extends Predictor {
             
 			//For all the items found 
 			for(i = 0; i <= consequentEndPosition; i++) {
+
+				double min_log = (Math.log(totalTrainingLength / minFreq)/Math.log(2));
+				double max_log = (Math.log(totalTrainingLength / maxFreq)/Math.log(2));
+				double predicted_log = (Math.log(totalTrainingLength / freq.get(branch.get(i)))/Math.log(2));
+				double to_add =  (predicted_log - min_log) / (double)(max_log - min_log);
 				
-				float oldValue = 0;
+				double oldValue = 0;
 				if(CountTable.containsKey(branch.get(i).val)) {
 					oldValue = CountTable.get(branch.get(i).val);
 				}
 
 				//Update the countable with the right weight and value
-				float curValue = 1f /((float)indexes.cardinality());
+				//float curValue = 1f /((float)indexes.cardinality());
+				double curValue = to_add /((float)indexes.cardinality());
 				
 				CountTable.put(branch.get(i).val, oldValue + (curValue * weight) );
 				
@@ -168,13 +177,13 @@ public class CPTPredictor extends Predictor {
 	 * @param CountTable The CountTable to use, it needs to be filled
 	 * @return The highest rated sequence or an empty one if the CountTable is empty
 	 */
-	private Sequence getBestSequenceFromCountTable(Map<Integer, Float> CountTable) {
+	private Sequence getBestSequenceFromCountTable(Map<Integer, Double> CountTable) {
 		
 		//Looking for the item with the highest count in the CountTable
 		double maxValue = -1;
 		double secondMaxValue = -1;
 		Integer maxItem = -1;
-		for(Map.Entry<Integer, Float> it : CountTable.entrySet()) {
+		for(Map.Entry<Integer, Double> it : CountTable.entrySet()) {
 			
 			//the following measure of confidence and lift are "simplified" but are exactly the same as in the literature.
 			//CONFIDENCE : |X -> Y|
@@ -220,7 +229,7 @@ public class CPTPredictor extends Predictor {
 			//pick the one with the highest support or lift
 			double highestScore = 0;
 			int newBestItem = -1;
-			for(Map.Entry<Integer, Float> it : CountTable.entrySet()) {
+			for(Map.Entry<Integer, Double> it : CountTable.entrySet()) {
 				
 				if(maxValue == it.getValue()) {
 					if(II.containsKey(it.getKey())) {
@@ -246,12 +255,22 @@ public class CPTPredictor extends Predictor {
 		return predicted;
 	}
 	
+	public Sequence Predict(Sequence target){
+		return null;
+	}
+
 	/**
 	 * Predict the next element in the given sequence
 	 * @param sequence to predict
 	 */
-	public Sequence Predict(Sequence target) {
+	@Override
+	public Sequence Predict(Sequence target, HashMap<Item, Integer> freq, int minFreq, int maxFreq, int totalTrainingLength) {
 		
+		this.freq = freq;
+		this.minFreq = minFreq;
+		this.maxFreq = maxFreq;
+		this.totalTrainingLength = totalTrainingLength;
+
 		//remove items that were never seen before from the Target sequence before LLCT try to make a prediction
 		//If set to false, those items will be still ignored later on (in updateCountTable())
 		Iterator<Item> iter = target.getItems().iterator();
@@ -279,7 +298,7 @@ public class CPTPredictor extends Predictor {
 		for(i = minRecursion ; i < maxRecursion && prediction.size() == 0; i++) {
 			//Reset the CountTable and the hasSidVisited
 			HashSet<Integer> hashSidVisited = new HashSet<Integer>();
-			Map<Integer, Float> CountTable = new HashMap<Integer, Float>();
+			Map<Integer, Double> CountTable = new HashMap<Integer, Double>();
 			
 			int minSize = targetArray.length - i; //setting the minSize for the recursiveDivider
 			
@@ -301,7 +320,7 @@ public class CPTPredictor extends Predictor {
 	 * @param countTable 
 	 * @param hashSidVisited 
 	 */
-	public void RecursiveDivider(Item[] targetArray, int minSize, Map<Integer, Float> countTable, HashSet<Integer> hashSidVisited , int initialTargetArraySize) {
+	public void RecursiveDivider(Item[] targetArray, int minSize, Map<Integer, Double> countTable, HashSet<Integer> hashSidVisited , int initialTargetArraySize) {
 		
 		int size = targetArray.length;
 		

@@ -395,7 +395,7 @@ public class Evaluator {
 				Sequence consequent = target.getLastItems(Profile.paramInt("consequentSize"),0); //the lasts actual items in target
 				Sequence finalTarget = target.getLastItems(Profile.paramInt("windowSize"),Profile.paramInt("consequentSize"));
 				
-				Sequence predicted = predictors.get(classifierId).Predict(finalTarget);
+				Sequence predicted = predictors.get(classifierId).Predict(finalTarget, itemFrequencies, minFreq, maxFreq, totalTrainingLength);
 
 
 				//if no sequence is returned, it means that they is no match for this sequence

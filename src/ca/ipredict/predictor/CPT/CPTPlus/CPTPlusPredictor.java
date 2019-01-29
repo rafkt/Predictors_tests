@@ -192,7 +192,21 @@ public class CPTPlusPredictor extends Predictor {
 		target = helper.removeUnseenItems(target);
 
 		CountTable ct = null;
-		ct = predictionByActiveNoiseReduction(target);
+		ct = predictionByActiveNoiseReduction(target, null, -1, -1, -1);
+		
+
+		Sequence predicted = ct.getBestSequence(1);
+		return predicted;
+	}
+
+	@Override
+	public Sequence Predict(Sequence target, HashMap<Item, Integer> freq, int minFreq, int maxFreq, int totalTrainingLength){
+		//remove items that were never seen before from the Target sequence before LLCT try to make a prediction
+		//If set to false, those items will be still ignored later on (in updateCountTable())
+		target = helper.removeUnseenItems(target);
+
+		CountTable ct = null;
+		ct = predictionByActiveNoiseReduction(target, freq, minFreq, maxFreq, totalTrainingLength);
 		
 
 		Sequence predicted = ct.getBestSequence(1);
@@ -200,7 +214,7 @@ public class CPTPlusPredictor extends Predictor {
 	}
 	
 	
-	protected CountTable predictionByActiveNoiseReduction(Sequence target) {
+	protected CountTable predictionByActiveNoiseReduction(Sequence target, HashMap<Item, Integer> freq, int minFreq, int maxFreq, int totalTrainingLength) {
 		
 		//Queues setup
 		HashSet<Sequence> seen = new HashSet<Sequence>(); //contains the sequence already seen to avoid work duplication
@@ -217,7 +231,7 @@ public class CPTPlusPredictor extends Predictor {
 		
 		//Initializing the count table
 		CountTable ct = new CountTable(helper);
-		ct.update(target.getItems().toArray(new Item[0]), target.size());
+		ct.update(target.getItems().toArray(new Item[0]), target.size(), freq, minFreq, maxFreq, totalTrainingLength);
 		
 		//Initial prediction
 		Sequence predicted = ct.getBestSequence(1);
@@ -262,7 +276,7 @@ public class CPTPlusPredictor extends Predictor {
 					//update count table with this sequence
  					Item[] candidateItems = candidate.getItems().toArray(new Item[0]);
 
-					int branches = ct.update(candidateItems, initialTargetSize);
+					int branches = ct.update(candidateItems, initialTargetSize, freq, minFreq, maxFreq, totalTrainingLength);
 					
  					//do a prediction if this CountTable update did something
 					if(branches > 0) {

@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.TreeMap;
+import java.util.HashMap;
+
 
 import ca.ipredict.database.Item;
 import ca.ipredict.database.Sequence;
@@ -18,7 +20,7 @@ public class CountTable {
 	/**
 	 * Internal representation of the CountTable
 	 */
-	private TreeMap<Integer, Float> table;
+	private TreeMap<Integer, Double> table;
 	private HashSet<Integer> branchVisited;
 	private CPTHelper helper;
 	
@@ -26,7 +28,7 @@ public class CountTable {
 	 * Basic controller
 	 */
 	public CountTable(CPTHelper helper) {
-		table = new TreeMap<Integer, Float>();
+		table = new TreeMap<Integer, Double>();
 		branchVisited = new HashSet<Integer>();
 		this.helper = helper;
 	}
@@ -38,8 +40,19 @@ public class CountTable {
 	 * @param fullSeqLength Size of the sequence before calling recursive divider
 	 * @param numberOfSeqSameLength Number of similar sequence
 	 */
-	public void push(Integer key, int curSeqLength, int fullSeqLength, int numberOfSeqSameLength, int dist) {
+	public void push(Item item, int curSeqLength, int fullSeqLength, int numberOfSeqSameLength, int dist, HashMap<Item, Integer> freq, int minFreq, int maxFreq, int totalTrainingLength) {
 				
+		Integer key = item.val;
+
+
+
+		double min_log = (Math.log(totalTrainingLength / minFreq)/Math.log(2));
+		double max_log = (Math.log(totalTrainingLength / maxFreq)/Math.log(2));
+		double predicted_log = (Math.log(totalTrainingLength / freq.get(item))/Math.log(2));
+		double to_add =  (predicted_log - min_log) / (double)(max_log - min_log);
+
+
+
 		//Declare the various weights
 		float weightLevel = 1f /numberOfSeqSameLength; //from [1.0,0[  -> higher is better
 		float weightDistance = 1f / dist; //from [1.0,0[ -> higher is better
@@ -49,10 +62,11 @@ public class CountTable {
 		//calculate the value for the current key 
 //		float curValue = (weightLevel * 0.5f) + (weightLength * 5.0f) + (weightDistance * 1.8f);
 //		float curValue = (weightLevel * 1f) + (weightLength * 1f) + (weightDistance * 0.0001f);
-		float curValue = (weightLevel * 1f) + (1f) + (weightDistance * 0.0001f);
+		//float curValue = (weightLevel * 1f) + (1f) + (weightDistance * 0.0001f);
+		Double curValue = (weightLevel * 1f) + to_add + (weightDistance * 0.0001f);
 		
 		//Update the count table
-		Float oldVal = table.get(key);
+		Double oldVal = table.get(key);
 		if(oldVal == null) {
 			table.put(key, curValue);
 		}
@@ -69,7 +83,7 @@ public class CountTable {
 	 * @param sequence Sequence to use to update the CountTable
 	 * @param initialSequenceSize The initial size of the sequence to predict (used for weighting)
 	 */
-	public int update(Item[] sequence, int initialSequenceSize) {
+	public int update(Item[] sequence, int initialSequenceSize, HashMap<Item, Integer> freq, int minFreq, int maxFreq, int totalTrainingLength) {
 
 		int branchesUsed = 0;
 		Bitvector ids = helper.getSimilarSequencesIds(sequence);
@@ -107,7 +121,7 @@ public class CountTable {
 				if(toAvoid.size() == 0 && count < max) {
 					
 					//calculating the score for this item
-					push(item.val, sequence.length, initialSequenceSize, ids.cardinality(), count);
+					push(item, sequence.length, initialSequenceSize, ids.cardinality(), count, freq, minFreq, maxFreq, totalTrainingLength);
 					count++;
 				}
 				else if(toAvoid.contains(item)) {
@@ -134,7 +148,7 @@ public class CountTable {
 		
 		//Iterating through the CountTable to sort the items by score
 		ScoreDistribution<Integer> sd = new ScoreDistribution<Integer>();
-		for(Entry<Integer, Float> it : table.entrySet()) {
+		for(Entry<Integer, Double> it : table.entrySet()) {
 			
 			//the following measure of confidence and lift are "simplified" but are exactly the same as in the literature.
 			//CONFIDENCE : |X -> Y|
