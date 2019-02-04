@@ -174,7 +174,7 @@ public class Evaluator {
 		//System.out.println("Training: " + trainingSequences.size() + " and Test set: "+ testSequences.size());
 		
 		PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier
-		
+
 		StartClassifier(testSequences, classifierId); //classification of the test sequence
 	}
 	

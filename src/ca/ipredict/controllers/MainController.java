@@ -12,6 +12,33 @@ import ca.ipredict.predictor.LZ78.LZ78Predictor;
 import ca.ipredict.predictor.Markov.MarkovAllKPredictor;
 import ca.ipredict.predictor.Markov.MarkovFirstOrderPredictor;
 import ca.ipredict.predictor.TDAG.TDAGPredictor;
+import ca.ipredict.predictor.CPT.CPT_Approx.CPT_Approx;
+
+
+
+
+
+import static java.util.Arrays.asList;
+
+import java.util.HashSet;
+import java.util.*;
+import java.util.Locale;
+import java.util.Set;
+
+import org.simmetrics.SetMetric;
+import org.simmetrics.StringDistance;
+import org.simmetrics.StringMetric;
+import org.simmetrics.builders.StringDistanceBuilder;
+import org.simmetrics.builders.StringMetricBuilder;
+import org.simmetrics.metrics.CosineSimilarity;
+import org.simmetrics.metrics.EuclideanDistance;
+import org.simmetrics.metrics.OverlapCoefficient;
+import org.simmetrics.metrics.StringMetrics;
+import org.simmetrics.simplifiers.Simplifiers;
+import org.simmetrics.tokenizers.Tokenizers;
+
+import org.simmetrics.metrics.SmithWaterman;
+import org.simmetrics.metrics.SmithWatermanSetMetric;
 
 /**
  * This controller demonstrates how to compare all the predictors.
@@ -46,13 +73,18 @@ public class MainController {
 			Evaluator evaluator = new Evaluator(args[0]);
 			
 			//Loading datasets
-			evaluator.addDataset("BMS", 		5000);
-			evaluator.addDataset("SIGN", 		1000);
-			evaluator.addDataset("MSNBC", 		5000);
-			evaluator.addDataset("BIBLE_WORD", 	5000);
-			evaluator.addDataset("BIBLE_CHAR", 	5000);
-			evaluator.addDataset("KOSARAK", 	45000);
-			evaluator.addDataset("FIFA", 		5000);
+			// evaluator.addDataset("BMS", 		5000);
+			// evaluator.addDataset("SIGN", 		1000);
+			 evaluator.addDataset("MSNBC", 		5000);
+			// evaluator.addDataset("BIBLE_WORD", 	5000);
+			// evaluator.addDataset("BIBLE_CHAR", 	5000);
+			// evaluator.addDataset("KOSARAK", 	5000);
+			//evaluator.addDataset("FIFA_bwt_training",	-1);
+			//evaluator.addDataset("FIFA_bwt_testing",	-1);
+			//evaluator.addDataset("FIFA_bwt_conseq",	-1);
+
+			//evaluator.addDataset("NASA07", 	5000);
+			//evaluator.addDataset("NASA08",	5000);
 
 			// evaluator.addDataset("SPICE0", 		5000);
 			// evaluator.addDataset("SPICE1", 		5000);
@@ -72,16 +104,36 @@ public class MainController {
 			// evaluator.addDataset("SPICE15", 		5000);
 			
 			//Loading predictors
-			evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
-			evaluator.addPredictor(new TDAGPredictor());
-			evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
-			evaluator.addPredictor(new CPTPredictor());
-			evaluator.addPredictor(new MarkovFirstOrderPredictor());
-			evaluator.addPredictor(new MarkovAllKPredictor());
-			evaluator.addPredictor(new LZ78Predictor());
+			// evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
+			// evaluator.addPredictor(new TDAGPredictor());
+			// evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
+			// for (int i = 0; i < 20; i++) {
+			// 	System.out.println("Current Predictor: " + "CPT_App_" + i);
+			evaluator.addPredictor(new CPT_Approx("CPT_App_" + 10, 10));
+			// }
+			// evaluator.addPredictor(new CPTPredictor());
+			// evaluator.addPredictor(new MarkovFirstOrderPredictor());
+			// evaluator.addPredictor(new MarkovAllKPredictor());
+			// evaluator.addPredictor(new LZ78Predictor());
 			
 			//Start the experiment
 			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 14 , true, true, true);
+
+		//Example on how to use Smith Waterman algorithm along with my customisation
+		// System.out.println("TEEEEEEST");
+
+		// List<Integer> scores1 = new ArrayList<>(asList(1, 9, 9, 9, 2, 3, 9, 9, 9));
+		// List<Integer> scores2 = new ArrayList<>(asList(1, 2, 3));
+
+		// System.out.println(scores1);
+
+		// SmithWatermanSetMetric<Integer> swSet = new SmithWatermanSetMetric<>();
+		// //SmithWaterman sw = new SmithWaterman();
+		// float dist = swSet.compare(scores1, scores2);
+		// //scores2 = new ArrayList<>(asList(1, 2));
+		// System.out.println(dist);
+		// System.out.println(swSet.getFirstLocalIndex() + " " + swSet.getSecondLocalIndex());
+		// // System.out.println(sw.compare("axxxbxxxabxxxxa", "abc"));
 	}
 
 }
