@@ -587,7 +587,7 @@ public class Evaluator {
 	private List<Sequence> splitList(List<Sequence> toSplit, double absoluteRatio){
 		int relativeRatio;
 		if (absoluteRatio > 0) relativeRatio = (int) (toSplit.size() * absoluteRatio); //absolute ratio: [0.0-1.0]
-		else relativeRatio = 9999900; //This is used mainly for QUEST10M, trainin on 9999900 and test on 100 sequences
+		else relativeRatio = 9994309; //This is used mainly for QUEST10M, trainin on 9999900 and test on 100 sequences
 		List<Sequence> sub=toSplit.subList(relativeRatio , toSplit.size());
 		List<Sequence> two= new ArrayList<Sequence>(sub);
 		sub.clear();
