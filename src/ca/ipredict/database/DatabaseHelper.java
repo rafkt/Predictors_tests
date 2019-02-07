@@ -32,7 +32,8 @@ public class DatabaseHelper {
 								SPICE12, 
 								SPICE13, 
 								SPICE14, 
-								SPICE15}; 
+								SPICE15, 
+								QUEST10M}; 
 	
 	//Database
 	private SequenceDatabase database;
@@ -181,6 +182,9 @@ public class DatabaseHelper {
 				break;
 			case SPICE15:
 				database.loadFileSPiCeFormat(fileToPath("SPICE/15.spice.train"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+				break;
+			case QUEST10M:
+				database.loadFileSPMFQUESTFormat(fileToPath("QUEST/data.slen_20.ncust_10000.tlen_1.nitems_1.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
 				break;
 			default:
 				System.out.println("Could not load dataset, unknown format.");

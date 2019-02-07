@@ -131,7 +131,7 @@ public class Evaluator {
 				//Picking the sampling strategy
 				switch(samplingType) {
 					case HOLDOUT:
-						Holdout(param, id);
+						Holdout(param, id, format);
 						break;
 				
 					case KFOLD:
@@ -204,7 +204,7 @@ public class Evaluator {
 	 * The classifier is trained using the training set and evaluated using the test set.
 	 * @param ratio to divide the training and test sets
 	 */
-	public void Holdout(double ratio, int classifierId) {
+	public void Holdout(double ratio, int classifierId, String datasetName) {
 		
 		List<Sequence> trainingSequences = getDatabaseCopy();
 		List<Sequence> testSequences = splitList(trainingSequences, ratio);
@@ -216,6 +216,7 @@ public class Evaluator {
 		PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier
 		
 		StartClassifier(testSequences, classifierId); //classification of the test sequence
+		writeFoldsAndAnswers(trainingSequences, testSequences, 0, datasetName);
 	}
 	
 	/**
@@ -227,7 +228,7 @@ public class Evaluator {
 		
 		int k = 10;
 		for(int i = 0 ; i < k; i++) {
-			Holdout(ratio, classifierId);
+			Holdout(ratio, classifierId, "");
 			
 			//Logging memory usage
 			MemoryLogger.addUpdate();
@@ -578,15 +579,15 @@ public class Evaluator {
 		// 	ID: <Fold_1_accur, Fold_2.., Fold_14>
 		// 	The above map should be a column; each predictor ID in different column
 		//	Export the map to a csv file per dataset
-		if(!foldResults.containsKey(predictors.get(classifierId).getTAG()))
-			foldResults.put(predictors.get(classifierId).getTAG(), new ArrayList<Double>());
-		foldResults.get(predictors.get(classifierId).getTAG()).add((double)success / (success + failure + noMatch + tooSmall));
+		// if(!foldResults.containsKey(predictors.get(classifierId).getTAG()))
+		// 	foldResults.put(predictors.get(classifierId).getTAG(), new ArrayList<Double>());
+		// foldResults.get(predictors.get(classifierId).getTAG()).add((double)success / (success + failure + noMatch + tooSmall));
 	}
 
 	private List<Sequence> splitList(List<Sequence> toSplit, double absoluteRatio){
-		
-		int relativeRatio = (int) (toSplit.size() * absoluteRatio); //absolute ratio: [0.0-1.0]
-		
+		int relativeRatio;
+		if (absoluteRatio > 0) relativeRatio = (int) (toSplit.size() * absoluteRatio); //absolute ratio: [0.0-1.0]
+		else relativeRatio = 9999900; //This is used mainly for QUEST10M, trainin on 9999900 and test on 100 sequences
 		List<Sequence> sub=toSplit.subList(relativeRatio , toSplit.size());
 		List<Sequence> two= new ArrayList<Sequence>(sub);
 		sub.clear();

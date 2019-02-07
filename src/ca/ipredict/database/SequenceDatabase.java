@@ -464,6 +464,52 @@ public class SequenceDatabase {
 		}
 	}
 
+	public void loadFileSPMFQUESTFormat(String path, int maxCount,
+			int minSize, int maxSize) {
+		
+		String thisLine;
+		BufferedReader myInput = null;
+		try {
+			int count = 0;
+			if (maxCount == -1) count = -2; //in order to disable the condition that limits the number of sequences that we read
+			boolean itemsetEnd = false;
+			FileInputStream fin = new FileInputStream(new File(path));
+			myInput = new BufferedReader(new InputStreamReader(fin));
+			Set<Integer> alreadySeen = new HashSet<Integer>();
+			while ((thisLine = myInput.readLine()) != null && count < maxCount) {
+				Sequence sequence = new Sequence(sequences.size());
+				for (String entier : thisLine.split(" ")) {
+					if (entier.equals("-1")) { // s�parateur d'itemsets
+						itemsetEnd = false;
+					} else if (entier.equals("-2")) { // indicateur de fin de s�quence
+						if(sequence.size()>= 1 &&
+							sequence.size() <= maxSize){
+							sequences.add(sequence);
+							if (maxCount != -1) count++;
+						}
+					} else { 
+						if (!itemsetEnd) { //since I can give a sequence with more than one items/itemset, we discard any extra items of itemset
+							itemsetEnd = true;
+							int val = Integer.parseInt(entier);
+							sequence.getItems().add(new Item(val));
+						}
+						//RAF: can't figure out why the below code exists - results to not getting any sequences at all
+//						if(alreadySeen.contains(val)){
+//							continue;
+//						}
+//						alreadySeen.add(val);
+						//sequence.getItems().add(new Item(val));
+					}
+				}
+			}
+			if (myInput != null) {
+				myInput.close();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 
 	public void loadFileSPiCeFormat(String path, int maxCount,
 			int minSize, int maxSize) {
