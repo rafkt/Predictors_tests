@@ -8,6 +8,7 @@ import ca.ipredict.predictor.profile.BIBLE_CHARProfile;
 import ca.ipredict.predictor.profile.KOSARAKProfile;
 import ca.ipredict.predictor.profile.FIFAProfile;
 import ca.ipredict.predictor.profile.SPICEProfile;
+import ca.ipredict.predictor.profile.QUEST10MProfile;
 
 /**
  * Apply a parameter profile by name
