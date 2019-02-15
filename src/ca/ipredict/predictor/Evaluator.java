@@ -105,6 +105,8 @@ public class Evaluator {
 		for(Predictor predictor : predictors) {
 			predictorNames.add(predictor.getTAG());
 		}
+
+		datasetAnswersPerFold = new TreeMap<String, List<TreeMap<String, Bitvector>>>();
 		
 		for(int i = 0; i < datasets.size(); i++) {
 			
@@ -212,11 +214,9 @@ public class Evaluator {
 		answersPerFold = new ArrayList<TreeMap<String, Bitvector>>();
 		
 		for (int i = 0; i < k; i ++){
-			for(int id = 0 ; id < predictors.size(); id++){
-				map = new TreeMap<String, Bitvector>();
-				map.put(predictors.get(id).getTAG(), new Bitvector());
-				answersPerFold.add(map);
-			}
+			map = new TreeMap<String, Bitvector>();
+			map.put(predictors.get(classifierId).getTAG(), new Bitvector());
+			answersPerFold.add(map);
 		}
 
 
@@ -233,6 +233,7 @@ public class Evaluator {
 		
 		//For each fold, it does training and testing
 		for(int i = 0 ; i < k ; i++) {
+			currentFold = i;
 
 			//Partitioning database 
 			//
@@ -373,21 +374,27 @@ public class Evaluator {
 				//if no sequence is returned, it means that they is no match for this sequence
 				if(predicted.size() == 0) {
 					stats.inc("No Match", predictors.get(classifierId).getTAG());
+					answersPerFold.get(currentFold).get(predictors.get(classifierId).getTAG()).setBit(i, false);
+
 				}
 				//evaluates the prediction
 				else if(isGoodPrediction(consequent, predicted)) {
 					stats.inc("Success", predictors.get(classifierId).getTAG());
-					answersPerFold.get(currentFold).get(predictors.get(classifierId).getTAG()).setBitAndIncrementCardinality(i);
+					answersPerFold.get(currentFold).get(predictors.get(classifierId).getTAG()).setBit(i, true);
 
 				}
 				else {
 					stats.inc("Failure", predictors.get(classifierId).getTAG());
+					answersPerFold.get(currentFold).get(predictors.get(classifierId).getTAG()).setBit(i, false);
+
 				}
 				
 			}
 			//sequence is too small
 			else {
 				stats.inc("Too Small", predictors.get(classifierId).getTAG());
+				answersPerFold.get(currentFold).get(predictors.get(classifierId).getTAG()).setBit(i, false);
+
 			}
 		}
 		
@@ -416,38 +423,36 @@ public class Evaluator {
 		BufferedWriter bufferedWriter = null;
 
 		
+		try {
+		    for (Map.Entry<String, List<TreeMap<String, Bitvector>>>  d_pair : datasetAnswersPerFold.entrySet()){
+		    	for (int i = 0; i < d_pair.getValue().size(); i++){
+		    		TreeMap<String, Bitvector> foldList = d_pair.getValue().get(i);
+		    		String fileName = "outputs/who_what/" + d_pair.getKey() + "." + i + ".csv";
+		    		fileWriter = new FileWriter(fileName);
+			        // Always wrap FileWriter in BufferedWriter.
+			       	bufferedWriter = new BufferedWriter(fileWriter);
+		    		for(Map.Entry<String, Bitvector>  f_pair : foldList.entrySet()){
 
-	    for (Map.Entry<String, List<TreeMap<String, Bitvector>>>  d_pair : datasetAnswersPerFold.entrySet()){
-	    	for (TreeMap<String, Bitvector> foldList : d_pair.getValue()){
-	    		for(Map.Entry<String, Bitvector>  f_pair : foldList.entrySet()){
-				// try {
 
-				// 	String fileName = "outputs/foldResults/" + datasets.get(i) + ".foldResults.csv";
-				// 	fileWriter = new FileWriter(fileName);
-			 //        // Always wrap FileWriter in BufferedWriter.
-			 //       	bufferedWriter = new BufferedWriter(fileWriter);
+					       	bufferedWriter.write(f_pair.getKey() + "," + f_pair.getValue());
+					       	bufferedWriter.newLine();
 
-		  //           bufferedWriter.write(pair.getKey());
-		  //           for (Double val : pair.getValue()){
-		  //           	bufferedWriter.write("," + val);
-		  //           }
-		  //           bufferedWriter.newLine();
-		  //           // bufferedWriter.write("We are writing");
-		  //       }
-		  //       catch(IOException ex) {
-		  //           System.out.println(
-		  //               "Error writing to file '"
-		  //               + fileName + "'");
-		  //           // Or we could just do this:
-		  //           // ex.printStackTrace();
-		  //       }
-				}
-	    	}
-	    }
+				            // bufferedWriter.write(pair.getKey());
+				            // for (Double val : pair.getValue()){
+				            // 	bufferedWriter.write("," + val);
+				            // }
+				            // bufferedWriter.newLine();
+				            // bufferedWriter.write("We are writing");
+					}
+					bufferedWriter.close();
+		    	}
+		    }
+	    }catch(IOException ex) {
+            System.out.println("Error writing to file");
+            // Or we could just do this:
+            // ex.printStackTrace();
+        }
 
-		
-		// try {bufferedWriter.close();} catch (IOException ex){}
-		// foldResults.clear();
 	}
 	
 }

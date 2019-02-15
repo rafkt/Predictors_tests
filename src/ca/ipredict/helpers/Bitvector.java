@@ -15,6 +15,7 @@ public class Bitvector {
 
 	BitSet bitset = new BitSet(); // the bitset
 	int cardinality;  // the cardinality
+	private int length;
 
 	/**
 	 * Public constructor
@@ -22,6 +23,7 @@ public class Bitvector {
 	public Bitvector() {
 		bitset = new BitSet();
 		cardinality = 0;
+		length = 0;
 	}
 	
 	/**
@@ -60,6 +62,10 @@ public class Bitvector {
 		return bitset.size();
 	}
 
+	public int length() {
+		return length;
+	}
+
 	public int nextSetBit(int i) {
 		return bitset.nextSetBit(i);
 	}
@@ -85,9 +91,26 @@ public class Bitvector {
 			cardinality++;
 		}
 	}
+
+	public void setBit(int i, boolean value){
+		if(bitset.get(i) == false) {
+			bitset.set(i, value);
+			if (value == true) cardinality++;
+			length++;
+		}else{
+			System.out.println("Are you sure what you want to do ?");
+		}
+	}
 	
 	// FOR DEBUGGING
 	public String toString(){
-		return  bitset.toString() +  " cardinality : " + cardinality;
+		//return  bitset.toString() +  " cardinality : " + cardinality;
+		String bitset_str = "";
+		if (length < bitset.length()) System.out.println("Bitset logical error...");
+		for (int i = 0; i < length; i ++){
+			bitset_str += (bitset.get(i) == true ? "1" : "0");
+			if (i < length - 1) bitset_str += ",";
+		}
+		return bitset_str;
 	}
 }
