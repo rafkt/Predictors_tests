@@ -4,7 +4,14 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.io.IOException;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
 
+import java.util.Map.Entry;
+import java.util.TreeMap;
+import java.util.Map;
+
+import ca.ipredict.helpers.Bitvector;
 import ca.ipredict.database.DatabaseHelper;
 import ca.ipredict.database.DatabaseHelper.Format;
 import ca.ipredict.database.Item;
@@ -40,6 +47,12 @@ public class Evaluator {
 	
 	public List<String> datasets;  
 	public List<Integer> datasetsMaxCount;  
+
+	private String currentFormat;
+
+	private List<TreeMap<String, Bitvector>> answersPerFold;
+	private TreeMap<String, List<TreeMap<String, Bitvector>>> datasetAnswersPerFold;
+	private int currentFold;
 	
 	
 	public Evaluator(String pathToDatasets) {
@@ -97,6 +110,7 @@ public class Evaluator {
 			
 			int maxCount = datasetsMaxCount.get(i);
 			String format = datasets.get(i);
+			currentFormat = format;
 			
 			//Loading the parameter profile
 			ProfileManager.loadProfileByName(format.toString());
@@ -193,7 +207,19 @@ public class Evaluator {
 	 * and the k-1 other folds for training
 	 */
 	public void KFold(int k, int classifierId) {
+
+		TreeMap<String, Bitvector> map;
+		answersPerFold = new ArrayList<TreeMap<String, Bitvector>>();
 		
+		for (int i = 0; i < k; i ++){
+			for(int id = 0 ; id < predictors.size(); id++){
+				map = new TreeMap<String, Bitvector>();
+				map.put(predictors.get(id).getTAG(), new Bitvector());
+				answersPerFold.add(map);
+			}
+		}
+
+
 		//k has to be at least 2
 		if(k < 2) {
 			throw new RuntimeException("K needs to be 2 or more");
@@ -243,6 +269,7 @@ public class Evaluator {
 			MemoryLogger.addUpdate();
 		}
 		
+		datasetAnswersPerFold.put(currentFormat, answersPerFold);
 	}
 	
 	/**
@@ -332,8 +359,9 @@ public class Evaluator {
 		long start = System.currentTimeMillis(); //Testing starting time
 		
 		//for each sequence; it classifies it and evaluates it
-		for(Sequence target : testSequences) {
+		for(int i = 0; i < testSequences.size(); i++) {
 			
+			Sequence target = testSequences.get(i);
 			//if sequence is long enough
 			if(target.size() > (Profile.paramInt("consequentSize"))) {
 				
@@ -349,6 +377,8 @@ public class Evaluator {
 				//evaluates the prediction
 				else if(isGoodPrediction(consequent, predicted)) {
 					stats.inc("Success", predictors.get(classifierId).getTAG());
+					answersPerFold.get(currentFold).get(predictors.get(classifierId).getTAG()).setBitAndIncrementCardinality(i);
+
 				}
 				else {
 					stats.inc("Failure", predictors.get(classifierId).getTAG());
@@ -379,6 +409,45 @@ public class Evaluator {
 	
 	private List<Sequence> getDatabaseCopy() {
 		return new ArrayList<Sequence>(database.getDatabase().getSequences().subList(0, database.getDatabase().size()));
+	}
+
+	public void exportCSV(){
+		FileWriter fileWriter = null;
+		BufferedWriter bufferedWriter = null;
+
+		
+
+	    for (Map.Entry<String, List<TreeMap<String, Bitvector>>>  d_pair : datasetAnswersPerFold.entrySet()){
+	    	for (TreeMap<String, Bitvector> foldList : d_pair.getValue()){
+	    		for(Map.Entry<String, Bitvector>  f_pair : foldList.entrySet()){
+				// try {
+
+				// 	String fileName = "outputs/foldResults/" + datasets.get(i) + ".foldResults.csv";
+				// 	fileWriter = new FileWriter(fileName);
+			 //        // Always wrap FileWriter in BufferedWriter.
+			 //       	bufferedWriter = new BufferedWriter(fileWriter);
+
+		  //           bufferedWriter.write(pair.getKey());
+		  //           for (Double val : pair.getValue()){
+		  //           	bufferedWriter.write("," + val);
+		  //           }
+		  //           bufferedWriter.newLine();
+		  //           // bufferedWriter.write("We are writing");
+		  //       }
+		  //       catch(IOException ex) {
+		  //           System.out.println(
+		  //               "Error writing to file '"
+		  //               + fileName + "'");
+		  //           // Or we could just do this:
+		  //           // ex.printStackTrace();
+		  //       }
+				}
+	    	}
+	    }
+
+		
+		// try {bufferedWriter.close();} catch (IOException ex){}
+		// foldResults.clear();
 	}
 	
 }
