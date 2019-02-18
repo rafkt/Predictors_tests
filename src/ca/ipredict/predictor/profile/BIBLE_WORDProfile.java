@@ -16,8 +16,8 @@ public class BIBLE_WORDProfile extends Profile {
 		///////////////
 		//CPT parameters
 		//Training
-		parameters.put("splitMethod", "1");
-		parameters.put("splitLength", "0.9f");
+		parameters.put("splitMethod", "0");
+		parameters.put("splitLength", "1f");
 		parameters.put("minSup", "0.0001"); //SEI compression, minSup to remove low supporting items
 		
 		//CCF compression
@@ -29,7 +29,7 @@ public class BIBLE_WORDProfile extends Profile {
 		parameters.put("recursiveDividerMin", "0"); //should be >= 0 and < recursiveDividerMax 
 		parameters.put("recursiveDividerMax", "5"); //should be > recusiveDividerMax and < windowSize
 		parameters.put("minPredictionRatio", "10f");
-		parameters.put("noiseRatio", "0.8f");
+		parameters.put("noiseRatio", "1f");
 
 	}
 

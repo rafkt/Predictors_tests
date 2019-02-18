@@ -46,31 +46,31 @@ public class MainController {
 			Evaluator evaluator = new Evaluator(args[0]);
 			
 			//Loading datasets
-			evaluator.addDataset("BMS", 		5000);
-			evaluator.addDataset("SIGN", 		1000);
-			evaluator.addDataset("MSNBC", 		5000);
+//			evaluator.addDataset("BMS", 		5000);
+//			evaluator.addDataset("SIGN", 		1000);
+//			evaluator.addDataset("MSNBC", 		5000);
 			evaluator.addDataset("BIBLE_WORD", 	5000);
 			evaluator.addDataset("BIBLE_CHAR", 	5000);
-			evaluator.addDataset("KOSARAK", 	45000);
-			evaluator.addDataset("FIFA", 		5000);
+//			evaluator.addDataset("KOSARAK", 	45000);
+//			evaluator.addDataset("FIFA", 		5000);
 			//evaluator.addDataset("SNAKE", 		5000); --> null pointer exception during finding frequent itemsets, even though all other datasets are fine!
-
-			evaluator.addDataset("SPICE0", 		5000);
-			evaluator.addDataset("SPICE1", 		5000);
-			evaluator.addDataset("SPICE2", 		5000);
-			evaluator.addDataset("SPICE3", 		5000);
-			evaluator.addDataset("SPICE4", 		5000);
-			evaluator.addDataset("SPICE5", 		5000);
-			evaluator.addDataset("SPICE6", 		5000);
-			evaluator.addDataset("SPICE7", 		5000);
-			evaluator.addDataset("SPICE8", 		5000);
-			evaluator.addDataset("SPICE9", 		5000);
-			evaluator.addDataset("SPICE10", 		5000);
-			evaluator.addDataset("SPICE11", 		5000);
-			evaluator.addDataset("SPICE12", 		5000);
-			evaluator.addDataset("SPICE13", 		5000);
-			evaluator.addDataset("SPICE14", 		5000);
-			evaluator.addDataset("SPICE15", 		5000);
+//
+//			evaluator.addDataset("SPICE0", 		5000);
+//			evaluator.addDataset("SPICE1", 		5000);
+//			evaluator.addDataset("SPICE2", 		5000);
+//			evaluator.addDataset("SPICE3", 		5000);
+//			evaluator.addDataset("SPICE4", 		5000);
+//			evaluator.addDataset("SPICE5", 		5000);
+//			evaluator.addDataset("SPICE6", 		5000);
+//			evaluator.addDataset("SPICE7", 		5000);
+//			evaluator.addDataset("SPICE8", 		5000);
+//			evaluator.addDataset("SPICE9", 		5000);
+//			evaluator.addDataset("SPICE10", 		5000);
+//			evaluator.addDataset("SPICE11", 		5000);
+//			evaluator.addDataset("SPICE12", 		5000);
+//			evaluator.addDataset("SPICE13", 		5000);
+//			evaluator.addDataset("SPICE14", 		5000);
+//			evaluator.addDataset("SPICE15", 		5000);
 			
 			//Loading predictors
 			// evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));

@@ -1,0 +1,484 @@
+[H[Jfind . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.07155889,0.0,0,1.0,0.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.013,0.0,0,1.0,0.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0014190148,1.0,0,1.0,0.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,1.0,0,1.0,0.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,2.0,0,1.0,0.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,2.0,0,1.0,0.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,3.0,0,1.0,0.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,3.0,0,1.0,0.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,4.0,0,1.0,0.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,4.0,0,1.0,0.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,5.0,0,1.0,0.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,5.0,0,1.0,0.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,6.0,0,1.0,0.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,6.0,0,1.0,0.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,7.0,0,1.0,0.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,7.0,0,1.0,0.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0014190148,8.0,0,1.0,0.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,8.0,0,1.0,0.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,9.0,0,1.0,0.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,9.0,0,1.0,0.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,10.0,0,1.0,0.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,10.0,0,1.0,0.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.07155889,0.0,0,1.0,0.1,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0144,0.0,0,1.0,0.1,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,1.0,0,1.0,0.1,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,1.0,0,1.0,0.1,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,2.0,0,1.0,0.1,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,2.0,0,1.0,0.1,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,3.0,0,1.0,0.1,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,3.0,0,1.0,0.1,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,4.0,0,1.0,0.1,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,4.0,0,1.0,0.1,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,5.0,0,1.0,0.1,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,5.0,0,1.0,0.1,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,6.0,0,1.0,0.1,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,6.0,0,1.0,0.1,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,7.0,0,1.0,0.1,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,7.0,0,1.0,0.1,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,8.0,0,1.0,0.1,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,8.0,0,1.0,0.1,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,9.0,0,1.0,0.1,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,9.0,0,1.0,0.1,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,10.0,0,1.0,0.1,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,10.0,0,1.0,0.1,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.072775185,0.0,0,1.0,0.2,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0142,0.0,0,1.0,0.2,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,1.0,0,1.0,0.2,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,1.0,0,1.0,0.2,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,2.0,0,1.0,0.2,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,2.0,0,1.0,0.2,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,3.0,0,1.0,0.2,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,3.0,0,1.0,0.2,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,4.0,0,1.0,0.2,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,4.0,0,1.0,0.2,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,5.0,0,1.0,0.2,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,5.0,0,1.0,0.2,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,6.0,0,1.0,0.2,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,6.0,0,1.0,0.2,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,7.0,0,1.0,0.2,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,7.0,0,1.0,0.2,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0016217312,8.0,0,1.0,0.2,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,8.0,0,1.0,0.2,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,9.0,0,1.0,0.2,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,9.0,0,1.0,0.2,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,10.0,0,1.0,0.2,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,10.0,0,1.0,0.2,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.07196432,0.0,0,1.0,0.3,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0148,0.0,0,1.0,0.3,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,1.0,0,1.0,0.3,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,1.0,0,1.0,0.3,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,2.0,0,1.0,0.3,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,2.0,0,1.0,0.3,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,3.0,0,1.0,0.3,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,3.0,0,1.0,0.3,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,4.0,0,1.0,0.3,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,4.0,0,1.0,0.3,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,5.0,0,1.0,0.3,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,5.0,0,1.0,0.3,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,6.0,0,1.0,0.3,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,6.0,0,1.0,0.3,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,7.0,0,1.0,0.3,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,7.0,0,1.0,0.3,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,8.0,0,1.0,0.3,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,8.0,0,1.0,0.3,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,9.0,0,1.0,0.3,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,9.0,0,1.0,0.3,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,10.0,0,1.0,0.3,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,10.0,0,1.0,0.3,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.07196432,0.0,0,1.0,0.4,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0156,0.0,0,1.0,0.4,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,1.0,0,1.0,0.4,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,1.0,0,1.0,0.4,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,2.0,0,1.0,0.4,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,2.0,0,1.0,0.4,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,3.0,0,1.0,0.4,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,3.0,0,1.0,0.4,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,4.0,0,1.0,0.4,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,4.0,0,1.0,0.4,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,5.0,0,1.0,0.4,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,5.0,0,1.0,0.4,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,6.0,0,1.0,0.4,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,6.0,0,1.0,0.4,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,7.0,0,1.0,0.4,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,7.0,0,1.0,0.4,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,8.0,0,1.0,0.4,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,8.0,0,1.0,0.4,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,9.0,0,1.0,0.4,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,9.0,0,1.0,0.4,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,10.0,0,1.0,0.4,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,10.0,0,1.0,0.4,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.072775185,0.0,0,1.0,0.5,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0156,0.0,0,1.0,0.5,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,1.0,0,1.0,0.5,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,1.0,0,1.0,0.5,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,4.054328E-4,2.0,0,1.0,0.5,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,2.0,0,1.0,0.5,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,3.0,0,1.0,0.5,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,3.0,0,1.0,0.5,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,4.0,0,1.0,0.5,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,4.0,0,1.0,0.5,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,5.0,0,1.0,0.5,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,5.0,0,1.0,0.5,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,6.0,0,1.0,0.5,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,6.0,0,1.0,0.5,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,7.0,0,1.0,0.5,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,7.0,0,1.0,0.5,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,8.0,0,1.0,0.5,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,8.0,0,1.0,0.5,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,9.0,0,1.0,0.5,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,9.0,0,1.0,0.5,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,10.0,0,1.0,0.5,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,10.0,0,1.0,0.5,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.07216704,0.0,0,1.0,0.6,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0142,0.0,0,1.0,0.6,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0014190148,1.0,0,1.0,0.6,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,1.0,0,1.0,0.6,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,2.0,0,1.0,0.6,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,2.0,0,1.0,0.6,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,3.0,0,1.0,0.6,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,3.0,0,1.0,0.6,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,4.0,0,1.0,0.6,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,4.0,0,1.0,0.6,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,5.0,0,1.0,0.6,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,5.0,0,1.0,0.6,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,6.0,0,1.0,0.6,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,6.0,0,1.0,0.6,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,7.0,0,1.0,0.6,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,7.0,0,1.0,0.6,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,8.0,0,1.0,0.6,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,8.0,0,1.0,0.6,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,9.0,0,1.0,0.6,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,9.0,0,1.0,0.6,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,10.0,0,1.0,0.6,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,10.0,0,1.0,0.6,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.07054531,0.0,0,1.0,0.7,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0118,0.0,0,1.0,0.7,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,1.0,0,1.0,0.7,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,1.0,0,1.0,0.7,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,2.0,0,1.0,0.7,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,2.0,0,1.0,0.7,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0014190148,3.0,0,1.0,0.7,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,3.0,0,1.0,0.7,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,4.0,0,1.0,0.7,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,4.0,0,1.0,0.7,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,5.0,0,1.0,0.7,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,5.0,0,1.0,0.7,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,6.0,0,1.0,0.7,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,6.0,0,1.0,0.7,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,7.0,0,1.0,0.7,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,7.0,0,1.0,0.7,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,8.0,0,1.0,0.7,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,8.0,0,1.0,0.7,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,9.0,0,1.0,0.7,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,9.0,0,1.0,0.7,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0016217312,10.0,0,1.0,0.7,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,10.0,0,1.0,0.7,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.07216704,0.0,0,1.0,0.8,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0144,0.0,0,1.0,0.8,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,1.0,0,1.0,0.8,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,1.0,0,1.0,0.8,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,2.0,0,1.0,0.8,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,2.0,0,1.0,0.8,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,3.0,0,1.0,0.8,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,3.0,0,1.0,0.8,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,4.0,0,1.0,0.8,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,4.0,0,1.0,0.8,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,5.0,0,1.0,0.8,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,5.0,0,1.0,0.8,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,6.0,0,1.0,0.8,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,6.0,0,1.0,0.8,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,7.0,0,1.0,0.8,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,7.0,0,1.0,0.8,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0014190148,8.0,0,1.0,0.8,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,8.0,0,1.0,0.8,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0016217312,9.0,0,1.0,0.8,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,9.0,0,1.0,0.8,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,10.0,0,1.0,0.8,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,10.0,0,1.0,0.8,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.07601865,0.0,0,1.0,0.9,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0136,0.0,0,1.0,0.9,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,1.0,0,1.0,0.9,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,1.0,0,1.0,0.9,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,4.054328E-4,2.0,0,1.0,0.9,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,2.0,0,1.0,0.9,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,4.054328E-4,3.0,0,1.0,0.9,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,3.0,0,1.0,0.9,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,4.0,0,1.0,0.9,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,4.0,0,1.0,0.9,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,5.0,0,1.0,0.9,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,5.0,0,1.0,0.9,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,6.0,0,1.0,0.9,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,6.0,0,1.0,0.9,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,7.0,0,1.0,0.9,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,7.0,0,1.0,0.9,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0012162984,8.0,0,1.0,0.9,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,8.0,0,1.0,0.9,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.001013582,9.0,0,1.0,0.9,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,9.0,0,1.0,0.9,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0014190148,10.0,0,1.0,0.9,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,10.0,0,1.0,0.9,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.07338334,0.0,0,1.0,1.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0134,0.0,0,1.0,1.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,0.0042570443,1.0,0,1.0,1.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,1.0,0,1.0,1.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,2.0,0,1.0,1.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,2.0,0,1.0,1.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,3.0,0,1.0,1.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,3.0,0,1.0,1.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,4.0,0,1.0,1.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,4.0,0,1.0,1.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,5.0,0,1.0,1.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,5.0,0,1.0,1.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,6.0,0,1.0,1.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,6.0,0,1.0,1.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,7.0,0,1.0,1.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,7.0,0,1.0,1.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,6.081492E-4,8.0,0,1.0,1.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,8.0,0,1.0,1.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,9.0,0,1.0,1.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,9.0,0,1.0,1.0,BIBLE_CHAR)
+find . -name "*.class" -type f -delete
+javac -cp src src/ca/ipredict/controllers/MainController.java
+(4933,5422,20.6045,16.704845,1.233444572538074,8.108656E-4,10.0,0,1.0,1.0,BIBLE_WORD)
+(5000,74,133.01,26.0638,5.1032466486084145,0.0072,10.0,0,1.0,1.0,BIBLE_CHAR)

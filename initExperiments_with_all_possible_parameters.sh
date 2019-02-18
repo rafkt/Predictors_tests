@@ -9,17 +9,9 @@
 clear
 
 declare -a arr=("BIBLE_CHARProfile.java"
-                "BMSProfile.java"    
-                "FIFAProfile.java"   
-                "MSNBCProfile.java" 
-                "SNAKEProfile.java"
-                "BIBLE_WORDProfile.java"
-                "DefaultProfile.java"
-                "KOSARAKProfile.java"
-                "SIGNProfile.java"    
-                "SPICEProfile.java")
+                "BIBLE_WORDProfile.java")
 
-
+#deleted the rest of datasets - put them back if you wanna run full experiment or revert commit
 
 
 #for ((i=0; i<=10; i+=3))
@@ -55,43 +47,7 @@ do
     done
 done
 
-for i in `seq -f "%g" 0.8 0.1 1` #was 0 0.1 1`
-do 
-    for j in `seq -f "%g" 0 1 10` #was 0 1 10`
-    do
-        for l in `seq -f "%g" 0.1 0.1 0.9` #was 0.1 0.1 0.9`
-        do
-            cd src/ca/ipredict/predictor/profile/   
-            for d in "${arr[@]}"
-            do
-                sed "s/parameters.put(\"noiseRatio\".*/parameters.put(\"noiseRatio\", \"${i}f\");/g" $d > $d."_tmp$i$j".java
-                mv $d."_tmp$i$j".java $d
-                rm -rf $d."_tmp$i$j".java
-                
-                sed "s/parameters.put(\"minPredictionRatio\".*/parameters.put(\"minPredictionRatio\", \"${j}f\");/g" $d > $d."_tmp$i$j".java
-                mv $d."_tmp$i$j".java $d
-                rm -rf $d."_tmp$i$j".java    
-                # mv tmp.java 
-
-                sed "s/parameters.put(\"splitMethod\".*/parameters.put(\"splitMethod\", \"1\");/g" $d > $d."_tmp$i$j".java
-                mv $d."_tmp$i$j".java $d
-                rm -rf $d."_tmp$i$j".java
-
-                sed "s/parameters.put(\"splitLength\".*/parameters.put(\"splitLength\", \"${l}f\");/g" $d > $d."_tmp$i$j".java
-                mv $d."_tmp$i$j".java $d
-                rm -rf $d."_tmp$i$j".java
-
-            done
-            cd ../../../../..
-            make clean
-            make all
-            java -cp src ca.ipredict.controllers.MainController ./datasets 
-        done
-    done
-done
-
-#run the same for different split legnths
-
+#deleted run for splitlength values; revert this file if you want full experiment
 
 
 
