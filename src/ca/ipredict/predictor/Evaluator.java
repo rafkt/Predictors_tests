@@ -50,8 +50,7 @@ public class Evaluator {
 
 	private String currentFormat;
 
-	private List<TreeMap<String, Bitvector>> answersPerFold;
-	private TreeMap<String, List<TreeMap<String, Bitvector>>> datasetAnswersPerFold;
+	private TreeMap<String, List<TreeMap<String, List<Bitvector>>>> datasetAnswersPerFold;
 	private int currentFold;
 	
 	
@@ -106,13 +105,14 @@ public class Evaluator {
 			predictorNames.add(predictor.getTAG());
 		}
 
-		datasetAnswersPerFold = new TreeMap<String, List<TreeMap<String, Bitvector>>>();
+		datasetAnswersPerFold = new TreeMap<String, List<TreeMap<String, List<Bitvector>>>>();
 		
 		for(int i = 0; i < datasets.size(); i++) {
 			
 			int maxCount = datasetsMaxCount.get(i);
 			String format = datasets.get(i);
 			currentFormat = format;
+			datasetAnswersPerFold.put(currentFormat, new ArrayList<TreeMap<String, List<Bitvector>>>());
 			
 			//Loading the parameter profile
 			ProfileManager.loadProfileByName(format.toString());
@@ -133,6 +133,9 @@ public class Evaluator {
 			
 			//For each predictor, do the sampling and do the training/testing
 			for(int id = 0 ; id < predictors.size(); id++) {
+
+				datasetAnswersPerFold.get(currentFormat).add(new TreeMap<String, List<Bitvector>>());
+				datasetAnswersPerFold.get(currentFormat).get(id).put(predictors.get(id).getTAG(), new ArrayList<Bitvector>());
 				
 				//Picking the sampling strategy
 				switch(samplingType) {
@@ -208,17 +211,7 @@ public class Evaluator {
 	 * Training and testing is done k times. For each time; a fold is used for testing 
 	 * and the k-1 other folds for training
 	 */
-	public void KFold(int k, int classifierId) {
-
-		TreeMap<String, Bitvector> map;
-		answersPerFold = new ArrayList<TreeMap<String, Bitvector>>();
-		
-		for (int i = 0; i < k; i ++){
-			map = new TreeMap<String, Bitvector>();
-			map.put(predictors.get(classifierId).getTAG(), new Bitvector());
-			answersPerFold.add(map);
-		}
-
+	public void KFold(int k, int classifierId) {		
 
 		//k has to be at least 2
 		if(k < 2) {
@@ -234,6 +227,9 @@ public class Evaluator {
 		//For each fold, it does training and testing
 		for(int i = 0 ; i < k ; i++) {
 			currentFold = i;
+
+			//datasetAnswersPerFold.get(currentFormat).get(classifierId).get(predictors.get(classifierId).getTAG()).add(new Bitvector());
+			datasetAnswersPerFold.get(currentFormat).get(classifierId).get(predictors.get(classifierId).getTAG()).add(new Bitvector());
 
 			//Partitioning database 
 			//
@@ -270,7 +266,6 @@ public class Evaluator {
 			MemoryLogger.addUpdate();
 		}
 		
-		datasetAnswersPerFold.put(currentFormat, answersPerFold);
 	}
 	
 	/**
@@ -374,18 +369,18 @@ public class Evaluator {
 				//if no sequence is returned, it means that they is no match for this sequence
 				if(predicted.size() == 0) {
 					stats.inc("No Match", predictors.get(classifierId).getTAG());
-					answersPerFold.get(currentFold).get(predictors.get(classifierId).getTAG()).setBit(i, false);
+					datasetAnswersPerFold.get(currentFormat).get(classifierId).get(predictors.get(classifierId).getTAG()).get(currentFold).setBit(i, false);
 
 				}
 				//evaluates the prediction
 				else if(isGoodPrediction(consequent, predicted)) {
 					stats.inc("Success", predictors.get(classifierId).getTAG());
-					answersPerFold.get(currentFold).get(predictors.get(classifierId).getTAG()).setBit(i, true);
+					datasetAnswersPerFold.get(currentFormat).get(classifierId).get(predictors.get(classifierId).getTAG()).get(currentFold).setBit(i, true);
 
 				}
 				else {
 					stats.inc("Failure", predictors.get(classifierId).getTAG());
-					answersPerFold.get(currentFold).get(predictors.get(classifierId).getTAG()).setBit(i, false);
+					datasetAnswersPerFold.get(currentFormat).get(classifierId).get(predictors.get(classifierId).getTAG()).get(currentFold).setBit(i, false);
 
 				}
 				
@@ -393,7 +388,7 @@ public class Evaluator {
 			//sequence is too small
 			else {
 				stats.inc("Too Small", predictors.get(classifierId).getTAG());
-				answersPerFold.get(currentFold).get(predictors.get(classifierId).getTAG()).setBit(i, false);
+				datasetAnswersPerFold.get(currentFormat).get(classifierId).get(predictors.get(classifierId).getTAG()).get(currentFold).setBit(i, false);
 
 			}
 		}
@@ -424,16 +419,16 @@ public class Evaluator {
 
 		
 		try {
-		    for (Map.Entry<String, List<TreeMap<String, Bitvector>>>  d_pair : datasetAnswersPerFold.entrySet()){
+		    for (Map.Entry<String, List<TreeMap<String, List<Bitvector>>>>  d_pair : datasetAnswersPerFold.entrySet()){
 		    	for (int i = 0; i < d_pair.getValue().size(); i++){
 		    		TreeMap<String, Bitvector> foldList = d_pair.getValue().get(i);
 		    		String fileName = "outputs/who_what/" + d_pair.getKey() + "." + i + ".csv";
 		    		fileWriter = new FileWriter(fileName);
 			        // Always wrap FileWriter in BufferedWriter.
 			       	bufferedWriter = new BufferedWriter(fileWriter);
-		    		for(Map.Entry<String, Bitvector>  f_pair : foldList.entrySet()){
+		    		for(Map.Entry<String, List<Bitvector>>  f_pair : foldList.entrySet()){
 
-
+		    				//CONTINUE HERE......
 					       	bufferedWriter.write(f_pair.getKey() + "," + f_pair.getValue());
 					       	bufferedWriter.newLine();
 
