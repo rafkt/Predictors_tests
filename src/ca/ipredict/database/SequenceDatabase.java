@@ -22,6 +22,44 @@ public class SequenceDatabase {
 	
 	public SequenceDatabase() {
 	}
+
+	/*
+	*This fucntion takes the list of sequences and maps it to a an alphabet 
+	* from 0 to sigma - 1. 
+	* Sigma symbol should be reservered as a seperation symbol between the sequences.
+	* The purpose of this is to use the exported data in our BWT predictor.
+	* Since the k-folding for our BWT predictor and any other tested predictor, happens here then
+	* the mapping should take place on the entire data before any sampling is done. 
+	*/
+	public void normaliseSequenceData(){
+
+		Map<Integer, Integer> mapSequenceData = new HashMap<Integer, Integer>();
+
+		for (Sequence s : sequences){
+			for (Item i : s.getItems()){
+				mapSequenceData.put(i.val, -1);
+		 	}
+		}
+		int counter = 0;
+		for (Map.Entry<Integer,Integer> entry : mapSequenceData.entrySet()){
+			entry.setValue(counter);
+			counter++;
+			//System.out.println(entry.getKey() + " : " + entry.getValue());
+		}
+
+		List<Sequence> mappedSequences = new ArrayList<Sequence>();
+
+		for (Sequence s : sequences){
+			Sequence new_s = new Sequence(s.getId());
+			for (Item i : s.getItems()){
+				
+				new_s.addItem(new Item(mapSequenceData.get(i.val)));
+			}
+			//System.out.println("Old sequence: " + s + " New: " + new_s);
+			mappedSequences.add(new_s);
+		}
+		sequences = mappedSequences;
+	}
 	
 	//Setter
 	public void setSequences(List<Sequence> newSequences)	{

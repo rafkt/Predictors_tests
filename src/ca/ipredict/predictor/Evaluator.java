@@ -113,6 +113,8 @@ public class Evaluator {
 			
 			//Loading the dataset
 			database.loadDataset(format, maxCount);
+
+			database.getDatabase().normaliseSequenceData();
 			
 			if(showDatasetStats) {
 				System.out.println();
