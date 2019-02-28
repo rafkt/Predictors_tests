@@ -115,6 +115,7 @@ public class Evaluator {
 			database.loadDataset(format, maxCount);
 
 			database.getDatabase().normaliseSequenceData();
+			System.out.println("Seperator character / Sigma size: " + database.getDatabase().sigma);
 			
 			if(showDatasetStats) {
 				System.out.println();
@@ -316,7 +317,7 @@ public class Evaluator {
 		FileWriter fileWriter = null, fileWriter2 = null;
 		BufferedWriter bufferedWriter = null, bufferedWriter2 = null;
 
-		String fileName = "outputs/" + datasetName + ".fold." + fold + ".training.txt";
+		String fileName = "outputs/" + datasetName + ".fold." + fold + ".training.mapped.txt";
 		try{
 	        fileWriter =
 	            new FileWriter(fileName);
@@ -327,6 +328,10 @@ public class Evaluator {
 
 	    }
 		
+
+	    try { bufferedWriter.write(database.getDatabase().sigma + " "); bufferedWriter.newLine();}catch(IOException ex) { System.out.println(
+	                "Error writing to file '"
+	                + fileName + "'");}
 
 		for(Sequence target : trainingSequences) {
 			
@@ -341,7 +346,7 @@ public class Evaluator {
 	        try {
 	            // Note that write() does not automatically
 	            // append a newline character.
-	            bufferedWriter.write(target.toString() + "99999 ");
+	            bufferedWriter.write(target.toString() + database.getDatabase().sigma + " ");
 	            // bufferedWriter.write(" here is some text.");
 	            // bufferedWriter.newLine();
 	            // bufferedWriter.write("We are writing");
@@ -362,10 +367,10 @@ public class Evaluator {
 		try {bufferedWriter.close();} catch (IOException ex){}
 
 
-		fileName = "outputs/" + datasetName + ".fold." + fold + ".consequent.txt";
+		fileName = "outputs/" + datasetName + ".fold." + fold + ".consequent.mapped.txt";
 
 
-        String fileName2 = "outputs/" + datasetName + ".fold." + fold + ".queries.txt";
+        String fileName2 = "outputs/" + datasetName + ".fold." + fold + ".queries.mapped.txt";
 
         try{
 

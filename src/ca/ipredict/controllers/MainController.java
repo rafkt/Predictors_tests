@@ -46,13 +46,13 @@ public class MainController {
 			Evaluator evaluator = new Evaluator(args[0]);
 			
 			//Loading datasets
-			// 	evaluator.addDataset("BMS", 		5000); //export with splitlength ON
-			// evaluator.addDataset("SIGN", 		1000);
-			evaluator.addDataset("MSNBC", 		5000);
-			// evaluator.addDataset("BIBLE_WORD", 	5000);
-			// 	evaluator.addDataset("BIBLE_CHAR", 	5000); //export with splitlength ON
-			// 	evaluator.addDataset("KOSARAK", 	45000); //export with splitlength ON
-			// evaluator.addDataset("FIFA", 		5000);
+			evaluator.addDataset("BMS", 		5000); //export with splitlength ON
+					// evaluator.addDataset("SIGN", 		1000); //NO SPLITLENGTH EXPORT
+					// evaluator.addDataset("MSNBC", 		5000); //NO SPLITLENGTH EXPORT
+					// evaluator.addDataset("BIBLE_WORD", 	5000); //NO SPLITLENGTH EXPORT
+			evaluator.addDataset("BIBLE_CHAR", 	5000); //export with splitlength ON
+			evaluator.addDataset("KOSARAK", 	45000); //export with splitlength ON
+					// evaluator.addDataset("FIFA", 		5000); //NO SPLITLENGTH EXPORT
 
 			// evaluator.addDataset("SPICE0", 		5000);
 			// evaluator.addDataset("SPICE1", 		5000);
