@@ -121,8 +121,9 @@ public class answerValidator {
 	        	// if (answers.get(i).compareTo(consequents.get(i)) == 0 && answersBWT.get(i).compareTo(answers.get(i)) != 0) System.out.println("Index: " + i);
 	        }
 
-	        System.out.println(args[0] + " fold " + args[1] + " subSeq Accuracy: " + ((float)counter / answersBWT.size()));
-
+//	        System.out.println(args[0] + " fold " + args[1] + " subSeq Accuracy: " + ((float)counter / answersBWT.size()));
+		System.out.println(((float)counter / answersBWT.size()));
 	}
+	//System.out.println("=AVERAGE(A1:A14)*1000");
 
 }
