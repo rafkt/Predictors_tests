@@ -1,0 +1,1 @@
+/cxml-data/crk15/Quest Datasets _stored_only_here/QUEST batch - million to billion sequences/spmf/data.slen_20.ncust_4000.tlen_1.nitems_1.txt

@@ -111,15 +111,15 @@ public class CPTPlusPredictor extends Predictor {
 		//CCF Strategy
 		//Identifying the frequent sequential itemsets
 		//setting up the encoder for future encoding tasks
-		// FIF finder = new FIFRaw();
-		// if(parameters.paramBoolOrDefault("CCF", CCF)) {
-		// 	List<List<Item>> itemsets = finder.findFrequentItemsets(trainingSequences, parameters.paramInt("CCFmin"), parameters.paramInt("CCFmax"), parameters.paramInt("CCFsup"));
+		FIF finder = new FIFRaw();
+		if(parameters.paramBoolOrDefault("CCF", CCF)) {
+			List<List<Item>> itemsets = finder.findFrequentItemsets(trainingSequences, parameters.paramInt("CCFmin"), parameters.paramInt("CCFmax"), parameters.paramInt("CCFsup"));
 			
-		// 	//filling the encoder with the frequent itemsets
-		// 	for(List<Item> itemset : itemsets) {
-		// 		encoder.addEntry(itemset);
-		// 	}
-		// }
+			//filling the encoder with the frequent itemsets
+			for(List<Item> itemset : itemsets) {
+				encoder.addEntry(itemset);
+			}
+		}
 		
 
 		//for each training sequence
@@ -176,7 +176,7 @@ public class CPTPlusPredictor extends Predictor {
 
 		//Patch collapsing for added compression
 		if(parameters.paramBoolOrDefault("CBS", CBS)) {
-			//pathCollapse();
+			pathCollapse();
 		}
 		
 		return true;

@@ -1,0 +1,28 @@
+javac -cp src src/ca/ipredict/controllers/MainController.java
+java -Xms4g -Xmx12g -cp src ca.ipredict.controllers.MainController ./datasets
+
+---QUEST10M---
+Number of sequences : 	1000000
+Number of distinct items: 	917
+Largest item id: 	999
+Itemsets per sequence: 	12.29156
+Distinct item per sequence: 	12.125086
+Occurences for each item: 	1.013729717051079
+Size of the dataset in MB: 	4000049.16624
+
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A
+
+No active splitLength during export of training data
+Memory history: 2024 1868 1381 
+Max memory used: 2024mb
+Execution time: 107330 seconds
+		CPT	
+Success   	28.571
+Failure   	71.429
+No Match  	2
+Too Small	00.000
+Overall   	28
+Size (MB)	247.723
+Train Tim	12.618
+Test Time	107316.709
+
