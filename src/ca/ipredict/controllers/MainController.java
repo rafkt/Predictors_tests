@@ -53,7 +53,16 @@ public class MainController {
 			// 	evaluator.addDataset("BIBLE_CHAR", 	5000); //export with splitlength ON
 			// 	evaluator.addDataset("KOSARAK", 	45000); //export with splitlength ON
 			// evaluator.addDataset("FIFA", 		5000);
-			evaluator.addDataset("QUEST10M", 1000000);
+			
+			evaluator.addDataset("QUEST10M", 50000);
+			evaluator.addDataset("QUEST10M", 100000);
+			evaluator.addDataset("QUEST10M", 200000);
+			evaluator.addDataset("QUEST10M", 400000);
+			evaluator.addDataset("QUEST10M", 800000);
+
+			// evaluator.addDataset("BMS", 1000);
+			// evaluator.addDataset("BMS", 2000);
+			// evaluator.addDataset("BMS", 3000);
 
 			// evaluator.addDataset("SPICE0", 		5000);
 			// evaluator.addDataset("SPICE1", 		5000);
@@ -75,14 +84,14 @@ public class MainController {
 			//Loading predictors
 			// evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
 			// evaluator.addPredictor(new TDAGPredictor());
-			//evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
-			 evaluator.addPredictor(new CPTPredictor());
+			evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
+			 //evaluator.addPredictor(new CPTPredictor());
 			// evaluator.addPredictor(new MarkovFirstOrderPredictor());
 			// evaluator.addPredictor(new MarkovAllKPredictor());
 			// evaluator.addPredictor(new LZ78Predictor());
 			
 			//Start the experiment
-			StatsLogger results = evaluator.Start(Evaluator.HOLDOUT, -1, true, true, true);
+			StatsLogger results = evaluator.Start(Evaluator.HOLDOUT, 100, true, true, true);
 	}
 
 }

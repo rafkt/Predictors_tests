@@ -22,7 +22,7 @@ import ca.ipredict.predictor.profile.ProfileManager;
  */
 public class Evaluator {
 
-	private static final boolean ALLOW_SPLIT_LENGTH_TRAINING_DATA_EXPORT = true;
+	private static final boolean ALLOW_SPLIT_LENGTH_TRAINING_DATA_EXPORT = false;
 	private static boolean print = true;
 
 	private List<Predictor> predictors; //list of predictors
@@ -317,7 +317,7 @@ public class Evaluator {
 		FileWriter fileWriter = null, fileWriter2 = null;
 		BufferedWriter bufferedWriter = null, bufferedWriter2 = null;
 
-		String fileName = "outputs/" + datasetName + ".fold." + fold + ".training.txt";
+		String fileName = "outputs/" + datasetName + ".seq." + trainingSequences.size() + ".training.txt";
 		try{
 	        fileWriter =
 	            new FileWriter(fileName);
@@ -363,10 +363,10 @@ public class Evaluator {
 		try {bufferedWriter.close();} catch (IOException ex){}
 
 
-		fileName = "outputs/" + datasetName + ".fold." + fold + ".consequent.txt";
+		fileName = "outputs/" + datasetName + ".seq." + trainingSequences.size() + ".consequent.txt";
 
 
-        String fileName2 = "outputs/" + datasetName + ".fold." + fold + ".queries.txt";
+        String fileName2 = "outputs/" + datasetName + ".seq." + trainingSequences.size() + ".queries.txt";
 
         try{
 
@@ -588,9 +588,10 @@ public class Evaluator {
 
 	private List<Sequence> splitList(List<Sequence> toSplit, double absoluteRatio){
 		int relativeRatio;
-		if (absoluteRatio > 0) relativeRatio = (int) (toSplit.size() * absoluteRatio); //absolute ratio: [0.0-1.0]
-		else relativeRatio = absoluteRatio - 100; //This is used mainly for QUEST10M, trainin on 9999900 and test on 100 sequences
-		List<Sequence> sub=toSplit.subList(relativeRatio , toSplit.size());
+		//if (absoluteRatio > 0) relativeRatio = (int) (toSplit.size() * absoluteRatio); //absolute ratio: [0.0-1.0]
+		//else 
+		relativeRatio = toSplit.size() - (int)absoluteRatio; //This is used mainly for QUEST10M, trainin on 9999900 and test on 100 sequences
+		List<Sequence> sub=toSplit.subList(relativeRatio , toSplit.size());//testing sequences list
 		List<Sequence> two= new ArrayList<Sequence>(sub);
 		sub.clear();
 		
