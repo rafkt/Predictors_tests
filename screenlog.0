@@ -1,0 +1,118 @@
+javac -cp src src/ca/ipredict/controllers/MainController.java
+java -Xms4g -Xmx14g -cp src ca.ipredict.controllers.MainController ./datasets
+
+---QUEST10M---
+Number of sequences : 	50000
+Number of distinct items: 	910
+Largest item id: 	909
+Itemsets per sequence: 	12.28078
+Distinct item per sequence: 	12.10992
+Occurences for each item: 	1.0141090940320001
+Size of the dataset in MB: 	200002.456156
+
+No active splitLength during export of training data
+Memory history: 969 
+Max memory used: 969mb
+Execution time: 44 seconds
+		CPT+	
+Success   	24.49
+Failure   	75.51
+No Match  	2
+Too Small	00.000
+Overall   	24
+Size (MB)	6.757
+Train Tim	40.939
+Test Time	3.66
+
+
+---QUEST10M---
+Number of sequences : 	100000
+Number of distinct items: 	910
+Largest item id: 	909
+Itemsets per sequence: 	12.28829
+Distinct item per sequence: 	12.12023
+Occurences for each item: 	1.0138660734986051
+Size of the dataset in MB: 	400004.915316
+
+Memory history: 969 1894 
+Max memory used: 1894mb
+Execution time: 259 seconds
+		CPT+	
+Success   	47
+Failure   	53
+No Match  	00.000
+Too Small	00.000
+Overall   	47
+Size (MB)	13.551
+Train Tim	256.402
+Test Time	3.083
+
+
+---QUEST10M---
+Number of sequences : 	200000
+Number of distinct items: 	911
+Largest item id: 	910
+Itemsets per sequence: 	12.28636
+Distinct item per sequence: 	12.118975
+Occurences for each item: 	1.0138118116424863
+Size of the dataset in MB: 	800009.829088
+
+Memory history: 969 1894 -663 
+Max memory used: 1894mb
+Execution time: 1255 seconds
+		CPT+	
+Success   	33.673
+Failure   	66.327
+No Match  	2
+Too Small	00.000
+Overall   	33
+Size (MB)	27.188
+Train Tim	1236.748
+Test Time	18.081
+
+
+---QUEST10M---
+Number of sequences : 	400000
+Number of distinct items: 	915
+Largest item id: 	914
+Itemsets per sequence: 	12.2875125
+Distinct item per sequence: 	12.1209125
+Occurences for each item: 	1.0137448397552578
+Size of the dataset in MB: 	1600019.66002
+
+Memory history: 969 1894 -663 -1325 
+Max memory used: 1894mb
+Execution time: 4787 seconds
+		CPT+	
+Success   	37
+Failure   	63
+No Match  	00.000
+Too Small	00.000
+Overall   	37
+Size (MB)	54.642
+Train Tim	4758.659
+Test Time	28.789
+
+
+---QUEST10M---
+Number of sequences : 	800000
+Number of distinct items: 	917
+Largest item id: 	916
+Itemsets per sequence: 	12.2927
+Distinct item per sequence: 	12.1260525
+Occurences for each item: 	1.0137429307682777
+Size of the dataset in MB: 	3200039.33664
+
+Memory history: 969 1894 -663 -1325 -52 
+Max memory used: 1894mb
+Execution time: 17001 seconds
+		CPT+	
+Success   	41
+Failure   	59
+No Match  	00.000
+Too Small	00.000
+Overall   	41
+Size (MB)	109.448
+Train Tim	16934.801
+Test Time	66.405
+
