@@ -8,7 +8,7 @@ import ca.ipredict.predictor.profile.BIBLE_CHARProfile;
 import ca.ipredict.predictor.profile.KOSARAKProfile;
 import ca.ipredict.predictor.profile.FIFAProfile;
 import ca.ipredict.predictor.profile.SPICEProfile;
-import ca.ipredict.predictor.profile.QUEST10MProfile;
+import ca.ipredict.predictor.profile.QUESTProfile;
 
 /**
  * Apply a parameter profile by name
@@ -19,6 +19,7 @@ public class ProfileManager {
 		try {
 			Class<?> classI;
 			if (name.contains("SPICE") ) classI = Class.forName("ca.ipredict.predictor.profile."+ "SPICE" + "Profile");
+			else if  (name.contains("QUEST") ) classI = Class.forName("ca.ipredict.predictor.profile."+ "QUEST" + "Profile");
 			else classI = Class.forName("ca.ipredict.predictor.profile."+ name + "Profile");
 			profile = (Profile) classI.newInstance();
 		} catch (Exception e) {
