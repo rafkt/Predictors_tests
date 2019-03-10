@@ -317,7 +317,7 @@ public class Evaluator {
 		FileWriter fileWriter = null, fileWriter2 = null;
 		BufferedWriter bufferedWriter = null, bufferedWriter2 = null;
 
-		String fileName = "outputs/" + datasetName + ".seq." + trainingSequences.size() + ".training.txt";
+		String fileName = "outputs/" + datasetName + ".sigma.seq" + trainingSequences.size() + ".training.txt";
 		try{
 	        fileWriter =
 	            new FileWriter(fileName);
