@@ -54,12 +54,10 @@ public class MainController {
 			// 	evaluator.addDataset("KOSARAK", 	45000); //export with splitlength ON
 			// evaluator.addDataset("FIFA", 		5000);
 			
-			evaluator.addDataset("QUEST_05", 		600);
-			evaluator.addDataset("QUEST_1", 		600);
-			evaluator.addDataset("QUEST_15", 		600);
-			evaluator.addDataset("QUEST_2", 		600);
-			evaluator.addDataset("QUEST_25", 		600);
-			evaluator.addDataset("QUEST_3", 		600);
+			evaluator.addDataset("QUEST_5_1200", 		2000);//since length is changing we use the whole dataset; 2000 is bigger than any of the datasets used now
+			evaluator.addDataset("QUEST_10_600", 		2000);
+			evaluator.addDataset("QUEST_20_300", 		2000);
+			evaluator.addDataset("QUEST_40_150", 		2000);
 			
 
 			// evaluator.addDataset("BMS", 1000);
