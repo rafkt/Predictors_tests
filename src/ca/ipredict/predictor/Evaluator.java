@@ -115,6 +115,7 @@ public class Evaluator {
 			database.loadDataset(format, maxCount);
 
 			database.getDatabase().normaliseSequenceData();
+			System.out.println("Seperator character / Sigma size: " + database.getDatabase().sigma);
 			
 			if(showDatasetStats) {
 				System.out.println();
@@ -342,7 +343,7 @@ public class Evaluator {
 	        try {
 	            // Note that write() does not automatically
 	            // append a newline character.
-	            bufferedWriter.write(target.toString() + "99999 ");
+	            bufferedWriter.write(target.toString() + database.getDatabase().sigma + " ");
 	            // bufferedWriter.write(" here is some text.");
 	            // bufferedWriter.newLine();
 	            // bufferedWriter.write("We are writing");
