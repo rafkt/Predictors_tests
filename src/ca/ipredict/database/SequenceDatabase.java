@@ -17,6 +17,8 @@ import ca.ipredict.predictor.profile.Profile;
 
 public class SequenceDatabase {
 
+	public int sigma;
+
 	private List<Sequence> sequences = new ArrayList<Sequence>();
 	
 	
@@ -46,6 +48,8 @@ public class SequenceDatabase {
 			counter++;
 			//System.out.println(entry.getKey() + " : " + entry.getValue());
 		}
+
+		sigma = counter;
 
 		List<Sequence> mappedSequences = new ArrayList<Sequence>();
 

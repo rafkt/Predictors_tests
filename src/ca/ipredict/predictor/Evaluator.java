@@ -330,6 +330,10 @@ public class Evaluator {
 	    }
 		
 
+	    try { bufferedWriter.write(database.getDatabase().sigma + " "); bufferedWriter.newLine();}catch(IOException ex) { System.out.println(
+	                "Error writing to file '"
+	                + fileName + "'");}
+
 		for(Sequence target : trainingSequences) {
 			
 			if(Profile.paramInt("splitMethod") > 0 && ALLOW_SPLIT_LENGTH_TRAINING_DATA_EXPORT) {

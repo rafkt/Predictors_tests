@@ -1,5 +1,6 @@
 javac -cp src src/ca/ipredict/controllers/MainController.java
 java -Xms4g -Xmx14g -cp src ca.ipredict.controllers.MainController ./datasets
+Seperator character / Sigma size: 775
 
 ---QUEST_5_1200---
 Number of sequences : 	2000
@@ -15,15 +16,16 @@ Memory history: 81
 Max memory used: 81mb
 Execution time: 0 seconds
 		CPT+	
-Success   	17.857
-Failure   	82.143
-No Match  	28
-Too Small	16
-Overall   	10
-Size (MB)	0.224
-Train Tim	0.182
-Test Time	0.053
+Success   	18.462
+Failure   	81.538
+No Match  	25
+Too Small	10
+Overall   	12
+Size (MB)	0.223
+Train Tim	0.165
+Test Time	0.05
 
+Seperator character / Sigma size: 827
 
 ---QUEST_10_600---
 Number of sequences : 	2000
@@ -38,15 +40,16 @@ Memory history: 81 102
 Max memory used: 102mb
 Execution time: 0 seconds
 		CPT+	
-Success   	16.667
-Failure   	83.333
-No Match  	16
+Success   	13.415
+Failure   	86.585
+No Match  	18
 Too Small	00.000
-Overall   	14
+Overall   	11
 Size (MB)	0.241
-Train Tim	0.082
-Test Time	0.052
+Train Tim	0.071
+Test Time	0.046
 
+Seperator character / Sigma size: 869
 
 ---QUEST_20_300---
 Number of sequences : 	2000
@@ -61,15 +64,16 @@ Memory history: 81 102 184
 Max memory used: 184mb
 Execution time: 0 seconds
 		CPT+	
-Success   	6.122
-Failure   	93.878
+Success   	2.041
+Failure   	97.959
 No Match  	2
 Too Small	00.000
-Overall   	6
+Overall   	2
 Size (MB)	0.252
-Train Tim	0.102
-Test Time	0.088
+Train Tim	0.105
+Test Time	0.096
 
+Seperator character / Sigma size: 887
 
 ---QUEST_40_150---
 Number of sequences : 	2000
@@ -80,16 +84,16 @@ Distinct item per sequence: 	24.425
 Occurences for each item: 	1.0267963152507678
 Size of the dataset in MB: 	8000.200636
 
-Memory history: 81 102 184 327 
-Max memory used: 327mb
+Memory history: 81 102 184 307 
+Max memory used: 307mb
 Execution time: 0 seconds
 		CPT+	
-Success   	00.000
-Failure   	100
+Success   	2
+Failure   	98
 No Match  	00.000
 Too Small	00.000
-Overall   	00.000
+Overall   	2
 Size (MB)	0.256
-Train Tim	0.241
-Test Time	0.116
+Train Tim	0.222
+Test Time	0.098
 
