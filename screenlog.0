@@ -1,147 +1,111 @@
 javac -cp src src/ca/ipredict/controllers/MainController.java
 java -Xms4g -Xmx14g -cp src ca.ipredict.controllers.MainController ./datasets
-Seperator character / Sigma size: 413
+Seperator character / Sigma size: 910
 
----QUEST_05---
-Number of sequences : 	600
-Number of distinct items: 	413
-Largest item id: 	412
-Itemsets per sequence: 	6.236666666666666
-Distinct item per sequence: 	6.175
-Occurences for each item: 	1.0099865047233467
-Size of the dataset in MB: 	2400.014968
+---QUEST---
+Number of sequences : 	50000
+Number of distinct items: 	910
+Largest item id: 	909
+Itemsets per sequence: 	12.28078
+Distinct item per sequence: 	12.10992
+Occurences for each item: 	1.0141090940320001
+Size of the dataset in MB: 	200002.456156
 
 No active splitLength during export of training data
-Memory history: 61 
-Max memory used: 61mb
-Execution time: 0 seconds
+Memory history: 434 
+Max memory used: 434mb
+Execution time: 47 seconds
 		CPT+	
-Success   	10
-Failure   	90
-No Match  	26
-Too Small	4
-Overall   	7
-Size (MB)	0.038
-Train Tim	0.152
-Test Time	0.104
+Success   	31.313
+Failure   	68.687
+No Match  	00.000
+Too Small	1
+Overall   	31
+Size (MB)	6.757
+Train Tim	41.592
+Test Time	5.44
 
-Seperator character / Sigma size: 701
+Seperator character / Sigma size: 910
 
----QUEST_1---
-Number of sequences : 	600
-Number of distinct items: 	701
-Largest item id: 	700
-Itemsets per sequence: 	6.215
-Distinct item per sequence: 	6.185
-Occurences for each item: 	1.0048504446240905
-Size of the dataset in MB: 	2400.014916
+---QUEST---
+Number of sequences : 	100000
+Number of distinct items: 	910
+Largest item id: 	909
+Itemsets per sequence: 	12.28829
+Distinct item per sequence: 	12.12023
+Occurences for each item: 	1.0138660734986051
+Size of the dataset in MB: 	400004.915316
 
-Memory history: 61 81 
-Max memory used: 81mb
-Execution time: 0 seconds
+Memory history: 434 1446 
+Max memory used: 1446mb
+Execution time: 270 seconds
 		CPT+	
-Success   	16.129
-Failure   	83.871
-No Match  	33
-Too Small	5
-Overall   	10
-Size (MB)	0.056
-Train Tim	0.022
-Test Time	0.041
+Success   	35.354
+Failure   	64.646
+No Match  	1
+Too Small	00.000
+Overall   	35
+Size (MB)	13.551
+Train Tim	265.182
+Test Time	5.472
 
-Seperator character / Sigma size: 916
+Seperator character / Sigma size: 911
 
----QUEST_15---
-Number of sequences : 	600
-Number of distinct items: 	916
-Largest item id: 	915
-Itemsets per sequence: 	6.215
-Distinct item per sequence: 	6.19
-Occurences for each item: 	1.004038772213247
-Size of the dataset in MB: 	2400.014916
+---QUEST---
+Number of sequences : 	200000
+Number of distinct items: 	911
+Largest item id: 	910
+Itemsets per sequence: 	12.28636
+Distinct item per sequence: 	12.118975
+Occurences for each item: 	1.0138118116424863
+Size of the dataset in MB: 	800009.829088
 
-Memory history: 61 81 102 
-Max memory used: 102mb
-Execution time: 0 seconds
+Memory history: 434 1446 -747 
+Max memory used: 1446mb
+Execution time: 1372 seconds
 		CPT+	
-Success   	12.5
-Failure   	87.5
-No Match  	49
-Too Small	3
-Overall   	6
-Size (MB)	0.069
-Train Tim	0.018
-Test Time	0.026
+Success   	39.796
+Failure   	60.204
+No Match  	1
+Too Small	1
+Overall   	39
+Size (MB)	27.188
+Train Tim	1355.398
+Test Time	16.512
 
-Seperator character / Sigma size: 1126
+Seperator character / Sigma size: 915
 
----QUEST_2---
-Number of sequences : 	600
-Number of distinct items: 	1126
-Largest item id: 	1125
-Itemsets per sequence: 	6.215
-Distinct item per sequence: 	6.205
-Occurences for each item: 	1.0016116035455278
-Size of the dataset in MB: 	2400.014916
+---QUEST---
+Number of sequences : 	400000
+Number of distinct items: 	915
+Largest item id: 	914
+Itemsets per sequence: 	12.2875125
+Distinct item per sequence: 	12.1209125
+Occurences for each item: 	1.0137448397552578
+Size of the dataset in MB: 	1600019.66002
 
-Memory history: 61 81 102 122 
-Max memory used: 122mb
-Execution time: 0 seconds
+^X  Memory history: 434 1446 -747 1074 
+Max memory used: 1446mb
+Execution time: 5043 seconds
 		CPT+	
-Success   	16.327
-Failure   	83.673
-No Match  	46
-Too Small	5
-Overall   	8
-Size (MB)	0.08
-Train Tim	0.017
-Test Time	0.015
+Success   	36
+Failure   	64
+No Match  	00.000
+Too Small	00.000
+Overall   	36
+Size (MB)	54.642
+Train Tim	5013.127
+Test Time	30.238
 
-Seperator character / Sigma size: 1256
+Seperator character / Sigma size: 917
 
----QUEST_25---
-Number of sequences : 	600
-Number of distinct items: 	1256
-Largest item id: 	1255
-Itemsets per sequence: 	6.236666666666666
-Distinct item per sequence: 	6.22
-Occurences for each item: 	1.002679528403001
-Size of the dataset in MB: 	2400.014968
+---QUEST---
+Number of sequences : 	800000
+Number of distinct items: 	917
+Largest item id: 	916
+Itemsets per sequence: 	12.2927
+Distinct item per sequence: 	12.1260525
+Occurences for each item: 	1.0137429307682777
+Size of the dataset in MB: 	3200039.33664
 
-Memory history: 61 81 102 122 143 
-Max memory used: 143mb
-Execution time: 0 seconds
-		CPT+	
-Success   	14.286
-Failure   	85.714
-No Match  	49
-Too Small	9
-Overall   	6
-Size (MB)	0.088
-Train Tim	0.018
-Test Time	0.013
-
-Seperator character / Sigma size: 1336
-
----QUEST_3---
-Number of sequences : 	600
-Number of distinct items: 	1336
-Largest item id: 	1335
-Itemsets per sequence: 	6.236666666666666
-Distinct item per sequence: 	6.225
-Occurences for each item: 	1.0018741633199464
-Size of the dataset in MB: 	2400.014968
-
-Memory history: 61 81 102 122 143 143 
-Max memory used: 143mb
-Execution time: 0 seconds
-		CPT+	
-Success   	20
-Failure   	80
-No Match  	60
-Too Small	5
-Overall   	7
-Size (MB)	0.094
-Train Tim	0.015
-Test Time	0.012
-
+^X  q 

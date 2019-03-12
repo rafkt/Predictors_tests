@@ -33,12 +33,7 @@ public class DatabaseHelper {
 								SPICE13, 
 								SPICE14, 
 								SPICE15, 
-								QUEST_05, 
-								QUEST_1, 
-								QUEST_15, 
-								QUEST_2,
-								QUEST_25,
-								QUEST_3}; 
+								QUEST}; 
 	
 	//Database
 	private SequenceDatabase database;
@@ -188,23 +183,8 @@ public class DatabaseHelper {
 			case SPICE15:
 				database.loadFileSPiCeFormat(fileToPath("SPICE/15.spice.train"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
 				break;
-			case QUEST_05:
-				database.loadFileSPMFQUESTFormat(fileToPath("Queset_var_length_sigma/var_sigma/data.slen_10.ncust_600.tlen_1.nitems_0.5.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
-				break;
-			case QUEST_1:
-				database.loadFileSPMFQUESTFormat(fileToPath("Queset_var_length_sigma/var_sigma/data.slen_10.ncust_600.tlen_1.nitems_1.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
-				break;
-			case QUEST_15:
-				database.loadFileSPMFQUESTFormat(fileToPath("Queset_var_length_sigma/var_sigma/data.slen_10.ncust_600.tlen_1.nitems_1.5.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
-				break;
-			case QUEST_2:
-				database.loadFileSPMFQUESTFormat(fileToPath("Queset_var_length_sigma/var_sigma/data.slen_10.ncust_600.tlen_1.nitems_2.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
-				break;
-			case QUEST_25:
-				database.loadFileSPMFQUESTFormat(fileToPath("Queset_var_length_sigma/var_sigma/data.slen_10.ncust_600.tlen_1.nitems_2.5.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
-				break;
-			case QUEST_3:
-				database.loadFileSPMFQUESTFormat(fileToPath("Queset_var_length_sigma/var_sigma/data.slen_10.ncust_600.tlen_1.nitems_3.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
+			case QUEST:
+				database.loadFileSPMFQUESTFormat(fileToPath("QUEST/data.slen_20.ncust_10000.tlen_1.nitems_1.txt"), maxCount, Profile.paramInt("sequenceMinSize"), Profile.paramInt("sequenceMaxSize"));
 				break;
 			default:
 				System.out.println("Could not load dataset, unknown format.");
