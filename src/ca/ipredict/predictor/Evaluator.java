@@ -291,7 +291,7 @@ public class Evaluator {
 			PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier	
 			StartClassifier(testSequences, classifierId); //classification of the test sequence
 
-			writeFoldsAndAnswers(trainingSequences, testSequences, i, datasetName);
+			//writeFoldsAndAnswers(trainingSequences, testSequences, i, datasetName);
 			
 			//Logging memory usage
 			MemoryLogger.addUpdate();
@@ -577,6 +577,7 @@ public class Evaluator {
 		//System.out.println(predictors.get(classifierId).getTAG() + " memory (MB): " + predictors.get(classifierId).memoryUsage() / (1000 * 1000));
 		//System.out.println(predictors.get(classifierId).getTAG() + " test time (ms): " + (double)(end - start));
 		double duration = (double)(end - start) / 1000;
+		System.out.println(predictors.get(classifierId).getTAG() + ":" + duration);
 		stats.set("Test Time", predictors.get(classifierId).getTAG(), duration);
 
 
