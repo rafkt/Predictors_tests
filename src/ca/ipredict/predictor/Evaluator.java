@@ -318,7 +318,7 @@ public class Evaluator {
 		FileWriter fileWriter = null, fileWriter2 = null;
 		BufferedWriter bufferedWriter = null, bufferedWriter2 = null;
 
-		String fileName = "outputs/" + datasetName + ".seq." + trainingSequences.size() + ".training.txt";
+		String fileName = "outputs/" + datasetName + ".query." + Profile.paramInt("windowSize") + ".training.txt";
 		try{
 	        fileWriter =
 	            new FileWriter(fileName);
@@ -368,10 +368,10 @@ public class Evaluator {
 		try {bufferedWriter.close();} catch (IOException ex){}
 
 
-		fileName = "outputs/" + datasetName + ".seq." + trainingSequences.size() + ".consequent.txt";
+		fileName = "outputs/" + datasetName + ".query." + Profile.paramInt("windowSize") + ".consequent.txt";
 
 
-        String fileName2 = "outputs/" + datasetName + ".seq." + trainingSequences.size() + ".queries.txt";
+        String fileName2 = "outputs/" + datasetName + ".query." + Profile.paramInt("windowSize") + ".queries.txt";
 
         try{
 

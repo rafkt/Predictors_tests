@@ -1,0 +1,81 @@
+javac -cp src src/ca/ipredict/controllers/MainController.java
+java -Xms4g -Xmx14g -cp src ca.ipredict.controllers.MainController ./datasets
+Seperator character / Sigma size: 898
+
+---QUEST---
+Number of sequences : 	10000
+Number of distinct items: 	898
+Largest item id: 	897
+Itemsets per sequence: 	12.2594
+Distinct item per sequence: 	12.0895
+Occurences for each item: 	1.0140535175151992
+Size of the dataset in MB: 	40000.490376
+
+No active splitLength during export of training data
+Memory history: 533 
+Max memory used: 533mb
+Execution time: 2 seconds
+		CPT+	
+Success   	14.141
+Failure   	85.859
+No Match  	1
+Too Small	00.000
+Overall   	14
+Size (MB)	1.328
+Train Tim	1.814
+Test Time	0.332
+
+javac -cp src src/ca/ipredict/controllers/MainController.java
+java -Xms4g -Xmx14g -cp src ca.ipredict.controllers.MainController ./datasets
+Seperator character / Sigma size: 898
+
+---QUEST---
+Number of sequences : 	10000
+Number of distinct items: 	898
+Largest item id: 	897
+Itemsets per sequence: 	12.2594
+Distinct item per sequence: 	12.0895
+Occurences for each item: 	1.0140535175151992
+Size of the dataset in MB: 	40000.490376
+
+No active splitLength during export of training data
+Memory history: 512 
+Max memory used: 512mb
+Execution time: 2 seconds
+		CPT+	
+Success   	15
+Failure   	85
+No Match  	00.000
+Too Small	00.000
+Overall   	15
+Size (MB)	1.328
+Train Tim	1.806
+Test Time	0.156
+
+javac -cp src src/ca/ipredict/controllers/MainController.java
+java -Xms4g -Xmx14g -cp src ca.ipredict.controllers.MainController ./datasets
+Seperator character / Sigma size: 898
+
+---QUEST---
+Number of sequences : 	10000
+Number of distinct items: 	898
+Largest item id: 	897
+Itemsets per sequence: 	12.2594
+Distinct item per sequence: 	12.0895
+Occurences for each item: 	1.0140535175151992
+Size of the dataset in MB: 	40000.490376
+
+No active splitLength during export of training data
+Memory history: 754 
+Max memory used: 754mb
+Execution time: 3 seconds
+		CPT+	
+Success   	17.172
+Failure   	82.828
+No Match  	1
+Too Small	00.000
+Overall   	17
+Size (MB)	1.328
+Train Tim	1.892
+Test Time	1.258
+

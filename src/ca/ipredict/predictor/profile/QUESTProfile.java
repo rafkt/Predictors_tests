@@ -9,9 +9,9 @@ public class QUESTProfile extends Profile {
 		//Pre-processing
 		parameters.put("sequenceMaxSize", "999");
 		parameters.put("removeDuplicatesMethod", "1");
-		parameters.put("consequentSize", "3");
-                parameters.put("windowSize", "14");
-                parameters.put("sequenceMinSize", "17");
+		parameters.put("consequentSize", "2");
+                parameters.put("windowSize", "12");
+                parameters.put("sequenceMinSize", "12");
 
 		parameters.put("predictionsNumber", "1");//raf
 		parameters.put("stepsToFlushCache", "50");//raf
