@@ -49,7 +49,7 @@ public class Evaluator {
 	public List<Integer> datasetsMaxCount;  
 
 	private String currentFormat;
-
+				//  dataset Predictors   Predictor Fold bitstring
 	private TreeMap<String, List<TreeMap<String, List<Bitvector>>>> datasetAnswersPerFold;
 	private int currentFold;
 	
@@ -355,6 +355,7 @@ public class Evaluator {
 		long start = System.currentTimeMillis(); //Testing starting time
 		
 		//for each sequence; it classifies it and evaluates it
+		// System.out.println("Testing sequences size: " + testSequences.size());
 		for(int i = 0; i < testSequences.size(); i++) {
 			
 			Sequence target = testSequences.get(i);
@@ -421,16 +422,21 @@ public class Evaluator {
 		try {
 		    for (Map.Entry<String, List<TreeMap<String, List<Bitvector>>>>  d_pair : datasetAnswersPerFold.entrySet()){
 		    	for (int i = 0; i < d_pair.getValue().size(); i++){
-		    		TreeMap<String, Bitvector> foldList = d_pair.getValue().get(i);
-		    		String fileName = "outputs/who_what/" + d_pair.getKey() + "." + i + ".csv";
-		    		fileWriter = new FileWriter(fileName);
-			        // Always wrap FileWriter in BufferedWriter.
-			       	bufferedWriter = new BufferedWriter(fileWriter);
+		    		TreeMap<String, List<Bitvector>> foldList = d_pair.getValue().get(i);
 		    		for(Map.Entry<String, List<Bitvector>>  f_pair : foldList.entrySet()){
 
+		    			for(int j = 0; j < f_pair.getValue().size(); j++){
+
+		    				String fileName = "outputs/who_what/" + d_pair.getKey() + "." + j + ".csv";
+				    		fileWriter = new FileWriter(fileName, true);
+					        // Always wrap FileWriter in BufferedWriter.
+					       	bufferedWriter = new BufferedWriter(fileWriter);
+
 		    				//CONTINUE HERE......
-					       	bufferedWriter.write(f_pair.getKey() + "," + f_pair.getValue());
+					       	bufferedWriter.write(f_pair.getKey() + "," + f_pair.getValue().get(j));
 					       	bufferedWriter.newLine();
+					       	bufferedWriter.close();
+		    			}
 
 				            // bufferedWriter.write(pair.getKey());
 				            // for (Double val : pair.getValue()){
@@ -439,7 +445,6 @@ public class Evaluator {
 				            // bufferedWriter.newLine();
 				            // bufferedWriter.write("We are writing");
 					}
-					bufferedWriter.close();
 		    	}
 		    }
 	    }catch(IOException ex) {
