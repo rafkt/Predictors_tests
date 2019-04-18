@@ -432,7 +432,7 @@ public class Evaluator {
 
 		    			for(int j = 0; j < f_pair.getValue().size(); j++){
 
-		    				String fileName = "outputs/who_what/" + d_pair.getKey() + "." + j + ".csv";
+		    				String fileName = "outputs/who_what/" + d_pair.getKey() + "." + j + "sBP.csv";
 				    		fileWriter = new FileWriter(fileName, true);
 					        // Always wrap FileWriter in BufferedWriter.
 					       	bufferedWriter = new BufferedWriter(fileWriter);
