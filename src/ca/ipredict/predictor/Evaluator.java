@@ -53,10 +53,7 @@ public class Evaluator {
 	public List<String> datasets;  
 	public List<Integer> datasetsMaxCount;  
 
-	private String currentFormat;
 				//  dataset Predictors   Predictor Fold bitstring
-	private TreeMap<String, List<TreeMap<String, List<Bitvector>>>> datasetAnswersPerFold;
-	private int currentFold;
 	
 	
 	public Evaluator(String pathToDatasets) {
@@ -109,16 +106,11 @@ public class Evaluator {
 		for(Predictor predictor : predictors) {
 			predictorNames.add(predictor.getTAG());
 		}
-
-		datasetAnswersPerFold = new TreeMap<String, List<TreeMap<String, List<Bitvector>>>>();
 		
 		for(int i = 0; i < datasets.size(); i++) {
 			
 			int maxCount = datasetsMaxCount.get(i);
 			String format = datasets.get(i);
-			currentFormat = format;
-			datasetAnswersPerFold.put(currentFormat, new ArrayList<TreeMap<String, List<Bitvector>>>());
-			
 			//Loading the parameter profile
 			ProfileManager.loadProfileByName(format.toString());
 			
@@ -135,12 +127,11 @@ public class Evaluator {
 			
 			//Saving current time for across time analysis
 			startTime = System.currentTimeMillis();
+
+			int id = 0;//not used for this experiment
 			
 			//For each predictor, do the sampling and do the training/testing
-			for(int id = 0 ; id < predictors.size(); id++) {
-
-				datasetAnswersPerFold.get(currentFormat).add(new TreeMap<String, List<Bitvector>>());
-				datasetAnswersPerFold.get(currentFormat).get(id).put(predictors.get(id).getTAG(), new ArrayList<Bitvector>());
+			//for(int id = 0 ; id < predictors.size(); id++) {
 				
 				//Picking the sampling strategy
 				switch(samplingType) {
@@ -149,7 +140,7 @@ public class Evaluator {
 						break;
 				
 					case KFOLD:
-						KFold((int)param, id);
+						KFold((int)param);
 						break;
 						
 					case RANDOMSAMPLING:
@@ -159,7 +150,7 @@ public class Evaluator {
 					default: 
 						System.out.println("Unknown sampling type."); 
 				}
-			}
+			//}
 			//Saving end time
 			endTime = System.currentTimeMillis();
 			
@@ -190,7 +181,7 @@ public class Evaluator {
 		
 		PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier
 		
-		StartClassifier(testSequences, classifierId); //classification of the test sequence
+		StartClassifier(testSequences); //classification of the test sequence
 	}
 	
 	/**
@@ -216,7 +207,7 @@ public class Evaluator {
 	 * Training and testing is done k times. For each time; a fold is used for testing 
 	 * and the k-1 other folds for training
 	 */
-	public void KFold(int k, int classifierId) {		
+	public void KFold(int k) {		
 
 		//k has to be at least 2
 		if(k < 2) {
@@ -231,10 +222,6 @@ public class Evaluator {
 		
 		//For each fold, it does training and testing
 		for(int i = 0 ; i < k ; i++) {
-			currentFold = i;
-
-			//datasetAnswersPerFold.get(currentFormat).get(classifierId).get(predictors.get(classifierId).getTAG()).add(new Bitvector());
-			datasetAnswersPerFold.get(currentFormat).get(classifierId).get(predictors.get(classifierId).getTAG()).add(new Bitvector());
 
 			//Partitioning database 
 			//
@@ -263,9 +250,12 @@ public class Evaluator {
 			}
 			//
 			//End of Partitioning
+
+			for (int classifierId = 0; classifierId < predictors.size(); classifierId++){
 		
-			PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier	
-			StartClassifier(testSequences, classifierId); //classification of the test sequence
+				PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier	
+			}
+			StartClassifier(testSequences); //classification of the test sequence
 			
 			//Logging memory usage
 			MemoryLogger.addUpdate();
@@ -355,53 +345,51 @@ public class Evaluator {
 		stats.set("Train Time", predictors.get(classifierId).getTAG(), duration);
 	}
 	
-	private void StartClassifier(List<Sequence> testSequences, int classifierId) {	
+	private void StartClassifier(List<Sequence> testSequences) {	
 		
 		long start = System.currentTimeMillis(); //Testing starting time
 		
 		//for each sequence; it classifies it and evaluates it
 		// System.out.println("Testing sequences size: " + testSequences.size());
 		for(int i = 0; i < testSequences.size(); i++) {
+
+			for (int classifierId = 0; classifierId < predictors.size(); classifierId++){
 			
-			Sequence target = testSequences.get(i);
-			//if sequence is long enough
-			if(target.size() > (Profile.paramInt("consequentSize"))) {
-				
-				Sequence consequent = target.getLastItems(Profile.paramInt("consequentSize"),0); //the lasts actual items in target
-				Sequence finalTarget = target.getLastItems(Profile.paramInt("windowSize"),Profile.paramInt("consequentSize"));
-				
-				Sequence predicted = predictors.get(classifierId).Predict(finalTarget);
-				
-				//if no sequence is returned, it means that they is no match for this sequence
-				if(predicted.size() == 0) {
-					stats.inc("No Match", predictors.get(classifierId).getTAG());
-					datasetAnswersPerFold.get(currentFormat).get(classifierId).get(predictors.get(classifierId).getTAG()).get(currentFold).setBit(i, false);
+				Sequence target = testSequences.get(i);
+				//if sequence is long enough
+				if(target.size() > (Profile.paramInt("consequentSize"))) {
+					
+					Sequence consequent = target.getLastItems(Profile.paramInt("consequentSize"),0); //the lasts actual items in target
+					Sequence finalTarget = target.getLastItems(Profile.paramInt("windowSize"),Profile.paramInt("consequentSize"));
+					
+					Sequence predicted = predictors.get(classifierId).Predict(finalTarget);
+					
+					//if no sequence is returned, it means that they is no match for this sequence
+					if(predicted.size() == 0) {
+						stats.inc("No Match", predictors.get(classifierId).getTAG());
 
-				}
-				//evaluates the prediction
-				else if(isGoodPrediction(consequent, predicted)) {
-					stats.inc("Success", predictors.get(classifierId).getTAG());
-					datasetAnswersPerFold.get(currentFormat).get(classifierId).get(predictors.get(classifierId).getTAG()).get(currentFold).setBit(i, true);
+					}
+					//evaluates the prediction
+					else if(isGoodPrediction(consequent, predicted)) {
+						stats.inc("Success", predictors.get(classifierId).getTAG());
 
+					}
+					else {
+						stats.inc("Failure", predictors.get(classifierId).getTAG());
+
+					}
+					
 				}
+				//sequence is too small
 				else {
-					stats.inc("Failure", predictors.get(classifierId).getTAG());
-					datasetAnswersPerFold.get(currentFormat).get(classifierId).get(predictors.get(classifierId).getTAG()).get(currentFold).setBit(i, false);
-
+					stats.inc("Too Small", predictors.get(classifierId).getTAG());
 				}
-				
-			}
-			//sequence is too small
-			else {
-				stats.inc("Too Small", predictors.get(classifierId).getTAG());
-				datasetAnswersPerFold.get(currentFormat).get(classifierId).get(predictors.get(classifierId).getTAG()).get(currentFold).setBit(i, false);
-
 			}
 		}
 		
 		long end = System.currentTimeMillis(); //Training ending time
 		double duration = (double)(end - start) / 1000;
-		stats.set("Test Time", predictors.get(classifierId).getTAG(), duration);
+		//stats.set("Test Time", predictors.get(classifierId).getTAG(), duration);
 	}
 
 	private List<Sequence> splitList(List<Sequence> toSplit, double absoluteRatio){
@@ -417,47 +405,6 @@ public class Evaluator {
 	
 	private List<Sequence> getDatabaseCopy() {
 		return new ArrayList<Sequence>(database.getDatabase().getSequences().subList(0, database.getDatabase().size()));
-	}
-
-	public void exportCSV(){
-		FileWriter fileWriter = null;
-		BufferedWriter bufferedWriter = null;
-
-		
-		try {
-		    for (Map.Entry<String, List<TreeMap<String, List<Bitvector>>>>  d_pair : datasetAnswersPerFold.entrySet()){
-		    	for (int i = 0; i < d_pair.getValue().size(); i++){
-		    		TreeMap<String, List<Bitvector>> foldList = d_pair.getValue().get(i);
-		    		for(Map.Entry<String, List<Bitvector>>  f_pair : foldList.entrySet()){
-
-		    			for(int j = 0; j < f_pair.getValue().size(); j++){
-
-		    				String fileName = "outputs/who_what/" + d_pair.getKey() + "." + j + "sBP.csv";
-				    		fileWriter = new FileWriter(fileName, true);
-					        // Always wrap FileWriter in BufferedWriter.
-					       	bufferedWriter = new BufferedWriter(fileWriter);
-
-		    				//CONTINUE HERE......
-					       	bufferedWriter.write(f_pair.getKey() + "," + f_pair.getValue().get(j));
-					       	bufferedWriter.newLine();
-					       	bufferedWriter.close();
-		    			}
-
-				            // bufferedWriter.write(pair.getKey());
-				            // for (Double val : pair.getValue()){
-				            // 	bufferedWriter.write("," + val);
-				            // }
-				            // bufferedWriter.newLine();
-				            // bufferedWriter.write("We are writing");
-					}
-		    	}
-		    }
-	    }catch(IOException ex) {
-            System.out.println("Error writing to file");
-            // Or we could just do this:
-            // ex.printStackTrace();
-        }
-
 	}
 	
 }

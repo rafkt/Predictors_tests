@@ -63,13 +63,13 @@ public class MainController {
 			Evaluator evaluator = new Evaluator(args[0]);
 			
 			//Loading datasets
-			//evaluator.addDataset("BMS", 		4830);
-			//evaluator.addDataset("SIGN", 		1000);
+			evaluator.addDataset("BMS", 		4830);
+			evaluator.addDataset("SIGN", 		1000);
 				 evaluator.addDataset("MSNBC", 		5000);
 				 //evaluator.addDataset("BIBLE_WORD", 	5000);
 				 //evaluator.addDataset("BIBLE_CHAR", 	5000);
 		//evaluator.addDataset("KOSARAK", 	45000);
-			evaluator.addDataset("FIFA", 		5000);
+			//evaluator.addDataset("FIFA", 		5000);
 
 			// evaluator.addDataset("SPICE0", 		5000);
 			// evaluator.addDataset("SPICE1", 		5000);
@@ -89,18 +89,17 @@ public class MainController {
 			// evaluator.addDataset("SPICE15", 		5000);
 			
 			//Loading predictors
-			// evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
-			// evaluator.addPredictor(new TDAGPredictor());
-			// evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
-			// evaluator.addPredictor(new CPTPredictor());
-			evaluator.addPredictor(new CPT_Approx("CPT_App_" + 10, 10));
-			// evaluator.addPredictor(new MarkovFirstOrderPredictor());
-			// evaluator.addPredictor(new MarkovAllKPredictor());
-			// evaluator.addPredictor(new LZ78Predictor());
+			evaluator.addPredictor(new DGPredictor("DG", "lookahead:4"));
+			evaluator.addPredictor(new TDAGPredictor());
+			evaluator.addPredictor(new CPTPlusPredictor("CPT+",		"CCF:true CBS:true"));
+			evaluator.addPredictor(new CPTPredictor());
+			//evaluator.addPredictor(new CPT_Approx("CPT_App_" + 10, 10));
+			evaluator.addPredictor(new MarkovFirstOrderPredictor());
+			evaluator.addPredictor(new MarkovAllKPredictor());
+			evaluator.addPredictor(new LZ78Predictor());
 			
 			//Start the experiment
 			StatsLogger results = evaluator.Start(Evaluator.KFOLD, 14 , true, true, true);
-			evaluator.exportCSV();
 	}
 
 }
