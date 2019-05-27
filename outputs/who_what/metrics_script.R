@@ -101,11 +101,11 @@ average_pearson_cor = function(dataset, predictorA, predictorB){
   sum_df = 0
   sum_pvalue = 0
   for (fold in 1:14){
-    pearson_cor = cor.test(as.numeric(dataset[[fold]][predictorA, 2:ncol(dataset[[fold]])]), as.numeric(dataset[[fold]][predictorB, ncol(dataset[[fold]])]), method = "pearson")
+    pearson_cor = cor.test(as.numeric(dataset[[fold]][predictorA, 2:ncol(dataset[[fold]])]), as.numeric(dataset[[fold]][predictorB, 2:ncol(dataset[[fold]])]), method = "pearson")
     
-    sum_t = sum_t + pearson_cor[1]
-    sum_df = sum_df + pearson_cor[2]
-    sum_pvalue = sum_pvalue + pearson_cor[3]
+    sum_t = sum_t + pearson_cor$statistic
+    sum_df = sum_df + pearson_cor$parameter
+    sum_pvalue = sum_pvalue + pearson_cor$p.value
   }
   return(c(t = sum_t/14, df = sum_df/14, p_value = sum_pvalue/14))
 }
