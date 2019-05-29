@@ -88,7 +88,7 @@ average_jaccard_sim = function(dataset, predictorA, predictorB){
     # jaccard_sim(bible_char[[2]][1,2:358], bible_char[[2]][1,2:358])[1]
     # the last accesibility modifier can access the list of similarities, e.g. 11, 00, dist, sim .. etc.
     
-    js = jaccard_sim(dataset[[fold]][predictorA, 2:ncol(dataset[[fold]])], bible_char[[fold]][predictorB, 2:ncol(dataset[[fold]])])
+    js = jaccard_sim(dataset[[fold]][predictorA, 2:ncol(dataset[[fold]])], dataset[[fold]][predictorB, 2:ncol(dataset[[fold]])])
     sum_00 = sum_00 + js[1]
     sum_11 = sum_11 + js[3]
   }
@@ -118,8 +118,7 @@ average_pearson_cor = function(dataset, predictorA, predictorB){
 # that can be useful to me.. 
 lossless_yes_lossy_no = function(dataset){
   av_per = 0
-  #for (fold in 1:14){
-  fold = 4
+  for (fold in 1:14){
     sum = 0
     result <-           as.numeric(dataset[[fold]][3,2:ncol(dataset[[fold]])])
     result <- result | as.numeric(dataset[[fold]][4,2:ncol(dataset[[fold]])])
@@ -132,36 +131,33 @@ lossless_yes_lossy_no = function(dataset){
     result <- result & !as.numeric(dataset[[fold]][7,2:ncol(dataset[[fold]])])
     
     sum = sum(TRUE == result[1:length(result)])
-    print(sum)
     
     av_per = av_per + sum/length(result)
-  #}
+  }
   
-    return(result) 
-  #return(c(Percentage = av_per/1 * 100))
+  return(c(Percentage = av_per/14 * 100))
 }
 
 lossy_yes_lossless_no = function(dataset){
   av_per = 0
-  #for (fold in 1:14){
-  fold = 4
+  for (fold in 1:14){
     sum = 0
     result <-          as.numeric(dataset[[fold]][1,2:ncol(dataset[[fold]])])
-    result <- result || as.numeric(dataset[[fold]][2,2:ncol(dataset[[fold]])])
-    result <- result || as.numeric(dataset[[fold]][5,2:ncol(dataset[[fold]])])
-    result <- result || as.numeric(dataset[[fold]][6,2:ncol(dataset[[fold]])])
-    result <- result || as.numeric(dataset[[fold]][7,2:ncol(dataset[[fold]])])
+    result <- result | as.numeric(dataset[[fold]][2,2:ncol(dataset[[fold]])])
+    result <- result | as.numeric(dataset[[fold]][5,2:ncol(dataset[[fold]])])
+    result <- result | as.numeric(dataset[[fold]][6,2:ncol(dataset[[fold]])])
+    result <- result | as.numeric(dataset[[fold]][7,2:ncol(dataset[[fold]])])
     
     result <- result & !as.numeric(dataset[[fold]][3,2:ncol(dataset[[fold]])])
     result <- result & !as.numeric(dataset[[fold]][4,2:ncol(dataset[[fold]])])
     result <- result & !as.numeric(dataset[[fold]][8,2:ncol(dataset[[fold]])])
     
     sum = sum(TRUE == result[1:length(result)])
-    print(sum) 
+
     av_per = av_per + sum/length(result)
-  #}
+  }
   
-  return(c(Percentage = av_per/1 * 100))
+  return(c(Percentage = av_per/14 * 100))
 }
 
 cptPlus_yes_subSeq_no = function(dataset){
@@ -172,7 +168,7 @@ cptPlus_yes_subSeq_no = function(dataset){
     result <- result & !as.numeric(dataset[[fold]][8,2:ncol(dataset[[fold]])])
     
     sum = sum(TRUE == result[1:length(result)])
-    
+
     av_per = av_per + sum/length(result)
   }
   
@@ -187,7 +183,7 @@ subseq_yes_cptPlus_no = function(dataset){
     result <- result & !as.numeric(dataset[[fold]][3,2:ncol(dataset[[fold]])])
     
     sum = sum(TRUE == result[1:length(result)])
-    
+
     av_per = av_per + sum/length(result)
   }
   
@@ -202,5 +198,8 @@ load_all_datasets = function(){
   Bible_c <<- prepare("BIBLE_CHAR.*.csv", "sBP.BIBLE_CHAR.*.csv")
   Kosarak <<- prepare("KOSARAK.*.csv", "sBP.KOSARAK.*.csv")
   Fifa <<- prepare("FIFA.*.csv", "sBP.FIFA.*.csv")
+  
+  predictors <<- list(DG = 1, TDAG = 2, CPTPlus = 3, CPT = 4, MARK1 = 5, AKOM = 6, LZ78 = 7, sBP = 8)
 }
 
+# [1] "DG"        "TDAG"      "CPT+"      "CPT"       "Mark1"     "AKOM"      "LZ78"      "CPT_App_0"
