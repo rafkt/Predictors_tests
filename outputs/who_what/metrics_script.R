@@ -191,13 +191,13 @@ subseq_yes_cptPlus_no = function(dataset){
 }
 
 load_all_datasets = function(){
-  Bms <<- prepare("BMS.*.csv", "sBP.BMS.*.csv")
-  Sign <<- prepare("SIGN.*.csv", "sBP.SIGN.*.csv")
-  Msnbc <<- prepare("MSNBC.*.csv", "sBP.MSNBC.*.csv")
-  Bible_w <<- prepare("BIBLE_WORD.*.csv", "sBP.BIBLE_WORD.*.csv")
-  Bible_c <<- prepare("BIBLE_CHAR.*.csv", "sBP.BIBLE_CHAR.*.csv")
-  Kosarak <<- prepare("KOSARAK.*.csv", "sBP.KOSARAK.*.csv")
-  Fifa <<- prepare("FIFA.*.csv", "sBP.FIFA.*.csv")
+  Bms <<- prepare("BMS.[0-9]+.csv", "BMS_sBP.[0-9]+.csv")
+  Sign <<- prepare("SIGN.[0-9]+.csv", "SIGN_sBP.[0-9]+.csv")
+  Msnbc <<- prepare("MSNBC.[0-9]+.csv", "MSNBC_sBP.[0-9]+.csv")
+  Bible_w <<- prepare("BIBLE_WORD.[0-9]+.csv", "BIBLE_WORD_sBP.[0-9]+.csv")
+  Bible_c <<- prepare("BIBLE_CHAR.[0-9]+.csv", "BIBLE_CHAR_sBP.[0-9]+.csv")
+  Kosarak <<- prepare("KOSARAK.[0-9]+.csv", "KOSARAK_sBP.[0-9]+.csv")
+  Fifa <<- prepare("FIFA.[0-9]+.csv", "FIFA_sBP.[0-9]+.csv")
   
   predictors <<- list(DG = 1, TDAG = 2, CPTPlus = 3, CPT = 4, MARK1 = 5, AKOM = 6, LZ78 = 7, sBP = 8)
 }
