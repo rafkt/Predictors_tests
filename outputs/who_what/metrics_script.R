@@ -76,7 +76,10 @@ jaccard_sim = function(one, another){
 # There is no need for different methon on one fold since it's a library call either way.
 # For example run on:
 # cor.test(as.numeric(bible_char[[1]][1, 2:358]), as.numeric(bible_char[[1]][2, 2:358]), method = "pearson")
-# Again, get bible_char through prepare... 
+# Again, get bible_char through prepare...
+# If the data variables are binary (like we have), the cor.test(..., method = "pearson") calculates the phi-coefficient. So no need for the:
+# GenomicRanges::phicoef(as.logical(as.numeric(Bms[[1]][predictors$CPTPlus, 2:ncol(Bms[[1]])])), as.logical(as.numeric(Bms[[1]][predictors$AKOM, 2:ncol(Bms[[1]])])))
+# Which I tried but gave exactly the same results.
 
 #for all folds which are available
 average_jaccard_sim = function(dataset, predictorA, predictorB){
@@ -97,17 +100,17 @@ average_jaccard_sim = function(dataset, predictorA, predictorB){
 
 #for all folds which are available
 average_pearson_cor = function(dataset, predictorA, predictorB){
-  sum_t = 0
+  sum_cor = 0
   sum_df = 0
   sum_pvalue = 0
   for (fold in 1:14){
     pearson_cor = cor.test(as.numeric(dataset[[fold]][predictorA, 2:ncol(dataset[[fold]])]), as.numeric(dataset[[fold]][predictorB, 2:ncol(dataset[[fold]])]), method = "pearson")
     
-    sum_t = sum_t + pearson_cor$statistic
-    sum_df = sum_df + pearson_cor$parameter
+    sum_cor = sum_cor + pearson_cor$estimate
+    #sum_df = sum_df + pearson_cor$parameter
     sum_pvalue = sum_pvalue + pearson_cor$p.value
   }
-  return(c(t = sum_t/14, df = sum_df/14, p_value = sum_pvalue/14))
+  return(c(t = sum_cor/14, p_value = sum_pvalue/14))
 }
 
 # The following functions, calculate usefull queries. Such queries can be in the form; "Somebody predicted correctly while somebody else not"..
