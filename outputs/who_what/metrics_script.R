@@ -203,6 +203,7 @@ load_all_datasets = function(){
   Fifa <<- prepare("FIFA.[0-9]+.csv", "FIFA_sBP.[0-9]+.csv")
   
   predictors <<- list(DG = 1, TDAG = 2, CPTPlus = 3, CPT = 4, MARK1 = 5, AKOM = 6, LZ78 = 7, sBP = 8)
+  options(scipen=999)
 }
 
 # [1] "DG"        "TDAG"      "CPT+"      "CPT"       "Mark1"     "AKOM"      "LZ78"      "CPT_App_0"
