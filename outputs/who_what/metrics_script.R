@@ -192,6 +192,22 @@ subseq_yes_cptPlus_no = function(dataset){
   
   return(c(Percentage = av_per/14 * 100))
 }
+# It calculates what can be a suggested predictor accuracy rate if it follows the ensemble majority approach.
+# At the moment we take as granted that we have 8 predictors.
+ensemble = function(dataset){
+  #dataset[[fold]][predictorB, 2:ncol(dataset[[fold]])]
+  #sum(as.numeric(Bms[[1]][1:8, 2]))
+  
+  sum = 0
+  for (i in 2:ncol(dataset[[1]])){
+    if (sum(as.numeric(dataset[[1]][1:8, i])) >= 4){ # we assume that we have 8 predictors; so the majority is 4 out of 8
+      sum = sum + 1
+    }else if (sum(as.numeric(dataset[[1]][predictors$sBP, i])) == 1){
+      sum = sum + 1
+    }
+  }
+  return (sum / ncol(dataset[[1]]))
+}
 
 load_all_datasets = function(){
   Bms <<- prepare("BMS.[0-9]+.csv", "BMS_sBP.[0-9]+.csv")
