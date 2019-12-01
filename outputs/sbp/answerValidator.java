@@ -127,3 +127,4 @@ public class answerValidator {
 	//System.out.println("=AVERAGE(A1:A14)*1000");
 
 }
+//For a ueful way to average results from seperate folds, run this as i.e (parallel ...<rest of the command for e.g. 14 folds>) | awk '{s+=$1} END {printf "%.3f\n", s/14.0}'
