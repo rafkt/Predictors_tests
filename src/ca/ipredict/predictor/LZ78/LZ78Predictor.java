@@ -173,7 +173,7 @@ public class LZ78Predictor extends Predictor implements Serializable {
 		
 		//returns the resulting sequence
 		Sequence predicted = new Sequence(-1);
-		predicted.addItem(new Item(mostProbableItem));
+		predicted.addItem(new Item(mostProbableItem != null ? mostProbableItem : -1));
 		return predicted;
 	}
 

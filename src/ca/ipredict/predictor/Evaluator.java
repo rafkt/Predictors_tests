@@ -22,7 +22,7 @@ import ca.ipredict.predictor.profile.ProfileManager;
  */
 public class Evaluator {
 
-	private static final boolean ALLOW_SPLIT_LENGTH_TRAINING_DATA_EXPORT = true;
+	private static final boolean ALLOW_SPLIT_LENGTH_TRAINING_DATA_EXPORT = false;
 	private static boolean print = true;
 
 	private List<Predictor> predictors; //list of predictors
@@ -44,7 +44,9 @@ public class Evaluator {
 	public List<StatsLogger> experiments;
 	
 	public List<String> datasets;  
-	public List<Integer> datasetsMaxCount;  
+	public List<Integer> datasetsMaxCount;
+
+	public List<Sequence> PredictorAnswers;
 
 	private Map<String, ArrayList<Double>> foldResults;
 	
@@ -287,11 +289,13 @@ public class Evaluator {
 			}
 			//
 			//End of Partitioning
+
+			PredictorAnswers = new LinkedList<Sequence>();
 		
 			PrepareClassifier(trainingSequences, classifierId); //training (preparing) classifier	
 			StartClassifier(testSequences, classifierId); //classification of the test sequence
 
-			//writeFoldsAndAnswers(trainingSequences, testSequences, i, datasetName);
+			//writeFoldsAndAnswers(trainingSequences, testSequences, i, datasetName, classifierId);
 			
 			//Logging memory usage
 			MemoryLogger.addUpdate();
@@ -310,14 +314,16 @@ public class Evaluator {
 		return result;
 	}
 
-	public void writeFoldsAndAnswers(List<Sequence> trainingSequences, List<Sequence> testingSequences, int fold, String datasetName){
+	public void writeFoldsAndAnswers(List<Sequence> trainingSequences, List<Sequence> testingSequences, int fold, String datasetName, int classifierId){
 		
 		// Assume default encoding.
 
-		FileWriter fileWriter = null, fileWriter2 = null;
-		BufferedWriter bufferedWriter = null, bufferedWriter2 = null;
+        String predictorName = predictors.get(classifierId).getTAG();
 
-		String fileName = "outputs/" + datasetName + ".fold." + fold + ".training.mapped.txt";
+		FileWriter fileWriter = null, fileWriter2 = null, fileWriterAnswers = null;
+		BufferedWriter bufferedWriter = null, bufferedWriter2 = null, bufferedAnswers = null;
+
+		String fileName = "outputs-ensemble/" + datasetName + ".fold." + fold + ".training.mapped.txt";
 		try{
 	        fileWriter =
 	            new FileWriter(fileName);
@@ -367,10 +373,12 @@ public class Evaluator {
 		try {bufferedWriter.close();} catch (IOException ex){}
 
 
-		fileName = "outputs/" + datasetName + ".fold." + fold + ".consequent.mapped.txt";
+		fileName = "outputs-ensemble/" + datasetName + ".fold." + fold + ".consequent.mapped.txt";
 
 
-        String fileName2 = "outputs/" + datasetName + ".fold." + fold + ".queries.mapped.txt";
+        String fileName2 = "outputs-ensemble/" + datasetName + ".fold." + fold + ".queries.mapped.txt";
+
+		String fileNameAnswers = "outputs-ensemble/" + datasetName + ".fold." + fold + ".answers." + predictorName + ".mapped.txt";
 
         try{
 
@@ -385,6 +393,12 @@ public class Evaluator {
 	        // Always wrap FileWriter in BufferedWriter.
 	        bufferedWriter2 =
 	            new BufferedWriter(fileWriter2);
+
+			fileWriterAnswers =
+					new FileWriter(fileNameAnswers);
+			// Always wrap FileWriter in BufferedWriter.
+			bufferedAnswers =
+					new BufferedWriter(fileWriterAnswers);
 	    }catch(IOException ex){}
 
 
@@ -447,8 +461,22 @@ public class Evaluator {
 			}
 		}
 
+		for(Sequence answer : PredictorAnswers) {
+
+			try {
+				bufferedAnswers.write(answer.toString());
+				bufferedAnswers.newLine();
+
+			} catch (Exception ex) {
+				System.out.println(
+						"Error writing to file '"
+								+ fileName + "'");
+			}
+		}
+
 		try {bufferedWriter.close();} catch (IOException ex){}
 		try {bufferedWriter2.close();} catch (IOException ex){}
+		try {bufferedAnswers.close();} catch (IOException ex){}
 	}
 	
 	/**
@@ -553,16 +581,19 @@ public class Evaluator {
 				//if no sequence is returned, it means that they is no match for this sequence
 				if(predicted.size() == 0) {
 					stats.inc("No Match", predictors.get(classifierId).getTAG());
+					PredictorAnswers.add(new Sequence(-1, new ArrayList<Item>(Arrays.asList(new Item(-1)))));
 					noMatch++;
 				}
 				//evaluates the prediction
 				else if(isGoodPrediction(consequent, predicted)) {
 					stats.inc("Success", predictors.get(classifierId).getTAG());
+					PredictorAnswers.add(new Sequence(predicted));
 					success++;
 				}
 				else {
 					stats.inc("Failure", predictors.get(classifierId).getTAG());
 					failure++;
+                    PredictorAnswers.add(new Sequence(predicted));
 				}
 				
 			}
@@ -570,6 +601,7 @@ public class Evaluator {
 			else {
 				stats.inc("Too Small", predictors.get(classifierId).getTAG());
 				tooSmall++;
+				PredictorAnswers.add(new Sequence(-1, new ArrayList<Item>(Arrays.asList(new Item(-1)))));
 			}
 		}
 
@@ -577,7 +609,7 @@ public class Evaluator {
 		//System.out.println(predictors.get(classifierId).getTAG() + " memory (MB): " + predictors.get(classifierId).memoryUsage() / (1000 * 1000));
 		//System.out.println(predictors.get(classifierId).getTAG() + " test time (ms): " + (double)(end - start));
 		double duration = (double)(end - start) / 1000;
-		System.out.println(predictors.get(classifierId).getTAG() + ":" + duration);
+		//System.out.println(predictors.get(classifierId).getTAG() + ":" + duration);
 		stats.set("Test Time", predictors.get(classifierId).getTAG(), duration);
 
 
