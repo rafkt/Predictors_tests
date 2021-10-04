@@ -11,6 +11,7 @@ public class EnsembleEvaluator {
 
         Arrays.stream(Datasets.values()).forEach(dataset -> {
             double accuracy = 0.0;
+
             for(int fold = 0; fold < FOLDS; fold++){
                 List<Sequence> consequents = EnsemblePredictor.ReadFromFile("../../outputs-ensemble/" + dataset.toString() + ".fold." + fold +
                         ".consequent.mapped.txt");
@@ -22,7 +23,7 @@ public class EnsembleEvaluator {
                 int counter = 0;
 
                 for (int i = 0; i < consequents.size(); i++){
-                    for(Integer item : consequents.get(i).getItems()){
+                    for(Integer item : consequents.get(i).GetItems()){
                         try {
                             Sequence predictions = ensemblePredictor.Predict(i, EnsemblePredictor.Mode.Recommendations);
                             if (IsGoodPrediction(predictions, item)){
@@ -36,14 +37,13 @@ public class EnsembleEvaluator {
                     }
                 }
                 accuracy = accuracy + ((float)counter / consequents.size());
-                //System.out.println(((float)counter / consequents.size()));
             }
             System.out.println("" + dataset.toString() + ": " + ((float)accuracy / FOLDS));
         });
     }
 
     public static boolean IsGoodPrediction(Sequence predictions, Integer item){
-        for (Integer prediction : predictions.getItems()){
+        for (Integer prediction : predictions.GetItems(4)){
             if (prediction.compareTo(item) == 0) {
                 return true;
             }

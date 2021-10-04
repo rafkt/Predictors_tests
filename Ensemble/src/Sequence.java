@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,8 +14,12 @@ public class Sequence {
         this.Items = new LinkedList<Integer>(items);
     }
 
-    public List<Integer> getItems() {
+    public List<Integer> GetItems() {
         return Items;
+    }
+
+    public List<Integer> GetItems(int n) {
+        return new ArrayList(Items.subList(0, Items.size() > n ? n : Items.size()));
     }
 
     public boolean IsValid(){

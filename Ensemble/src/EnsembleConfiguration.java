@@ -21,7 +21,7 @@ public class EnsembleConfiguration {
 
     static Sequence PredictorsHaveCommonPredictions(List<Predictor> predictorsList, int index, int expectedCommonScore){
         HashMap<Integer, Integer> countTableForAll = GetAnswerRanksFor(predictorsList, index);
-        ScoreDistribution<Integer> sdAll = new ScoreDistribution<Integer>();
+        ScoreDistribution sdAll = new ScoreDistribution();
         for(Map.Entry<Integer, Integer> it : countTableForAll.entrySet()){
 
             sdAll.put(it.getKey(), it.getValue());
@@ -35,7 +35,7 @@ public class EnsembleConfiguration {
     static HashMap<Integer, Integer> GetAnswerRanksFor(List<Predictor> predictors, int index){
         HashMap countTable = new HashMap<Integer, Integer>();
         predictors.stream().forEach(predictor -> {
-            List items = predictor.GetAnswerForIndex(index).getItems();
+            List items = predictor.GetAnswerForIndex(index).GetItems();
             items.stream().forEach(item -> {
                 if (countTable.containsKey(item)){
                     int freq = (int) countTable.get(item);
@@ -48,14 +48,6 @@ public class EnsembleConfiguration {
             });
         });
         return countTable;
-    }
-
-    static Sequence ToSequence(HashMap<Integer, Integer> map){
-        List sequence = new ArrayList<Integer>();
-        for(Map.Entry<Integer, Integer> it : map.entrySet()){
-            sequence.add(it.getKey());
-        }
-        return new Sequence(sequence);
     }
 
     public int getCurrentRank() {

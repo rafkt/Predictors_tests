@@ -63,7 +63,7 @@ public class EnsemblePredictor {
     private Sequence Naive(int index){
 
         HashMap<Integer, Integer> countTableForAll = EnsembleConfiguration.GetAnswerRanksFor(PredictorsList, index);
-        ScoreDistribution<Integer> sd = new ScoreDistribution<Integer>();
+        ScoreDistribution sd = new ScoreDistribution();
         for(Map.Entry<Integer, Integer> it : countTableForAll.entrySet()){
 
             sd.put(it.getKey(), it.getValue());
@@ -117,7 +117,13 @@ public class EnsemblePredictor {
 
     private Sequence Recommendations(int index) {
         HashMap<Integer, Integer> predictionFromAll = EnsembleConfiguration.GetAnswerRanksFor(PredictorsList, index);
-        return EnsembleConfiguration.ToSequence(predictionFromAll);
+        ScoreDistribution sortedMap = new ScoreDistribution();
+        for(Map.Entry<Integer, Integer> it : predictionFromAll.entrySet()){
+
+            sortedMap.put(it.getKey(), it.getValue());
+        }
+
+        return sortedMap.ToSequence();
     }
 
     private List<Predictor> GetLosslessPredictors(){

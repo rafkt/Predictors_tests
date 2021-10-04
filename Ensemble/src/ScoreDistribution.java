@@ -1,22 +1,32 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.TreeMap;
+import org.omg.CORBA.INTERNAL;
 
-public class ScoreDistribution<K> {
+import java.util.*;
+import java.util.stream.Collectors;
 
-
-    private TreeMap<Integer, List<K>> dict;
+public class ScoreDistribution {
 
 
-    public ScoreDistribution() {
-        dict = new TreeMap<Integer, List<K>>();
+    private TreeMap<Integer, List<Integer>> dict;
+
+    public Sequence ToSequence(){
+        List<Integer> sequenceItems = new ArrayList<Integer>();
+        TreeMap<Integer, List<Integer>> reversedDict = new TreeMap<Integer, List<Integer>>(Collections.reverseOrder());
+        reversedDict.putAll(dict);
+        for(Map.Entry<Integer, List<Integer>> it : reversedDict.entrySet()){
+            sequenceItems.addAll((it.getValue()).stream().filter(v -> v != -1).collect(Collectors.toList()));
+        }
+        return new Sequence(sequenceItems);
     }
 
-    public void put(K key, Integer value) {
+    public ScoreDistribution() {
+        dict = new TreeMap<Integer, List<Integer>>();
+    }
 
-        List<K> keys = dict.get(value);
+    public void put(Integer key, Integer value) {
+
+        List<Integer> keys = dict.get(value);
         if(keys == null) {
-            keys = new ArrayList<K>();
+            keys = new ArrayList<Integer>();
         }
 
         keys.add(key);
@@ -28,7 +38,7 @@ public class ScoreDistribution<K> {
         dict.clear();
     }
 
-    public List<K> getBestValue() {
+    public List<Integer> getBestValue() {
 
         if(dict.size() == 0) {
             return null;
@@ -42,7 +52,7 @@ public class ScoreDistribution<K> {
         return dict.get(bestVal);
     }
 
-    public List<K> getNextBestValue(Integer best) {
+    public List<Integer> getNextBestValue(Integer best) {
 
         Integer nextBest = dict.lowerKey(best);
         if(nextBest == null) {
